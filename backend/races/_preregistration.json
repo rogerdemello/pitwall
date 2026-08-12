@@ -1,0 +1,80 @@
+{
+ "document": "Pre-registration for the v2 pipeline rebuild",
+ "registered_utc": "2026-08-12T03:22:54Z",
+ "registered_against_commit": "8eee02d",
+ "baseline": "_v1_baseline.json",
+ "why_this_file_is_hand_written": "Every other artifact in races/ is generated, because a typed number drifts. This one is a declaration rather than a measurement: it states what we will accept as a result before we can see it. Its integrity comes from being committed to git before the run, not from being derived. Check `git log --diff-filter=A -- backend/races/_preregistration.json` against the timestamps on the v2 artifacts.",
+
+ "what_is_changing": {
+  "asr": "openai/whisper-small.en, greedy, no VAD, truncating at 30s -> openai/whisper-large-v3 via faster-whisper, beam 5, temperature fallback, Silero VAD, no_speech_threshold 0.6, compression_ratio_threshold 2.4, condition_on_previous_text False, word timestamps, no truncation",
+  "prosody": "15s windows mean-pooled over the whole clip, CPU -> 4s windows with 2s hop over VAD speech spans only, loudness-normalised, per-window scores emitted and aggregated in stage 2, CUDA",
+  "speaker": "clip-level lexicon -> segment-level classification using word timestamps, with calibrated abstention",
+  "fusion": "drop the dominance term (r=0.97 with arousal, so it is a no-op); source valence from text rather than acoustics if the diagnostic below confirms acoustic valence is at chance",
+  "calibration": "in-sample pooled -> leave-one-race-out, fitted on driver-attributed messages only"
+ },
+
+ "confirmatory_hypotheses": [
+  {
+   "id": "H1",
+   "claim": "The upgrade removes the truncation defect entirely.",
+   "metric": "_v1_baseline.truncation.clips_truncated",
+   "baseline": 92,
+   "threshold": "exactly 0",
+   "if_it_fails": "The chunking is wrong. Report the count and do not ship the ASR upgrade as complete."
+  },
+  {
+   "id": "H2",
+   "claim": "Hallucination on non-speech does not get worse, despite large-v3 being more confabulatory than small.en on noise.",
+   "metric": "_v1_baseline.hallucination.rate",
+   "baseline": 0.0269,
+   "threshold": "<= 0.0269; target < 0.010 given no_speech_threshold is now active",
+   "if_it_fails": "Report it as a regression. A larger model that invents more text is not an improvement, and the 51 near-silent clips that currently decode to 'you' are the specific test."
+  },
+  {
+   "id": "H3",
+   "claim": "Segment-level attribution cuts the unattributed share.",
+   "metric": "_v1_baseline.speaker_attribution.unknown_share",
+   "baseline": 0.525,
+   "threshold": "< 0.35 at >= 90% precision on held-out judgements",
+   "if_it_fails": "Report the precision-coverage curve as measured. Abstention is acceptable; unmeasured abstention is not."
+  },
+  {
+   "id": "H4",
+   "claim": "Acoustic valence is at chance, and the failure is the model rather than our quadrant mapping.",
+   "test": "Matched-arousal contrast on CREMA-D: happy vs anger. Both are high-arousal and differ almost purely in valence.",
+   "baseline": "valence axis lift +0.0097 over a 0.6188 majority baseline",
+   "threshold": "If raw valence separates happy from anger at <= 55% accuracy, acoustic valence is dead and moves out of the index. If it separates them at >= 65%, the quadrant mapping is at fault and the model stays.",
+   "if_it_fails": "Between 55% and 65% is inconclusive. Report it as inconclusive and leave the index unchanged rather than choosing the reading that suits us."
+  }
+ ],
+
+ "the_commitment_that_matters": {
+  "statement": "Fusion weights will not be fitted against lap time, at any stage, for any variant.",
+  "why": "The project's headline finding is that stress does not predict lap-time loss (pooled r = 0.043, n = 1155). Fitting the index to maximise correlation with lap time and then reporting the correlation would be circular. It would manufacture the fourth false positive this project has caught, except self-inflicted.",
+  "what_lap_time_is_instead": "A held-out outcome, never optimised against, re-measured exactly once after the rebuild and reported whichever way it comes out.",
+  "fitting_target_actually_used": "CREMA-D gold labels, split by actor rather than by clip so speaker identity does not leak. Out of domain, and reported as such, but free of circularity."
+ },
+
+ "the_single_confirmatory_test": {
+  "script": "backend/data/corpus_analysis.py",
+  "run": "exactly once, after the rebuild is complete and frozen",
+  "baseline": {"pooled_r": 0.0428, "n": 1155, "tercile_gap_s": -0.071, "sign_test_p": 0.7376, "predictive": false},
+  "prediction": "The null holds. We do not expect better models to reveal a relationship that is not there.",
+  "how_each_outcome_will_be_reported": {
+   "null_holds": "Reported as a stronger null than v1's, because it forecloses the rebuttal that the models were simply too weak to see the effect. This is the expected outcome and it is a headline, not a disappointment.",
+   "relationship_appears": "Reported, with the explicit caveat that it emerged after a pipeline change and is therefore a hypothesis for a fresh corpus rather than a confirmed finding. It will not be presented as a validated result on this data.",
+   "relationship_reverses": "Reported as-is. A negative correlation is not evidence for the hypothesis and will not be described as 'predictive' in either direction."
+  },
+  "no_second_run": "If the analysis is re-run after any further change, that is exploratory and will be labelled exploratory. The confirmatory result is whatever the first run says."
+ },
+
+ "regressions_that_must_be_reported_not_dropped": [
+  "Any increase in hallucination rate",
+  "Any decrease in speaker attribution precision, even if coverage improves",
+  "Any race whose /api/compare ordering changes under leave-one-race-out calibration",
+  "Any aggregation strategy chosen for reasons other than held-out performance",
+  "Any of the four pre-registered hypotheses failing"
+ ],
+
+ "what_would_falsify_the_whole_index": "If, after the rebuild, the Driver State Index no longer separates the pre-registered contrast slate (currently PARTIAL SUPPORT, 4 of 5 predictions held, spread 5.6 points), then the separation in v1 was an artifact of the v1 pipeline and the index does not measure what we claim. That result would be published in place of the current one."
+}
