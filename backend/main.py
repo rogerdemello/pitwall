@@ -10,6 +10,7 @@ Two very different paths, on purpose:
 
 from __future__ import annotations
 
+import asyncio
 import io
 import json
 import os
@@ -24,7 +25,7 @@ from fastapi.responses import FileResponse
 
 from pipeline import analysis, asr, fusion, prosody, sentiment
 from pipeline.artifacts import is_race_file as _is_race_file
-from pipeline.calibration import Calibrator
+from pipeline.calibration import CROSS_RACE_SOURCES, Calibrator
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RACES = os.path.join(HERE, "races")
@@ -66,33 +67,56 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(title="PIT WALL", version="1.0", lifespan=lifespan)
+
+# Dev origins, plus whatever the deployment sets. Not a wildcard: /api/analyze
+# runs ~25s of CPU per request, and `allow_origins=["*"]` on an endpoint like
+# that is a free amplification vector.
+_ORIGINS = [f"http://{h}:{p}" for h in ("localhost", "127.0.0.1")
+            for p in (3000, 3001, 3002)]
+_ORIGINS += [o.strip() for o in os.environ.get("PITWALL_ORIGINS", "").split(",")
+             if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    # Next.js falls back to 3001+ when 3000 is taken; allow the usual dev range.
-    allow_origins=[f"http://{h}:{p}" for h in ("localhost", "127.0.0.1")
-                   for p in (3000, 3001, 3002)],
+    allow_origins=_ORIGINS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-_race_cache: dict[str, dict] = {}
-_cal_cache: dict[str, Calibrator] = {}
+# Cached payloads, keyed with the file mtime they were read at.
+#
+# The size was never the problem - twelve races is a few MB. Staleness was:
+# rebuilding a race while the server ran left the API serving yesterday's
+# numbers, silently and forever, which for this project is a credibility bug
+# rather than a memory one.
+_race_cache: dict[str, tuple[float, dict]] = {}
+_cal_cache: dict[str, tuple[float, Calibrator | None]] = {}
 
 
 def _load_race(race_id: str) -> dict:
-    if race_id not in _race_cache:
-        path = os.path.join(RACES, f"{race_id}.json")
-        if not os.path.exists(path):
-            raise HTTPException(404, f"race not built: {race_id}")
-        _race_cache[race_id] = json.load(open(path, encoding="utf-8"))
-    return _race_cache[race_id]
+    path = os.path.join(RACES, f"{race_id}.json")
+    if not os.path.exists(path):
+        raise HTTPException(404, f"race not built: {race_id}")
+    mtime = os.path.getmtime(path)
+    hit = _race_cache.get(race_id)
+    if hit is None or hit[0] != mtime:
+        _race_cache[race_id] = (mtime, json.load(open(path, encoding="utf-8")))
+    return _race_cache[race_id][1]
 
 
 def _calibrator(race_id: str) -> Calibrator | None:
-    if race_id not in _cal_cache:
-        path = os.path.join(RACES, f"{race_id}.calibration.json")
-        _cal_cache[race_id] = Calibrator.from_json(path) if os.path.exists(path) else None
-    return _cal_cache[race_id]
+    # Prefer the pooled mapping: the twelve per-race sidecars are byte-identical
+    # copies of it, and a stale copy would silently score one race against a
+    # mapping the others no longer use.
+    for path in (os.path.join(RACES, "_pooled.calibration.json"),
+                 os.path.join(RACES, f"{race_id}.calibration.json")):
+        if os.path.exists(path):
+            mtime = os.path.getmtime(path)
+            hit = _cal_cache.get(path)
+            if hit is None or hit[0] != mtime:
+                _cal_cache[path] = (mtime, Calibrator.from_json(path))
+            return _cal_cache[path][1]
+    return None
 
 
 @app.get("/api/races")
@@ -166,9 +190,13 @@ def get_evidence(race_id: str):
         "message_count": len(msgs),
         "on_lap_count": len(on_lap),
         "join_rate": round(len(on_lap) / len(msgs), 4) if msgs else 0,
+        # Guarded: min()/max() on an empty sequence raises, and the line above
+        # already guards the same case for join_rate. A race with no messages
+        # returned a 500 with a traceback instead of an empty summary.
         "dsi": {
-            "min": min(dsis), "max": max(dsis),
-            "mean": round(sum(dsis) / len(dsis), 1),
+            "min": min(dsis) if dsis else None,
+            "max": max(dsis) if dsis else None,
+            "mean": round(sum(dsis) / len(dsis), 1) if dsis else None,
         },
         "suppressed_stress_count": flagged,
         "suppressed_stress_eligible": len(eligible),
@@ -228,13 +256,21 @@ def compare_races():
         })
 
     rows.sort(key=lambda r: -(r["mean_dsi"] or 0))
-    comparable = sources == {"pooled"} and len(rows) > 1
+    # What makes races comparable is a *shared* reference, not specifically the
+    # pooled one. Leave-one-race-out shares the reference too and additionally
+    # scores each race out of sample. Testing for "pooled" alone reported the
+    # corpus as incomparable the moment it became more rigorous, with a note
+    # claiming per-race calibration that was simply untrue.
+    comparable = sources <= CROSS_RACE_SOURCES and len(rows) > 1
+    held_out = sources == {"leave-one-race-out"}
     return {
         "races": rows,
         "comparable": comparable,
         "calibration_sources": sorted(sources),
         "note": (
-            "Comparable across races."
+            ("Comparable across races, and each race is scored against a "
+             "calibration fitted without it - so these are out-of-sample."
+             if held_out else "Comparable across races.")
             if comparable
             else "Races are calibrated per-race, so every mean sits at 50 by "
                  "construction. Run pool_calibration.py then rebuild to compare."
@@ -381,6 +417,20 @@ def get_corpus_analysis():
 
 MAX_UPLOAD_BYTES = 25 * 1024 * 1024  # a radio clip is tens of KB; 25 MB is generous
 
+#: How many analyses may run at once, and how long one may take. Two is right
+#: for a demo machine: enough that a second viewer is not blocked, few enough
+#: that they do not starve each other on a CPU box.
+_ANALYZE_SLOTS = asyncio.Semaphore(int(os.environ.get("PITWALL_MAX_CONCURRENT", "2")))
+_ANALYZE_TIMEOUT_S = float(os.environ.get("PITWALL_ANALYZE_TIMEOUT", "90"))
+
+
+def _run_models(audio):
+    """The blocking part, so it can be handed to a worker thread."""
+    tr = asr.transcribe(audio)
+    af = prosody.analyse(audio)
+    se = sentiment.analyse(tr.text)
+    return tr, af, se
+
 
 @app.post("/api/analyze")
 async def analyze(file: UploadFile = File(...), race_id: str = "2021_Abu_Dhabi_Grand_Prix"):
@@ -397,9 +447,23 @@ async def analyze(file: UploadFile = File(...), race_id: str = "2021_Abu_Dhabi_G
     except Exception as e:
         raise HTTPException(400, f"could not decode audio: {e}")
 
-    tr = asr.transcribe(audio)
-    af = prosody.analyse(audio)
-    se = sentiment.analyse(tr.text)
+    # The pipeline is ~25s of CPU and this is an `async def`, so running it
+    # inline blocked the event loop outright: one upload froze every other
+    # request, including /api/health and the precomputed race JSON the demo runs
+    # on. Three separate guards, because they fail differently:
+    #   to_thread   gets the CPU work off the loop
+    #   semaphore   bounds how many can run at once
+    #   wait_for    bounds how long one may take
+    if _ANALYZE_SLOTS.locked() and _ANALYZE_SLOTS._value == 0:
+        raise HTTPException(503, "analysis queue is full; try again in a moment")
+
+    async with _ANALYZE_SLOTS:
+        try:
+            tr, af, se = await asyncio.wait_for(
+                asyncio.to_thread(_run_models, audio), _ANALYZE_TIMEOUT_S)
+        except asyncio.TimeoutError:
+            raise HTTPException(
+                504, f"analysis exceeded {_ANALYZE_TIMEOUT_S:.0f}s and was stopped")
     st = fusion.fuse(af, se, calibrator=_calibrator(race_id), transcript=tr.text)
 
     return {

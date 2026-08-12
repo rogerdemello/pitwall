@@ -60,7 +60,12 @@ shows the transcript and the lap it landed on. Precomputed, so it is instant and
 works offline.
 
 **Live Analysis** — upload or record a clip and watch the same pipeline run. This
-is the proof the replay is a real analysis and not a recording.
+is the proof the replay is a real analysis and not a recording. It runs the same
+`backend/pipeline` package in all three places it can be reached: locally against
+FastAPI, in the Docker image, and on a ZeroGPU Gradio Space (`space_live/`) that
+the deployed static frontend calls cross-origin. The response says which model
+produced it and whether that is the one the corpus was built with, so a
+deployment running a smaller model is disclosed rather than silently different.
 
 **Evidence** — every number the project claims, read from the eval files rather
 than typed into the page, including the experiments that failed.

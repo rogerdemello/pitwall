@@ -67,25 +67,47 @@ The Evidence screen reads from measured files; nothing on it is typed by hand.
 - **Two planned features were measured and rejected** — ASR vocabulary prompting
   (worse in 4 of 6 races, and the prompt leaked into transcripts) and acoustic
   speaker separation (cleared its pre-registered bar for 1 of 4 drivers).
-- **We know which half of our model works.** Against CREMA-D gold labels,
-  arousal scores 78.1% vs a 61.8% baseline; valence 62.9% vs 61.9% — chance. The
-  index weights valence 0.45, so nearly half of it rests on a dimension the model
-  cannot resolve. Marked in the product, not buried.
+- **We know which half of our model works — and we were wrong about why.**
+  Against CREMA-D gold labels, arousal scores 78.1% vs a 61.8% baseline; valence
+  62.9% vs 61.9%, which is chance. We had planned to remove acoustic valence on
+  that basis. A pre-registered matched-arousal test says the opposite: valence
+  separates happy from anger at **AUC 0.67 with arousal held constant**, and
+  fitting the boundary on held-out speakers lifts the axis to **+0.061** over
+  baseline, six times the published figure. The axis is threshold-limited, not
+  signal-limited. So the planned removal was abandoned.
+- **And we did not ship the fix either.** The corrected boundary was measured on
+  acted studio speech, where raw valence sits 2.3 standard deviations away from
+  where it sits on radio. Applying it would relabel Stressed from 324 messages to
+  72 for a reason unrelated to how the drivers sound, with no in-domain labels to
+  say which is right. The finding is published; the production boundary is
+  untouched.
+- **Every DSI is now out of sample.** The calibration used to be fitted on the
+  same 2,042 messages it scored. It is now leave-one-race-out, and the leak was
+  quantified rather than quietly fixed: race means move by at most 0.41 points
+  and the ordering survives, so every previously published contrast stands.
 - **What does hold:** the index separates races that were genuinely different to
-  drive, and the recording-era confound was tested on nine same-season races and
-  ruled out.
+  drive — and more strongly out of sample than in, spread 5.5 → 7.7 points,
+  Cohen's d 0.41 → 0.52. The recording-era confound was tested on nine
+  same-season races and ruled out.
 
-the suite passes (`pytest backend/tests -q`).
+The suite passes (`pytest backend/tests -q`), and it includes tests that fail the
+build if a published number drifts from the file that measured it.
 
 ---
 
 ## Known gaps, stated plainly
 
-**Live Analysis is disabled on the public Space.** It needs a model backend;
-Hugging Face hosts static Spaces free but charges for Docker ones. It works
-locally, and the Docker image is built and verified — running that container is
-how two real bugs were found. Everything on the Space's Race Replay is this
-pipeline's actual output.
+**Live Analysis needs a second Space.** Hugging Face hosts static Spaces free but
+charges for Docker and Gradio ones, so the deployed frontend has no process to
+run a model in. Free accounts in good standing may host two **ZeroGPU** Gradio
+Spaces, so the model backend lives in `space_live/` — it imports `backend/pipeline`
+rather than reimplementing it, and a test asserts the copy is byte-identical and
+that its response matches `POST /api/analyze` field for field. Gradio accepts any
+origin on `*.hf.space`, so the static frontend calls it directly with no proxy.
+
+It works locally and in the verified Docker image either way — running that
+container is how two real bugs were found. Everything on the Space's Race Replay
+is this pipeline's actual output.
 
 **Audio on the Space covers the showcase race only** (Abu Dhabi 2021). All twelve
 would be 327 MB; the Evidence screens need none of it.
@@ -95,8 +117,13 @@ speech. Nobody has listened to *this* audio and labelled it. The tool is built
 (`label_affect.py`); the Evidence page says "still outstanding" rather than
 implying otherwise.
 
-This is the only remaining gap, and it is a limitation we chose to state rather
-than a requirement we missed.
+That gap is now sharper than it was, which is progress of a kind: we know
+precisely which number labels would settle. The valence boundary is misplaced by
+a measured amount on gold data, and whether that correction transfers to radio is
+exactly the question 300 labelled clips would answer. Before, "we need labels"
+was a general wish; now it is a specific one.
+
+These are limitations we chose to state rather than requirements we missed.
 
 ---
 
