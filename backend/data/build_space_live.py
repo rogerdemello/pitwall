@@ -38,13 +38,16 @@ CALIBRATION = os.path.join(BACKEND, "races", "_pooled.calibration.json")
 #: about what runs here.
 MODULES = [
     "__init__.py",
+    "aggregate.py",
     "artifacts.py",
     "asr.py",
+    "audio.py",      # prosody.analyse normalises against detected speech
     "calibration.py",
     "device.py",
     "fusion.py",
     "prosody.py",
     "sentiment.py",
+    "vad.py",        # and needs the speech regions to window over
 ]
 
 #: Files that must exist in space_live/ and are hand-written, not generated.

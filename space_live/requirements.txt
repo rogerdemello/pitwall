@@ -10,7 +10,13 @@ transformers==5.15.0
 librosa==0.11.0
 soundfile==0.14.0
 numpy==1.26.2
+scipy==1.16.3
 scikit-learn==1.8.0
+
+# Not for transcription here - the Space runs Whisper through transformers. This
+# is for the Silero VAD it bundles as ONNX, which prosody needs to window over
+# speech instead of over silence and channel noise.
+faster-whisper==1.2.1
 
 gradio==5.49.1
 spaces==0.42.1
