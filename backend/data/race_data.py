@@ -20,12 +20,23 @@ import os
 import re
 from dataclasses import dataclass
 
-import fastf1
 import pandas as pd
 
 CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".fastf1_cache")
 os.makedirs(CACHE, exist_ok=True)
-fastf1.Cache.enable_cache(CACHE)
+
+
+def _fastf1():
+    """Import FastF1 on first use, not at module import.
+
+    build_race.py imports this module, and stage 1 can now run with the lap join
+    disabled - on a GPU runtime that has neither the FastF1 cache nor a reason to
+    install it. A module-level import would make the whole build require a
+    package it never calls.
+    """
+    import fastf1
+    fastf1.Cache.enable_cache(CACHE)
+    return fastf1
 
 
 @dataclass
@@ -58,7 +69,7 @@ def parse_race_id(race_id: str) -> tuple[int, str]:
 
 def load_session(race_id: str):
     year, gp = parse_race_id(race_id)
-    session = fastf1.get_session(year, gp, "R")
+    session = _fastf1().get_session(year, gp, "R")
     # telemetry=True is required for LapStartDate. See module docstring.
     session.load(telemetry=True, weather=False, messages=False)
     return session
