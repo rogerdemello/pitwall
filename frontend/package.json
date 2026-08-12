@@ -9,12 +9,16 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check:export": "node scripts/check-export.mjs",
-    "verify": "npm run typecheck && npm run lint && npm run check:export"
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run check:export",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.101.4",
     "next": "16.3.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "recharts": "^3.10.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -24,6 +28,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.7"
   }
 }
