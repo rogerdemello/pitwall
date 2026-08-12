@@ -132,6 +132,25 @@ class TestFusion:
             for v in (0.0, 0.5, 1.0):
                 assert 0 <= fusion.fuse(affect(a, v), text(0.0), transcript="a b c").dsi <= 100
 
+    def test_dominance_does_not_affect_the_index(self):
+        """It was removed after measuring corr(arousal, dominance) = 0.97.
+
+        At that collinearity it is not a third dimension, it is a rescaled
+        arousal discount carrying its own coefficient. It is still reported.
+        """
+        low = fusion.fuse(affect(0.7, 0.3, d=0.0), text(0.0),
+                          transcript="a b c")
+        high = fusion.fuse(affect(0.7, 0.3, d=1.0), text(0.0),
+                           transcript="a b c")
+        assert low.dsi == high.dsi
+        assert low.dominance_pct != high.dominance_pct, "still reported, just unused"
+
+    def test_index_is_the_two_stated_terms(self):
+        """Guards the published formula against silent drift."""
+        for a, v in ((0.0, 1.0), (1.0, 0.0), (0.6, 0.4), (0.5, 0.5)):
+            expected = round(max(0.0, min(1.0, 0.55 * a + 0.45 * (1 - v))) * 100)
+            assert fusion.fuse(affect(a, v), text(0.0), transcript="a b c").dsi == expected
+
 
 class TestSpeaker:
     def test_vocative_is_engineer(self):

@@ -46,7 +46,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pipeline import fusion  # noqa: E402
+from pipeline import fusion, labels  # noqa: E402
 from pipeline.calibration import Calibrator  # noqa: E402
 from pipeline.prosody import SAMPLE_RATE, analyse  # noqa: E402
 
@@ -55,22 +55,16 @@ SPLIT = "test"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "races",
                    "_gold_affect_eval.json")
 
-# Mapping onto the arousal/valence plane our product uses. Disgust is excluded:
-# it does not place cleanly on that plane, and forcing it would be us choosing
-# the answer.
-LABEL_TO_QUADRANT = {
-    "anger": "Stressed",
-    "angry": "Stressed",
-    "fear": "Stressed",
-    "fearful": "Stressed",
-    "happy": "Energised",
-    "happiness": "Energised",
-    "sad": "Fatigued",
-    "sadness": "Fatigued",
-    "neutral": "Calm",
-}
-EXCLUDED = {"disgust", "disgusted"}
-STATES = ["Calm", "Energised", "Stressed", "Fatigued"]
+# Mapping onto the arousal/valence plane our product uses, from pipeline/labels.py.
+# Disgust is excluded: it does not place cleanly on that plane, and forcing it
+# would be us choosing the answer. eval_convergent.py makes the opposite choice,
+# which used to be invisible - both files now record their treatment in the
+# output so two results computed under different label sets cannot be read as
+# comparable.
+INCLUDE_DISGUST = False
+LABEL_TO_QUADRANT = labels.quadrant_map(INCLUDE_DISGUST)
+EXCLUDED = set(labels.DISPUTED)
+STATES = labels.STATES
 
 
 def load_clips(limit: int | None):
@@ -89,8 +83,8 @@ def load_clips(limit: int | None):
     return rows
 
 
-HIGH_AROUSAL = {"Energised", "Stressed"}
-NEGATIVE_VALENCE = {"Stressed", "Fatigued"}
+HIGH_AROUSAL = labels.HIGH_AROUSAL
+NEGATIVE_VALENCE = labels.NEGATIVE_VALENCE
 
 
 def axis_breakdown(confusion: dict[str, dict[str, int]]) -> dict:
@@ -214,7 +208,8 @@ def main(limit: int | None = None) -> None:
         "dataset": DATASET_ID,
         "split": SPLIT,
         "n": len(pairs),
-        "excluded_labels": sorted(EXCLUDED),
+        "label_treatment": labels.treatment(INCLUDE_DISGUST),
+        "excluded_labels": labels.excluded_labels(INCLUDE_DISGUST),
         "label_mapping": LABEL_TO_QUADRANT,
         "accuracy": round(acc, 4),
         "majority_class_baseline": round(majority, 4),

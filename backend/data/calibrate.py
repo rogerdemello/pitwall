@@ -15,6 +15,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from data import pool_calibration  # noqa: E402
 from pipeline import fusion, roster, speaker, strategy  # noqa: E402
 from pipeline.calibration import Calibrator  # noqa: E402
 from pipeline.prosody import Affect  # noqa: E402
@@ -77,8 +78,19 @@ def run(race_id: str) -> str:
     # Prefer the pooled calibration when it exists. Fitting per-race centres every
     # race on 50.0 by construction, which makes races look identical and hides
     # exactly the wet-versus-dry contrast the corpus was built to expose.
+    #
+    # Prefer the leave-one-race-out mapping, fitted on every race except this
+    # one. Pooling fixed comparability but left every DSI an in-sample score:
+    # a message helped set the percentile scale it was then measured against.
+    # Each held-out fold still has ~1,900 reference messages, so nothing is lost
+    # in precision, and "top fifth of F1 radio" becomes a claim about F1 radio
+    # rather than about the fitting set.
+    loro_path = pool_calibration.loro_path(race_id)
     pooled_path = os.path.join(OUT_ROOT, "_pooled.calibration.json")
-    if os.path.exists(pooled_path):
+    if os.path.exists(loro_path):
+        cal = Calibrator.from_json(loro_path)
+        cal_source = "leave-one-race-out"
+    elif os.path.exists(pooled_path):
         cal = Calibrator.from_json(pooled_path)
         cal_source = "pooled"
     else:

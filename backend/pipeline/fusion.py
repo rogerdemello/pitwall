@@ -90,7 +90,22 @@ def fuse(
         # Uncalibrated fallback: usable, but compressed. See calibration.py.
         a, v, d = affect.arousal, affect.valence, affect.dominance
 
-    stress = (0.55 * a) + (0.45 * (1.0 - v)) - (0.10 * (d - 0.5))
+    # Two terms, not three. The index used to carry `- 0.10 * (d - 0.5)`, which
+    # was removed after measuring corr(arousal, dominance) = 0.97 over the whole
+    # corpus (95% CI 0.967-0.973). At that collinearity the dominance term is not
+    # a third dimension, it is a rescaled arousal discount wearing its own
+    # coefficient - and an uninterpretable coefficient in the headline formula
+    # costs more than the ~nothing it contributes: dropping it moves DSI by at
+    # most 5 points, mean change -0.01, and old and new correlate at 0.984.
+    #
+    # Dominance is still computed, stored and reported. It is demoted to a
+    # measured-but-unused signal rather than deleted, the same way asr.py keeps
+    # the prompting-ablation path: it is published evidence.
+    #
+    # These weights are still hand-set. They are fitted and ablated against gold
+    # labels in fit_fusion.py - and deliberately never against lap time, which
+    # is a held-out outcome (see races/_preregistration.json).
+    stress = (0.55 * a) + (0.45 * (1.0 - v))
     dsi = int(round(max(0.0, min(1.0, stress)) * 100))
 
     state, descriptor = _quadrant(a, v)

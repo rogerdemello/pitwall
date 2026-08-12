@@ -38,6 +38,7 @@ import torch
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pipeline import asr  # noqa: E402  (load_audio only)
+from pipeline import labels  # noqa: E402
 
 MODEL_ID = "Dpngtm/wav2vec2-emotion-recognition"
 SAMPLE_RATE = 16000
@@ -49,14 +50,12 @@ OUT = os.path.join(RACES, "_convergent_eval.json")
 # The second model's 7 categorical labels onto our 4 quadrants. Surprise is
 # excluded rather than forced - it is high-arousal but valence-ambiguous, and
 # assigning it would be us choosing the answer.
-OTHER_TO_QUADRANT = {
-    "angry": "Stressed", "anger": "Stressed",
-    "fear": "Stressed", "fearful": "Stressed",
-    "disgust": "Stressed", "disgusted": "Stressed",
-    "happy": "Energised", "happiness": "Energised",
-    "sad": "Fatigued", "sadness": "Fatigued",
-    "neutral": "Calm",
-}
+# The reference model emits disgust, which this evaluation maps to Stressed
+# rather than dropping - the opposite choice to eval_affect_gold.py. Both are
+# defensible; what was not defensible was the disagreement being invisible. Each
+# file now records its treatment in the output.
+INCLUDE_DISGUST = True
+OTHER_TO_QUADRANT = labels.quadrant_map(INCLUDE_DISGUST)
 SKIP = {"surprise", "surprised"}
 STATES = ["Calm", "Energised", "Stressed", "Fatigued"]
 
@@ -272,6 +271,7 @@ def main(limit: int | None = None) -> None:
         "second_model": MODEL_ID,
         "n": len(pairs),
         "skipped_unmappable": skipped,
+        "label_treatment": labels.treatment(INCLUDE_DISGUST),
         "raw_agreement": round(observed, 4),
         "cohens_kappa": k,
         "kappa_band": band(k),
