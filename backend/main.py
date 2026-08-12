@@ -23,6 +23,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
 from pipeline import analysis, asr, fusion, prosody, sentiment
+from pipeline.artifacts import is_race_file as _is_race_file
 from pipeline.calibration import Calibrator
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -92,21 +93,6 @@ def _calibrator(race_id: str) -> Calibrator | None:
         path = os.path.join(RACES, f"{race_id}.calibration.json")
         _cal_cache[race_id] = Calibrator.from_json(path) if os.path.exists(path) else None
     return _cal_cache[race_id]
-
-
-def _is_race_file(fn: str) -> bool:
-    """Is this a race file, as opposed to something else living in races/?
-
-    Two kinds of neighbour share the directory and must never be parsed as races:
-      - sidecars with a dotted suffix (.calibration.json, .asr_eval.json, ...)
-      - corpus-level artifacts prefixed with an underscore
-        (_pooled.calibration.json, _diarization_experiment.json)
-    Missing the underscore case here made /api/races return a 500 once the
-    diarization experiment was written.
-    """
-    if not fn.endswith(".json") or fn.startswith("_"):
-        return False
-    return "." not in fn[:-5]
 
 
 @app.get("/api/races")

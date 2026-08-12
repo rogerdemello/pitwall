@@ -22,6 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from data.race_data import _is_representative  # noqa: E402
 from pipeline import analysis, fusion, speaker, strategy  # noqa: E402
+from pipeline.artifacts import is_race_file, race_ids  # noqa: E402
 from pipeline.calibration import Calibrator  # noqa: E402
 from pipeline.prosody import Affect  # noqa: E402
 from pipeline.sentiment import TextSentiment  # noqa: E402
@@ -180,11 +181,14 @@ class TestRaceFileFilter:
 
     This has caused a 500 twice: first when eval sidecars were added, then again
     when the diarization experiment landed with an underscore prefix.
+
+    The definition now lives in pipeline/artifacts.py. It used to be duplicated
+    in six places in two incompatible forms - main.py's required a .json suffix,
+    the five inlined copies did not - so `notes.txt` was a race to five of them.
     """
 
     def test_real_race_file_accepted(self):
-        from main import _is_race_file
-        assert _is_race_file("2021_Abu_Dhabi_Grand_Prix.json") is True
+        assert is_race_file("2021_Abu_Dhabi_Grand_Prix.json") is True
 
     @pytest.mark.parametrize("name", [
         "2021_Abu_Dhabi_Grand_Prix.calibration.json",
@@ -192,20 +196,24 @@ class TestRaceFileFilter:
         "2021_Abu_Dhabi_Grand_Prix.affect_eval.json",
     ])
     def test_sidecars_rejected(self, name):
-        from main import _is_race_file
-        assert _is_race_file(name) is False
+        assert is_race_file(name) is False
 
     @pytest.mark.parametrize("name", [
         "_pooled.calibration.json",
         "_diarization_experiment.json",
+        "_corpus_finding.json",
     ])
     def test_corpus_artifacts_rejected(self, name):
-        from main import _is_race_file
-        assert _is_race_file(name) is False
+        assert is_race_file(name) is False
 
-    def test_non_json_rejected(self):
-        from main import _is_race_file
-        assert _is_race_file("notes.txt") is False
+    @pytest.mark.parametrize("name", ["notes.txt", "README.md", "manifest"])
+    def test_non_json_rejected(self, name):
+        assert is_race_file(name) is False
+
+    def test_main_uses_the_shared_definition(self):
+        """main.py must not carry its own copy again."""
+        import main
+        assert main._is_race_file is is_race_file
 
 
 class TestLagGuard:

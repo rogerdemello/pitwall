@@ -11,7 +11,11 @@ costs about a minute a race rather than an hour.
 
 Ends by printing the contrast table, which is the point of the whole corpus: if
 a soaking-wet race does not separate from a processional dry one, the index is
-not measuring what we claim.
+not measuring what we claim - and then regenerating the evidence artifacts that
+depend on the calibration, so they cannot drift away from it. `_corpus_finding`
+went stale exactly this way once: the pool grew from six races to twelve, every
+mean DSI moved by about 0.4 points, and the published file still carried the old
+numbers.
 
 Usage:
     python backend/data/finish_corpus.py
@@ -27,7 +31,7 @@ import traceback
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from data import calibrate, pool_calibration  # noqa: E402
+from data import calibrate, corpus_finding, era_analysis, pool_calibration  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW_ROOT = os.path.join(HERE, "..", "raw")
@@ -104,6 +108,17 @@ def main() -> None:
         else:
             print("The index does separate the races. Check the ordering matches")
             print("expectation (wet/chaotic high, dry processional low) before claiming it.")
+
+    # Every artifact below is a function of the calibration that was just
+    # re-pooled, so regenerate them here rather than trusting anyone to remember.
+    print(f"\n{'=' * 66}\nREGENERATING CALIBRATION-DEPENDENT EVIDENCE\n{'=' * 66}")
+    for name, run in (("era_analysis", era_analysis.main),
+                      ("corpus_finding", corpus_finding.main)):
+        print(f"\n--- {name} ---")
+        try:
+            run()
+        except Exception:
+            print(f"!! {name} failed:\n{traceback.format_exc()}")
 
 
 if __name__ == "__main__":
