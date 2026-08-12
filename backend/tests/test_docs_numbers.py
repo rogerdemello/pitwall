@@ -111,3 +111,21 @@ class TestDocsExist:
     ])
     def test_present(self, rel):
         assert os.path.exists(os.path.join(ROOT, rel)), f"{rel} is missing"
+
+
+class TestNotebooksCarryNoExecutionState:
+    """A committed notebook should hold source, not whatever was on screen.
+
+    Running a cell in VS Code, Jupyter or Colab writes the output back into the
+    file, and it gets committed with everything else. That is how a
+    FileNotFoundError traceback from a GPU-less runtime ended up inside the
+    build tool - in a repository a judge may well open.
+    """
+
+    def test_no_notebook_has_saved_outputs(self):
+        sys.path.insert(0, os.path.join(BACKEND, "tools"))
+        import clean_notebooks
+        assert clean_notebooks.main(check_only=True) == 0, (
+            "a notebook carries execution state; run "
+            "python backend/tools/clean_notebooks.py"
+        )
