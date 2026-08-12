@@ -5,143 +5,143 @@
    "race": "2020 Turkish",
    "season": 2020,
    "n": 145,
-   "mean": 53.234482758620686,
-   "sd": 12.111558339954298,
-   "se": 1.005810174118071,
-   "calibration": "pooled"
+   "mean": 54.4551724137931,
+   "sd": 13.570749126957775,
+   "se": 1.1269893732229312,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2023_Monaco_Grand_Prix",
    "race": "2023 Monaco",
    "season": 2023,
    "n": 171,
-   "mean": 53.21637426900585,
-   "sd": 13.005845323740742,
-   "se": 0.9945818498509987,
-   "calibration": "pooled"
+   "mean": 53.30994152046784,
+   "sd": 14.472109312391076,
+   "se": 1.1067098595190632,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2023_Qatar_Grand_Prix",
    "race": "2023 Qatar",
    "season": 2023,
    "n": 120,
-   "mean": 52.36666666666667,
-   "sd": 15.092455804878881,
-   "se": 1.3777464154136585,
-   "calibration": "pooled"
+   "mean": 52.233333333333334,
+   "sd": 16.730577462306023,
+   "se": 1.5272857793654244,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2023_Spanish_Grand_Prix",
    "race": "2023 Spanish",
    "season": 2023,
    "n": 131,
-   "mean": 51.82442748091603,
-   "sd": 13.565493334377718,
-   "se": 1.1852226556854082,
-   "calibration": "pooled"
-  },
-  {
-   "race_id": "2023_Mexico_City_Grand_Prix",
-   "race": "2023 Mexico City",
-   "season": 2023,
-   "n": 137,
-   "mean": 51.715328467153284,
-   "sd": 13.131534955730391,
-   "se": 1.1219027447003587,
-   "calibration": "pooled"
+   "mean": 52.11450381679389,
+   "sd": 15.365591192425155,
+   "se": 1.3424979357816973,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2021_Abu_Dhabi_Grand_Prix",
    "race": "2021 Abu Dhabi",
    "season": 2021,
    "n": 118,
-   "mean": 51.24576271186441,
-   "sd": 12.883399146607738,
-   "se": 1.1860130246620004,
-   "calibration": "pooled"
+   "mean": 52.101694915254235,
+   "sd": 14.512641964448763,
+   "se": 1.3359969831117593,
+   "calibration": "leave-one-race-out"
+  },
+  {
+   "race_id": "2023_Mexico_City_Grand_Prix",
+   "race": "2023 Mexico City",
+   "season": 2023,
+   "n": 137,
+   "mean": 51.99270072992701,
+   "sd": 14.43409201903906,
+   "se": 1.2331877048654403,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2023_Miami_Grand_Prix",
    "race": "2023 Miami",
    "season": 2023,
    "n": 125,
-   "mean": 51.152,
-   "sd": 14.066161381130248,
-   "se": 1.2581157212275824,
-   "calibration": "pooled"
-  },
-  {
-   "race_id": "2023_Japanese_Grand_Prix",
-   "race": "2023 Japanese",
-   "season": 2023,
-   "n": 126,
-   "mean": 49.92063492063492,
-   "sd": 13.81660099622694,
-   "se": 1.230880647086684,
-   "calibration": "pooled"
+   "mean": 51.464,
+   "sd": 15.741686821938746,
+   "se": 1.4079792725747065,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2023_United_States_Grand_Prix",
    "race": "2023 United States",
    "season": 2023,
    "n": 126,
-   "mean": 49.476190476190474,
-   "sd": 11.759301813386797,
-   "se": 1.0476018688895932,
-   "calibration": "pooled"
+   "mean": 49.6031746031746,
+   "sd": 13.061563243591447,
+   "se": 1.163616537933308,
+   "calibration": "leave-one-race-out"
   },
   {
-   "race_id": "2019_German_Grand_Prix",
-   "race": "2019 German",
-   "season": 2019,
-   "n": 115,
-   "mean": 49.13913043478261,
-   "sd": 13.37738972167573,
-   "se": 1.2474480237167171,
-   "calibration": "pooled"
+   "race_id": "2023_Japanese_Grand_Prix",
+   "race": "2023 Japanese",
+   "season": 2023,
+   "n": 126,
+   "mean": 49.32539682539682,
+   "sd": 15.698968404628175,
+   "se": 1.3985752641882792,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2023_Dutch_Grand_Prix",
    "race": "2023 Dutch",
    "season": 2023,
    "n": 134,
-   "mean": 48.917910447761194,
-   "sd": 11.692610568321694,
-   "se": 1.0100877082592035,
-   "calibration": "pooled"
+   "mean": 48.417910447761194,
+   "sd": 13.12187333473677,
+   "se": 1.1335572058357086,
+   "calibration": "leave-one-race-out"
+  },
+  {
+   "race_id": "2019_German_Grand_Prix",
+   "race": "2019 German",
+   "season": 2019,
+   "n": 115,
+   "mean": 48.391304347826086,
+   "sd": 15.112733273446233,
+   "se": 1.409269644314199,
+   "calibration": "leave-one-race-out"
   },
   {
    "race_id": "2023_Italian_Grand_Prix",
    "race": "2023 Italian",
    "season": 2023,
    "n": 137,
-   "mean": 47.722627737226276,
-   "sd": 13.71968053457913,
-   "se": 1.1721514126145263,
-   "calibration": "pooled"
+   "mean": 46.77372262773723,
+   "sd": 15.156599921438154,
+   "se": 1.2949157207829944,
+   "calibration": "leave-one-race-out"
   }
  ],
  "n_races": 12,
  "n_2023": 9,
- "within_season_spread": 5.49,
- "cross_era_spread": 5.51,
+ "within_season_spread": 6.54,
+ "cross_era_spread": 7.68,
  "contrasts": [
   {
    "comparison": "2023 Monaco vs 2023 Italian (both 2023)",
-   "diff": 5.49,
-   "z": 3.57,
-   "p": 0.00035,
+   "diff": 6.54,
+   "z": 3.84,
+   "p": 0.00012,
    "bonferroni_alpha": 0.0063,
    "survives": true
   }
  ],
  "era_comparison": {
-  "mean_2023": 50.7,
-  "mean_pre2023": 51.21,
-  "diff": -0.51,
-  "z": -0.66,
-  "p": 0.5095,
+  "mean_2023": 50.58,
+  "mean_pre2023": 51.65,
+  "diff": -1.07,
+  "z": -1.24,
+  "p": 0.2146,
   "systematic_era_effect": false
  },
- "verdict": "Holding the season fixed barely changes the picture: races from 2023 alone spread 5.5 points, against 5.5 across all seasons. Recording era does not explain the separation. 2023 Monaco vs 2023 Italian (both 2023) differs by +5.5 (p=0.00035), surviving Bonferroni correction. And there is no systematic offset between eras (-0.5 points, p=0.5095), which is the confound tested directly."
+ "verdict": "Holding the season fixed barely changes the picture: races from 2023 alone spread 6.5 points, against 7.7 across all seasons. Recording era does not explain the separation. 2023 Monaco vs 2023 Italian (both 2023) differs by +6.5 (p=0.00012), surviving Bonferroni correction. And there is no systematic offset between eras (-1.1 points, p=0.2146), which is the confound tested directly."
 }

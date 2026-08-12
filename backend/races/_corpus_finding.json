@@ -29,15 +29,15 @@
    "race": "2020 Turkish",
    "season": 2020,
    "n": 145,
-   "mean_dsi": 53.2,
-   "sd": 12.1,
+   "mean_dsi": 54.5,
+   "sd": 13.6,
    "ci95": [
-    51.3,
-    55.2
+    52.2,
+    56.7
    ],
    "stressed_pct": 18,
    "fatigued_pct": 26,
-   "calibration_source": "pooled",
+   "calibration_source": "leave-one-race-out",
    "messages_total": 190
   },
   {
@@ -45,15 +45,15 @@
    "race": "2023 Monaco",
    "season": 2023,
    "n": 171,
-   "mean_dsi": 53.2,
-   "sd": 13.0,
+   "mean_dsi": 53.3,
+   "sd": 14.5,
    "ci95": [
-    51.3,
-    55.2
+    51.1,
+    55.5
    ],
-   "stressed_pct": 18,
-   "fatigued_pct": 44,
-   "calibration_source": "pooled",
+   "stressed_pct": 20,
+   "fatigued_pct": 46,
+   "calibration_source": "leave-one-race-out",
    "messages_total": 207
   },
   {
@@ -61,15 +61,15 @@
    "race": "2023 Qatar",
    "season": 2023,
    "n": 120,
-   "mean_dsi": 52.4,
-   "sd": 15.1,
+   "mean_dsi": 52.2,
+   "sd": 16.7,
    "ci95": [
-    49.7,
-    55.1
+    49.2,
+    55.2
    ],
    "stressed_pct": 21,
-   "fatigued_pct": 42,
-   "calibration_source": "pooled",
+   "fatigued_pct": 43,
+   "calibration_source": "leave-one-race-out",
    "messages_total": 148
   },
   {
@@ -77,15 +77,15 @@
    "race": "2021 Abu Dhabi",
    "season": 2021,
    "n": 118,
-   "mean_dsi": 51.2,
-   "sd": 12.9,
+   "mean_dsi": 52.1,
+   "sd": 14.5,
    "ci95": [
-    48.9,
-    53.6
+    49.5,
+    54.7
    ],
-   "stressed_pct": 14,
-   "fatigued_pct": 28,
-   "calibration_source": "pooled",
+   "stressed_pct": 13,
+   "fatigued_pct": 27,
+   "calibration_source": "leave-one-race-out",
    "messages_total": 168
   },
   {
@@ -93,15 +93,15 @@
    "race": "2019 German",
    "season": 2019,
    "n": 115,
-   "mean_dsi": 49.1,
-   "sd": 13.4,
+   "mean_dsi": 48.4,
+   "sd": 15.1,
    "ci95": [
-    46.7,
-    51.6
+    45.6,
+    51.2
    ],
    "stressed_pct": 20,
    "fatigued_pct": 37,
-   "calibration_source": "pooled",
+   "calibration_source": "leave-one-race-out",
    "messages_total": 157
   },
   {
@@ -109,56 +109,56 @@
    "race": "2023 Italian",
    "season": 2023,
    "n": 137,
-   "mean_dsi": 47.7,
-   "sd": 13.7,
+   "mean_dsi": 46.8,
+   "sd": 15.2,
    "ci95": [
-    45.4,
-    50.0
+    44.2,
+    49.3
    ],
-   "stressed_pct": 15,
+   "stressed_pct": 14,
    "fatigued_pct": 39,
-   "calibration_source": "pooled",
+   "calibration_source": "leave-one-race-out",
    "messages_total": 180
   }
  ],
  "contrasts_vs_dry_control": [
   {
    "race": "2020 Turkish",
-   "diff": 5.5,
-   "z": 3.56,
-   "p": 0.0004,
+   "diff": 7.7,
+   "z": 4.49,
+   "p": 0.0,
    "survives_bonferroni": true,
    "predicted": "high"
   },
   {
    "race": "2023 Monaco",
-   "diff": 5.5,
-   "z": 3.58,
-   "p": 0.0003,
+   "diff": 6.5,
+   "z": 3.82,
+   "p": 0.0001,
    "survives_bonferroni": true,
    "predicted": "high"
   },
   {
    "race": "2023 Qatar",
-   "diff": 4.7,
-   "z": 2.6,
-   "p": 0.0094,
+   "diff": 5.4,
+   "z": 2.7,
+   "p": 0.007,
    "survives_bonferroni": true,
    "predicted": "fatigue"
   },
   {
    "race": "2021 Abu Dhabi",
-   "diff": 3.5,
-   "z": 2.1,
-   "p": 0.0358,
-   "survives_bonferroni": false,
+   "diff": 5.3,
+   "z": 2.85,
+   "p": 0.0044,
+   "survives_bonferroni": true,
    "predicted": "not predicted"
   },
   {
    "race": "2019 German",
-   "diff": 1.4,
-   "z": 0.82,
-   "p": 0.4134,
+   "diff": 1.6,
+   "z": 0.84,
+   "p": 0.4032,
    "survives_bonferroni": false,
    "predicted": "high"
   }
@@ -169,47 +169,47 @@
    "prediction": "high",
    "rationale": "wet",
    "held": true,
-   "detail": "2020 Turkish (wet) predicted high: +5.5 vs the control, p=0.0004, survives Bonferroni 0.010."
+   "detail": "2020 Turkish (wet) predicted high: +7.7 vs the control, p=0.0000, survives Bonferroni 0.010."
   },
   {
    "race": "2019 German",
    "prediction": "high",
    "rationale": "wet chaos",
    "held": false,
-   "detail": "2019 German (wet chaos) predicted high: +1.4 vs the control, p=0.4134, does not survive Bonferroni 0.010."
+   "detail": "2019 German (wet chaos) predicted high: +1.6 vs the control, p=0.4032, does not survive Bonferroni 0.010."
   },
   {
    "race": "2023 Monaco",
    "prediction": "high",
    "rationale": "dry to wet",
    "held": true,
-   "detail": "2023 Monaco (dry to wet) predicted high: +5.5 vs the control, p=0.0003, survives Bonferroni 0.010."
+   "detail": "2023 Monaco (dry to wet) predicted high: +6.5 vs the control, p=0.0001, survives Bonferroni 0.010."
   },
   {
    "race": "2023 Italian",
    "prediction": "low",
    "rationale": "dry, processional - the control",
    "held": true,
-   "detail": "2023 Italian (dry, processional - the control) predicted lowest: it is the lowest in the slate at 47.7."
+   "detail": "2023 Italian (dry, processional - the control) predicted lowest: it is the lowest in the slate at 46.8."
   },
   {
    "race": "2023 Qatar",
    "prediction": "fatigue",
    "rationale": "extreme heat",
    "held": true,
-   "detail": "2023 Qatar (extreme heat) predicted highest fatigue: 21% Stressed and 42% Fatigued, the highest Stressed share in the slate."
+   "detail": "2023 Qatar (extreme heat) predicted highest fatigue: 21% Stressed and 43% Fatigued, the highest Stressed share in the slate."
   }
  ],
- "bonferroni_note": "5 contrasts were tested, so the corrected threshold is p < 0.010. 2021 Abu Dhabi's p = 0.036 does not survive it and is not claimed; 2019 German's p = 0.413 does not survive it and is not claimed.",
+ "bonferroni_note": "5 contrasts were tested, so the corrected threshold is p < 0.010. 2019 German's p = 0.403 does not survive it and is not claimed.",
  "verdict": "PARTIAL SUPPORT - 4 of 5 predictions held, 1 clearly failed.",
  "what_held": [
-  "2020 Turkish (wet) predicted high: +5.5 vs the control, p=0.0004, survives Bonferroni 0.010.",
-  "2023 Monaco (dry to wet) predicted high: +5.5 vs the control, p=0.0003, survives Bonferroni 0.010.",
-  "2023 Italian (dry, processional - the control) predicted lowest: it is the lowest in the slate at 47.7.",
-  "2023 Qatar (extreme heat) predicted highest fatigue: 21% Stressed and 42% Fatigued, the highest Stressed share in the slate."
+  "2020 Turkish (wet) predicted high: +7.7 vs the control, p=0.0000, survives Bonferroni 0.010.",
+  "2023 Monaco (dry to wet) predicted high: +6.5 vs the control, p=0.0001, survives Bonferroni 0.010.",
+  "2023 Italian (dry, processional - the control) predicted lowest: it is the lowest in the slate at 46.8.",
+  "2023 Qatar (extreme heat) predicted highest fatigue: 21% Stressed and 43% Fatigued, the highest Stressed share in the slate."
  ],
- "what_failed": "2019 German (wet chaos) predicted high: +1.4 vs the control, p=0.4134, does not survive Bonferroni 0.010.",
- "effect_size": "The full spread across the slate is 5.5 DSI points against a within-race sd of about 13, so Cohen's d is roughly 0.41 - a small-to-moderate effect. The index separates these races, but not dramatically.",
+ "what_failed": "2019 German (wet chaos) predicted high: +1.6 vs the control, p=0.4032, does not survive Bonferroni 0.010.",
+ "effect_size": "The full spread across the slate is 7.7 DSI points against a within-race sd of about 15, so Cohen's d is roughly 0.52 - a small-to-moderate effect. The index separates these races, but not dramatically.",
  "not_predicted": {
   "note": "6 further races were built after the predictions were registered, to test the recording-era confound. They were not predicted in either direction and are reported descriptively only. Folding them into the prediction test would turn a confirmatory result into an exploratory one.",
   "races": [
@@ -218,15 +218,15 @@
     "race": "2023 Spanish",
     "season": 2023,
     "n": 131,
-    "mean_dsi": 51.8,
-    "sd": 13.6,
+    "mean_dsi": 52.1,
+    "sd": 15.4,
     "ci95": [
      49.5,
-     54.1
+     54.7
     ],
-    "stressed_pct": 15,
+    "stressed_pct": 14,
     "fatigued_pct": 34,
-    "calibration_source": "pooled",
+    "calibration_source": "leave-one-race-out",
     "messages_total": 162
    },
    {
@@ -234,15 +234,15 @@
     "race": "2023 Mexico City",
     "season": 2023,
     "n": 137,
-    "mean_dsi": 51.7,
-    "sd": 13.1,
+    "mean_dsi": 52.0,
+    "sd": 14.4,
     "ci95": [
-     49.5,
-     53.9
+     49.6,
+     54.4
     ],
-    "stressed_pct": 16,
-    "fatigued_pct": 35,
-    "calibration_source": "pooled",
+    "stressed_pct": 18,
+    "fatigued_pct": 34,
+    "calibration_source": "leave-one-race-out",
     "messages_total": 187
    },
    {
@@ -250,68 +250,68 @@
     "race": "2023 Miami",
     "season": 2023,
     "n": 125,
-    "mean_dsi": 51.2,
-    "sd": 14.1,
+    "mean_dsi": 51.5,
+    "sd": 15.7,
     "ci95": [
      48.7,
-     53.6
+     54.2
     ],
     "stressed_pct": 17,
     "fatigued_pct": 30,
-    "calibration_source": "pooled",
+    "calibration_source": "leave-one-race-out",
     "messages_total": 158
-   },
-   {
-    "race_id": "2023_Japanese_Grand_Prix",
-    "race": "2023 Japanese",
-    "season": 2023,
-    "n": 126,
-    "mean_dsi": 49.9,
-    "sd": 13.8,
-    "ci95": [
-     47.5,
-     52.3
-    ],
-    "stressed_pct": 18,
-    "fatigued_pct": 38,
-    "calibration_source": "pooled",
-    "messages_total": 151
    },
    {
     "race_id": "2023_United_States_Grand_Prix",
     "race": "2023 United States",
     "season": 2023,
     "n": 126,
-    "mean_dsi": 49.5,
-    "sd": 11.8,
+    "mean_dsi": 49.6,
+    "sd": 13.1,
     "ci95": [
-     47.4,
-     51.5
+     47.3,
+     51.9
     ],
-    "stressed_pct": 15,
-    "fatigued_pct": 26,
-    "calibration_source": "pooled",
+    "stressed_pct": 16,
+    "fatigued_pct": 25,
+    "calibration_source": "leave-one-race-out",
     "messages_total": 162
+   },
+   {
+    "race_id": "2023_Japanese_Grand_Prix",
+    "race": "2023 Japanese",
+    "season": 2023,
+    "n": 126,
+    "mean_dsi": 49.3,
+    "sd": 15.7,
+    "ci95": [
+     46.6,
+     52.1
+    ],
+    "stressed_pct": 18,
+    "fatigued_pct": 38,
+    "calibration_source": "leave-one-race-out",
+    "messages_total": 151
    },
    {
     "race_id": "2023_Dutch_Grand_Prix",
     "race": "2023 Dutch",
     "season": 2023,
     "n": 134,
-    "mean_dsi": 48.9,
-    "sd": 11.7,
+    "mean_dsi": 48.4,
+    "sd": 13.1,
     "ci95": [
-     46.9,
-     50.9
+     46.2,
+     50.6
     ],
     "stressed_pct": 16,
     "fatigued_pct": 40,
-    "calibration_source": "pooled",
+    "calibration_source": "leave-one-race-out",
     "messages_total": 172
    }
   ]
  },
- "confound_we_cannot_rule_out": "RESOLVED - see _era_analysis.json. This previously read as an open confound: the slate spanned several seasons and radio encoding is not constant across them, so some separation could have been recording era. It was then tested directly by building 9 races from 2023 alone. Within that single season races still spread 5.51 DSI points against 5.56 across all eras, 2023 Monaco vs 2023 Italian (both 2023) differs by +5.5 (p=0.0005, surviving Bonferroni), and there is no systematic offset between eras (-0.6 points, p=0.4543). Recording era does not explain the separation.",
+ "confound_we_cannot_rule_out": "RESOLVED - see _era_analysis.json. This previously read as an open confound: the slate spanned several seasons and radio encoding is not constant across them, so some separation could have been recording era. It was then tested directly by building 9 races from 2023 alone. Within that single season races still spread 5.49 DSI points against 5.51 across all eras, 2023 Monaco vs 2023 Italian (both 2023) differs by +5.5 (p=0.00035, surviving Bonferroni), and there is no systematic offset between eras (-0.5 points, p=0.5095). Recording era does not explain the separation.",
  "confound_status": "resolved",
- "honest_summary": "DSI separates races in the direction predicted, with the dry processional control correctly at the bottom, and the era confound has now been tested and ruled out on a 9-race within-season slate. It remains evidence that the index tracks race conditions, not proof it tracks driver stress specifically: the effect is modest (Cohen's d about 0.41), 1 prediction still failed."
+ "honest_summary": "DSI separates races in the direction predicted, with the dry processional control correctly at the bottom, and the era confound has now been tested and ruled out on a 9-race within-season slate. It remains evidence that the index tracks race conditions, not proof it tracks driver stress specifically: the effect is modest (Cohen's d about 0.52), 1 prediction still failed."
 }

@@ -87,3 +87,15 @@ class Calibrator:
     def from_json(cls, path: str) -> "Calibrator":
         d = json.load(open(path, encoding="utf-8"))
         return cls(arousal=d["arousal"], valence=d["valence"], dominance=d["dominance"])
+
+
+#: Calibration sources under which cross-race comparison is meaningful.
+#:
+#: The distinction that matters is not pooled-vs-held-out, it is shared-vs-per-
+#: race. Per-race calibration centres every race on 50.0 by construction, so a
+#: soaking-wet scramble and a processional dry afternoon produce identical
+#: distributions and the contrast test becomes vacuous rather than merely wrong.
+#: Both pooled and leave-one-race-out use one reference distribution across the
+#: corpus, so both preserve the contrast; LORO additionally makes each score
+#: out-of-sample.
+CROSS_RACE_SOURCES = frozenset({"pooled", "leave-one-race-out"})

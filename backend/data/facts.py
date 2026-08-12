@@ -106,6 +106,9 @@ def facts() -> dict:
     conv = _load("_convergent_eval.json") or {}
     finding = _load("_corpus_finding.json") or {}
     diar = _load("_diarization_experiment.json") or {}
+    leak = _load("_calibration_leakage.json") or {}
+    vdiag = _load("_valence_diagnostic.json") or {}
+    v1 = _load("_v1_baseline.json") or {}
 
     svp = ca.get("stress_vs_pace") or {}
     tercile = svp.get("tercile") or {}
@@ -184,6 +187,35 @@ def facts() -> dict:
         "asr_mean_wer": asr.get("mean_wer_unbiased"),
         "asr_mean_wer_prompted": asr.get("mean_wer_biased"),
         "asr_sample_per_race": asr.get("sample_per_race"),
+
+        # Calibration: is it held out, and what was the leak worth?
+        "calibration_scheme": "leave-one-race-out",
+        "leakage_ordering_preserved": leak.get("ordering_preserved"),
+        "leakage_mean_abs_delta": (leak.get("per_message") or {}).get("mean_abs_delta"),
+        "leakage_verdict": leak.get("verdict"),
+
+        # Why acoustic valence was kept or removed. The stratified figure is the
+        # one the verdict rests on: the naive contrast turned out not to be
+        # matched on arousal, so it measures partly the axis it meant to hold
+        # constant. Both are exposed so a doc can never quote only the flattering
+        # one.
+        "valence_diagnostic_verdict": vdiag.get("verdict"),
+        "valence_diagnostic_auc": (
+            ((vdiag.get("contrasts") or {}).get("happy_vs_anger") or {})
+            .get("valence_arousal_stratified") or {}).get("pooled_auc"),
+        "valence_diagnostic_auc_naive": (
+            ((vdiag.get("contrasts") or {}).get("happy_vs_anger") or {})
+            .get("valence_naive") or {}).get("auc"),
+        "valence_contrast_was_matched": (
+            (vdiag.get("contrasts") or {}).get("happy_vs_anger") or {}
+        ).get("contrast_is_matched"),
+
+        # v1 defects the rebuild has to beat
+        "v1_clips_truncated": (v1.get("truncation") or {}).get("clips_truncated"),
+        "v1_audio_lost_min": (v1.get("truncation") or {}).get("audio_never_transcribed_min"),
+        "v1_hallucination_rate": (v1.get("hallucination") or {}).get("rate"),
+        "v1_unknown_speaker_share": (
+            v1.get("speaker_attribution") or {}).get("unknown_share"),
 
         # Rejected experiments
         "diarization_verdict": diar.get("verdict"),

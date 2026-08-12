@@ -44,7 +44,11 @@
    "test": "Matched-arousal contrast on CREMA-D: happy vs anger. Both are high-arousal and differ almost purely in valence.",
    "baseline": "valence axis lift +0.0097 over a 0.6188 majority baseline",
    "threshold": "If raw valence separates happy from anger at <= 55% accuracy, acoustic valence is dead and moves out of the index. If it separates them at >= 65%, the quadrant mapping is at fault and the model stays.",
-   "if_it_fails": "Between 55% and 65% is inconclusive. Report it as inconclusive and leave the index unchanged rather than choosing the reading that suits us."
+   "if_it_fails": "Between 55% and 65% is inconclusive. Report it as inconclusive and leave the index unchanged rather than choosing the reading that suits us.",
+   "outcome": "NOT SUPPORTED - the hypothesis as stated is wrong, and the planned change it justified has been abandoned.",
+   "outcome_detail": "Acoustic valence separates happy from anger at AUC 0.6889 raw, and at 0.6695 with arousal held constant - above the pre-registered 0.65 threshold. The model does carry valence. The four-quadrant mapping is what loses it: a hard 0.5 split on the calibrated percentile measures a threshold, while AUC measures ranking, and the model ranks valence correctly while the median split sits in the wrong place. So valence stays in the index and the decision boundary is what gets fixed. The plan of record had been to remove acoustic valence and source it from text instead; that is now unjustified and is not being done.",
+   "the_design_flaw_this_test_had": "The pre-registered contrast assumed happy and anger are matched on arousal. They are not - arousal separates them at AUC 0.2697, further from chance than the valence signal being claimed. The naive figure was therefore contaminated by exactly the axis the design was meant to hold constant. It was rescued by scoring valence within arousal quintiles, which is the number the verdict now rests on. Recorded because the flaw was in our design, not in the data.",
+   "weaker_second_contrast": "The low-arousal pair (neutral vs sad) gives a stratified AUC of 0.6149, which falls between the thresholds and is inconclusive on its own. The verdict rests on the primary contrast, and this is reported rather than dropped."
   }
  ],
 

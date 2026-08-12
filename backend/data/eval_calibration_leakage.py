@@ -122,23 +122,55 @@ def main() -> None:
 
     by_in = [r["race_id"] for r in sorted(rows, key=lambda r: -r["mean_in_sample"])]
     by_out = [r["race_id"] for r in sorted(rows, key=lambda r: -r["mean_held_out"])]
-    ordering_preserved = by_in == by_out
-    moved = [rid for i, rid in enumerate(by_in) if by_out[i] != rid]
 
-    spread_in = max(r["mean_in_sample"] for r in rows) - min(r["mean_in_sample"] for r in rows)
-    spread_out = max(r["mean_held_out"] for r in rows) - min(r["mean_held_out"] for r in rows)
+    # Comparing the two orderings position-by-position counts tie-breaking as a
+    # reordering, which is not a finding: two races whose means are equal to the
+    # reported precision will swap on floating-point noise. So a swap only counts
+    # when the pair is separated by more than the precision the means are
+    # published at - otherwise this would manufacture exactly the kind of false
+    # positive the rest of this project exists to catch.
+    TIE = 0.15  # DSI points; means are published to one decimal
+    in_mean = {r["race_id"]: r["mean_in_sample"] for r in rows}
+    out_mean = {r["race_id"]: r["mean_held_out"] for r in rows}
+    ids = [r["race_id"] for r in rows]
+
+    real_swaps, tied_swaps = [], []
+    for i, a in enumerate(ids):
+        for b in ids[i + 1:]:
+            d_in = in_mean[a] - in_mean[b]
+            d_out = out_mean[a] - out_mean[b]
+            if (d_in > 0) == (d_out > 0):
+                continue
+            pair = f"{a} vs {b}"
+            if abs(d_in) <= TIE and abs(d_out) <= TIE:
+                tied_swaps.append(pair)
+            else:
+                real_swaps.append(
+                    {"pair": pair, "in_sample_diff": round(d_in, 2),
+                     "held_out_diff": round(d_out, 2)})
+
+    ordering_preserved = not real_swaps
+    spread_in = max(in_mean.values()) - min(in_mean.values())
+    spread_out = max(out_mean.values()) - min(out_mean.values())
 
     verdict = (
         "The leak was not material. Scoring every message against a calibration "
-        f"fitted without its own race moves race means by at most "
-        f"{max(abs(r['mean_shift']) for r in rows)} DSI points, and the race "
-        "ordering is unchanged. Every previously published cross-race contrast "
-        "stands, and now stands out of sample."
+        "fitted without its own race moves race means by at most "
+        f"{max(abs(r['mean_shift']) for r in rows)} DSI points and no message by "
+        f"more than {max(abs(d) for d in all_deltas)}. No pair of races separated "
+        "by more than the reported precision changes order, so every previously "
+        "published cross-race contrast stands - and now stands out of sample."
+        + (f" {len(tied_swaps)} pair(s) swap within the tie threshold of {TIE} "
+           f"points ({'; '.join(tied_swaps)}); those races were indistinguishable "
+           "in both orderings and no claim rested on their order."
+           if tied_swaps else "")
         if ordering_preserved else
-        "The leak was material: the race ordering changes when each race is "
-        f"scored against a calibration it did not help fit ({', '.join(moved)} "
-        "move). The in-sample ordering was partly an artifact of the fitting and "
-        "the affected contrasts are corrected rather than restated."
+        "The leak was material: "
+        + "; ".join(f"{s['pair']} changes order ({s['in_sample_diff']:+.2f} in "
+                    f"sample, {s['held_out_diff']:+.2f} held out)"
+                    for s in real_swaps)
+        + ". The in-sample ordering was partly an artifact of the fitting, and "
+          "the affected contrasts are corrected rather than restated."
     )
 
     payload = {
@@ -161,6 +193,9 @@ def main() -> None:
         "ordering_preserved": ordering_preserved,
         "ordering_in_sample": by_in,
         "ordering_held_out": by_out,
+        "material_swaps": real_swaps,
+        "swaps_within_tie_threshold": tied_swaps,
+        "tie_threshold_dsi": TIE,
         "spread_in_sample": round(spread_in, 2),
         "spread_held_out": round(spread_out, 2),
         "verdict": verdict,

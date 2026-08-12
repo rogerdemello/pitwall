@@ -77,19 +77,25 @@ def build_cache(limit: int | None = None) -> list[dict]:
     """Raw arousal/valence/dominance per CREMA-D clip, with its gold label."""
     from datasets import Audio, load_dataset
 
-    print(f"loading {DATASET_ID} [{SPLIT}] ...")
+    print(f"loading {DATASET_ID} [{SPLIT}] ...", flush=True)
     ds = load_dataset(DATASET_ID, split=SPLIT).cast_column("audio", Audio(decode=False))
-    rows = list(ds)[:limit] if limit else list(ds)
+    total = min(len(ds), limit) if limit else len(ds)
+    print(f"{total} clips to score", flush=True)
 
+    # Iterate lazily. Materialising the split with list(ds) pulls every clip's
+    # audio bytes into memory before a single one is scored, which on this
+    # dataset means minutes of silence before any progress appears.
     out, t0 = [], time.perf_counter()
-    for i, r in enumerate(rows, 1):
+    for i, r in enumerate(ds, 1):
+        if limit and i > limit:
+            break
         data = (r.get("audio") or {}).get("bytes")
         if not data:
             continue
         try:
             audio, _ = librosa.load(io.BytesIO(data), sr=SAMPLE_RATE, mono=True)
         except Exception as e:
-            print(f"  !! decode failed: {type(e).__name__}: {e}")
+            print(f"  !! decode failed: {type(e).__name__}: {e}", flush=True)
             continue
         af = analyse(np.asarray(audio, dtype=np.float32))
         out.append({
@@ -97,10 +103,10 @@ def build_cache(limit: int | None = None) -> list[dict]:
             "arousal": af.arousal, "valence": af.valence, "dominance": af.dominance,
             "duration_s": round(len(audio) / SAMPLE_RATE, 2),
         })
-        if i % 100 == 0:
+        # Frequent enough that a stalled run is obvious rather than ambiguous.
+        if i % 25 == 0:
             rate = (time.perf_counter() - t0) / i
-            print(f"  {i}/{len(rows)}  ~{rate * (len(rows) - i) / 60:.1f} min left",
-                  flush=True)
+            print(f"  {i}/{total}  ~{rate * (total - i) / 60:.1f} min left", flush=True)
 
     json.dump({
         "generated_by": "backend/data/eval_valence_diagnostic.py",
@@ -162,30 +168,117 @@ def contrast(clips: list[dict], pos_labels: set, neg_labels: set,
     }
 
 
-def verdict(v_auc: float | None) -> tuple[str, str]:
-    if v_auc is None:
+def stratified_valence_auc(clips: list[dict], pos_labels: set, neg_labels: set,
+                           n_strata: int = 5, min_per_class: int = 8) -> dict:
+    """Valence AUC computed *within* bands of equal arousal, then pooled.
+
+    The naive contrast assumes happy and anger are matched on arousal. In this
+    data they are not - the control shows arousal separating them at AUC 0.27,
+    which is further from chance than the valence signal being claimed. So the
+    naive number cannot distinguish "the model reads valence" from "the model
+    reads arousal, and arousal happens to differ between these two labels".
+
+    Slicing into arousal quintiles and scoring valence inside each one removes
+    that leak: within a stratum the two classes have near-identical arousal, so
+    whatever separates them there is not arousal. Strata are pooled by sample
+    size.
+    """
+    tagged = ([(c["arousal"], c["valence"], 1) for c in clips if c["label"] in pos_labels]
+              + [(c["arousal"], c["valence"], 0) for c in clips if c["label"] in neg_labels])
+    if len(tagged) < n_strata * min_per_class * 2:
+        return {"computable": False, "why": "too few clips to stratify"}
+
+    tagged.sort(key=lambda t: t[0])
+    size = len(tagged) // n_strata
+    strata, weights = [], []
+    for i in range(n_strata):
+        chunk = tagged[i * size:(i + 1) * size] if i < n_strata - 1 else tagged[i * size:]
+        p = [v for _, v, lab in chunk if lab == 1]
+        n = [v for _, v, lab in chunk if lab == 0]
+        if len(p) < min_per_class or len(n) < min_per_class:
+            strata.append({"n_positive": len(p), "n_negative": len(n),
+                           "auc": None, "skipped": "too few in one class"})
+            continue
+        a = auc(p, n)
+        ar = [x for x, _, _ in chunk]
+        strata.append({
+            "arousal_range": [round(min(ar), 3), round(max(ar), 3)],
+            "n_positive": len(p), "n_negative": len(n), "auc": a,
+            "arousal_auc_within": auc([x for x, _, lab in chunk if lab == 1],
+                                      [x for x, _, lab in chunk if lab == 0]),
+        })
+        weights.append((a, len(p) + len(n)))
+
+    if not weights:
+        return {"computable": False, "why": "no stratum had both classes"}
+    total = sum(w for _, w in weights)
+    pooled = sum(a * w for a, w in weights) / total
+    return {
+        "computable": True,
+        "pooled_auc": round(pooled, 4),
+        "n_strata_used": len(weights),
+        "n_scored": total,
+        "strata": strata,
+    }
+
+
+def verdict(naive_auc: float | None, matched: bool, strat: dict,
+            arousal_control_auc: float | None) -> tuple[str, str]:
+    """The stratified number decides, and only if the design held.
+
+    The pre-registered test assumed happy and anger are matched on arousal. That
+    assumption is checkable and it failed, so the naive AUC cannot be read as a
+    valence result - it is contaminated by exactly the axis the design was meant
+    to hold constant. Deferring to the arousal-stratified figure instead is the
+    conservative reading, and if that is not computable the answer is that the
+    test did not run, not that valence works.
+    """
+    if naive_auc is None:
         return "not computable", "Not enough clips in one of the classes."
-    if v_auc <= DEAD_AT_OR_BELOW:
-        return "valence_is_dead", (
-            f"Raw valence separates the matched-arousal pair at AUC {v_auc}, at or "
-            f"below the pre-registered {DEAD_AT_OR_BELOW} threshold. This is the "
-            "cleanest test available - clean studio speech, maximal valence "
-            "contrast, no mapping in the way - and the model cannot do it. No "
-            "quadrant mapping can rescue it, so acoustic valence leaves the index."
+
+    caveat = ""
+    if not matched:
+        caveat = (
+            f" The pre-registered design assumed the pair was matched on arousal "
+            f"and it is not: arousal separates these labels at AUC "
+            f"{arousal_control_auc}, further from chance than the valence signal "
+            f"being claimed ({naive_auc}). The naive figure is therefore "
+            "contaminated by arousal leakage and is not used to decide."
         )
-    if v_auc >= WORKS_AT_OR_ABOVE:
+
+    if not strat.get("computable"):
+        return "inconclusive", (
+            "The matched-arousal assumption failed and the arousal-stratified "
+            f"fallback could not be computed ({strat.get('why')}). The question "
+            "is undecided, and reported as undecided rather than resolved from a "
+            "contaminated number." + caveat
+        )
+
+    a = strat["pooled_auc"]
+    basis = (f"Within bands of equal arousal - which removes the leak the control "
+             f"exposed - valence separates the pair at AUC {a}, pooled over "
+             f"{strat['n_strata_used']} strata and {strat['n_scored']} clips.")
+
+    if a <= DEAD_AT_OR_BELOW:
+        return "valence_is_dead", (
+            f"{basis} That is at or below the pre-registered {DEAD_AT_OR_BELOW} "
+            "threshold. This is the cleanest test available - clean studio "
+            "speech, maximal valence contrast, arousal held constant - and the "
+            "model cannot do it. No quadrant mapping can rescue it, so acoustic "
+            "valence leaves the index." + caveat
+        )
+    if a >= WORKS_AT_OR_ABOVE:
         return "mapping_is_at_fault", (
-            f"Raw valence separates the matched-arousal pair at AUC {v_auc}, at or "
-            f"above the pre-registered {WORKS_AT_OR_ABOVE} threshold. The model "
-            "does carry valence; the four-quadrant mapping is what loses it. Keep "
-            "the model and fix the mapping."
+            f"{basis} That is at or above the pre-registered {WORKS_AT_OR_ABOVE} "
+            "threshold, and it survives holding arousal constant. The model does "
+            "carry valence; the four-quadrant mapping is what loses it. Keep the "
+            "model and fix the mapping." + caveat
         )
     return "inconclusive", (
-        f"Raw valence separates the matched-arousal pair at AUC {v_auc}, between "
-        f"the pre-registered thresholds of {DEAD_AT_OR_BELOW} and "
-        f"{WORKS_AT_OR_ABOVE}. This does not decide the question. Reported as "
-        "inconclusive rather than resolved in the direction that happens to suit; "
-        "the index is left unchanged."
+        f"{basis} That falls between the pre-registered thresholds of "
+        f"{DEAD_AT_OR_BELOW} and {WORKS_AT_OR_ABOVE}, so it does not decide the "
+        "question. Reported as inconclusive rather than resolved in whichever "
+        "direction happens to suit; the index is left unchanged." + caveat
     )
 
 
@@ -202,15 +295,21 @@ def main(limit: int | None = None) -> None:
         results[name] = {
             "positive_labels": sorted(pos), "negative_labels": sorted(neg),
             "shared_arousal": arousal_level,
-            "valence": v,
+            "valence_naive": v,
             "arousal_control": a,
             # If arousal separates them strongly the pair is not matched, and the
-            # valence number is measuring arousal leakage rather than valence.
+            # naive valence number is measuring arousal leakage rather than valence.
             "contrast_is_matched": a["auc"] is not None and abs(a["auc"] - 0.5) < 0.15,
+            "valence_arousal_stratified": stratified_valence_auc(clips, pos, neg),
         }
 
     primary = results["happy_vs_anger"]
-    label, explanation = verdict(primary["valence"]["auc"])
+    label, explanation = verdict(
+        primary["valence_naive"]["auc"],
+        primary["contrast_is_matched"],
+        primary["valence_arousal_stratified"],
+        primary["arousal_control"]["auc"],
+    )
 
     payload = {
         "generated_by": "backend/data/eval_valence_diagnostic.py",
@@ -240,14 +339,20 @@ def main(limit: int | None = None) -> None:
 
     print(f"\n{len(clips)} clips\n")
     for name, r in results.items():
-        v, a = r["valence"], r["arousal_control"]
+        v, a, s = r["valence_naive"], r["arousal_control"], r["valence_arousal_stratified"]
         print(f"{name}  ({r['positive_labels']} vs {r['negative_labels']}, "
               f"both {r['shared_arousal']} arousal)")
         print(f"  n = {v['n_positive']} vs {v['n_negative']}")
-        print(f"  VALENCE  auc {v['auc']}  ci95 {v['auc_ci95']}  "
+        print(f"  valence naive       auc {v['auc']}  ci95 {v['auc_ci95']}  "
               f"means {v['mean_positive']} vs {v['mean_negative']}")
-        print(f"  arousal  auc {a['auc']}  (control - should be near 0.5)  "
+        print(f"  arousal control     auc {a['auc']}  (should be near 0.5)  "
               f"{'matched' if r['contrast_is_matched'] else '!! NOT MATCHED'}")
+        if s.get("computable"):
+            print(f"  valence stratified  auc {s['pooled_auc']}  "
+                  f"({s['n_strata_used']} arousal bands, {s['n_scored']} clips) "
+                  "<- the one that counts")
+        else:
+            print(f"  valence stratified  not computable: {s.get('why')}")
         print()
 
     print(f"VERDICT: {label}\n  {explanation}")

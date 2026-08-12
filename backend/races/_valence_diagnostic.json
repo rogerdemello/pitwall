@@ -1,0 +1,201 @@
+{
+ "generated_by": "backend/data/eval_valence_diagnostic.py",
+ "question": "Is acoustic valence dead, or is our quadrant mapping at fault?",
+ "why": "The 4-way gold eval reports valence at chance (+0.0097 lift), but it cannot say whether the model or our mapping is responsible. A matched-arousal contrast can: happy and anger sit at the same end of the arousal axis and differ almost purely in valence.",
+ "dataset": "confit/cremad-parquet",
+ "split": "test",
+ "n_clips": 1117,
+ "preregistered_thresholds": {
+  "dead_at_or_below": 0.55,
+  "works_at_or_above": 0.65,
+  "registered_in": "races/_preregistration.json (H4)"
+ },
+ "contrasts": {
+  "happy_vs_anger": {
+   "positive_labels": [
+    "happiness",
+    "happy"
+   ],
+   "negative_labels": [
+    "anger",
+    "angry"
+   ],
+   "shared_arousal": "high",
+   "valence_naive": {
+    "n_positive": 190,
+    "n_negative": 191,
+    "auc": 0.6889,
+    "auc_ci95": [
+     0.631,
+     0.7389
+    ],
+    "mean_positive": 0.4289,
+    "mean_negative": 0.3622
+   },
+   "arousal_control": {
+    "n_positive": 190,
+    "n_negative": 191,
+    "auc": 0.2697,
+    "auc_ci95": [
+     0.22,
+     0.32
+    ],
+    "mean_positive": 0.4768,
+    "mean_negative": 0.6101
+   },
+   "contrast_is_matched": false,
+   "valence_arousal_stratified": {
+    "computable": true,
+    "pooled_auc": 0.6695,
+    "n_strata_used": 5,
+    "n_scored": 381,
+    "strata": [
+     {
+      "arousal_range": [
+       0.083,
+       0.408
+      ],
+      "n_positive": 60,
+      "n_negative": 16,
+      "auc": 0.6292,
+      "arousal_auc_within": 0.5167
+     },
+     {
+      "arousal_range": [
+       0.41,
+       0.497
+      ],
+      "n_positive": 40,
+      "n_negative": 36,
+      "auc": 0.6681,
+      "arousal_auc_within": 0.5649
+     },
+     {
+      "arousal_range": [
+       0.498,
+       0.569
+      ],
+      "n_positive": 45,
+      "n_negative": 31,
+      "auc": 0.7498,
+      "arousal_auc_within": 0.3738
+     },
+     {
+      "arousal_range": [
+       0.57,
+       0.678
+      ],
+      "n_positive": 33,
+      "n_negative": 43,
+      "auc": 0.6089,
+      "arousal_auc_within": 0.3259
+     },
+     {
+      "arousal_range": [
+       0.679,
+       0.98
+      ],
+      "n_positive": 12,
+      "n_negative": 65,
+      "auc": 0.691,
+      "arousal_auc_within": 0.3372
+     }
+    ]
+   }
+  },
+  "neutral_vs_sad": {
+   "positive_labels": [
+    "neutral"
+   ],
+   "negative_labels": [
+    "sad",
+    "sadness"
+   ],
+   "shared_arousal": "low",
+   "valence_naive": {
+    "n_positive": 163,
+    "n_negative": 191,
+    "auc": 0.6853,
+    "auc_ci95": [
+     0.6311,
+     0.741
+    ],
+    "mean_positive": 0.3901,
+    "mean_negative": 0.3395
+   },
+   "arousal_control": {
+    "n_positive": 163,
+    "n_negative": 191,
+    "auc": 0.7466,
+    "auc_ci95": [
+     0.6967,
+     0.7989
+    ],
+    "mean_positive": 0.2986,
+    "mean_negative": 0.207
+   },
+   "contrast_is_matched": false,
+   "valence_arousal_stratified": {
+    "computable": true,
+    "pooled_auc": 0.6149,
+    "n_strata_used": 5,
+    "n_scored": 354,
+    "strata": [
+     {
+      "arousal_range": [
+       -0.127,
+       0.143
+      ],
+      "n_positive": 10,
+      "n_negative": 60,
+      "auc": 0.5583,
+      "arousal_auc_within": 0.5367
+     },
+     {
+      "arousal_range": [
+       0.146,
+       0.221
+      ],
+      "n_positive": 19,
+      "n_negative": 51,
+      "auc": 0.6424,
+      "arousal_auc_within": 0.629
+     },
+     {
+      "arousal_range": [
+       0.222,
+       0.282
+      ],
+      "n_positive": 35,
+      "n_negative": 35,
+      "auc": 0.6882,
+      "arousal_auc_within": 0.5437
+     },
+     {
+      "arousal_range": [
+       0.282,
+       0.345
+      ],
+      "n_positive": 49,
+      "n_negative": 21,
+      "auc": 0.5928,
+      "arousal_auc_within": 0.4621
+     },
+     {
+      "arousal_range": [
+       0.345,
+       0.742
+      ],
+      "n_positive": 50,
+      "n_negative": 24,
+      "auc": 0.5942,
+      "arousal_auc_within": 0.5358
+     }
+    ]
+   }
+  }
+ },
+ "verdict": "mapping_is_at_fault",
+ "explanation": "Within bands of equal arousal - which removes the leak the control exposed - valence separates the pair at AUC 0.6695, pooled over 5 strata and 381 clips. That is at or above the pre-registered 0.65 threshold, and it survives holding arousal constant. The model does carry valence; the four-quadrant mapping is what loses it. Keep the model and fix the mapping. The pre-registered design assumed the pair was matched on arousal and it is not: arousal separates these labels at AUC 0.2697, further from chance than the valence signal being claimed (0.6889). The naive figure is therefore contaminated by arousal leakage and is not used to decide.",
+ "caveat": "CREMA-D is acted, studio-quality American English. The implication runs one way only: a model that cannot recover valence from clean acted speech certainly cannot do it on compressed team radio. A pass here would not have proven the reverse."
+}

@@ -121,16 +121,37 @@ class TestCorpusFindingIsGenerated:
         assert not (predicted & descriptive)
 
 
-class TestCalibrationIsPooled:
+class TestCalibrationIsSharedAndHeldOut:
     """Every cross-race claim depends on one shared calibration.
 
     Per-race calibration centres each race on 50.0 by construction, which would
-    make the contrast test vacuous rather than merely wrong.
+    make the contrast test vacuous rather than merely wrong. Both pooled and
+    leave-one-race-out use one reference across the corpus; LORO additionally
+    makes each score out-of-sample.
     """
 
-    def test_all_races_share_the_pooled_calibration(self, live_races):
+    def test_no_race_uses_its_own_calibration(self, live_races):
+        from pipeline.calibration import CROSS_RACE_SOURCES
         sources = {r["calibration_source"] for r in live_races.values()}
-        assert sources == {"pooled"}, f"mixed calibration sources: {sources}"
+        assert sources <= CROSS_RACE_SOURCES, f"unusable sources: {sources}"
+
+    def test_scores_are_out_of_sample(self, live_races):
+        """The corpus should be scored against calibrations it did not help fit."""
+        sources = {r["calibration_source"] for r in live_races.values()}
+        assert sources == {"leave-one-race-out"}, (
+            f"expected held-out calibration everywhere, got {sources}. "
+            "Run pool_calibration.py then re-run calibrate.py."
+        )
+
+    def test_the_leak_was_quantified(self):
+        """Fixing a leak silently is half the work; the size must be published."""
+        leak = _load("_calibration_leakage.json")
+        assert "ordering_preserved" in leak
+        assert leak["per_message"]["mean_abs_delta"] is not None
+        if not leak["ordering_preserved"]:
+            assert leak["material_swaps"], (
+                "ordering reported as changed but no material swap listed"
+            )
 
 
 class TestEraAnalysisAgrees:

@@ -27,6 +27,11 @@ import json
 import math
 import os
 import statistics as st
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from pipeline.calibration import CROSS_RACE_SOURCES  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RACES = os.path.join(HERE, "..", "races")
@@ -76,8 +81,10 @@ def main() -> None:
         return
 
     sources = {r["calibration"] for r in rows}
-    if sources != {"pooled"}:
-        print(f"!! calibration sources are {sources}; run finish_corpus.py first")
+    if not sources <= CROSS_RACE_SOURCES:
+        print(f"!! calibration sources are {sources}; cross-race comparison needs "
+              f"a shared reference ({sorted(CROSS_RACE_SOURCES)}). "
+              "Run finish_corpus.py.")
         return
 
     rows.sort(key=lambda r: -r["mean"])
