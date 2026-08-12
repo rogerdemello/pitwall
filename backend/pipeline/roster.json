@@ -1,0 +1,581 @@
+{
+ "generated_by": "backend/data/build_roster.py",
+ "source": "FastF1 session.results across every race in backend/races/",
+ "note": "Committed on purpose: nothing at runtime should need FastF1 or the network to render a driver's name. Regenerate when a race is added.",
+ "n_drivers": 30,
+ "n_messages": 2042,
+ "drivers": {
+  "LEWHAM01": {
+   "code": "HAM",
+   "full_name": "Lewis Hamilton",
+   "first_name": "Lewis",
+   "last_name": "Hamilton",
+   "numbers": [
+    "44"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "hamilton",
+    "lewis"
+   ],
+   "messages": 181
+  },
+  "MAXVER01": {
+   "code": "VER",
+   "full_name": "Max Verstappen",
+   "first_name": "Max",
+   "last_name": "Verstappen",
+   "numbers": [
+    "1",
+    "33"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "max",
+    "verstappen"
+   ],
+   "messages": 173
+  },
+  "CARSAI01": {
+   "code": "SAI",
+   "full_name": "Carlos Sainz",
+   "first_name": "Carlos",
+   "last_name": "Sainz",
+   "numbers": [
+    "55"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "carlos",
+    "sainz"
+   ],
+   "messages": 144
+  },
+  "GEORUS01": {
+   "code": "RUS",
+   "full_name": "George Russell",
+   "first_name": "George",
+   "last_name": "Russell",
+   "numbers": [
+    "63"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "george",
+    "russell"
+   ],
+   "messages": 141
+  },
+  "LANNOR01": {
+   "code": "NOR",
+   "full_name": "Lando Norris",
+   "first_name": "Lando",
+   "last_name": "Norris",
+   "numbers": [
+    "4"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "lando",
+    "norris"
+   ],
+   "messages": 137
+  },
+  "FERALO01": {
+   "code": "ALO",
+   "full_name": "Fernando Alonso",
+   "first_name": "Fernando",
+   "last_name": "Alonso",
+   "numbers": [
+    "14"
+   ],
+   "seasons": [
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "alonso",
+    "fernando",
+    "nando"
+   ],
+   "messages": 100
+  },
+  "CHALEC01": {
+   "code": "LEC",
+   "full_name": "Charles Leclerc",
+   "first_name": "Charles",
+   "last_name": "Leclerc",
+   "numbers": [
+    "16"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "charles",
+    "leclerc"
+   ],
+   "messages": 98
+  },
+  "PIEGAS01": {
+   "code": "GAS",
+   "full_name": "Pierre Gasly",
+   "first_name": "Pierre",
+   "last_name": "Gasly",
+   "numbers": [
+    "10"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "gasly",
+    "pierre"
+   ],
+   "messages": 98
+  },
+  "SERPER01": {
+   "code": "PER",
+   "full_name": "Sergio Perez",
+   "first_name": "Sergio",
+   "last_name": "Perez",
+   "numbers": [
+    "11"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "checo",
+    "perez",
+    "sergio"
+   ],
+   "messages": 98
+  },
+  "NICHUL01": {
+   "code": "HUL",
+   "full_name": "Nico Hulkenberg",
+   "first_name": "Nico",
+   "last_name": "Hulkenberg",
+   "numbers": [
+    "27"
+   ],
+   "seasons": [
+    2019,
+    2023
+   ],
+   "vocatives": [
+    "hulk",
+    "hulkenberg",
+    "nico"
+   ],
+   "messages": 97
+  },
+  "ESTOCO01": {
+   "code": "OCO",
+   "full_name": "Esteban Ocon",
+   "first_name": "Esteban",
+   "last_name": "Ocon",
+   "numbers": [
+    "31"
+   ],
+   "seasons": [
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "esteban",
+    "ocon"
+   ],
+   "messages": 88
+  },
+  "LANSTR01": {
+   "code": "STR",
+   "full_name": "Lance Stroll",
+   "first_name": "Lance",
+   "last_name": "Stroll",
+   "numbers": [
+    "18"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "lance",
+    "stroll"
+   ],
+   "messages": 86
+  },
+  "ALEALB01": {
+   "code": "ALB",
+   "full_name": "Alexander Albon",
+   "first_name": "Alexander",
+   "last_name": "Albon",
+   "numbers": [
+    "23"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2023
+   ],
+   "vocatives": [
+    "albon",
+    "alex",
+    "alexander"
+   ],
+   "messages": 82
+  },
+  "VALBOT01": {
+   "code": "BOT",
+   "full_name": "Valtteri Bottas",
+   "first_name": "Valtteri",
+   "last_name": "Bottas",
+   "numbers": [
+    "77"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "bottas",
+    "val",
+    "valtteri"
+   ],
+   "messages": 66
+  },
+  "OSCPIA01": {
+   "code": "PIA",
+   "full_name": "Oscar Piastri",
+   "first_name": "Oscar",
+   "last_name": "Piastri",
+   "numbers": [
+    "81"
+   ],
+   "seasons": [
+    2023
+   ],
+   "vocatives": [
+    "osc",
+    "oscar",
+    "piastri"
+   ],
+   "messages": 66
+  },
+  "KEVMAG01": {
+   "code": "MAG",
+   "full_name": "Kevin Magnussen",
+   "first_name": "Kevin",
+   "last_name": "Magnussen",
+   "numbers": [
+    "20"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2023
+   ],
+   "vocatives": [
+    "kevin",
+    "magnussen"
+   ],
+   "messages": 62
+  },
+  "GUAZHO01": {
+   "code": "ZHO",
+   "full_name": "Guanyu Zhou",
+   "first_name": "Guanyu",
+   "last_name": "Zhou",
+   "numbers": [
+    "24"
+   ],
+   "seasons": [
+    2023
+   ],
+   "vocatives": [
+    "guanyu",
+    "zhou"
+   ],
+   "messages": 61
+  },
+  "LOGSAR01": {
+   "code": "SAR",
+   "full_name": "Logan Sargeant",
+   "first_name": "Logan",
+   "last_name": "Sargeant",
+   "numbers": [
+    "2"
+   ],
+   "seasons": [
+    2023
+   ],
+   "vocatives": [
+    "logan",
+    "sargeant"
+   ],
+   "messages": 52
+  },
+  "YUKTSU01": {
+   "code": "TSU",
+   "full_name": "Yuki Tsunoda",
+   "first_name": "Yuki",
+   "last_name": "Tsunoda",
+   "numbers": [
+    "22"
+   ],
+   "seasons": [
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "tsunoda",
+    "yuki"
+   ],
+   "messages": 45
+  },
+  "DANRIC01": {
+   "code": "RIC",
+   "full_name": "Daniel Ricciardo",
+   "first_name": "Daniel",
+   "last_name": "Ricciardo",
+   "numbers": [
+    "3"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021,
+    2023
+   ],
+   "vocatives": [
+    "daniel",
+    "danny",
+    "danny ric",
+    "ricciardo"
+   ],
+   "messages": 32
+  },
+  "SEBVET01": {
+   "code": "VET",
+   "full_name": "Sebastian Vettel",
+   "first_name": "Sebastian",
+   "last_name": "Vettel",
+   "numbers": [
+    "5"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021
+   ],
+   "vocatives": [
+    "seb",
+    "sebastian",
+    "vettel"
+   ],
+   "messages": 28
+  },
+  "LIALAW01": {
+   "code": "LAW",
+   "full_name": "Liam Lawson",
+   "first_name": "Liam",
+   "last_name": "Lawson",
+   "numbers": [
+    "40"
+   ],
+   "seasons": [
+    2023
+   ],
+   "vocatives": [
+    "lawson",
+    "liam"
+   ],
+   "messages": 25
+  },
+  "KIMRAI01": {
+   "code": "RAI",
+   "full_name": "Kimi Räikkönen",
+   "first_name": "Kimi",
+   "last_name": "Räikkönen",
+   "numbers": [
+    "7"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021
+   ],
+   "vocatives": [
+    "kimi",
+    "räikkönen"
+   ],
+   "messages": 23
+  },
+  "NYCDEV01": {
+   "code": "DEV",
+   "full_name": "Nyck De Vries",
+   "first_name": "Nyck",
+   "last_name": "De Vries",
+   "numbers": [
+    "21"
+   ],
+   "seasons": [
+    2023
+   ],
+   "vocatives": [
+    "de vries",
+    "nyck"
+   ],
+   "messages": 14
+  },
+  "ANTGIO01": {
+   "code": "GIO",
+   "full_name": "Antonio Giovinazzi",
+   "first_name": "Antonio",
+   "last_name": "Giovinazzi",
+   "numbers": [
+    "99"
+   ],
+   "seasons": [
+    2019,
+    2020,
+    2021
+   ],
+   "vocatives": [
+    "antonio",
+    "gio",
+    "giovinazzi"
+   ],
+   "messages": 10
+  },
+  "ROMGRO01": {
+   "code": "GRO",
+   "full_name": "Romain Grosjean",
+   "first_name": "Romain",
+   "last_name": "Grosjean",
+   "numbers": [
+    "8"
+   ],
+   "seasons": [
+    2019,
+    2020
+   ],
+   "vocatives": [
+    "grosjean",
+    "romain"
+   ],
+   "messages": 10
+  },
+  "NICLAF01": {
+   "code": "LAT",
+   "full_name": "Nicholas Latifi",
+   "first_name": "Nicholas",
+   "last_name": "Latifi",
+   "numbers": [
+    "6"
+   ],
+   "seasons": [
+    2020,
+    2021
+   ],
+   "vocatives": [
+    "latifi",
+    "nicholas"
+   ],
+   "messages": 10
+  },
+  "DANKVY01": {
+   "code": "KVY",
+   "full_name": "Daniil Kvyat",
+   "first_name": "Daniil",
+   "last_name": "Kvyat",
+   "numbers": [
+    "26"
+   ],
+   "seasons": [
+    2019,
+    2020
+   ],
+   "vocatives": [
+    "daniil",
+    "kvyat"
+   ],
+   "messages": 9
+  },
+  "MICSCH02": {
+   "code": "MSC",
+   "full_name": "Mick Schumacher",
+   "first_name": "Mick",
+   "last_name": "Schumacher",
+   "numbers": [
+    "47"
+   ],
+   "seasons": [
+    2021
+   ],
+   "vocatives": [
+    "mick",
+    "schumacher"
+   ],
+   "messages": 5
+  },
+  "ROBKUB01": {
+   "code": "KUB",
+   "full_name": "Robert Kubica",
+   "first_name": "Robert",
+   "last_name": "Kubica",
+   "numbers": [
+    "88"
+   ],
+   "seasons": [
+    2019
+   ],
+   "vocatives": [
+    "kubica",
+    "robert"
+   ],
+   "messages": 1
+  }
+ }
+}

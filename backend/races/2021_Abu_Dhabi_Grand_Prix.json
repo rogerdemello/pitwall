@@ -173,7 +173,7 @@
   {
    "driver_id": "KIMRAI01",
    "code": "RAI",
-   "name": "Kimi Raikkonen",
+   "name": "Kimi R\u00e4ikk\u00f6nen",
    "racing_number": "7",
    "message_count": 5,
    "in_race_count": 3,
@@ -8179,7 +8179,7 @@
    "id": "2021_Abu_Dhabi_Grand_Prix_KIMRAI01_7_20211212_130046",
    "driver_id": "KIMRAI01",
    "driver_code": "RAI",
-   "driver_name": "Kimi Raikkonen",
+   "driver_name": "Kimi R\u00e4ikk\u00f6nen",
    "racing_number": "7",
    "timestamp": "2021-12-12T13:01:44.5220866Z",
    "audio_file": "KIMRAI01_7_20211212_130046.mp3",
@@ -8590,8 +8590,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 49,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -9503,8 +9503,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 51,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -9605,7 +9605,7 @@
    "id": "2021_Abu_Dhabi_Grand_Prix_KIMRAI01_7_20211212_132855",
    "driver_id": "KIMRAI01",
    "driver_code": "RAI",
-   "driver_name": "Kimi Raikkonen",
+   "driver_name": "Kimi R\u00e4ikk\u00f6nen",
    "racing_number": "7",
    "timestamp": "2021-12-12T13:29:15.552Z",
    "audio_file": "KIMRAI01_7_20211212_132855.mp3",
@@ -9708,8 +9708,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (gio)",
    "dsi": 62,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -9800,8 +9800,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lewis)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (lewis)",
    "dsi": 51,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -9901,7 +9901,7 @@
     "headline": "PER: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
-     "DSI 91 (+38 over last 3 calls)",
+     "DSI 91 (+40 over last 3 calls)",
      "pace +8.55s vs own median",
      "Soft, 24 laps old",
      "lap 21"
@@ -10271,8 +10271,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 37,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -10363,8 +10363,8 @@
     "track_status": "1",
     "pit_lap": true
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 54,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -10465,7 +10465,7 @@
    "id": "2021_Abu_Dhabi_Grand_Prix_KIMRAI01_7_20211212_134223",
    "driver_id": "KIMRAI01",
    "driver_code": "RAI",
-   "driver_name": "Kimi Raikkonen",
+   "driver_name": "Kimi R\u00e4ikk\u00f6nen",
    "racing_number": "7",
    "timestamp": "2021-12-12T13:42:32.32Z",
    "audio_file": "KIMRAI01_7_20211212_134223.mp3",
@@ -10506,7 +10506,7 @@
    "id": "2021_Abu_Dhabi_Grand_Prix_KIMRAI01_7_20211212_134151",
    "driver_id": "KIMRAI01",
    "driver_code": "RAI",
-   "driver_name": "Kimi Raikkonen",
+   "driver_name": "Kimi R\u00e4ikk\u00f6nen",
    "racing_number": "7",
    "timestamp": "2021-12-12T13:42:32.868Z",
    "audio_file": "KIMRAI01_7_20211212_134151.mp3",
@@ -10629,7 +10629,7 @@
    "id": "2021_Abu_Dhabi_Grand_Prix_KIMRAI01_7_20211212_134506",
    "driver_id": "KIMRAI01",
    "driver_code": "RAI",
-   "driver_name": "Kimi Raikkonen",
+   "driver_name": "Kimi R\u00e4ikk\u00f6nen",
    "racing_number": "7",
    "timestamp": "2021-12-12T13:46:37.713Z",
    "audio_file": "KIMRAI01_7_20211212_134506.mp3",
@@ -10732,8 +10732,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (esteban)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (esteban)",
    "dsi": 39,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -10833,7 +10833,7 @@
     "headline": "TSU: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
-     "DSI 77 (+24 over last 3 calls)",
+     "DSI 77 (-8 over last 3 calls)",
      "pace +0.12s vs own median",
      "Hard, 8 laps old",
      "lap 31"
@@ -11500,8 +11500,8 @@
     "track_status": "671",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (vettel)",
    "dsi": 43,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11541,8 +11541,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (verstappen)",
    "dsi": 46,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11808,8 +11808,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lance)",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 55,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -11982,8 +11982,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lance)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (ricciardo)",
    "dsi": 48,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -12157,8 +12157,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 70,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -12176,7 +12176,7 @@
     "headline": "PER: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
-     "DSI 70 (-1 over last 3 calls)",
+     "DSI 70 (+25 over last 3 calls)",
      "pace -1.36s vs own median",
      "Hard, 8 laps old",
      "lap 44"
@@ -12771,8 +12771,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (bottas)",
    "dsi": 30,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -12812,8 +12812,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (norris)",
    "dsi": 46,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -13787,7 +13787,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (sainz)",
    "dsi": 27,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -13827,8 +13827,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 25,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -13991,8 +13991,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 50,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -14005,7 +14005,17 @@
    "incongruence": 0.0133,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and positive - focused, on it.",
-   "recommendation": null
+   "recommendation": {
+    "severity": "act",
+    "headline": "GAS: prepare the stop",
+    "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
+    "evidence": [
+     "DSI 67 (+2 over last 3 calls)",
+     "pace +30.79s vs own median",
+     "Soft, 1 laps old",
+     "lap 55"
+    ]
+   }
   },
   {
    "id": "2021_Abu_Dhabi_Grand_Prix_VALBOT01_77_20211212_144213",
@@ -14032,8 +14042,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lewis)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (lewis)",
    "dsi": 45,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -14278,8 +14288,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (carlos)",
    "dsi": 33,
    "state": "Calm",
    "descriptor": "settled and composed",

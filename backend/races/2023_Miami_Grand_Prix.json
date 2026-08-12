@@ -95,8 +95,8 @@
   },
   {
    "driver_id": "NICHUL01",
-   "code": "NIC",
-   "name": "NICHUL01",
+   "code": "HUL",
+   "name": "Nico Hulkenberg",
    "racing_number": "27",
    "message_count": 6,
    "in_race_count": 4,
@@ -106,8 +106,8 @@
   },
   {
    "driver_id": "OSCPIA01",
-   "code": "OSC",
-   "name": "OSCPIA01",
+   "code": "PIA",
+   "name": "Oscar Piastri",
    "racing_number": "81",
    "message_count": 6,
    "in_race_count": 3,
@@ -117,8 +117,8 @@
   },
   {
    "driver_id": "ALEALB01",
-   "code": "ALE",
-   "name": "ALEALB01",
+   "code": "ALB",
+   "name": "Alexander Albon",
    "racing_number": "23",
    "message_count": 5,
    "in_race_count": 3,
@@ -128,8 +128,8 @@
   },
   {
    "driver_id": "GUAZHO01",
-   "code": "GUA",
-   "name": "GUAZHO01",
+   "code": "ZHO",
+   "name": "Guanyu Zhou",
    "racing_number": "24",
    "message_count": 5,
    "in_race_count": 4,
@@ -139,8 +139,8 @@
   },
   {
    "driver_id": "LOGSAR01",
-   "code": "LOG",
-   "name": "LOGSAR01",
+   "code": "SAR",
+   "name": "Logan Sargeant",
    "racing_number": "2",
    "message_count": 4,
    "in_race_count": 3,
@@ -183,8 +183,8 @@
   },
   {
    "driver_id": "NYCDEV01",
-   "code": "NYC",
-   "name": "NYCDEV01",
+   "code": "DEV",
+   "name": "Nyck De Vries",
    "racing_number": "21",
    "message_count": 3,
    "in_race_count": 2,
@@ -216,8 +216,8 @@
   },
   {
    "driver_id": "KEVMAG01",
-   "code": "KEV",
-   "name": "KEVMAG01",
+   "code": "MAG",
+   "name": "Kevin Magnussen",
    "racing_number": "20",
    "message_count": 2,
    "in_race_count": 1,
@@ -8455,8 +8455,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NYCDEV01_21_20230507_194626",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-07T18:46:34.074Z",
    "audio_file": "NYCDEV01_21_20230507_194626.mp3",
@@ -8701,8 +8701,8 @@
   {
    "id": "2023_Miami_Grand_Prix_ALEALB01_23_20230507_195239",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-07T18:53:15.1786922Z",
    "audio_file": "ALEALB01_23_20230507_195239.mp3",
@@ -8846,8 +8846,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (ocon)",
    "dsi": 27,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -8947,8 +8947,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NICHUL01_27_20230507_202946",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-07T19:30:21.529Z",
    "audio_file": "NICHUL01_27_20230507_202946.mp3",
@@ -9174,8 +9174,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (gasly)",
    "dsi": 49,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -9244,8 +9244,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NYCDEV01_21_20230507_203805",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-07T19:38:10.617Z",
    "audio_file": "NYCDEV01_21_20230507_203805.mp3",
@@ -9282,7 +9282,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "NYC: prepare the stop",
+    "headline": "DEV: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 81",
@@ -9295,8 +9295,8 @@
   {
    "id": "2023_Miami_Grand_Prix_LOGSAR01_2_20230507_203847",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-07T19:39:17.694Z",
    "audio_file": "LOGSAR01_2_20230507_203847.mp3",
@@ -9951,8 +9951,8 @@
   {
    "id": "2023_Miami_Grand_Prix_OSCPIA01_81_20230507_204716",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-07T19:47:44.689Z",
    "audio_file": "OSCPIA01_81_20230507_204716.mp3",
@@ -9992,8 +9992,8 @@
   {
    "id": "2023_Miami_Grand_Prix_KEVMAG01_20_20230507_204850",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-07T19:49:24.781Z",
    "audio_file": "KEVMAG01_20_20230507_204850.mp3",
@@ -10030,7 +10030,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "KEV: prepare the stop",
+    "headline": "MAG: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 68",
@@ -10125,8 +10125,8 @@
   {
    "id": "2023_Miami_Grand_Prix_LOGSAR01_2_20230507_204954",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-07T19:50:33.437Z",
    "audio_file": "LOGSAR01_2_20230507_204954.mp3",
@@ -10381,8 +10381,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NYCDEV01_21_20230507_205339",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-07T19:53:55.809Z",
    "audio_file": "NYCDEV01_21_20230507_205339.mp3",
@@ -10403,8 +10403,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (stroll)",
    "dsi": 74,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -10419,7 +10419,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "NYC: prepare the stop",
+    "headline": "DEV: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 74 (-7 over last 2 calls)",
@@ -10514,8 +10514,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NICHUL01_27_20230507_205527",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-07T19:56:10.448Z",
    "audio_file": "NICHUL01_27_20230507_205527.mp3",
@@ -10659,8 +10659,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 51,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -10678,8 +10678,8 @@
   {
    "id": "2023_Miami_Grand_Prix_OSCPIA01_81_20230507_205745",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-07T19:58:25.3196314Z",
    "audio_file": "OSCPIA01_81_20230507_205745.mp3",
@@ -10801,8 +10801,8 @@
   {
    "id": "2023_Miami_Grand_Prix_GUAZHO01_24_20230507_205922",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-07T19:59:34.868Z",
    "audio_file": "GUAZHO01_24_20230507_205922.mp3",
@@ -10839,7 +10839,7 @@
    "note": "Words read positive, but the voice sits in the bottom 33% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "watch",
-    "headline": "GUA: check in with the driver",
+    "headline": "ZHO: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 73",
@@ -10894,8 +10894,8 @@
   {
    "id": "2023_Miami_Grand_Prix_OSCPIA01_81_20230507_210412",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-07T20:04:33.38Z",
    "audio_file": "OSCPIA01_81_20230507_210412.mp3",
@@ -11017,8 +11017,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NICHUL01_27_20230507_210556",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-07T20:06:16.067Z",
    "audio_file": "NICHUL01_27_20230507_210556.mp3",
@@ -11295,8 +11295,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (max)",
    "dsi": 47,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -11570,8 +11570,8 @@
   {
    "id": "2023_Miami_Grand_Prix_ALEALB01_23_20230507_201616",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-07T20:16:53.106Z",
    "audio_file": "ALEALB01_23_20230507_201616.mp3",
@@ -11608,7 +11608,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 69",
@@ -11725,8 +11725,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (russell)",
    "dsi": 47,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -11901,7 +11901,7 @@
     "pit_lap": false
    },
    "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (fernando)",
+   "speaker_reason": "addresses the driver",
    "dsi": 36,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -12257,8 +12257,8 @@
   {
    "id": "2023_Miami_Grand_Prix_ALEALB01_23_20230507_212504",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-07T20:25:20.726Z",
    "audio_file": "ALEALB01_23_20230507_212504.mp3",
@@ -12298,8 +12298,8 @@
   {
    "id": "2023_Miami_Grand_Prix_ALEALB01_23_20230507_212515",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-07T20:25:54.663Z",
    "audio_file": "ALEALB01_23_20230507_212515.mp3",
@@ -12336,7 +12336,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 70 (+1 over last 3 calls)",
@@ -12523,8 +12523,8 @@
   {
    "id": "2023_Miami_Grand_Prix_GUAZHO01_24_20230507_213319",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-07T20:33:42.7796096Z",
    "audio_file": "GUAZHO01_24_20230507_213319.mp3",
@@ -12564,8 +12564,8 @@
   {
    "id": "2023_Miami_Grand_Prix_LOGSAR01_2_20230507_213333",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-07T20:33:43.064Z",
    "audio_file": "LOGSAR01_2_20230507_213333.mp3",
@@ -12831,8 +12831,8 @@
   {
    "id": "2023_Miami_Grand_Prix_GUAZHO01_24_20230507_213627",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-07T20:37:06.593Z",
    "audio_file": "GUAZHO01_24_20230507_213627.mp3",
@@ -13445,8 +13445,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NICHUL01_27_20230507_214810",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-07T20:48:18.913Z",
    "audio_file": "NICHUL01_27_20230507_214810.mp3",
@@ -13508,8 +13508,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 66,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -13522,13 +13522,23 @@
    "incongruence": 0.58,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
-   "recommendation": null
+   "recommendation": {
+    "severity": "watch",
+    "headline": "BOT: elevated stress",
+    "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
+    "evidence": [
+     "DSI 66 (-7 over last 2 calls)",
+     "pace -0.50s vs own median",
+     "Hard, 34 laps old",
+     "lap 49"
+    ]
+   }
   },
   {
    "id": "2023_Miami_Grand_Prix_GUAZHO01_24_20230507_214851",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-07T20:49:28.709Z",
    "audio_file": "GUAZHO01_24_20230507_214851.mp3",
@@ -13549,8 +13559,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (albon)",
    "dsi": 31,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -13590,8 +13600,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lance)",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 44,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -13805,8 +13815,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 43,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -13887,8 +13897,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (fernando)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (fernando)",
    "dsi": 50,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -13947,8 +13957,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NICHUL01_27_20230507_215758",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-07T20:58:25.36Z",
    "audio_file": "NICHUL01_27_20230507_215758.mp3",
@@ -14420,8 +14430,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (fernando)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (fernando)",
    "dsi": 25,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -14439,8 +14449,8 @@
   {
    "id": "2023_Miami_Grand_Prix_OSCPIA01_81_20230507_221211",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "OSCPIA01_81_20230507_221211.mp3",
@@ -14521,8 +14531,8 @@
   {
    "id": "2023_Miami_Grand_Prix_GUAZHO01_24_20230507_221358",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "GUAZHO01_24_20230507_221358.mp3",
@@ -14562,8 +14572,8 @@
   {
    "id": "2023_Miami_Grand_Prix_KEVMAG01_20_20230507_211407",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "KEVMAG01_20_20230507_211407.mp3",
@@ -14600,7 +14610,7 @@
    "note": "Voice and words agree - settled and composed.",
    "recommendation": {
     "severity": "act",
-    "headline": "KEV: prepare the stop",
+    "headline": "MAG: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 68",
@@ -14613,8 +14623,8 @@
   {
    "id": "2023_Miami_Grand_Prix_LOGSAR01_2_20230507_220609",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "LOGSAR01_2_20230507_220609.mp3",
@@ -14695,8 +14705,8 @@
   {
    "id": "2023_Miami_Grand_Prix_NICHUL01_27_20230507_211546",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "NICHUL01_27_20230507_211546.mp3",
@@ -14758,8 +14768,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (george)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (george)",
    "dsi": 28,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -14777,8 +14787,8 @@
   {
    "id": "2023_Miami_Grand_Prix_OSCPIA01_81_20230507_221255",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "OSCPIA01_81_20230507_221255.mp3",
@@ -14818,8 +14828,8 @@
   {
    "id": "2023_Miami_Grand_Prix_OSCPIA01_81_20230507_221147",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "OSCPIA01_81_20230507_221147.mp3",
@@ -14896,22 +14906,22 @@
    "suppressed_stress": false,
    "note": "Voice and words agree - settled and composed.",
    "recommendation": {
-    "severity": "act",
-    "headline": "BOT: box this lap",
-    "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
+    "severity": "watch",
+    "headline": "BOT: elevated stress",
+    "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
-     "DSI 73",
-     "pace +1.29s vs own median",
-     "Hard, 25 laps old",
-     "lap 40"
+     "DSI 66 (-7 over last 2 calls)",
+     "pace -0.50s vs own median",
+     "Hard, 34 laps old",
+     "lap 49"
     ]
    }
   },
   {
    "id": "2023_Miami_Grand_Prix_ALEALB01_23_20230507_220719",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-07T21:06:01.62Z",
    "audio_file": "ALEALB01_23_20230507_220719.mp3",
@@ -14948,7 +14958,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 70 (+1 over last 3 calls)",

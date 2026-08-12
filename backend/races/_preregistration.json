@@ -65,7 +65,8 @@
    "relationship_appears": "Reported, with the explicit caveat that it emerged after a pipeline change and is therefore a hypothesis for a fresh corpus rather than a confirmed finding. It will not be presented as a validated result on this data.",
    "relationship_reverses": "Reported as-is. A negative correlation is not evidence for the hypothesis and will not be described as 'predictive' in either direction."
   },
-  "no_second_run": "If the analysis is re-run after any further change, that is exploratory and will be labelled exploratory. The confirmatory result is whatever the first run says."
+  "no_second_run": "If the analysis is re-run after any further change, that is exploratory and will be labelled exploratory. The confirmatory result is whatever the first run says.",
+  "regression_checks_are_not_the_confirmatory_run": "corpus_analysis.py is also run during refactoring, to check that a change did not silently move the result. Those runs are regression checks and are not the confirmatory test, which happens once after the v2 pipeline is frozen. Recording them here so the distinction cannot be blurred later: after the Phase 2a speaker-attribution change (roster-based vocatives using each clip's own driver_id), the headline was unchanged - n=1155, pooled_r=0.0428, tercile gap -0.071s, 38/80 drivers, sign test p=0.7376. The lag sub-analysis moved (lag_0 n 883 -> 911, best lag 3 -> 2) because attribution changed which messages count as driver-voiced; predictive remained false."
  },
 
  "regressions_that_must_be_reported_not_dropped": [

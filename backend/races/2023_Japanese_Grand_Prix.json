@@ -51,8 +51,8 @@
   },
   {
    "driver_id": "NICHUL01",
-   "code": "NIC",
-   "name": "NICHUL01",
+   "code": "HUL",
+   "name": "Nico Hulkenberg",
    "racing_number": "27",
    "message_count": 11,
    "in_race_count": 9,
@@ -84,8 +84,8 @@
   },
   {
    "driver_id": "GUAZHO01",
-   "code": "GUA",
-   "name": "GUAZHO01",
+   "code": "ZHO",
+   "name": "Guanyu Zhou",
    "racing_number": "24",
    "message_count": 9,
    "in_race_count": 5,
@@ -117,8 +117,8 @@
   },
   {
    "driver_id": "OSCPIA01",
-   "code": "OSC",
-   "name": "OSCPIA01",
+   "code": "PIA",
+   "name": "Oscar Piastri",
    "racing_number": "81",
    "message_count": 6,
    "in_race_count": 4,
@@ -128,8 +128,8 @@
   },
   {
    "driver_id": "ALEALB01",
-   "code": "ALE",
-   "name": "ALEALB01",
+   "code": "ALB",
+   "name": "Alexander Albon",
    "racing_number": "23",
    "message_count": 6,
    "in_race_count": 5,
@@ -161,8 +161,8 @@
   },
   {
    "driver_id": "KEVMAG01",
-   "code": "KEV",
-   "name": "KEVMAG01",
+   "code": "MAG",
+   "name": "Kevin Magnussen",
    "racing_number": "20",
    "message_count": 5,
    "in_race_count": 1,
@@ -183,8 +183,8 @@
   },
   {
    "driver_id": "LIALAW01",
-   "code": "LIA",
-   "name": "LIALAW01",
+   "code": "LAW",
+   "name": "Liam Lawson",
    "racing_number": "40",
    "message_count": 4,
    "in_race_count": 3,
@@ -194,8 +194,8 @@
   },
   {
    "driver_id": "LOGSAR01",
-   "code": "LOG",
-   "name": "LOGSAR01",
+   "code": "SAR",
+   "name": "Logan Sargeant",
    "racing_number": "2",
    "message_count": 3,
    "in_race_count": 1,
@@ -6099,8 +6099,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_051128",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T04:11:36.777Z",
    "audio_file": "GUAZHO01_24_20230924_051128.mp3",
@@ -6222,8 +6222,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_LOGSAR01_2_20230924_051248",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-24T04:13:19.541Z",
    "audio_file": "LOGSAR01_2_20230924_051248.mp3",
@@ -6345,8 +6345,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_OSCPIA01_81_20230924_051547",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-24T04:16:09.975Z",
    "audio_file": "OSCPIA01_81_20230924_051547.mp3",
@@ -6427,8 +6427,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_LOGSAR01_2_20230924_051718",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-24T04:17:50.286Z",
    "audio_file": "LOGSAR01_2_20230924_051718.mp3",
@@ -6509,8 +6509,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_051812",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T04:18:23.239Z",
    "audio_file": "GUAZHO01_24_20230924_051812.mp3",
@@ -6632,8 +6632,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_051920",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T04:19:31.378Z",
    "audio_file": "NICHUL01_27_20230924_051920.mp3",
@@ -6878,8 +6878,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_060434",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T05:05:08.72Z",
    "audio_file": "GUAZHO01_24_20230924_060434.mp3",
@@ -6916,7 +6916,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "GUA: prepare the stop",
+    "headline": "ZHO: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 70",
@@ -7257,8 +7257,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_061026",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T05:10:46.386Z",
    "audio_file": "GUAZHO01_24_20230924_061026.mp3",
@@ -7339,8 +7339,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_ALEALB01_23_20230924_061226",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-24T05:13:01.212Z",
    "audio_file": "ALEALB01_23_20230924_061226.mp3",
@@ -7431,8 +7431,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_ALEALB01_23_20230924_061638",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-24T05:16:56.4162004Z",
    "audio_file": "ALEALB01_23_20230924_061638.mp3",
@@ -7469,7 +7469,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "ALE: prepare the stop",
+    "headline": "ALB: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 82",
@@ -7533,8 +7533,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_061854",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T05:19:11.002Z",
    "audio_file": "NICHUL01_27_20230924_061854.mp3",
@@ -7615,8 +7615,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_061910",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T05:19:46.111Z",
    "audio_file": "GUAZHO01_24_20230924_061910.mp3",
@@ -7656,8 +7656,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_ALEALB01_23_20230924_062001",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-24T05:20:21.219Z",
    "audio_file": "ALEALB01_23_20230924_062001.mp3",
@@ -7697,8 +7697,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_ALEALB01_23_20230924_062206",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-24T05:22:34.326Z",
    "audio_file": "ALEALB01_23_20230924_062206.mp3",
@@ -7902,8 +7902,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_OSCPIA01_81_20230924_062646",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-24T05:27:04.15Z",
    "audio_file": "OSCPIA01_81_20230924_062646.mp3",
@@ -8066,8 +8066,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_LOGSAR01_2_20230924_062845",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-24T05:29:19.3126892Z",
    "audio_file": "LOGSAR01_2_20230924_062845.mp3",
@@ -8104,7 +8104,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: prepare the stop",
+    "headline": "SAR: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 82",
@@ -8117,8 +8117,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_062946",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T05:30:27.99Z",
    "audio_file": "NICHUL01_27_20230924_062946.mp3",
@@ -8304,7 +8304,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (perez)",
    "dsi": 60,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -8414,8 +8414,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_063559",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T05:36:05.484Z",
    "audio_file": "NICHUL01_27_20230924_063559.mp3",
@@ -8455,8 +8455,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_ALEALB01_23_20230924_063718",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-24T05:37:46.654Z",
    "audio_file": "ALEALB01_23_20230924_063718.mp3",
@@ -8660,8 +8660,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_064045",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T05:41:10.041Z",
    "audio_file": "NICHUL01_27_20230924_064045.mp3",
@@ -8928,8 +8928,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (oscar)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (oscar)",
    "dsi": 47,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -8947,8 +8947,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_OSCPIA01_81_20230924_064322",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-24T05:44:00.913Z",
    "audio_file": "OSCPIA01_81_20230924_064322.mp3",
@@ -9029,8 +9029,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_064517",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T05:45:42.005Z",
    "audio_file": "GUAZHO01_24_20230924_064517.mp3",
@@ -9152,8 +9152,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_064658",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T05:47:26.097Z",
    "audio_file": "NICHUL01_27_20230924_064658.mp3",
@@ -9190,7 +9190,7 @@
    "note": "Words read neutral, but the voice sits in the bottom 3% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: check in with the driver",
+    "headline": "HUL: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 61 (+21 over last 3 calls)",
@@ -9204,8 +9204,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_064729",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T05:47:58.737Z",
    "audio_file": "NICHUL01_27_20230924_064729.mp3",
@@ -9327,8 +9327,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_ALEALB01_23_20230924_064833",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-24T05:49:07.361Z",
    "audio_file": "ALEALB01_23_20230924_064833.mp3",
@@ -9472,8 +9472,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (george)",
    "dsi": 72,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -9542,8 +9542,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_065253",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T05:53:03.028Z",
    "audio_file": "GUAZHO01_24_20230924_065253.mp3",
@@ -9686,8 +9686,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_KEVMAG01_20_20230924_065543",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-24T05:55:52.619Z",
    "audio_file": "KEVMAG01_20_20230924_065543.mp3",
@@ -9809,8 +9809,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_LIALAW01_40_20230924_065827",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-24T05:58:40.647Z",
    "audio_file": "LIALAW01_40_20230924_065827.mp3",
@@ -9847,7 +9847,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LIA: elevated stress",
+    "headline": "LAW: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 66",
@@ -10435,8 +10435,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_071829",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T06:18:52.188Z",
    "audio_file": "NICHUL01_27_20230924_071829.mp3",
@@ -10476,8 +10476,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_071837",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T06:18:52.345Z",
    "audio_file": "NICHUL01_27_20230924_071837.mp3",
@@ -10691,8 +10691,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_OSCPIA01_81_20230924_072007",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-24T06:20:36.89Z",
    "audio_file": "OSCPIA01_81_20230924_072007.mp3",
@@ -10732,8 +10732,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_072156",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T06:22:17.529Z",
    "audio_file": "NICHUL01_27_20230924_072156.mp3",
@@ -10814,8 +10814,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_072315",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T06:23:24.012Z",
    "audio_file": "GUAZHO01_24_20230924_072315.mp3",
@@ -10855,8 +10855,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_LIALAW01_40_20230924_072343",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-24T06:23:57.995Z",
    "audio_file": "LIALAW01_40_20230924_072343.mp3",
@@ -10893,7 +10893,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LIA: elevated stress",
+    "headline": "LAW: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 67 (+1 over last 2 calls)",
@@ -10947,8 +10947,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_OSCPIA01_81_20230924_072430",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-24T06:25:05.994Z",
    "audio_file": "OSCPIA01_81_20230924_072430.mp3",
@@ -11307,8 +11307,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (george)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (george)",
    "dsi": 43,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -11418,7 +11418,7 @@
     "headline": "HAM: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
-     "DSI 67 (+23 over last 3 calls)",
+     "DSI 67 (+3 over last 3 calls)",
      "pace -0.80s vs own median",
      "Hard, 17 laps old",
      "lap 51"
@@ -11428,8 +11428,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_LIALAW01_40_20230924_073254",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-24T06:33:00.673Z",
    "audio_file": "LIALAW01_40_20230924_073254.mp3",
@@ -11602,8 +11602,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_KEVMAG01_20_20230924_074515",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "KEVMAG01_20_20230924_074515.mp3",
@@ -11684,8 +11684,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_NICHUL01_27_20230924_074416",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "NICHUL01_27_20230924_074416.mp3",
@@ -11725,8 +11725,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_KEVMAG01_20_20230924_074531",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "KEVMAG01_20_20230924_074531.mp3",
@@ -11766,8 +11766,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_GUAZHO01_24_20230924_074701",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "GUAZHO01_24_20230924_074701.mp3",
@@ -11789,7 +11789,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (lawson)",
    "dsi": 40,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11971,8 +11971,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_KEVMAG01_20_20230924_074545",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "KEVMAG01_20_20230924_074545.mp3",
@@ -12176,8 +12176,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_KEVMAG01_20_20230924_074556",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "KEVMAG01_20_20230924_074556.mp3",
@@ -12268,8 +12268,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_OSCPIA01_81_20230924_074221",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "OSCPIA01_81_20230924_074221.mp3",
@@ -12402,8 +12402,8 @@
   {
    "id": "2023_Japanese_Grand_Prix_LIALAW01_40_20230924_074326",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-24T06:39:03.214Z",
    "audio_file": "LIALAW01_40_20230924_074326.mp3",
@@ -12440,7 +12440,7 @@
    "note": "Voice and words agree - settled and composed.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LIA: elevated stress",
+    "headline": "LAW: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 67 (+1 over last 2 calls)",

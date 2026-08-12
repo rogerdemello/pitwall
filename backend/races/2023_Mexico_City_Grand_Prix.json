@@ -7,8 +7,8 @@
  "drivers": [
   {
    "driver_id": "OSCPIA01",
-   "code": "OSC",
-   "name": "OSCPIA01",
+   "code": "PIA",
+   "name": "Oscar Piastri",
    "racing_number": "81",
    "message_count": 22,
    "in_race_count": 18,
@@ -29,8 +29,8 @@
   },
   {
    "driver_id": "LOGSAR01",
-   "code": "LOG",
-   "name": "LOGSAR01",
+   "code": "SAR",
+   "name": "Logan Sargeant",
    "racing_number": "2",
    "message_count": 14,
    "in_race_count": 11,
@@ -40,8 +40,8 @@
   },
   {
    "driver_id": "GUAZHO01",
-   "code": "GUA",
-   "name": "GUAZHO01",
+   "code": "ZHO",
+   "name": "Guanyu Zhou",
    "racing_number": "24",
    "message_count": 13,
    "in_race_count": 10,
@@ -62,8 +62,8 @@
   },
   {
    "driver_id": "NICHUL01",
-   "code": "NIC",
-   "name": "NICHUL01",
+   "code": "HUL",
+   "name": "Nico Hulkenberg",
    "racing_number": "27",
    "message_count": 12,
    "in_race_count": 10,
@@ -161,8 +161,8 @@
   },
   {
    "driver_id": "ALEALB01",
-   "code": "ALE",
-   "name": "ALEALB01",
+   "code": "ALB",
+   "name": "Alexander Albon",
    "racing_number": "23",
    "message_count": 6,
    "in_race_count": 5,
@@ -205,8 +205,8 @@
   },
   {
    "driver_id": "KEVMAG01",
-   "code": "KEV",
-   "name": "KEVMAG01",
+   "code": "MAG",
+   "name": "Kevin Magnussen",
    "racing_number": "20",
    "message_count": 3,
    "in_race_count": 2,
@@ -9171,8 +9171,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_KEVMAG01_20_20231029_191228",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-29T19:12:47.031Z",
    "audio_file": "KEVMAG01_20_20231029_191228.mp3",
@@ -9253,8 +9253,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_191316",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T19:13:55.1205613Z",
    "audio_file": "GUAZHO01_24_20231029_191316.mp3",
@@ -9335,8 +9335,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_191533",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T19:16:11.371Z",
    "audio_file": "OSCPIA01_81_20231029_191533.mp3",
@@ -9417,8 +9417,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_191654",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T19:17:19.838Z",
    "audio_file": "GUAZHO01_24_20231029_191654.mp3",
@@ -9458,8 +9458,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_191753",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T19:18:29.806Z",
    "audio_file": "GUAZHO01_24_20231029_191753.mp3",
@@ -9499,8 +9499,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_191812",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T19:18:29.806Z",
    "audio_file": "OSCPIA01_81_20231029_191812.mp3",
@@ -9622,8 +9622,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_191908",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T19:19:37.5511082Z",
    "audio_file": "LOGSAR01_2_20231029_191908.mp3",
@@ -9827,8 +9827,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_200038",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:01:03.136Z",
    "audio_file": "OSCPIA01_81_20231029_200038.mp3",
@@ -9868,8 +9868,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_200504",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T20:05:30.475Z",
    "audio_file": "GUAZHO01_24_20231029_200504.mp3",
@@ -10114,8 +10114,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_200829",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:08:56.0112379Z",
    "audio_file": "OSCPIA01_81_20231029_200829.mp3",
@@ -10155,8 +10155,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_200900",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T20:09:30.596Z",
    "audio_file": "LOGSAR01_2_20231029_200900.mp3",
@@ -10193,7 +10193,7 @@
    "note": "Words read positive, but the voice sits in the bottom 2% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: prepare the stop",
+    "headline": "SAR: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 75",
@@ -10288,8 +10288,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_201125",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T20:11:46.75Z",
    "audio_file": "GUAZHO01_24_20231029_201125.mp3",
@@ -10411,8 +10411,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_ALEALB01_23_20231029_201302",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-29T20:13:30.295Z",
    "audio_file": "ALEALB01_23_20231029_201302.mp3",
@@ -10493,8 +10493,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_201413",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T20:14:38.028Z",
    "audio_file": "GUAZHO01_24_20231029_201413.mp3",
@@ -10616,8 +10616,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_201607",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:16:20.76Z",
    "audio_file": "OSCPIA01_81_20231029_201607.mp3",
@@ -10657,8 +10657,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_201538",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:16:20.76Z",
    "audio_file": "OSCPIA01_81_20231029_201538.mp3",
@@ -10739,8 +10739,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_201732",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T20:18:02.556Z",
    "audio_file": "NICHUL01_27_20231029_201732.mp3",
@@ -10903,8 +10903,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_202058",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T20:21:28.255Z",
    "audio_file": "GUAZHO01_24_20231029_202058.mp3",
@@ -10966,8 +10966,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (max)",
    "dsi": 41,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -11108,8 +11108,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_202325",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T20:23:44.628Z",
    "audio_file": "LOGSAR01_2_20231029_202325.mp3",
@@ -11149,8 +11149,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_202345",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:24:18.596Z",
    "audio_file": "OSCPIA01_81_20231029_202345.mp3",
@@ -11190,8 +11190,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_202507",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T20:25:27.376Z",
    "audio_file": "NICHUL01_27_20231029_202507.mp3",
@@ -11323,8 +11323,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_202605",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T20:26:37.484Z",
    "audio_file": "LOGSAR01_2_20231029_202605.mp3",
@@ -11361,7 +11361,7 @@
    "note": "Voice and words agree - activated and positive - focused, on it.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: prepare the stop",
+    "headline": "SAR: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 68 (-7 over last 3 calls)",
@@ -11477,8 +11477,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_202748",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:28:18.513Z",
    "audio_file": "OSCPIA01_81_20231029_202748.mp3",
@@ -11518,8 +11518,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_202833",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T20:28:52.7Z",
    "audio_file": "LOGSAR01_2_20231029_202833.mp3",
@@ -11556,7 +11556,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: box this lap",
+    "headline": "SAR: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
      "DSI 86 (+30 over last 3 calls)",
@@ -11938,8 +11938,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_203329",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:34:05.117Z",
    "audio_file": "OSCPIA01_81_20231029_203329.mp3",
@@ -11960,8 +11960,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (russell)",
    "dsi": 50,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -12071,8 +12071,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_203431",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:34:39.819Z",
    "audio_file": "OSCPIA01_81_20231029_203431.mp3",
@@ -12112,8 +12112,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_KEVMAG01_20_20231029_203516",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-29T20:35:48.599Z",
    "audio_file": "KEVMAG01_20_20231029_203516.mp3",
@@ -12153,8 +12153,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_ALEALB01_23_20231029_203531",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-29T20:35:48.599Z",
    "audio_file": "ALEALB01_23_20231029_203531.mp3",
@@ -12194,8 +12194,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_203601",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T20:36:21.614Z",
    "audio_file": "GUAZHO01_24_20231029_203601.mp3",
@@ -12235,8 +12235,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_KEVMAG01_20_20231029_203827",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-29T20:38:36.753Z",
    "audio_file": "KEVMAG01_20_20231029_203827.mp3",
@@ -12399,8 +12399,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_204018",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T20:40:54.375Z",
    "audio_file": "NICHUL01_27_20231029_204018.mp3",
@@ -12440,8 +12440,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_204113",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T20:41:29.421Z",
    "audio_file": "LOGSAR01_2_20231029_204113.mp3",
@@ -12481,8 +12481,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_204130",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T20:42:01.968Z",
    "audio_file": "GUAZHO01_24_20231029_204130.mp3",
@@ -12544,8 +12544,8 @@
     "track_status": "1",
     "pit_lap": true
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (norris)",
    "dsi": 87,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -12573,8 +12573,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_204208",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:42:36.233Z",
    "audio_file": "OSCPIA01_81_20231029_204208.mp3",
@@ -12655,8 +12655,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_204400",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:44:19.684Z",
    "audio_file": "OSCPIA01_81_20231029_204400.mp3",
@@ -12870,8 +12870,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_204640",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T20:47:10.181Z",
    "audio_file": "GUAZHO01_24_20231029_204640.mp3",
@@ -12911,8 +12911,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_204631",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T20:47:10.181Z",
    "audio_file": "OSCPIA01_81_20231029_204631.mp3",
@@ -12934,7 +12934,7 @@
     "pit_lap": false
    },
    "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lando)",
+   "speaker_reason": "addresses the driver by name (oscar)",
    "dsi": 43,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -13455,8 +13455,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 40,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -13515,8 +13515,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_211821",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T21:18:37.585Z",
    "audio_file": "LOGSAR01_2_20231029_211821.mp3",
@@ -13553,7 +13553,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: prepare the stop",
+    "headline": "SAR: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 81 (+13 over last 3 calls)",
@@ -13566,8 +13566,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_212011",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T21:20:18.631Z",
    "audio_file": "OSCPIA01_81_20231029_212011.mp3",
@@ -13629,8 +13629,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (norris)",
    "dsi": 61,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -13648,8 +13648,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_212115",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T21:21:26.989Z",
    "audio_file": "NICHUL01_27_20231029_212115.mp3",
@@ -13670,8 +13670,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (ocon)",
    "dsi": 42,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -13853,8 +13853,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_ALEALB01_23_20231029_212425",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-29T21:24:52.594Z",
    "audio_file": "ALEALB01_23_20231029_212425.mp3",
@@ -13998,8 +13998,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 48,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -14058,8 +14058,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_212706",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T21:27:43.076Z",
    "audio_file": "OSCPIA01_81_20231029_212706.mp3",
@@ -14140,8 +14140,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_212751",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T21:28:18.185Z",
    "audio_file": "LOGSAR01_2_20231029_212751.mp3",
@@ -14178,7 +14178,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LOG: elevated stress",
+    "headline": "SAR: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 68 (-18 over last 3 calls)",
@@ -14191,8 +14191,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_212831",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T21:28:53.309Z",
    "audio_file": "NICHUL01_27_20231029_212831.mp3",
@@ -14232,8 +14232,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_212924",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T21:29:59.136Z",
    "audio_file": "GUAZHO01_24_20231029_212924.mp3",
@@ -14273,8 +14273,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_213013",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T21:30:33.62Z",
    "audio_file": "NICHUL01_27_20231029_213013.mp3",
@@ -14314,8 +14314,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_213105",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T21:31:41.4673991Z",
    "audio_file": "NICHUL01_27_20231029_213105.mp3",
@@ -14337,7 +14337,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (norris)",
    "dsi": 47,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -14396,8 +14396,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_213222",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T21:32:50.024Z",
    "audio_file": "GUAZHO01_24_20231029_213222.mp3",
@@ -14478,8 +14478,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_213254",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T21:33:24.872113Z",
    "audio_file": "NICHUL01_27_20231029_213254.mp3",
@@ -14519,8 +14519,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_ALEALB01_23_20231029_213327",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-29T21:33:59.226Z",
    "audio_file": "ALEALB01_23_20231029_213327.mp3",
@@ -14652,8 +14652,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_ALEALB01_23_20231029_213537",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-29T21:36:14.958Z",
    "audio_file": "ALEALB01_23_20231029_213537.mp3",
@@ -14693,8 +14693,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_213547",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T21:36:15.145Z",
    "audio_file": "OSCPIA01_81_20231029_213547.mp3",
@@ -14731,7 +14731,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "OSC: stress climbing on old tyres",
+    "headline": "PIA: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 62 (+15 over last 3 calls)",
@@ -14744,8 +14744,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_213753",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T21:38:30.002Z",
    "audio_file": "LOGSAR01_2_20231029_213753.mp3",
@@ -14785,8 +14785,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_213918",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T21:39:40.219Z",
    "audio_file": "LOGSAR01_2_20231029_213918.mp3",
@@ -14823,7 +14823,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LOG: elevated stress",
+    "headline": "SAR: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 67 (-1 over last 3 calls)",
@@ -14979,8 +14979,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_214054",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T21:41:22.233Z",
    "audio_file": "NICHUL01_27_20231029_214054.mp3",
@@ -15017,7 +15017,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: stress climbing on old tyres",
+    "headline": "HUL: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 59 (+12 over last 3 calls)",
@@ -15071,8 +15071,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_214207",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T21:42:30.732Z",
    "audio_file": "OSCPIA01_81_20231029_214207.mp3",
@@ -15134,8 +15134,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 56,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -15194,8 +15194,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_214410",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T21:44:46.839Z",
    "audio_file": "OSCPIA01_81_20231029_214410.mp3",
@@ -15217,7 +15217,7 @@
     "pit_lap": false
    },
    "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lando)",
+   "speaker_reason": "addresses the driver by name (oscar)",
    "dsi": 68,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -15276,8 +15276,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_214516",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T21:45:54.447Z",
    "audio_file": "OSCPIA01_81_20231029_214516.mp3",
@@ -15299,7 +15299,7 @@
     "pit_lap": false
    },
    "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lando)",
+   "speaker_reason": "addresses the driver by name (oscar)",
    "dsi": 52,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -15317,8 +15317,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_214629",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T21:47:02.4703598Z",
    "audio_file": "LOGSAR01_2_20231029_214629.mp3",
@@ -15399,8 +15399,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_214716",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T21:47:37.367Z",
    "audio_file": "LOGSAR01_2_20231029_214716.mp3",
@@ -15437,7 +15437,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LOG: stress climbing on old tyres",
+    "headline": "SAR: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 79 (+37 over last 3 calls)",
@@ -15737,8 +15737,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_GUAZHO01_24_20231029_215323",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-29T21:53:50.689Z",
    "audio_file": "GUAZHO01_24_20231029_215323.mp3",
@@ -15775,7 +15775,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "GUA: stress climbing on old tyres",
+    "headline": "ZHO: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 57 (+13 over last 3 calls)",
@@ -15788,8 +15788,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_215444",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T21:54:58.657Z",
    "audio_file": "OSCPIA01_81_20231029_215444.mp3",
@@ -16013,8 +16013,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_220019",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T22:00:37.0719939Z",
    "audio_file": "NICHUL01_27_20231029_220019.mp3",
@@ -16076,8 +16076,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (stroll)",
    "dsi": 44,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -16169,7 +16169,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (russell)",
    "dsi": 67,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -16197,8 +16197,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_220208",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T22:02:19.93Z",
    "audio_file": "OSCPIA01_81_20231029_220208.mp3",
@@ -16402,8 +16402,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_ALEALB01_23_20231029_221328",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-29T22:11:21.53Z",
    "audio_file": "ALEALB01_23_20231029_221328.mp3",
@@ -16627,8 +16627,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_221158",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T22:11:21.53Z",
    "audio_file": "LOGSAR01_2_20231029_221158.mp3",
@@ -16649,8 +16649,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (logan)",
    "dsi": 63,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -16663,17 +16663,7 @@
    "incongruence": 0.8449,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and positive - focused, on it.",
-   "recommendation": {
-    "severity": "watch",
-    "headline": "LOG: stress climbing on old tyres",
-    "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
-    "evidence": [
-     "DSI 79 (+37 over last 3 calls)",
-     "pace -0.66s vs own median",
-     "Medium, 24 laps old",
-     "lap 58"
-    ]
-   }
+   "recommendation": null
   },
   {
    "id": "2023_Mexico_City_Grand_Prix_DANRIC01_3_20231029_221426",
@@ -16780,8 +16770,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_OSCPIA01_81_20231029_221154",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-29T22:11:21.53Z",
    "audio_file": "OSCPIA01_81_20231029_221154.mp3",
@@ -16802,8 +16792,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lando)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (lando)",
    "dsi": 42,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -16821,8 +16811,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_221542",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T22:11:21.53Z",
    "audio_file": "NICHUL01_27_20231029_221542.mp3",
@@ -16862,8 +16852,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_NICHUL01_27_20231029_221519",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-29T22:11:21.53Z",
    "audio_file": "NICHUL01_27_20231029_221519.mp3",
@@ -16900,7 +16890,7 @@
    "note": "Voice and words agree - activated and positive - focused, on it.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: stress climbing on old tyres",
+    "headline": "HUL: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 59 (+12 over last 3 calls)",
@@ -16954,8 +16944,8 @@
   {
    "id": "2023_Mexico_City_Grand_Prix_LOGSAR01_2_20231029_221250",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-29T22:11:21.53Z",
    "audio_file": "LOGSAR01_2_20231029_221250.mp3",
@@ -16992,7 +16982,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LOG: stress climbing on old tyres",
+    "headline": "SAR: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 79 (+37 over last 3 calls)",

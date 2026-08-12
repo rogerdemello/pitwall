@@ -62,8 +62,8 @@
   },
   {
    "driver_id": "LIALAW01",
-   "code": "LIA",
-   "name": "LIALAW01",
+   "code": "LAW",
+   "name": "Liam Lawson",
    "racing_number": "40",
    "message_count": 10,
    "in_race_count": 9,
@@ -73,8 +73,8 @@
   },
   {
    "driver_id": "OSCPIA01",
-   "code": "OSC",
-   "name": "OSCPIA01",
+   "code": "PIA",
+   "name": "Oscar Piastri",
    "racing_number": "81",
    "message_count": 9,
    "in_race_count": 5,
@@ -95,8 +95,8 @@
   },
   {
    "driver_id": "GUAZHO01",
-   "code": "GUA",
-   "name": "GUAZHO01",
+   "code": "ZHO",
+   "name": "Guanyu Zhou",
    "racing_number": "24",
    "message_count": 8,
    "in_race_count": 5,
@@ -106,8 +106,8 @@
   },
   {
    "driver_id": "ALEALB01",
-   "code": "ALE",
-   "name": "ALEALB01",
+   "code": "ALB",
+   "name": "Alexander Albon",
    "racing_number": "23",
    "message_count": 8,
    "in_race_count": 7,
@@ -128,8 +128,8 @@
   },
   {
    "driver_id": "KEVMAG01",
-   "code": "KEV",
-   "name": "KEVMAG01",
+   "code": "MAG",
+   "name": "Kevin Magnussen",
    "racing_number": "20",
    "message_count": 7,
    "in_race_count": 5,
@@ -139,8 +139,8 @@
   },
   {
    "driver_id": "LOGSAR01",
-   "code": "LOG",
-   "name": "LOGSAR01",
+   "code": "SAR",
+   "name": "Logan Sargeant",
    "racing_number": "2",
    "message_count": 7,
    "in_race_count": 6,
@@ -183,8 +183,8 @@
   },
   {
    "driver_id": "NICHUL01",
-   "code": "NIC",
-   "name": "NICHUL01",
+   "code": "HUL",
+   "name": "Nico Hulkenberg",
    "racing_number": "27",
    "message_count": 4,
    "in_race_count": 3,
@@ -7352,8 +7352,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_171152",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T16:12:33.57Z",
    "audio_file": "GUAZHO01_24_20231008_171152.mp3",
@@ -7434,8 +7434,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_171345",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T16:13:55.23Z",
    "audio_file": "OSCPIA01_81_20231008_171345.mp3",
@@ -7475,8 +7475,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_KEVMAG01_20_20231008_171438",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-08T16:15:01.0600282Z",
    "audio_file": "KEVMAG01_20_20231008_171438.mp3",
@@ -7762,8 +7762,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_175501",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-08T16:55:13.999Z",
    "audio_file": "LOGSAR01_2_20231008_175501.mp3",
@@ -8131,8 +8131,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_NICHUL01_27_20231008_180420",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-08T17:04:47.712Z",
    "audio_file": "NICHUL01_27_20231008_180420.mp3",
@@ -8172,8 +8172,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_180549",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T17:05:55.805Z",
    "audio_file": "LIALAW01_40_20231008_180549.mp3",
@@ -8358,8 +8358,8 @@
     "track_status": "4",
     "pit_lap": true
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (russell)",
    "dsi": 49,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -8450,8 +8450,8 @@
     "track_status": "41",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (george)",
    "dsi": 44,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -8469,8 +8469,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_181153",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-08T17:12:07.5206499Z",
    "audio_file": "LOGSAR01_2_20231008_181153.mp3",
@@ -8510,8 +8510,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_181157",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-08T17:12:07.832Z",
    "audio_file": "LOGSAR01_2_20231008_181157.mp3",
@@ -8551,8 +8551,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_181218",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-08T17:12:42.3Z",
    "audio_file": "LOGSAR01_2_20231008_181218.mp3",
@@ -8573,8 +8573,8 @@
     "track_status": "41",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (alex)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (alex)",
    "dsi": 43,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -8592,8 +8592,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_181324",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T17:13:48.956Z",
    "audio_file": "LIALAW01_40_20231008_181324.mp3",
@@ -8630,7 +8630,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "act",
-    "headline": "LIA: prepare the stop",
+    "headline": "LAW: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 68 (+12 over last 2 calls)",
@@ -8643,8 +8643,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_181404",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T17:14:23.471Z",
    "audio_file": "LIALAW01_40_20231008_181404.mp3",
@@ -8909,8 +8909,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_181738",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T17:17:48.406Z",
    "audio_file": "OSCPIA01_81_20231008_181738.mp3",
@@ -9073,8 +9073,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_181939",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T17:20:03.795Z",
    "audio_file": "GUAZHO01_24_20231008_181939.mp3",
@@ -9114,8 +9114,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_NICHUL01_27_20231008_182000",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-08T17:20:38.857Z",
    "audio_file": "NICHUL01_27_20231008_182000.mp3",
@@ -9155,8 +9155,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_182119",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-08T17:21:44.732Z",
    "audio_file": "LOGSAR01_2_20231008_182119.mp3",
@@ -9193,10 +9193,10 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: prepare the stop",
+    "headline": "SAR: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
-     "DSI 76 (+34 over last 3 calls)",
+     "DSI 76 (+15 over last 3 calls)",
      "pace +1.72s vs own median",
      "Medium, 10 laps old",
      "lap 10"
@@ -9206,8 +9206,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_182339",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T17:24:00.543Z",
    "audio_file": "LIALAW01_40_20231008_182339.mp3",
@@ -9228,8 +9228,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (liam)",
    "dsi": 82,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -9242,17 +9242,7 @@
    "incongruence": 0.118,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
-   "recommendation": {
-    "severity": "act",
-    "headline": "LIA: prepare the stop",
-    "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
-    "evidence": [
-     "DSI 82 (+14 over last 3 calls)",
-     "pace +2.52s vs own median",
-     "Hard, 9 laps old",
-     "lap 12"
-    ]
-   }
+   "recommendation": null
   },
   {
    "id": "2023_Qatar_Grand_Prix_YUKTSU01_22_20231008_182401",
@@ -9349,8 +9339,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_182452",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T17:25:06.683Z",
    "audio_file": "ALEALB01_23_20231008_182452.mp3",
@@ -9387,7 +9377,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "ALE: prepare the stop",
+    "headline": "ALB: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 79",
@@ -9441,7 +9431,7 @@
     "headline": "RUS: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
-     "DSI 88 (+44 over last 3 calls)",
+     "DSI 88 (+11 over last 3 calls)",
      "pace +1.52s vs own median",
      "Medium, 19 laps old",
      "lap 13"
@@ -9492,8 +9482,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_182714",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T17:27:22.3947505Z",
    "audio_file": "GUAZHO01_24_20231008_182714.mp3",
@@ -9637,8 +9627,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (russell)",
    "dsi": 34,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -9720,7 +9710,7 @@
     "pit_lap": false
    },
    "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (fernando)",
+   "speaker_reason": "addresses the driver by name (lance)",
    "dsi": 44,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -9738,8 +9728,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_183347",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T17:34:07.192Z",
    "audio_file": "OSCPIA01_81_20231008_183347.mp3",
@@ -9760,8 +9750,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (verstappen)",
    "dsi": 60,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -10312,8 +10302,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_184008",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T17:40:19.2609293Z",
    "audio_file": "ALEALB01_23_20231008_184008.mp3",
@@ -10350,7 +10340,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "ALE: prepare the stop",
+    "headline": "ALB: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 86 (+7 over last 2 calls)",
@@ -10363,8 +10353,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_184015",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T17:40:53.469Z",
    "audio_file": "OSCPIA01_81_20231008_184015.mp3",
@@ -10404,8 +10394,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_184022",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T17:40:53.641Z",
    "audio_file": "OSCPIA01_81_20231008_184022.mp3",
@@ -10442,7 +10432,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "act",
-    "headline": "OSC: box this lap",
+    "headline": "PIA: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
      "DSI 68 (+8 over last 2 calls)",
@@ -10455,8 +10445,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_184209",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T17:42:34.4813887Z",
    "audio_file": "ALEALB01_23_20231008_184209.mp3",
@@ -10493,7 +10483,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 77 (-2 over last 3 calls)",
@@ -10588,8 +10578,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_184259",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T17:43:08.795Z",
    "audio_file": "ALEALB01_23_20231008_184259.mp3",
@@ -10626,7 +10616,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 83 (-3 over last 3 calls)",
@@ -10772,8 +10762,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_184707",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T17:47:05.152Z",
    "audio_file": "GUAZHO01_24_20231008_184707.mp3",
@@ -10813,8 +10803,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_184739",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T17:48:14.448Z",
    "audio_file": "LIALAW01_40_20231008_184739.mp3",
@@ -10854,8 +10844,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_NICHUL01_27_20231008_184916",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-08T17:49:54.728Z",
    "audio_file": "NICHUL01_27_20231008_184916.mp3",
@@ -10892,7 +10882,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: elevated stress",
+    "headline": "HUL: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 71 (+26 over last 3 calls)",
@@ -10905,8 +10895,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_184947",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T17:50:26.931Z",
    "audio_file": "ALEALB01_23_20231008_184947.mp3",
@@ -10943,7 +10933,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "ALE: prepare the stop",
+    "headline": "ALB: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 82 (+5 over last 3 calls)",
@@ -11171,8 +11161,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_185442",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T17:54:57.741Z",
    "audio_file": "OSCPIA01_81_20231008_185442.mp3",
@@ -11212,8 +11202,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_185456",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T17:55:31.5013567Z",
    "audio_file": "GUAZHO01_24_20231008_185456.mp3",
@@ -11253,8 +11243,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_185851",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-08T17:58:53.566Z",
    "audio_file": "LOGSAR01_2_20231008_185851.mp3",
@@ -11335,8 +11325,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_185914",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T17:59:27.628Z",
    "audio_file": "ALEALB01_23_20231008_185914.mp3",
@@ -11376,8 +11366,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_KEVMAG01_20_20231008_190001",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-08T18:00:36.846Z",
    "audio_file": "KEVMAG01_20_20231008_190001.mp3",
@@ -11673,8 +11663,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_190710",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-10-08T18:07:23.31Z",
    "audio_file": "LOGSAR01_2_20231008_190710.mp3",
@@ -11755,8 +11745,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_KEVMAG01_20_20231008_190928",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-08T18:10:12.636Z",
    "audio_file": "KEVMAG01_20_20231008_190928.mp3",
@@ -11793,7 +11783,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "KEV: prepare the stop",
+    "headline": "MAG: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 68 (+14 over last 2 calls)",
@@ -11949,8 +11939,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_191214",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T18:12:28.1232395Z",
    "audio_file": "LIALAW01_40_20231008_191214.mp3",
@@ -12113,8 +12103,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_191647",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T18:16:59.866Z",
    "audio_file": "ALEALB01_23_20231008_191647.mp3",
@@ -12154,8 +12144,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_191717",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T18:17:34.975Z",
    "audio_file": "LIALAW01_40_20231008_191717.mp3",
@@ -12192,7 +12182,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LIA: elevated stress",
+    "headline": "LAW: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 67 (+3 over last 3 calls)",
@@ -12205,8 +12195,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_KEVMAG01_20_20231008_191821",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-08T18:18:41.1247139Z",
    "audio_file": "KEVMAG01_20_20231008_191821.mp3",
@@ -12328,8 +12318,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_192058",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T18:21:30.582Z",
    "audio_file": "LIALAW01_40_20231008_192058.mp3",
@@ -12369,8 +12359,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_192055",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T18:21:30.582Z",
    "audio_file": "LIALAW01_40_20231008_192055.mp3",
@@ -12515,7 +12505,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (perez)",
    "dsi": 36,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -12544,8 +12534,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_192613",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T18:26:33.047Z",
    "audio_file": "GUAZHO01_24_20231008_192613.mp3",
@@ -12677,8 +12667,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_KEVMAG01_20_20231008_192658",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-08T18:27:42.1213352Z",
    "audio_file": "KEVMAG01_20_20231008_192658.mp3",
@@ -12715,7 +12705,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "KEV: elevated stress",
+    "headline": "MAG: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 66 (+12 over last 3 calls)",
@@ -12728,8 +12718,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_KEVMAG01_20_20231008_192753",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-08T18:28:16.765Z",
    "audio_file": "KEVMAG01_20_20231008_192753.mp3",
@@ -12851,8 +12841,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_193301",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T18:33:22.543Z",
    "audio_file": "OSCPIA01_81_20231008_193301.mp3",
@@ -12889,7 +12879,7 @@
    "note": "Voice and words agree - settled and composed.",
    "recommendation": {
     "severity": "act",
-    "headline": "OSC: box this lap",
+    "headline": "PIA: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
      "DSI 68 (+8 over last 2 calls)",
@@ -12902,8 +12892,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_193416",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T18:34:28.245Z",
    "audio_file": "OSCPIA01_81_20231008_193416.mp3",
@@ -12940,7 +12930,7 @@
    "note": "Voice and words agree - activated and positive - focused, on it.",
    "recommendation": {
     "severity": "act",
-    "headline": "OSC: box this lap",
+    "headline": "PIA: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
      "DSI 68 (+8 over last 2 calls)",
@@ -12953,8 +12943,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_193431",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-10-08T18:34:28.3679464Z",
    "audio_file": "OSCPIA01_81_20231008_193431.mp3",
@@ -12991,7 +12981,7 @@
    "note": "Voice and words agree - activated and positive - focused, on it.",
    "recommendation": {
     "severity": "act",
-    "headline": "OSC: box this lap",
+    "headline": "PIA: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
      "DSI 68 (+8 over last 2 calls)",
@@ -13045,8 +13035,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_193523",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-10-08T18:35:37.963Z",
    "audio_file": "ALEALB01_23_20231008_193523.mp3",
@@ -13137,8 +13127,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_193657",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-10-08T18:37:19.024Z",
    "audio_file": "LIALAW01_40_20231008_193657.mp3",
@@ -13260,8 +13250,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_NICHUL01_27_20231008_193733",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-10-08T18:37:54.071Z",
    "audio_file": "NICHUL01_27_20231008_193733.mp3",
@@ -13298,7 +13288,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: elevated stress",
+    "headline": "HUL: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 71 (+26 over last 3 calls)",
@@ -13311,8 +13301,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_KEVMAG01_20_20231008_193908",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-10-08T18:39:35.507Z",
    "audio_file": "KEVMAG01_20_20231008_193908.mp3",
@@ -13516,8 +13506,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_194231",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T18:39:53.71Z",
    "audio_file": "GUAZHO01_24_20231008_194231.mp3",
@@ -13557,8 +13547,8 @@
   {
    "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_194123",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-10-08T18:39:53.71Z",
    "audio_file": "GUAZHO01_24_20231008_194123.mp3",

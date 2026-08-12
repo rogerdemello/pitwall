@@ -95,8 +95,8 @@
   },
   {
    "driver_id": "ALEALB01",
-   "code": "ALE",
-   "name": "ALEALB01",
+   "code": "ALB",
+   "name": "Alexander Albon",
    "racing_number": "23",
    "message_count": 11,
    "in_race_count": 9,
@@ -128,8 +128,8 @@
   },
   {
    "driver_id": "KEVMAG01",
-   "code": "KEV",
-   "name": "KEVMAG01",
+   "code": "MAG",
+   "name": "Kevin Magnussen",
    "racing_number": "20",
    "message_count": 8,
    "in_race_count": 5,
@@ -150,8 +150,8 @@
   },
   {
    "driver_id": "GUAZHO01",
-   "code": "GUA",
-   "name": "GUAZHO01",
+   "code": "ZHO",
+   "name": "Guanyu Zhou",
    "racing_number": "24",
    "message_count": 7,
    "in_race_count": 2,
@@ -161,8 +161,8 @@
   },
   {
    "driver_id": "NICHUL01",
-   "code": "NIC",
-   "name": "NICHUL01",
+   "code": "HUL",
+   "name": "Nico Hulkenberg",
    "racing_number": "27",
    "message_count": 6,
    "in_race_count": 3,
@@ -172,8 +172,8 @@
   },
   {
    "driver_id": "LIALAW01",
-   "code": "LIA",
-   "name": "LIALAW01",
+   "code": "LAW",
+   "name": "Liam Lawson",
    "racing_number": "40",
    "message_count": 5,
    "in_race_count": 2,
@@ -183,8 +183,8 @@
   },
   {
    "driver_id": "OSCPIA01",
-   "code": "OSC",
-   "name": "OSCPIA01",
+   "code": "PIA",
+   "name": "Oscar Piastri",
    "racing_number": "81",
    "message_count": 5,
    "in_race_count": 2,
@@ -194,8 +194,8 @@
   },
   {
    "driver_id": "LOGSAR01",
-   "code": "LOG",
-   "name": "LOGSAR01",
+   "code": "SAR",
+   "name": "Logan Sargeant",
    "racing_number": "2",
    "message_count": 5,
    "in_race_count": 2,
@@ -6960,8 +6960,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LIALAW01_40_20230903_131035",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-03T12:11:05.896Z",
    "audio_file": "LIALAW01_40_20230903_131035.mp3",
@@ -7042,8 +7042,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_131216",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T12:12:46.864Z",
    "audio_file": "KEVMAG01_20_20230903_131216.mp3",
@@ -7247,8 +7247,8 @@
   {
    "id": "2023_Italian_Grand_Prix_NICHUL01_27_20230903_131544",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-03T12:16:11.69Z",
    "audio_file": "NICHUL01_27_20230903_131544.mp3",
@@ -7288,8 +7288,8 @@
   {
    "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_131615",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-03T12:16:46.783Z",
    "audio_file": "GUAZHO01_24_20230903_131615.mp3",
@@ -7329,8 +7329,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LIALAW01_40_20230903_141852",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-03T12:18:27.094Z",
    "audio_file": "LIALAW01_40_20230903_141852.mp3",
@@ -7370,8 +7370,8 @@
   {
    "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_131850",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-03T12:19:33.246914Z",
    "audio_file": "GUAZHO01_24_20230903_131850.mp3",
@@ -7515,8 +7515,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 46,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -7556,8 +7556,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 48,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -7698,8 +7698,8 @@
   {
    "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_140156",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-03T13:02:34.456Z",
    "audio_file": "GUAZHO01_24_20230903_140156.mp3",
@@ -7739,8 +7739,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_140318",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T13:03:40.252Z",
    "audio_file": "KEVMAG01_20_20230903_140318.mp3",
@@ -7821,8 +7821,8 @@
   {
    "id": "2023_Italian_Grand_Prix_OSCPIA01_81_20230903_140418",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-03T13:04:49.86Z",
    "audio_file": "OSCPIA01_81_20230903_140418.mp3",
@@ -8149,8 +8149,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_140836",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T13:08:46.78Z",
    "audio_file": "ALEALB01_23_20230903_140836.mp3",
@@ -8313,8 +8313,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LOGSAR01_2_20230903_141145",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-03T13:12:11.23Z",
    "audio_file": "LOGSAR01_2_20230903_141145.mp3",
@@ -8395,8 +8395,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LOGSAR01_2_20230903_141207",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-03T13:12:46.324Z",
    "audio_file": "LOGSAR01_2_20230903_141207.mp3",
@@ -8436,8 +8436,8 @@
   {
    "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_141342",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-03T13:14:26.698Z",
    "audio_file": "GUAZHO01_24_20230903_141342.mp3",
@@ -8477,8 +8477,8 @@
   {
    "id": "2023_Italian_Grand_Prix_OSCPIA01_81_20230903_141439",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-03T13:15:01.822Z",
    "audio_file": "OSCPIA01_81_20230903_141439.mp3",
@@ -8641,8 +8641,8 @@
   {
    "id": "2023_Italian_Grand_Prix_NICHUL01_27_20230903_141852",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-03T13:19:30.3377442Z",
    "audio_file": "NICHUL01_27_20230903_141852.mp3",
@@ -8909,8 +8909,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 32,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -9010,8 +9010,8 @@
   {
    "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_142714",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-03T13:27:59.704Z",
    "audio_file": "GUAZHO01_24_20230903_142714.mp3",
@@ -9247,8 +9247,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (russell)",
    "dsi": 38,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -9307,8 +9307,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_143130",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T13:31:59.952Z",
    "audio_file": "KEVMAG01_20_20230903_143130.mp3",
@@ -9471,8 +9471,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_143335",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T13:33:40.763Z",
    "audio_file": "ALEALB01_23_20230903_143335.mp3",
@@ -9708,8 +9708,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 35,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -9809,8 +9809,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_143807",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T13:38:47.572Z",
    "audio_file": "KEVMAG01_20_20230903_143807.mp3",
@@ -9872,8 +9872,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 50,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -9891,7 +9891,7 @@
     "headline": "NOR: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
-     "DSI 50 (-23 over last 2 calls)",
+     "DSI 50 (-23 over last 3 calls)",
      "pace +0.42s vs own median",
      "Medium, 12 laps old",
      "lap 12",
@@ -9924,8 +9924,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 56,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -9943,8 +9943,8 @@
   {
    "id": "2023_Italian_Grand_Prix_NICHUL01_27_20230903_144034",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-03T13:41:05.961Z",
    "audio_file": "NICHUL01_27_20230903_144034.mp3",
@@ -9984,8 +9984,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_144120",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T13:41:41.039Z",
    "audio_file": "ALEALB01_23_20230903_144120.mp3",
@@ -10066,8 +10066,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_144233",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T13:42:46.9030339Z",
    "audio_file": "ALEALB01_23_20230903_144233.mp3",
@@ -10240,8 +10240,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_144413",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T13:44:29.162Z",
    "audio_file": "ALEALB01_23_20230903_144413.mp3",
@@ -10363,8 +10363,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_144526",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T13:45:38.755Z",
    "audio_file": "KEVMAG01_20_20230903_144526.mp3",
@@ -10401,7 +10401,7 @@
    "note": "Words read positive, but the voice sits in the bottom 32% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "watch",
-    "headline": "KEV: check in with the driver",
+    "headline": "MAG: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 38",
@@ -10437,8 +10437,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 39,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -10456,8 +10456,8 @@
   {
    "id": "2023_Italian_Grand_Prix_OSCPIA01_81_20230903_144620",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-03T13:46:47.004Z",
    "audio_file": "OSCPIA01_81_20230903_144620.mp3",
@@ -10724,8 +10724,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 45,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -10929,8 +10929,8 @@
     "track_status": "1",
     "pit_lap": true
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (ocon)",
    "dsi": 84,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -11173,8 +11173,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_145710",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T13:58:05.965Z",
    "audio_file": "KEVMAG01_20_20230903_145710.mp3",
@@ -11255,8 +11255,8 @@
   {
    "id": "2023_Italian_Grand_Prix_NICHUL01_27_20230903_145827",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-03T13:58:40.387Z",
    "audio_file": "NICHUL01_27_20230903_145827.mp3",
@@ -11293,7 +11293,7 @@
    "note": "Words read positive, but the voice sits in the bottom 10% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: check in with the driver",
+    "headline": "HUL: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 47",
@@ -11307,8 +11307,8 @@
   {
    "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_145852",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-03T13:59:14.433Z",
    "audio_file": "GUAZHO01_24_20230903_145852.mp3",
@@ -11452,8 +11452,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hamilton)",
    "dsi": 32,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -11471,8 +11471,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_150139",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T14:02:04.6668577Z",
    "audio_file": "KEVMAG01_20_20230903_150139.mp3",
@@ -11676,7 +11676,7 @@
     "headline": "HAM: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
-     "DSI 79",
+     "DSI 79 (+40 over last 2 calls)",
      "pace +18.98s vs own median",
      "Medium, 1 laps old",
      "lap 28"
@@ -11708,8 +11708,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 54,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11727,8 +11727,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LIALAW01_40_20230903_150459",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-03T14:05:30.257Z",
    "audio_file": "LIALAW01_40_20230903_150459.mp3",
@@ -11850,8 +11850,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_150716",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T14:07:45.662Z",
    "audio_file": "ALEALB01_23_20230903_150716.mp3",
@@ -11888,7 +11888,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 65 (+2 over last 3 calls)",
@@ -11923,8 +11923,8 @@
     "track_status": "1",
     "pit_lap": true
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (hulkenberg)",
    "dsi": 48,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -12106,8 +12106,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_161408",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T14:13:56.783Z",
    "audio_file": "ALEALB01_23_20230903_161408.mp3",
@@ -12144,7 +12144,7 @@
    "note": "Words read positive, but the voice sits in the bottom 9% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: check in with the driver",
+    "headline": "ALB: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 50 (-1 over last 3 calls)",
@@ -12158,8 +12158,8 @@
   {
    "id": "2023_Italian_Grand_Prix_NICHUL01_27_20230903_151328",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-03T14:13:56.783Z",
    "audio_file": "NICHUL01_27_20230903_151328.mp3",
@@ -12303,8 +12303,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (lando)",
    "dsi": 58,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -12578,8 +12578,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LOGSAR01_2_20230903_152001",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-03T14:20:43.106Z",
    "audio_file": "LOGSAR01_2_20230903_152001.mp3",
@@ -12742,8 +12742,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_152347",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T14:24:05.37Z",
    "audio_file": "ALEALB01_23_20230903_152347.mp3",
@@ -12783,8 +12783,8 @@
   {
    "id": "2023_Italian_Grand_Prix_OSCPIA01_81_20230903_152342",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-03T14:24:05.479Z",
    "audio_file": "OSCPIA01_81_20230903_152342.mp3",
@@ -12860,7 +12860,17 @@
    "incongruence": 0.0148,
    "suppressed_stress": false,
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
-   "recommendation": null
+   "recommendation": {
+    "severity": "watch",
+    "headline": "PER: stress climbing on old tyres",
+    "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
+    "evidence": [
+     "DSI 58 (+13 over last 3 calls)",
+     "pace +0.27s vs own median",
+     "Hard, 22 laps old",
+     "lap 43"
+    ]
+   }
   },
   {
    "id": "2023_Italian_Grand_Prix_FERALO01_14_20230903_152432",
@@ -12979,8 +12989,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 56,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -12998,8 +13008,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LOGSAR01_2_20230903_152631",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-03T14:26:55.649Z",
    "audio_file": "LOGSAR01_2_20230903_152631.mp3",
@@ -13039,8 +13049,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_152651",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T14:27:29.4612009Z",
    "audio_file": "ALEALB01_23_20230903_152651.mp3",
@@ -13121,7 +13131,7 @@
     "headline": "PER: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
-     "DSI 72 (+18 over last 3 calls)",
+     "DSI 72 (+14 over last 3 calls)",
      "pace -0.76s vs own median",
      "Hard, 25 laps old",
      "lap 46"
@@ -13195,7 +13205,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (alonso)",
    "dsi": 45,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -13290,7 +13300,17 @@
    "incongruence": 0.3006,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and positive - focused, on it.",
-   "recommendation": null
+   "recommendation": {
+    "severity": "watch",
+    "headline": "STR: stress climbing on old tyres",
+    "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
+    "evidence": [
+     "DSI 49 (+12 over last 3 calls)",
+     "pace +0.24s vs own median",
+     "Hard, 32 laps old",
+     "lap 48"
+    ]
+   }
   },
   {
    "id": "2023_Italian_Grand_Prix_CARSAI01_55_20230903_163432",
@@ -13368,8 +13388,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (gasly)",
    "dsi": 36,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -13387,8 +13407,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LIALAW01_40_20230903_153509",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-03T14:35:21.472Z",
    "audio_file": "LIALAW01_40_20230903_153509.mp3",
@@ -13425,7 +13445,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LIA: elevated stress",
+    "headline": "LAW: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 83",
@@ -13490,8 +13510,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_153639",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T14:37:02.90108Z",
    "audio_file": "ALEALB01_23_20230903_153639.mp3",
@@ -13613,7 +13633,7 @@
     "headline": "PER: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
-     "DSI 72 (+18 over last 3 calls)",
+     "DSI 72 (+14 over last 3 calls)",
      "pace -0.76s vs own median",
      "Hard, 25 laps old",
      "lap 46"
@@ -13715,8 +13735,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LIALAW01_40_20230903_154139",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-09-03T14:42:07.9197311Z",
    "audio_file": "LIALAW01_40_20230903_154139.mp3",
@@ -13807,8 +13827,8 @@
   {
    "id": "2023_Italian_Grand_Prix_OSCPIA01_81_20230903_164417",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-09-03T14:43:49.3403204Z",
    "audio_file": "OSCPIA01_81_20230903_164417.mp3",
@@ -13830,7 +13850,7 @@
     "pit_lap": false
    },
    "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (lando)",
+   "speaker_reason": "addresses the driver by name (oscar)",
    "dsi": 21,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -13848,8 +13868,8 @@
   {
    "id": "2023_Italian_Grand_Prix_NICHUL01_27_20230903_154722",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-09-03T14:44:22.356Z",
    "audio_file": "NICHUL01_27_20230903_154722.mp3",
@@ -13930,8 +13950,8 @@
   {
    "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_164816",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-09-03T14:44:22.356Z",
    "audio_file": "GUAZHO01_24_20230903_164816.mp3",
@@ -13971,8 +13991,8 @@
   {
    "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_154311",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-09-03T14:44:22.356Z",
    "audio_file": "ALEALB01_23_20230903_154311.mp3",
@@ -13993,8 +14013,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (alex)",
    "dsi": 44,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -14012,8 +14032,8 @@
   {
    "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_154754",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-09-03T14:44:22.356Z",
    "audio_file": "KEVMAG01_20_20230903_154754.mp3",
@@ -14186,8 +14206,8 @@
   {
    "id": "2023_Italian_Grand_Prix_LOGSAR01_2_20230903_154542",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-09-03T14:44:22.356Z",
    "audio_file": "LOGSAR01_2_20230903_154542.mp3",
@@ -14209,7 +14229,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (alex)",
    "dsi": 42,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",

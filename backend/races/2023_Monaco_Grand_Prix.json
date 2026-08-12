@@ -36,7 +36,7 @@
    "in_race_count": 13,
    "mean_dsi": 46.7,
    "peak_dsi": 58,
-   "suppressed_count": 0
+   "suppressed_count": 1
   },
   {
    "driver_id": "FERALO01",
@@ -51,8 +51,8 @@
   },
   {
    "driver_id": "NICHUL01",
-   "code": "NIC",
-   "name": "NICHUL01",
+   "code": "HUL",
+   "name": "Nico Hulkenberg",
    "racing_number": "27",
    "message_count": 13,
    "in_race_count": 12,
@@ -95,8 +95,8 @@
   },
   {
    "driver_id": "GUAZHO01",
-   "code": "GUA",
-   "name": "GUAZHO01",
+   "code": "ZHO",
+   "name": "Guanyu Zhou",
    "racing_number": "24",
    "message_count": 10,
    "in_race_count": 6,
@@ -128,8 +128,8 @@
   },
   {
    "driver_id": "KEVMAG01",
-   "code": "KEV",
-   "name": "KEVMAG01",
+   "code": "MAG",
+   "name": "Kevin Magnussen",
    "racing_number": "20",
    "message_count": 8,
    "in_race_count": 5,
@@ -139,8 +139,8 @@
   },
   {
    "driver_id": "NYCDEV01",
-   "code": "NYC",
-   "name": "NYCDEV01",
+   "code": "DEV",
+   "name": "Nyck De Vries",
    "racing_number": "21",
    "message_count": 7,
    "in_race_count": 4,
@@ -150,8 +150,8 @@
   },
   {
    "driver_id": "LOGSAR01",
-   "code": "LOG",
-   "name": "LOGSAR01",
+   "code": "SAR",
+   "name": "Logan Sargeant",
    "racing_number": "2",
    "message_count": 6,
    "in_race_count": 4,
@@ -172,8 +172,8 @@
   },
   {
    "driver_id": "ALEALB01",
-   "code": "ALE",
-   "name": "ALEALB01",
+   "code": "ALB",
+   "name": "Alexander Albon",
    "racing_number": "23",
    "message_count": 5,
    "in_race_count": 3,
@@ -205,8 +205,8 @@
   },
   {
    "driver_id": "OSCPIA01",
-   "code": "OSC",
-   "name": "OSCPIA01",
+   "code": "PIA",
+   "name": "Oscar Piastri",
    "racing_number": "81",
    "message_count": 3,
    "in_race_count": 1,
@@ -10950,8 +10950,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_131123",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T12:11:34.278Z",
    "audio_file": "NICHUL01_27_20230528_131123.mp3",
@@ -10991,8 +10991,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_131146",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-28T12:12:06.4155543Z",
    "audio_file": "NYCDEV01_21_20230528_131146.mp3",
@@ -11073,8 +11073,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_131311",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T12:13:47.385Z",
    "audio_file": "GUAZHO01_24_20230528_131311.mp3",
@@ -11114,8 +11114,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_131403",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T12:14:21.056Z",
    "audio_file": "KEVMAG01_20_20230528_131403.mp3",
@@ -11196,8 +11196,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_131505",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T12:15:29.977Z",
    "audio_file": "GUAZHO01_24_20230528_131505.mp3",
@@ -11237,8 +11237,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_131611",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-28T12:16:35.5763944Z",
    "audio_file": "NYCDEV01_21_20230528_131611.mp3",
@@ -11319,8 +11319,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_ALEALB01_23_20230528_132029",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-28T12:21:03.049Z",
    "audio_file": "ALEALB01_23_20230528_132029.mp3",
@@ -11401,8 +11401,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_LOGSAR01_2_20230528_135847",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-28T12:59:12.321Z",
    "audio_file": "LOGSAR01_2_20230528_135847.mp3",
@@ -11423,8 +11423,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (perez)",
    "dsi": 42,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11565,8 +11565,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_OSCPIA01_81_20230528_140140",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-28T13:01:58.052Z",
    "audio_file": "OSCPIA01_81_20230528_140140.mp3",
@@ -11647,8 +11647,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_140206",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T13:02:32.864Z",
    "audio_file": "GUAZHO01_24_20230528_140206.mp3",
@@ -11893,8 +11893,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_LOGSAR01_2_20230528_140808",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-28T13:08:40.5458213Z",
    "audio_file": "LOGSAR01_2_20230528_140808.mp3",
@@ -11931,7 +11931,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LOG: elevated stress",
+    "headline": "SAR: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 91",
@@ -12077,8 +12077,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_140938",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:09:49.122Z",
    "audio_file": "NICHUL01_27_20230528_140938.mp3",
@@ -12118,8 +12118,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_140932",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:09:49.122Z",
    "audio_file": "NICHUL01_27_20230528_140932.mp3",
@@ -12159,8 +12159,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_140924",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:09:49.122Z",
    "audio_file": "NICHUL01_27_20230528_140924.mp3",
@@ -12197,7 +12197,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: elevated stress",
+    "headline": "HUL: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 74 (+15 over last 3 calls)",
@@ -12232,8 +12232,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (checo)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (checo)",
    "dsi": 38,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -12292,8 +12292,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_141100",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T13:11:30.464Z",
    "audio_file": "KEVMAG01_20_20230528_141100.mp3",
@@ -12374,8 +12374,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_141211",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-28T13:12:39.572Z",
    "audio_file": "NYCDEV01_21_20230528_141211.mp3",
@@ -12412,7 +12412,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NYC: elevated stress",
+    "headline": "DEV: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 70",
@@ -12507,8 +12507,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_141639",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:17:05.396Z",
    "audio_file": "NICHUL01_27_20230528_141639.mp3",
@@ -12545,7 +12545,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "NIC: prepare the stop",
+    "headline": "HUL: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 66 (+16 over last 3 calls)",
@@ -12558,8 +12558,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_LOGSAR01_2_20230528_141705",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-28T13:17:40.489Z",
    "audio_file": "LOGSAR01_2_20230528_141705.mp3",
@@ -13111,8 +13111,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_142133",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T13:21:37.813Z",
    "audio_file": "GUAZHO01_24_20230528_142133.mp3",
@@ -13149,7 +13149,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "GUA: prepare the stop",
+    "headline": "ZHO: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 82",
@@ -13203,8 +13203,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_142210",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:22:46.39Z",
    "audio_file": "NICHUL01_27_20230528_142210.mp3",
@@ -13244,8 +13244,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_142254",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T13:23:19.374Z",
    "audio_file": "GUAZHO01_24_20230528_142254.mp3",
@@ -13623,8 +13623,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_142600",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:26:09.527Z",
    "audio_file": "NICHUL01_27_20230528_142600.mp3",
@@ -13664,8 +13664,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_142604",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:26:43.3893497Z",
    "audio_file": "NICHUL01_27_20230528_142604.mp3",
@@ -13686,8 +13686,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (kevin)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (kevin)",
    "dsi": 47,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -13756,8 +13756,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_142812",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-28T13:28:24.134Z",
    "audio_file": "NYCDEV01_21_20230528_142812.mp3",
@@ -13819,8 +13819,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (de vries)",
    "dsi": 28,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -13838,8 +13838,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_142902",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:29:32.461Z",
    "audio_file": "NICHUL01_27_20230528_142902.mp3",
@@ -13920,8 +13920,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_142951",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T13:30:07.538Z",
    "audio_file": "KEVMAG01_20_20230528_142951.mp3",
@@ -13958,7 +13958,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "KEV: stress climbing on old tyres",
+    "headline": "MAG: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 75 (+17 over last 2 calls)",
@@ -13971,8 +13971,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_142956",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T13:30:07.538Z",
    "audio_file": "KEVMAG01_20_20230528_142956.mp3",
@@ -14770,8 +14770,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_144032",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:40:46.5938781Z",
    "audio_file": "NICHUL01_27_20230528_144032.mp3",
@@ -14806,7 +14806,17 @@
    "incongruence": 0.3508,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
-   "recommendation": null
+   "recommendation": {
+    "severity": "watch",
+    "headline": "HUL: stress climbing on old tyres",
+    "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
+    "evidence": [
+     "DSI 62 (+15 over last 3 calls)",
+     "pace +2.26s vs own median",
+     "Hard, 28 laps old",
+     "lap 29"
+    ]
+   }
   },
   {
    "id": "2023_Monaco_Grand_Prix_SERPER01_11_20230528_144102",
@@ -14862,8 +14872,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_144112",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T13:41:54.572Z",
    "audio_file": "NICHUL01_27_20230528_144112.mp3",
@@ -14900,7 +14910,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NIC: stress climbing on old tyres",
+    "headline": "HUL: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 54 (+26 over last 3 calls)",
@@ -14954,8 +14964,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_144313",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T13:43:35.242Z",
    "audio_file": "GUAZHO01_24_20230528_144313.mp3",
@@ -15099,8 +15109,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 53,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -15232,8 +15242,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (max)",
    "dsi": 49,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -15374,8 +15384,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_LOGSAR01_2_20230528_144848",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-28T13:49:12.283Z",
    "audio_file": "LOGSAR01_2_20230528_144848.mp3",
@@ -15412,7 +15422,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "LOG: elevated stress",
+    "headline": "SAR: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 90 (-1 over last 3 calls)",
@@ -15539,8 +15549,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (charles)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (charles)",
    "dsi": 46,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -15558,8 +15568,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_145021",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-28T13:50:54.25Z",
    "audio_file": "NYCDEV01_21_20230528_145021.mp3",
@@ -15596,7 +15606,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "NYC: elevated stress",
+    "headline": "DEV: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 67 (-3 over last 3 calls)",
@@ -15660,8 +15670,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_ALEALB01_23_20230528_145047",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-28T13:50:56.344Z",
    "audio_file": "ALEALB01_23_20230528_145047.mp3",
@@ -15742,8 +15752,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_OSCPIA01_81_20230528_145338",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-28T13:54:16.934Z",
    "audio_file": "OSCPIA01_81_20230528_145338.mp3",
@@ -16134,8 +16144,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (max)",
    "dsi": 47,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -16625,8 +16635,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_150517",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T14:05:29.407Z",
    "audio_file": "GUAZHO01_24_20230528_150517.mp3",
@@ -16663,7 +16673,7 @@
    "note": "Voice and words agree - activated and positive - focused, on it.",
    "recommendation": {
     "severity": "watch",
-    "headline": "GUA: stress climbing on old tyres",
+    "headline": "ZHO: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 51 (+15 over last 3 calls)",
@@ -16676,8 +16686,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_150622",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-28T14:06:36.374Z",
    "audio_file": "NYCDEV01_21_20230528_150622.mp3",
@@ -16799,8 +16809,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_150707",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T14:07:44.545Z",
    "audio_file": "KEVMAG01_20_20230528_150707.mp3",
@@ -16837,7 +16847,7 @@
    "note": "Words read neutral, but the voice sits in the bottom 28% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "watch",
-    "headline": "KEV: check in with the driver",
+    "headline": "MAG: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 44 (-31 over last 3 calls)",
@@ -17037,8 +17047,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 52,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -17230,8 +17240,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_LOGSAR01_2_20230528_151709",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-28T14:17:48.4773353Z",
    "audio_file": "LOGSAR01_2_20230528_151709.mp3",
@@ -17268,7 +17278,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: prepare the stop",
+    "headline": "SAR: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 75 (+14 over last 3 calls)",
@@ -17322,8 +17332,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_151854",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T14:19:29.001Z",
    "audio_file": "NICHUL01_27_20230528_151854.mp3",
@@ -17344,8 +17354,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (kevin)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (kevin)",
    "dsi": 52,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -17363,8 +17373,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_151909",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T14:19:29.204Z",
    "audio_file": "KEVMAG01_20_20230528_151909.mp3",
@@ -17401,7 +17411,7 @@
    "note": "Voice and words agree - activated and positive - focused, on it.",
    "recommendation": {
     "severity": "watch",
-    "headline": "KEV: check in with the driver",
+    "headline": "MAG: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 44 (-31 over last 3 calls)",
@@ -17456,8 +17466,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_152044",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T14:21:10.343Z",
    "audio_file": "KEVMAG01_20_20230528_152044.mp3",
@@ -17494,7 +17504,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "KEV: check in with the driver",
+    "headline": "MAG: check in with the driver",
     "detail": "He is telling you it is fine, but his voice does not agree. This is the pattern that gets missed - worth an explicit question.",
     "evidence": [
      "DSI 44 (-31 over last 3 calls)",
@@ -17694,8 +17704,8 @@
     "track_status": "12",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 53,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -17858,8 +17868,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (esteban)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (lewis)",
    "dsi": 50,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -17918,8 +17928,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_153007",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-05-28T14:30:42.395Z",
    "audio_file": "KEVMAG01_20_20230528_153007.mp3",
@@ -18041,8 +18051,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_153137",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-05-28T14:31:50.769Z",
    "audio_file": "NICHUL01_27_20230528_153137.mp3",
@@ -18430,8 +18440,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_ALEALB01_23_20230528_154001",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-28T14:40:14.228Z",
    "audio_file": "ALEALB01_23_20230528_154001.mp3",
@@ -18788,8 +18798,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_154654",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T14:46:58.346Z",
    "audio_file": "GUAZHO01_24_20230528_154654.mp3",
@@ -18826,7 +18836,7 @@
    "note": "Voice and words agree - activated and positive - focused, on it.",
    "recommendation": {
     "severity": "act",
-    "headline": "GUA: box this lap",
+    "headline": "ZHO: box this lap",
     "detail": "Driver stress is high, pace is dropping and the tyres are past their useful window. All three point the same way - bring him in.",
     "evidence": [
      "DSI 67 (+14 over last 3 calls)",
@@ -18839,8 +18849,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_154649",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T14:46:58.346Z",
    "audio_file": "GUAZHO01_24_20230528_154649.mp3",
@@ -18880,8 +18890,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_ALEALB01_23_20230528_154728",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-28T14:48:04.47Z",
    "audio_file": "ALEALB01_23_20230528_154728.mp3",
@@ -18918,7 +18928,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: stress climbing on old tyres",
+    "headline": "ALB: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 64 (+18 over last 3 calls)",
@@ -19127,8 +19137,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 45,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -19139,15 +19149,15 @@
    "valence_raw": 0.4643,
    "text_polarity": 0.5328,
    "incongruence": 1.214,
-   "suppressed_stress": false,
+   "suppressed_stress": true,
    "note": "Words read positive, but the voice sits in the bottom 15% of the race for valence. Possible suppressed stress.",
    "recommendation": null
   },
   {
    "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_160736",
    "driver_id": "GUAZHO01",
-   "driver_code": "GUA",
-   "driver_name": "GUAZHO01",
+   "driver_code": "ZHO",
+   "driver_name": "Guanyu Zhou",
    "racing_number": "24",
    "timestamp": "2023-05-28T14:57:10.585Z",
    "audio_file": "GUAZHO01_24_20230528_160736.mp3",
@@ -19361,8 +19371,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_ALEALB01_23_20230528_160513",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-05-28T14:57:10.585Z",
    "audio_file": "ALEALB01_23_20230528_160513.mp3",
@@ -19399,7 +19409,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: stress climbing on old tyres",
+    "headline": "ALB: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 64 (+18 over last 3 calls)",
@@ -19453,8 +19463,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_OSCPIA01_81_20230528_160249",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-05-28T14:57:10.585Z",
    "audio_file": "OSCPIA01_81_20230528_160249.mp3",
@@ -19545,8 +19555,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_160141",
    "driver_id": "NYCDEV01",
-   "driver_code": "NYC",
-   "driver_name": "NYCDEV01",
+   "driver_code": "DEV",
+   "driver_name": "Nyck De Vries",
    "racing_number": "21",
    "timestamp": "2023-05-28T14:57:10.585Z",
    "audio_file": "NYCDEV01_21_20230528_160141.mp3",
@@ -19668,8 +19678,8 @@
   {
    "id": "2023_Monaco_Grand_Prix_LOGSAR01_2_20230528_160702",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-05-28T14:57:10.585Z",
    "audio_file": "LOGSAR01_2_20230528_160702.mp3",
@@ -19706,7 +19716,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "act",
-    "headline": "LOG: prepare the stop",
+    "headline": "SAR: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 75 (+14 over last 3 calls)",

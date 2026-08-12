@@ -28,6 +28,8 @@ import math
 import statistics
 from collections import defaultdict
 
+from pipeline import stats
+
 
 def _pearson(xs: list[float], ys: list[float]) -> float | None:
     if len(xs) < 3:
@@ -221,28 +223,11 @@ def lag_analysis(messages: list[dict], max_lag: int = 3) -> dict:
     }
 
 
-def _sign_test_p(successes: int, n: int) -> float | None:
-    """Two-sided exact binomial test against p=0.5.
-
-    Guards the "most drivers were slower when stressed" style of claim, which
-    sounds compelling and is often just a coin flip: 23 of 37 gives p=0.19.
-    """
-    if n == 0:
-        return None
-    k = max(successes, n - successes)
-    tail = sum(math.comb(n, i) for i in range(k, n + 1)) / (2 ** n)
-    return round(min(1.0, 2 * tail), 4)
-
-
-def _pearson_p(r: float | None, n: int) -> float | None:
-    """Two-sided p-value for a correlation, via the t approximation."""
-    if r is None or n < 4 or abs(r) >= 1.0:
-        return None
-    t = abs(r) * math.sqrt((n - 2) / (1 - r * r))
-    # Survival function of |t| with n-2 df, normal approximation is too loose at
-    # these sample sizes, so use the incomplete beta via math.erf on a
-    # Fisher z-transform instead - accurate enough to decide significance.
-    z = 0.5 * math.log((1 + abs(r)) / (1 - abs(r))) * math.sqrt(n - 3)
-    p = 2 * (1 - 0.5 * (1 + math.erf(z / math.sqrt(2))))
-    del t
-    return round(p, 4)
+# Both now live in pipeline/stats.py, so the eval scripts can use the same ones.
+# `_pearson_p` previously computed a t-statistic, discarded it with `del t`, and
+# returned a Fisher z-transform approximation instead. The approximation is good
+# - within 1.5% of the exact test at n=12 and indistinguishable above n=100, so
+# no published p-value was wrong - but it was gating a published significance
+# claim by a route its own comment called a substitute. It is now the exact t.
+_sign_test_p = stats.sign_test_p
+_pearson_p = stats.pearson_p

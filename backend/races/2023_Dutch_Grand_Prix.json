@@ -29,8 +29,8 @@
   },
   {
    "driver_id": "ALEALB01",
-   "code": "ALE",
-   "name": "ALEALB01",
+   "code": "ALB",
+   "name": "Alexander Albon",
    "racing_number": "23",
    "message_count": 15,
    "in_race_count": 10,
@@ -40,8 +40,8 @@
   },
   {
    "driver_id": "NICHUL01",
-   "code": "NIC",
-   "name": "NICHUL01",
+   "code": "HUL",
+   "name": "Nico Hulkenberg",
    "racing_number": "27",
    "message_count": 14,
    "in_race_count": 9,
@@ -73,8 +73,8 @@
   },
   {
    "driver_id": "KEVMAG01",
-   "code": "KEV",
-   "name": "KEVMAG01",
+   "code": "MAG",
+   "name": "Kevin Magnussen",
    "racing_number": "20",
    "message_count": 11,
    "in_race_count": 7,
@@ -139,8 +139,8 @@
   },
   {
    "driver_id": "OSCPIA01",
-   "code": "OSC",
-   "name": "OSCPIA01",
+   "code": "PIA",
+   "name": "Oscar Piastri",
    "racing_number": "81",
    "message_count": 6,
    "in_race_count": 4,
@@ -172,14 +172,14 @@
   },
   {
    "driver_id": "LIALAW01",
-   "code": "LIA",
-   "name": "LIALAW01",
+   "code": "LAW",
+   "name": "Liam Lawson",
    "racing_number": "40",
    "message_count": 6,
    "in_race_count": 0,
    "mean_dsi": null,
    "peak_dsi": null,
-   "suppressed_count": 3
+   "suppressed_count": 2
   },
   {
    "driver_id": "CHALEC01",
@@ -205,8 +205,8 @@
   },
   {
    "driver_id": "LOGSAR01",
-   "code": "LOG",
-   "name": "LOGSAR01",
+   "code": "SAR",
+   "name": "Logan Sargeant",
    "racing_number": "2",
    "message_count": 1,
    "in_race_count": 0,
@@ -9130,8 +9130,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_131253",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T12:13:18.917Z",
    "audio_file": "KEVMAG01_20_20230827_131253.mp3",
@@ -9294,8 +9294,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_141808",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T12:17:50.006Z",
    "audio_file": "ALEALB01_23_20230827_141808.mp3",
@@ -9335,8 +9335,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_131743",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T12:19:00.052Z",
    "audio_file": "NICHUL01_27_20230827_131743.mp3",
@@ -9376,8 +9376,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_132103",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T12:21:12.643Z",
    "audio_file": "ALEALB01_23_20230827_132103.mp3",
@@ -9458,8 +9458,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_132200",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T12:22:20.83Z",
    "audio_file": "NICHUL01_27_20230827_132200.mp3",
@@ -9622,8 +9622,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_135450",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T12:55:48.8142761Z",
    "audio_file": "NICHUL01_27_20230827_135450.mp3",
@@ -9786,8 +9786,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_OSCPIA01_81_20230827_140141",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-08-27T13:02:03.568Z",
    "audio_file": "OSCPIA01_81_20230827_140141.mp3",
@@ -9868,8 +9868,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_140342",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T13:04:19.019Z",
    "audio_file": "KEVMAG01_20_20230827_140342.mp3",
@@ -10001,8 +10001,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_140523",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T13:05:59.33Z",
    "audio_file": "ALEALB01_23_20230827_140523.mp3",
@@ -10039,7 +10039,7 @@
    "note": "Words read positive, but the voice sits in the bottom 20% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "act",
-    "headline": "ALE: prepare the stop",
+    "headline": "ALB: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 67",
@@ -10074,8 +10074,8 @@
     "track_status": "1",
     "pit_lap": true
    },
-   "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 42,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -10320,8 +10320,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 62,
    "state": "Stressed",
    "descriptor": "activated and negative - frustration or pressure",
@@ -10339,8 +10339,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_140907",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T13:09:24.983Z",
    "audio_file": "ALEALB01_23_20230827_140907.mp3",
@@ -10554,8 +10554,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_141704",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T13:17:16.365Z",
    "audio_file": "KEVMAG01_20_20230827_141704.mp3",
@@ -10595,8 +10595,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_141755",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T13:18:23.004Z",
    "audio_file": "KEVMAG01_20_20230827_141755.mp3",
@@ -10636,8 +10636,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_141904",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T13:19:32.144Z",
    "audio_file": "ALEALB01_23_20230827_141904.mp3",
@@ -10674,7 +10674,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "act",
-    "headline": "ALE: prepare the stop",
+    "headline": "ALB: prepare the stop",
     "detail": "Stress and lap time are degrading together. Get the crew ready and take the next clear window.",
     "evidence": [
      "DSI 69 (+2 over last 2 calls)",
@@ -10687,8 +10687,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_141942",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T13:20:04.299Z",
    "audio_file": "NICHUL01_27_20230827_141942.mp3",
@@ -10833,7 +10833,7 @@
     "pit_lap": false
    },
    "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (checo)",
+   "speaker_reason": "addresses the driver by name (max)",
    "dsi": 43,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -10873,8 +10873,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver by name (max)",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (max)",
    "dsi": 47,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -11015,8 +11015,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_OSCPIA01_81_20230827_142428",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-08-27T13:24:38.279Z",
    "audio_file": "OSCPIA01_81_20230827_142428.mp3",
@@ -11056,8 +11056,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_142506",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T13:25:44.512Z",
    "audio_file": "KEVMAG01_20_20230827_142506.mp3",
@@ -11241,8 +11241,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_LOGSAR01_2_20230827_152752",
    "driver_id": "LOGSAR01",
-   "driver_code": "LOG",
-   "driver_name": "LOGSAR01",
+   "driver_code": "SAR",
+   "driver_name": "Logan Sargeant",
    "racing_number": "2",
    "timestamp": "2023-08-27T13:28:00.2219951Z",
    "audio_file": "LOGSAR01_2_20230827_152752.mp3",
@@ -11304,8 +11304,8 @@
     "track_status": "4",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 45,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -11405,8 +11405,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_143128",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T13:32:30.583Z",
    "audio_file": "NICHUL01_27_20230827_143128.mp3",
@@ -11427,8 +11427,8 @@
     "track_status": "4",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 38,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11579,8 +11579,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_143458",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T13:35:21.455Z",
    "audio_file": "ALEALB01_23_20230827_143458.mp3",
@@ -11643,7 +11643,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (leclerc)",
    "dsi": 45,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11683,8 +11683,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 48,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -11702,8 +11702,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_143816",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T13:38:43.092Z",
    "audio_file": "ALEALB01_23_20230827_143816.mp3",
@@ -11743,8 +11743,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_143905",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T13:39:17.295Z",
    "audio_file": "ALEALB01_23_20230827_143905.mp3",
@@ -11825,8 +11825,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_OSCPIA01_81_20230827_144110",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-08-27T13:41:32.823Z",
    "audio_file": "OSCPIA01_81_20230827_144110.mp3",
@@ -11929,8 +11929,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (norris)",
    "dsi": 57,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -11982,7 +11982,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (leclerc)",
    "dsi": 54,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -12000,8 +12000,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_144610",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T13:46:36.443Z",
    "audio_file": "KEVMAG01_20_20230827_144610.mp3",
@@ -12237,8 +12237,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 48,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -12343,7 +12343,17 @@
    "incongruence": 0.3169,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and positive - focused, on it.",
-   "recommendation": null
+   "recommendation": {
+    "severity": "watch",
+    "headline": "ALO: stress climbing on old tyres",
+    "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
+    "evidence": [
+     "DSI 61 (+16 over last 3 calls)",
+     "pace -0.09s vs own median",
+     "Soft, 23 laps old",
+     "lap 33"
+    ]
+   }
   },
   {
    "id": "2023_Dutch_Grand_Prix_LEWHAM01_44_20230827_145133",
@@ -12430,8 +12440,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_145357",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T13:54:30.169Z",
    "audio_file": "KEVMAG01_20_20230827_145357.mp3",
@@ -12452,8 +12462,8 @@
     "track_status": "1",
     "pit_lap": true
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (piastri)",
    "dsi": 48,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -12468,7 +12478,7 @@
    "note": "Voice and words agree - low energy and negative - resigned or worn down.",
    "recommendation": {
     "severity": "watch",
-    "headline": "KEV: stress climbing on old tyres",
+    "headline": "MAG: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
      "DSI 48 (+12 over last 3 calls)",
@@ -12522,8 +12532,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_145655",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T13:57:20.556Z",
    "audio_file": "ALEALB01_23_20230827_145655.mp3",
@@ -12645,8 +12655,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_OSCPIA01_81_20230827_145846",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-08-27T13:59:00.852Z",
    "audio_file": "OSCPIA01_81_20230827_145846.mp3",
@@ -12809,8 +12819,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_150249",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T14:02:58.05Z",
    "audio_file": "NICHUL01_27_20230827_150249.mp3",
@@ -12952,8 +12962,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_150259",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T14:03:33.003Z",
    "audio_file": "NICHUL01_27_20230827_150259.mp3",
@@ -13045,8 +13055,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_150630",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T14:06:54.89Z",
    "audio_file": "NICHUL01_27_20230827_150630.mp3",
@@ -13127,7 +13137,7 @@
     "headline": "RUS: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
-     "DSI 63 (+12 over last 3 calls)",
+     "DSI 63 (+15 over last 3 calls)",
      "pace -1.69s vs own median",
      "Hard, 29 laps old",
      "lap 45"
@@ -13159,8 +13169,8 @@
     "track_status": "1",
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (norris)",
    "dsi": 52,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -13214,7 +13224,17 @@
    "incongruence": 0.1283,
    "suppressed_stress": false,
    "note": "Voice and words agree - activated and positive - focused, on it.",
-   "recommendation": null
+   "recommendation": {
+    "severity": "watch",
+    "headline": "ALO: stress climbing on old tyres",
+    "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
+    "evidence": [
+     "DSI 61 (+13 over last 3 calls)",
+     "pace -0.09s vs own median",
+     "Soft, 37 laps old",
+     "lap 47"
+    ]
+   }
   },
   {
    "id": "2023_Dutch_Grand_Prix_CARSAI01_55_20230827_151032",
@@ -13260,8 +13280,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_151229",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T14:13:08.383Z",
    "audio_file": "ALEALB01_23_20230827_151229.mp3",
@@ -13342,8 +13362,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_OSCPIA01_81_20230827_151334",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-08-27T14:14:14.476Z",
    "audio_file": "OSCPIA01_81_20230827_151334.mp3",
@@ -13383,8 +13403,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_151425",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T14:14:48.663Z",
    "audio_file": "KEVMAG01_20_20230827_151425.mp3",
@@ -13424,8 +13444,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_151554",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T14:16:29.255Z",
    "audio_file": "NICHUL01_27_20230827_151554.mp3",
@@ -13598,8 +13618,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_151915",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T14:20:25.266Z",
    "audio_file": "ALEALB01_23_20230827_151915.mp3",
@@ -13636,7 +13656,7 @@
    "note": "Voice and words agree - activated and negative - frustration or pressure.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 66 (-3 over last 3 calls)",
@@ -13854,8 +13874,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_152232",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T14:22:41.545Z",
    "audio_file": "NICHUL01_27_20230827_152232.mp3",
@@ -14018,8 +14038,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_152438",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T14:24:56.996Z",
    "audio_file": "NICHUL01_27_20230827_152438.mp3",
@@ -14122,8 +14142,8 @@
     "track_status": "1",
     "pit_lap": true
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "driver",
+   "speaker_reason": "first-person report, mentions another driver (george)",
    "dsi": 53,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -14233,8 +14253,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_152648",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T14:27:13.696Z",
    "audio_file": "NICHUL01_27_20230827_152648.mp3",
@@ -14591,8 +14611,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_153603",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T14:36:13.4699114Z",
    "audio_file": "ALEALB01_23_20230827_153603.mp3",
@@ -14632,8 +14652,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_153654",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T14:37:22.779Z",
    "audio_file": "ALEALB01_23_20230827_153654.mp3",
@@ -14714,8 +14734,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_153844",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T14:39:03.106Z",
    "audio_file": "KEVMAG01_20_20230827_153844.mp3",
@@ -14796,8 +14816,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_LIALAW01_40_20230827_155039",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-08-27T14:52:28.013Z",
    "audio_file": "LIALAW01_40_20230827_155039.mp3",
@@ -14818,8 +14838,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (liam)",
    "dsi": 48,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -14837,8 +14857,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_LIALAW01_40_20230827_155339",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-08-27T14:54:42.3296102Z",
    "audio_file": "LIALAW01_40_20230827_155339.mp3",
@@ -14878,8 +14898,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_LIALAW01_40_20230827_165745",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-08-27T14:57:31.383Z",
    "audio_file": "LIALAW01_40_20230827_165745.mp3",
@@ -14919,8 +14939,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_LIALAW01_40_20230827_160409",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-08-27T15:04:44.688Z",
    "audio_file": "LIALAW01_40_20230827_160409.mp3",
@@ -14941,8 +14961,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (liam)",
    "dsi": 49,
    "state": "Energised",
    "descriptor": "activated and positive - focused, on it",
@@ -14960,8 +14980,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_160601",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T15:06:25.576Z",
    "audio_file": "KEVMAG01_20_20230827_160601.mp3",
@@ -15001,8 +15021,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_KEVMAG01_20_20230827_160620",
    "driver_id": "KEVMAG01",
-   "driver_code": "KEV",
-   "driver_name": "KEVMAG01",
+   "driver_code": "MAG",
+   "driver_name": "Kevin Magnussen",
    "racing_number": "20",
    "timestamp": "2023-08-27T15:06:59.857Z",
    "audio_file": "KEVMAG01_20_20230827_160620.mp3",
@@ -15042,8 +15062,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_LIALAW01_40_20230827_160654",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-08-27T15:07:33.6825813Z",
    "audio_file": "LIALAW01_40_20230827_160654.mp3",
@@ -15124,7 +15144,7 @@
     "headline": "RUS: stress climbing on old tyres",
     "detail": "Not critical yet, but the trend and the tyre age are moving together. Start planning the window.",
     "evidence": [
-     "DSI 63 (+12 over last 3 calls)",
+     "DSI 63 (+15 over last 3 calls)",
      "pace -1.69s vs own median",
      "Hard, 29 laps old",
      "lap 45"
@@ -15134,8 +15154,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_160911",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T15:09:48.6891236Z",
    "audio_file": "NICHUL01_27_20230827_160911.mp3",
@@ -15605,8 +15625,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_162306",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T15:23:21.996Z",
    "audio_file": "ALEALB01_23_20230827_162306.mp3",
@@ -15933,8 +15953,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_LIALAW01_40_20230827_163348",
    "driver_id": "LIALAW01",
-   "driver_code": "LIA",
-   "driver_name": "LIALAW01",
+   "driver_code": "LAW",
+   "driver_name": "Liam Lawson",
    "racing_number": "40",
    "timestamp": "2023-08-27T15:30:38.926Z",
    "audio_file": "LIALAW01_40_20230827_163348.mp3",
@@ -15955,8 +15975,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "unknown",
-   "speaker_reason": "no clear direction",
+   "speaker": "engineer",
+   "speaker_reason": "addresses the driver by name (liam)",
    "dsi": 51,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -15967,15 +15987,15 @@
    "valence_raw": 0.5117,
    "text_polarity": 0.8838,
    "incongruence": 1.376,
-   "suppressed_stress": true,
+   "suppressed_stress": false,
    "note": "Words read positive, but the voice sits in the bottom 25% of the race for valence. Possible suppressed stress.",
    "recommendation": null
   },
   {
    "id": "2023_Dutch_Grand_Prix_OSCPIA01_81_20230827_173626",
    "driver_id": "OSCPIA01",
-   "driver_code": "OSC",
-   "driver_name": "OSCPIA01",
+   "driver_code": "PIA",
+   "driver_name": "Oscar Piastri",
    "racing_number": "81",
    "timestamp": "2023-08-27T15:30:38.926Z",
    "audio_file": "OSCPIA01_81_20230827_173626.mp3",
@@ -16119,8 +16139,8 @@
     "track_status": null,
     "pit_lap": false
    },
-   "speaker": "engineer",
-   "speaker_reason": "addresses the driver",
+   "speaker": "unknown",
+   "speaker_reason": "no clear direction",
    "dsi": 36,
    "state": "Calm",
    "descriptor": "settled and composed",
@@ -16161,7 +16181,7 @@
     "pit_lap": false
    },
    "speaker": "driver",
-   "speaker_reason": "first-person report",
+   "speaker_reason": "first-person report, mentions another driver (russell)",
    "dsi": 36,
    "state": "Fatigued",
    "descriptor": "low energy and negative - resigned or worn down",
@@ -16220,8 +16240,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_NICHUL01_27_20230827_173910",
    "driver_id": "NICHUL01",
-   "driver_code": "NIC",
-   "driver_name": "NICHUL01",
+   "driver_code": "HUL",
+   "driver_name": "Nico Hulkenberg",
    "racing_number": "27",
    "timestamp": "2023-08-27T15:39:11.276Z",
    "audio_file": "NICHUL01_27_20230827_173910.mp3",
@@ -16312,8 +16332,8 @@
   {
    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_163811",
    "driver_id": "ALEALB01",
-   "driver_code": "ALE",
-   "driver_name": "ALEALB01",
+   "driver_code": "ALB",
+   "driver_name": "Alexander Albon",
    "racing_number": "23",
    "timestamp": "2023-08-27T15:39:11.276Z",
    "audio_file": "ALEALB01_23_20230827_163811.mp3",
@@ -16350,7 +16370,7 @@
    "note": "Words read positive, but the voice sits in the bottom 19% of the race for valence. Possible suppressed stress.",
    "recommendation": {
     "severity": "watch",
-    "headline": "ALE: elevated stress",
+    "headline": "ALB: elevated stress",
     "detail": "Pace is holding, so no action needed - but keep the radio calm and avoid loading him with information.",
     "evidence": [
      "DSI 66 (-3 over last 3 calls)",

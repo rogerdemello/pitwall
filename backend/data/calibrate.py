@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pipeline import fusion, speaker, strategy  # noqa: E402
+from pipeline import fusion, roster, speaker, strategy  # noqa: E402
 from pipeline.calibration import Calibrator  # noqa: E402
 from pipeline.prosody import Affect  # noqa: E402
 from pipeline.sentiment import TextSentiment  # noqa: E402
@@ -24,24 +24,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 RAW_ROOT = os.path.join(HERE, "..", "raw")
 OUT_ROOT = os.path.join(HERE, "..", "races")
 
-# Driver codes for display: the dataset uses FIRST3+LAST3+NN.
-DRIVER_NAMES = {
-    "MAXVER01": ("VER", "Max Verstappen"), "LEWHAM01": ("HAM", "Lewis Hamilton"),
-    "VALBOT01": ("BOT", "Valtteri Bottas"), "SERPER01": ("PER", "Sergio Perez"),
-    "CARSAI01": ("SAI", "Carlos Sainz"), "CHALEC01": ("LEC", "Charles Leclerc"),
-    "LANNOR01": ("NOR", "Lando Norris"), "DANRIC01": ("RIC", "Daniel Ricciardo"),
-    "PIEGAS01": ("GAS", "Pierre Gasly"), "FERALO01": ("ALO", "Fernando Alonso"),
-    "ESTOCO01": ("OCO", "Esteban Ocon"), "LANSTR01": ("STR", "Lance Stroll"),
-    "SEBVET01": ("VET", "Sebastian Vettel"), "YUKTSU01": ("TSU", "Yuki Tsunoda"),
-    "GEORUS01": ("RUS", "George Russell"), "NICLAF01": ("LAT", "Nicholas Latifi"),
-    "ANTGIO01": ("GIO", "Antonio Giovinazzi"), "MICSCH02": ("MSC", "Mick Schumacher"),
-    "KIMRAI01": ("RAI", "Kimi Raikkonen"), "NIKMAZ01": ("MAZ", "Nikita Mazepin"),
-    "BREHAR01": ("HAR", "Brendon Hartley"), "MARERI01": ("ERI", "Marcus Ericsson"),
-}
-
-
-def display(driver_id: str) -> tuple[str, str]:
-    return DRIVER_NAMES.get(driver_id, (driver_id[:3], driver_id))
+# Driver identity comes from pipeline/roster.json, generated from FastF1 by
+# build_roster.py. It used to be a hand-typed map here that covered 22 of the 30
+# drivers in the corpus; the rest fell through to a driver_id[:3] fallback, so
+# 479 messages rendered a driver called "NICHUL01" with the code "NIC".
+display = roster.display
 
 
 def _lap_traces(session, numbers: dict[str, str]) -> dict[str, list[dict]]:
@@ -112,7 +99,7 @@ def run(race_id: str) -> str:
             positive=m["text_positive"],
         )
         state = fusion.fuse(affect, text, calibrator=cal, transcript=m["transcript"])
-        who, why = speaker.classify(m["transcript"])
+        who, why = speaker.classify(m["transcript"], m.get("driver_id"))
         code, name = display(m["driver_id"])
         analysed.append({
             "id": m["id"],
