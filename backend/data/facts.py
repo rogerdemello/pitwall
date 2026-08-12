@@ -1,0 +1,220 @@
+"""Every number this project publishes, derived from the files that measured it.
+
+The problem this solves: the corpus grew from six races to twelve, and the docs
+did not all follow. `space/README.md` and the *published* dataset card still said
+"556 paired observations, r = 0.047" against a measured 1,155 and 0.043. README
+said 29 tests against 48. README contradicted itself - 1,155 on one line and 556
+thirty lines later - because nobody re-reads 385 lines of prose.
+
+Typed numbers drift. Derived numbers cannot. So no document states a figure in
+its own right: templates carry placeholders, `render_docs.py` fills them from
+here, and `test_docs_numbers.py` fails the build if a rendered file has been
+hand-edited or a stale token reappears.
+
+Read-only. Runs in milliseconds. Never imports a model.
+
+Usage:
+    python backend/data/facts.py            # print every fact
+    python backend/data/facts.py pooled_r   # print one
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import subprocess
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from pipeline.artifacts import iter_race_files, race_ids, sidecar_path  # noqa: E402
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+BACKEND = os.path.join(HERE, "..")
+RACES = os.path.join(BACKEND, "races")
+TESTS = os.path.join(BACKEND, "tests")
+
+#: Tokens that were published, are now wrong, and must never reappear in a doc.
+#: Each maps to the fact that supersedes it, so the failure message can say what
+#: the number should be rather than only that it is wrong.
+RETIRED = {
+    "556": "paired_n",
+    "0.047": "pooled_r",
+    "1,042": "n_messages",
+    "29 tests": "n_tests",
+    "six races": "n_races",
+}
+
+
+def _load(name: str) -> dict | None:
+    path = os.path.join(RACES, name)
+    if not os.path.exists(path):
+        return None
+    try:
+        return json.load(open(path, encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+
+
+def _count_tests() -> int | None:
+    """Ask pytest, rather than trusting anyone to update a number in prose."""
+    try:
+        out = subprocess.run(
+            [sys.executable, "-m", "pytest", TESTS, "--collect-only", "-q",
+             "-p", "no:cacheprovider"],
+            capture_output=True, text=True, timeout=120, cwd=BACKEND,
+        ).stdout
+    except (subprocess.SubprocessError, OSError):
+        return None
+    for line in reversed(out.splitlines()):
+        # pytest's summary line, e.g. "61 tests collected in 0.42s"
+        if "test" in line and line.split()[:1] and line.split()[0].isdigit():
+            return int(line.split()[0])
+    return None
+
+
+def _asr_ablation() -> dict:
+    """The prompting ablation, aggregated across every race that measured it.
+
+    README quoted the showcase race alone (0.2138 vs 0.2157) while DEMO and both
+    Space cards quoted "worse in 4 of 6 races". Neither was wrong; they were
+    never reconciled. Report both, each labelled with its scope.
+    """
+    rows = []
+    for race_id in race_ids(RACES):
+        d = _load(os.path.basename(sidecar_path(RACES, race_id, "asr_eval")))
+        if d and d.get("wer_unbiased") is not None:
+            rows.append(d)
+    if not rows:
+        return {"measured": False}
+    hurt = [r for r in rows if r["wer_biased"] > r["wer_unbiased"]]
+    return {
+        "measured": True,
+        "races_measured": len(rows),
+        "races_hurt_by_prompting": len(hurt),
+        "mean_wer_unbiased": round(sum(r["wer_unbiased"] for r in rows) / len(rows), 4),
+        "mean_wer_biased": round(sum(r["wer_biased"] for r in rows) / len(rows), 4),
+        "sample_per_race": rows[0].get("sample_size"),
+    }
+
+
+def facts() -> dict:
+    """Every published number, keyed by the placeholder documents use."""
+    ca = _load("_corpus_analysis.json") or {}
+    gold = _load("_gold_affect_eval.json") or {}
+    era = _load("_era_analysis.json") or {}
+    conv = _load("_convergent_eval.json") or {}
+    finding = _load("_corpus_finding.json") or {}
+    diar = _load("_diarization_experiment.json") or {}
+
+    svp = ca.get("stress_vs_pace") or {}
+    tercile = svp.get("tercile") or {}
+    lag = ca.get("lag") or {}
+    axes = gold.get("axes") or {}
+    arousal = axes.get("arousal_high_vs_low") or {}
+    valence = axes.get("valence_negative_vs_positive") or {}
+    asr = _asr_ablation()
+
+    ids = race_ids(RACES)
+    slate = []
+    for path in iter_race_files(RACES):
+        d = json.load(open(path, encoding="utf-8"))
+        slate.append({
+            "race_id": d["race_id"],
+            "grand_prix": d["grand_prix"],
+            "season": int(d["race_id"][:4]),
+            "date": d.get("session_date"),
+            "messages": d.get("message_count"),
+            "in_race": d.get("in_race_count"),
+            "drivers": len(d.get("drivers") or []),
+        })
+
+    return {
+        # Corpus
+        "n_races": len(ids),
+        "n_messages": ca.get("messages_pooled") or sum(r["messages"] for r in slate),
+        "race_slate": slate,
+        "race_ids": ids,
+
+        # The central question, and its null answer
+        "paired_n": svp.get("n"),
+        "excluded_non_racing": svp.get("excluded_non_racing_laps"),
+        "pooled_r": round(svp["pooled_r"], 3) if svp.get("pooled_r") is not None else None,
+        "tercile_gap_s": tercile.get("mean_gap_s"),
+        "drivers_slower": tercile.get("drivers_slower_when_stressed"),
+        "drivers_total": tercile.get("drivers_total"),
+        "sign_test_p": tercile.get("sign_test_p"),
+        "best_lag": lag.get("best_lag"),
+        "best_lag_r": lag.get("best_r"),
+        "lag_predictive": lag.get("predictive"),
+        "stress_vs_pace_verdict": ca.get("verdict"),
+
+        # Gold-label validation, including the axis that fails
+        "gold_dataset": gold.get("dataset"),
+        "gold_n": gold.get("n"),
+        "gold_accuracy": gold.get("accuracy"),
+        "gold_baseline": gold.get("majority_class_baseline"),
+        "arousal_acc": arousal.get("accuracy"),
+        "arousal_baseline": arousal.get("majority_baseline"),
+        "arousal_lift": arousal.get("lift"),
+        "valence_acc": valence.get("accuracy"),
+        "valence_baseline": valence.get("majority_baseline"),
+        "valence_lift": valence.get("lift"),
+        "valence_at_chance": (valence.get("lift") or 0) < 0.05,
+
+        # Convergent validity
+        "convergent_model": conv.get("second_model"),
+        "convergent_n": conv.get("n"),
+        "convergent_kappa": conv.get("cohens_kappa"),
+        "convergent_band": conv.get("kappa_band"),
+
+        # Cross-race separation
+        "finding_verdict": finding.get("verdict"),
+        "prereg_races": (finding.get("setup") or {}).get("races"),
+        "prereg_held": sum(1 for v in finding.get("prediction_scorecard", []) if v["held"]),
+        "prereg_total": len(finding.get("prediction_scorecard", [])),
+        "within_season_spread": era.get("within_season_spread"),
+        "cross_era_spread": era.get("cross_era_spread"),
+        "era_races_2023": era.get("n_2023"),
+        "era_confound_resolved": finding.get("confound_status") == "resolved",
+
+        # ASR
+        "asr_races_measured": asr.get("races_measured"),
+        "asr_races_hurt": asr.get("races_hurt_by_prompting"),
+        "asr_mean_wer": asr.get("mean_wer_unbiased"),
+        "asr_mean_wer_prompted": asr.get("mean_wer_biased"),
+        "asr_sample_per_race": asr.get("sample_per_race"),
+
+        # Rejected experiments
+        "diarization_verdict": diar.get("verdict"),
+
+        # The repo itself
+        "n_tests": _count_tests(),
+    }
+
+
+def main() -> None:
+    f = facts()
+    if len(sys.argv) > 1:
+        for key in sys.argv[1:]:
+            if key not in f:
+                print(f"!! no such fact: {key}", file=sys.stderr)
+                raise SystemExit(1)
+            print(f[key])
+        return
+
+    missing = [k for k, v in f.items() if v is None]
+    width = max(len(k) for k in f)
+    for k, v in f.items():
+        if k == "race_slate":
+            v = f"{len(v)} races"
+        elif isinstance(v, list):
+            v = f"[{len(v)} items]"
+        print(f"{k:<{width}}  {v}")
+    if missing:
+        print(f"\n!! {len(missing)} fact(s) unmeasured: {', '.join(missing)}",
+              file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()
