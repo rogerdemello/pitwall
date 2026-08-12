@@ -1,0 +1,16 @@
+# The main requirements.txt minus the data-pipeline half: this Space serves one
+# clip at a time and never builds a corpus, so fastf1 / datasets / duckdb / jiwer
+# are all dead weight in the image.
+#
+# torch is NOT pinned to the CPU wheel here, unlike the root requirements.txt.
+# ZeroGPU needs the CUDA build, and its runtime requires torch >= 2.8.
+
+torch==2.9.1
+transformers==5.15.0
+librosa==0.11.0
+soundfile==0.14.0
+numpy==1.26.2
+scikit-learn==1.8.0
+
+gradio==5.49.1
+spaces==0.42.1

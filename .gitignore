@@ -32,6 +32,12 @@ frontend/public/data/
 frontend/public/audio/
 frontend/out/
 
+# Copied in from backend/ by build_space_live.py. space_live/ owns app.py,
+# README.md and requirements.txt; everything else there is a build artifact and
+# backend/pipeline/ stays the only source.
+space_live/pipeline/
+space_live/_pooled.calibration.json
+
 # Logs
 frontend/dev*.log
 backend/*.log
