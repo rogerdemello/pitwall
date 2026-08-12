@@ -1,4 +1,5 @@
 /* PIT WALL design tokens.
+
    Dark-first: this is a race-engineer console, read in a dim garage. Colours are
    the validated data-viz palette stepped for a dark surface, not invented.
 
@@ -10,94 +11,119 @@
                          the relief rule covers because every chart ships a table
                          view. Aqua is NOT used for text in light mode: 2.74:1
                          fails WCAG AA, so --accent-text switches to a darker
-                         green there. */
+                         green there.
+
+   Each token is declared once, as light-dark(light, dark). The two palettes used
+   to live in separate blocks that repeated fourteen declarations verbatim - once
+   under prefers-color-scheme and once under [data-theme="light"] - which is a
+   standing invitation for the two to drift apart. Putting both values on one
+   line makes a mismatch visible while you are editing it.
+
+   light-dark() resolves against the used value of `color-scheme`, so the four
+   one-line rules below are what actually drive the theme. The :not() guard lets
+   an explicit dark stamp beat OS-light, so the toggle wins in both directions. */
+
+:root { color-scheme: dark; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { color-scheme: light; }
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 :root {
-  --plane: #0d0d0d;
-  --surface-1: #141416;
-  --surface-2: #1c1c1f;
-  --surface-3: #232327;
+  /* surfaces */
+  --plane:     light-dark(#f9f9f7, #0d0d0d);
+  --surface-1: light-dark(#fcfcfb, #141416);
+  --surface-2: light-dark(#f2f2ee, #1c1c1f);
+  --surface-3: light-dark(#e9e9e3, #232327);
 
-  --ink-primary: #ffffff;
-  --ink-secondary: #c3c2b7;
-  --ink-muted: #898781;
+  /* ink */
+  --ink-primary:   light-dark(#0b0b0b, #ffffff);
+  --ink-secondary: light-dark(#52514e, #c3c2b7);
+  --ink-muted:     light-dark(#898781, #898781);
 
-  --grid: #2c2c2a;
-  --baseline: #383835;
-  --hairline: rgba(255, 255, 255, 0.1);
+  /* lines */
+  --grid:     light-dark(#e1e0d9, #2c2c2a);
+  --baseline: light-dark(#c3c2b7, #383835);
+  --hairline: light-dark(rgba(11, 11, 11, 0.1), rgba(255, 255, 255, 0.1));
 
-  /* Categorical (validated: all-pairs PASS on #141416, dark mode) */
-  --series-1: #3987e5;
-  --series-2: #d95926;
-  --series-3: #199e70;
+  /* Categorical (validated: all-pairs PASS on both surfaces) */
+  --series-1: light-dark(#2a78d6, #3987e5);
+  --series-2: light-dark(#eb6834, #d95926);
+  --series-3: light-dark(#1baf7a, #199e70);
 
   /* Status - reserved, never used as a series */
-  --good: #0ca30c;
-  --warning: #fab219;
-  --serious: #ec835a;
+  --good:     #0ca30c;
+  --warning:  #fab219;
+  --serious:  #ec835a;
   --critical: #d03b3b;
 
   /* Green used as *text* (the driver-voice badge). Distinct from --series-3,
      which is a chart mark and allowed lower contrast under the relief rule. */
-  --accent-text: #199e70;
+  --accent-text: light-dark(#006300, #199e70);
 
+  /* Washes and edges.
+     These replace thirteen hardcoded rgba() literals scattered across six
+     files - rgba(250,178,25,.08) and friends - which were invisible to the
+     theme and had to be re-picked by hand for every new callout. Derived with
+     color-mix from the status colour they belong to, so they follow it. */
+  --critical-wash: color-mix(in oklab, var(--critical) 10%, transparent);
+  --critical-edge: color-mix(in oklab, var(--critical) 28%, transparent);
+  --serious-wash:  color-mix(in oklab, var(--serious) 10%, transparent);
+  --serious-edge:  color-mix(in oklab, var(--serious) 28%, transparent);
+  --warning-wash:  color-mix(in oklab, var(--warning) 10%, transparent);
+  --warning-edge:  color-mix(in oklab, var(--warning) 28%, transparent);
+  --good-wash:     color-mix(in oklab, var(--good) 10%, transparent);
+  --good-edge:     color-mix(in oklab, var(--good) 28%, transparent);
+  --muted-wash:    color-mix(in oklab, var(--ink-muted) 12%, transparent);
+  --muted-edge:    color-mix(in oklab, var(--ink-muted) 28%, transparent);
+
+  /* The four states, encoded to match what the validation says we know.
+
+     The plane is arousal x valence, and those two axes are NOT equally
+     trustworthy: arousal scores +0.163 lift over baseline on gold labels while
+     valence scores +0.0097 at the shipped boundary. So arousal is carried by
+     *lightness*, which is the strong perceptual channel, and valence only by
+     *hue*, which is the weak one. High-arousal states read brighter than
+     low-arousal ones at a glance; telling Stressed from Energised requires
+     actually reading the hue, which is exactly as reliable as the underlying
+     measurement.
+
+     Built by mixing the existing validated hues rather than introducing new
+     ones, because a new categorical hue would have to go back through the
+     palette validator and this project does not ship colours it has not
+     checked. */
+  --state-stressed:  color-mix(in oklab, var(--series-2) 88%, var(--ink-primary));
+  --state-energised: color-mix(in oklab, var(--series-1) 88%, var(--ink-primary));
+  --state-fatigued:  color-mix(in oklab, var(--series-2) 52%, var(--surface-3));
+  --state-calm:      color-mix(in oklab, var(--series-1) 52%, var(--surface-3));
+
+  /* Type scale, in rem so it honours the browser font-size preference.
+     The previous sizes were fractional px - 12.5, 13.5, 10.5, 11.5 - which
+     ignore that preference entirely and are an accessibility problem rather
+     than a styling nicety. */
+  --text-2xs: 0.6875rem;  /* 11px */
+  --text-xs:  0.75rem;    /* 12px */
+  --text-sm:  0.8125rem;  /* 13px */
+  --text-base: 0.875rem;  /* 14px */
+  --text-md:  1rem;       /* 16px */
+  --text-lg:  1.125rem;   /* 18px */
+  --text-xl:  1.375rem;   /* 22px */
+  --text-2xl: 1.75rem;    /* 28px */
+  --text-3xl: 2.25rem;    /* 36px */
+
+  /* Radii. One value could not distinguish a chip from a card from a panel. */
+  --radius-sm: 6px;
   --radius: 10px;
+  --radius-lg: 14px;
+
   --font: system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: ui-monospace, "Cascadia Mono", "Consolas", monospace;
-
-  color-scheme: dark;
 }
 
-/* ---------- light mode ----------
-   Applied when the OS asks for light AND the user has not pinned dark, or when
-   the toggle explicitly stamps light. The :not() guard lets a dark stamp beat
-   OS-light, so the toggle wins in both directions. */
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --plane: #f9f9f7;
-    --surface-1: #fcfcfb;
-    --surface-2: #f2f2ee;
-    --surface-3: #e9e9e3;
-
-    --ink-primary: #0b0b0b;
-    --ink-secondary: #52514e;
-    --ink-muted: #898781;
-
-    --grid: #e1e0d9;
-    --baseline: #c3c2b7;
-    --hairline: rgba(11, 11, 11, 0.1);
-
-    --series-1: #2a78d6;
-    --series-2: #eb6834;
-    --series-3: #1baf7a;
-    --accent-text: #006300;
-
-    color-scheme: light;
-  }
-}
-
-:root[data-theme="light"] {
-  --plane: #f9f9f7;
-  --surface-1: #fcfcfb;
-  --surface-2: #f2f2ee;
-  --surface-3: #e9e9e3;
-
-  --ink-primary: #0b0b0b;
-  --ink-secondary: #52514e;
-  --ink-muted: #898781;
-
-  --grid: #e1e0d9;
-  --baseline: #c3c2b7;
-  --hairline: rgba(11, 11, 11, 0.1);
-
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --series-3: #1baf7a;
-  --accent-text: #006300;
-
-  color-scheme: light;
-}
+/* Deliberately no box-shadow tokens. Elevation in a dark console reads as haze
+   rather than depth; borders carry the same information and survive both
+   palettes without being re-tuned. */
 
 * {
   box-sizing: border-box;
