@@ -13,6 +13,9 @@ soundfile==0.14.0
 numpy==1.26.2
 pandas==2.1.3
 scikit-learn==1.8.0
+# Was already present transitively via scikit-learn and used unpinned for exact
+# significance tests; pinned explicitly because published p-values depend on it.
+scipy==1.16.3
 
 fastapi==0.129.0
 uvicorn==0.41.0
@@ -24,6 +27,12 @@ fastf1==3.8.3
 datasets==5.0.1
 duckdb==1.5.5
 jiwer==4.0.0
+
+# Stage-1 ASR. CTranslate2 implements the decode guards v1 lacked - temperature
+# fallback, compression-ratio and no-speech thresholds - and bundles Silero VAD
+# as ONNX, so voice-activity detection costs no extra dependency and no
+# torchaudio (see the note above).
+faster-whisper==1.2.1
 
 # NOTE: torchaudio is deliberately absent. speechbrain pulled in a build that was
 # ABI-incompatible with torch 2.9.1 and broke every import; nothing here needs it
