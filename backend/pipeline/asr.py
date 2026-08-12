@@ -42,6 +42,8 @@ import numpy as np
 import torch
 from transformers import WhisperForConditionalGeneration, WhisperProcessor
 
+from pipeline import device
+
 MODEL_ID = "openai/whisper-small.en"
 SAMPLE_RATE = 16000
 
@@ -66,13 +68,11 @@ class Transcript:
 @functools.lru_cache(maxsize=1)
 def _load():
     processor = WhisperProcessor.from_pretrained(MODEL_ID)
-    use_cuda = torch.cuda.is_available()
-    dtype = torch.float16 if use_cuda else torch.float32
-    model = WhisperForConditionalGeneration.from_pretrained(MODEL_ID, dtype=dtype)
-    if use_cuda:
-        model = model.to("cuda")
-    model.eval()
-    return processor, model
+    # Whisper is safe and roughly twice as fast in fp16 on CUDA, unlike the
+    # wav2vec2 affect model. See pipeline/device.py for why that is per-model.
+    model = WhisperForConditionalGeneration.from_pretrained(
+        MODEL_ID, dtype=device.dtype_for(prefer_fp16=True))
+    return processor, device.place(model, prefer_fp16=True)
 
 
 def load_audio(path: str) -> np.ndarray:

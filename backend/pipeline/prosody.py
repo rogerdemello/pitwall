@@ -28,6 +28,8 @@ from transformers import (
     Wav2Vec2PreTrainedModel,
 )
 
+from pipeline import device
+
 MODEL_ID = "audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim"
 SAMPLE_RATE = 16000
 
@@ -82,15 +84,21 @@ def _load():
     config = AutoConfig.from_pretrained(MODEL_ID)
     processor = Wav2Vec2FeatureExtractor.from_pretrained(MODEL_ID)
     model = _AffectModel.from_pretrained(MODEL_ID, config=config)
-    model.eval()
-    return processor, model
+    # fp32 deliberately: wav2vec2-large's feature-encoder group norm can overflow
+    # in fp16 and emit NaNs, which mean-pooling then turns into a plausible-
+    # looking score rather than an obvious failure. See pipeline/device.py.
+    return processor, device.place(model, prefer_fp16=False)
 
 
 def _predict(audio: np.ndarray, sampling_rate: int) -> tuple[float, float, float]:
     processor, model = _load()
     inputs = processor(audio, sampling_rate=sampling_rate, return_tensors="pt")
     with torch.no_grad():
-        out = model(inputs.input_values).squeeze().cpu().numpy()
+        out = model(device.inputs_to(inputs).input_values).squeeze().cpu().numpy()
+    if not np.all(np.isfinite(out)):
+        raise ValueError(
+            f"{MODEL_ID} returned non-finite affect {out!r} - refusing to score it"
+        )
     return tuple(float(v) for v in out)  # arousal, dominance, valence
 
 

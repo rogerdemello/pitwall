@@ -12,6 +12,8 @@ from dataclasses import dataclass
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
+from pipeline import device
+
 MODEL_ID = "cardiffnlp/twitter-roberta-base-sentiment-latest"
 
 
@@ -32,8 +34,7 @@ class TextSentiment:
 def _load():
     tok = AutoTokenizer.from_pretrained(MODEL_ID)
     model = AutoModelForSequenceClassification.from_pretrained(MODEL_ID)
-    model.eval()
-    return tok, model
+    return tok, device.place(model, prefer_fp16=False)
 
 
 def analyse(text: str) -> TextSentiment:
@@ -43,7 +44,8 @@ def analyse(text: str) -> TextSentiment:
     tok, model = _load()
     inputs = tok(text, return_tensors="pt", truncation=True, max_length=256)
     with torch.no_grad():
-        probs = torch.softmax(model(**inputs).logits, dim=-1).squeeze().tolist()
+        logits = model(**device.inputs_to(inputs)).logits
+        probs = torch.softmax(logits, dim=-1).squeeze().cpu().tolist()
 
     # id2label from the model config rather than positional assumption.
     by_label = {model.config.id2label[i].lower(): float(p) for i, p in enumerate(probs)}
