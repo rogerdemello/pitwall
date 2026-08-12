@@ -1,0 +1,462 @@
+/* PIT WALL design tokens.
+   Dark-first: this is a race-engineer console, read in a dim garage. Colours are
+   the validated data-viz palette stepped for a dark surface, not invented.
+
+   Light mode is a *selected* set of steps for a light surface, not an automatic
+   inversion - the dark steps are not valid against white. Both sets were run
+   through the palette validator:
+     dark  on #141416 -> all checks pass (all-pairs)
+     light on #fcfcfb -> all checks pass, with aqua at 2.74:1 flagged WARN, which
+                         the relief rule covers because every chart ships a table
+                         view. Aqua is NOT used for text in light mode: 2.74:1
+                         fails WCAG AA, so --accent-text switches to a darker
+                         green there. */
+
+:root {
+  --plane: #0d0d0d;
+  --surface-1: #141416;
+  --surface-2: #1c1c1f;
+  --surface-3: #232327;
+
+  --ink-primary: #ffffff;
+  --ink-secondary: #c3c2b7;
+  --ink-muted: #898781;
+
+  --grid: #2c2c2a;
+  --baseline: #383835;
+  --hairline: rgba(255, 255, 255, 0.1);
+
+  /* Categorical (validated: all-pairs PASS on #141416, dark mode) */
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+
+  /* Status - reserved, never used as a series */
+  --good: #0ca30c;
+  --warning: #fab219;
+  --serious: #ec835a;
+  --critical: #d03b3b;
+
+  /* Green used as *text* (the driver-voice badge). Distinct from --series-3,
+     which is a chart mark and allowed lower contrast under the relief rule. */
+  --accent-text: #199e70;
+
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+
+  color-scheme: dark;
+}
+
+/* ---------- light mode ----------
+   Applied when the OS asks for light AND the user has not pinned dark, or when
+   the toggle explicitly stamps light. The :not() guard lets a dark stamp beat
+   OS-light, so the toggle wins in both directions. */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --plane: #f9f9f7;
+    --surface-1: #fcfcfb;
+    --surface-2: #f2f2ee;
+    --surface-3: #e9e9e3;
+
+    --ink-primary: #0b0b0b;
+    --ink-secondary: #52514e;
+    --ink-muted: #898781;
+
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --hairline: rgba(11, 11, 11, 0.1);
+
+    --series-1: #2a78d6;
+    --series-2: #eb6834;
+    --series-3: #1baf7a;
+    --accent-text: #006300;
+
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --plane: #f9f9f7;
+  --surface-1: #fcfcfb;
+  --surface-2: #f2f2ee;
+  --surface-3: #e9e9e3;
+
+  --ink-primary: #0b0b0b;
+  --ink-secondary: #52514e;
+  --ink-muted: #898781;
+
+  --grid: #e1e0d9;
+  --baseline: #c3c2b7;
+  --hairline: rgba(11, 11, 11, 0.1);
+
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --accent-text: #006300;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--plane);
+  color: var(--ink-primary);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- shell ---------- */
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 0 24px;
+  height: 58px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--surface-1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  font-size: 14px;
+}
+
+.brand .accent {
+  color: var(--series-2);
+}
+
+.brand .sub {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.nav a {
+  padding: 7px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav a:hover {
+  background: var(--surface-3);
+  color: var(--ink-primary);
+}
+
+.nav a.active {
+  background: var(--surface-3);
+  color: var(--ink-primary);
+  font-weight: 600;
+}
+
+.page {
+  flex: 1;
+  padding: 24px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------- primitives ---------- */
+
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.card-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+
+.hero-figure {
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 650;
+  /* proportional figures on purpose - tabular-nums looks loose at display size */
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  background: var(--surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.stat .label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.stat .value {
+  font-size: 26px;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.stat .foot {
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+
+.muted {
+  color: var(--ink-muted);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- driver picker ---------- */
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.chip {
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+  color: var(--ink-secondary);
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: all 0.15s;
+}
+
+.chip:hover {
+  border-color: var(--ink-muted);
+  color: var(--ink-primary);
+}
+
+.chip.on {
+  background: var(--series-1);
+  border-color: var(--series-1);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- severity ---------- */
+
+.sev {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* status colour never carries meaning alone - each ships with its icon + word */
+.sev.act {
+  background: rgba(208, 59, 59, 0.15);
+  color: var(--critical);
+}
+
+.sev.watch {
+  background: rgba(250, 178, 25, 0.13);
+  color: var(--warning);
+}
+
+.sev.info {
+  background: rgba(137, 135, 129, 0.15);
+  color: var(--ink-muted);
+}
+
+/* ---------- table view (the WCAG-clean twin of every chart) ---------- */
+
+.tablewrap {
+  overflow-x: auto;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+table.data th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  font-size: 10.5px;
+  letter-spacing: 0.07em;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--baseline);
+  position: sticky;
+  top: 0;
+  background: var(--surface-1);
+}
+
+table.data td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--grid);
+  color: var(--ink-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+table.data tr:hover td {
+  background: var(--surface-2);
+}
+
+.linkish {
+  background: none;
+  border: none;
+  color: var(--series-1);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  font-family: var(--font);
+}
+
+.linkish:hover {
+  text-decoration: underline;
+}
+
+/* ---------- layout ---------- */
+
+/* The Replay and Live screens are two-column on desktop. Below ~900px the
+   detail panel has nowhere to go, so both stack. */
+.split {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.85fr) minmax(320px, 1fr);
+}
+
+.split.even {
+  grid-template-columns: minmax(300px, 1fr) minmax(0, 1.4fr);
+}
+
+@media (max-width: 900px) {
+  .split,
+  .split.even {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page {
+    padding: 16px 14px;
+  }
+
+  .topbar {
+    gap: 12px;
+    padding: 0 14px;
+  }
+
+  .brand .sub {
+    display: none;
+  }
+
+  .nav a {
+    padding: 7px 10px;
+    font-size: 12.5px;
+  }
+}
+
+/* ---------- accessibility ---------- */
+
+/* Chart points were click-only. They are real controls, so they take focus and
+   respond to Enter/Space like any button. */
+:focus-visible {
+  outline: 2px solid var(--series-1);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.chart-point {
+  cursor: pointer;
+}
+
+.chart-point:focus {
+  outline: none;
+}
+
+.chart-point:focus-visible {
+  outline: 2px solid var(--ink-primary);
+  outline-offset: 1px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

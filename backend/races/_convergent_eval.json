@@ -1,0 +1,71 @@
+{
+ "second_model": "Dpngtm/wav2vec2-emotion-recognition",
+ "n": 55,
+ "skipped_unmappable": 5,
+ "raw_agreement": 0.2364,
+ "cohens_kappa": -0.0013,
+ "kappa_band": "worse than chance",
+ "ours_distribution": {
+  "Fatigued": 17,
+  "Calm": 7,
+  "Energised": 19,
+  "Stressed": 12
+ },
+ "theirs_distribution": {
+  "Stressed": 45,
+  "Energised": 4,
+  "Fatigued": 6
+ },
+ "confusion_ours_vs_theirs": {
+  "Calm": {
+   "Stressed": 4,
+   "Fatigued": 2,
+   "Energised": 1
+  },
+  "Energised": {
+   "Stressed": 18,
+   "Fatigued": 1
+  },
+  "Stressed": {
+   "Stressed": 10,
+   "Energised": 2
+  },
+  "Fatigued": {
+   "Stressed": 13,
+   "Energised": 1,
+   "Fatigued": 3
+  }
+ },
+ "label_mapping": {
+  "angry": "Stressed",
+  "anger": "Stressed",
+  "fear": "Stressed",
+  "fearful": "Stressed",
+  "disgust": "Stressed",
+  "disgusted": "Stressed",
+  "happy": "Energised",
+  "happiness": "Energised",
+  "sad": "Fatigued",
+  "sadness": "Fatigued",
+  "neutral": "Calm"
+ },
+ "reference_collapsed_on_radio": true,
+ "reference_largest_class_share": 0.8182,
+ "reference_sanity_check": {
+  "ran": true,
+  "n": 120,
+  "accuracy_on_gold": 0.8167,
+  "majority_baseline": 0.5833,
+  "beats_baseline": true,
+  "prediction_distribution": {
+   "Stressed": 73,
+   "Energised": 21,
+   "Fatigued": 26
+  },
+  "largest_class_share": 0.6083,
+  "truth_largest_class_share": 0.5833,
+  "degenerate_on_gold": false
+ },
+ "verdict": "Raw agreement 23.6%, Cohen's kappa -0.0013 (worse than chance). But the reference model is degenerate on radio: it assigns one quadrant to 82% of clips. On CREMA-D it works normally (81.7% vs a 58.3% baseline, largest class 61%), so the failure is domain transfer in the *reference*, not evidence about our scoring. This comparison cannot adjudicate either way - it is reported because the attempt was made, not because it settles anything.",
+ "why_kappa": "Raw agreement is misleading here: both models over-produce one or two quadrants, so a large share of agreement happens by accident. Kappa subtracts the agreement expected from the marginal distributions."
+}

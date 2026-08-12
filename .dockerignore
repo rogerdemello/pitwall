@@ -1,0 +1,39 @@
+# Keep the Space image small and the build fast.
+
+# Source audio: several GB, and it is not ours to redistribute. The Space serves
+# precomputed race JSON, so the Replay screen needs none of it. Live Analysis
+# works on uploads.
+backend/clips/
+
+# Raw model outputs are an intermediate; backend/races/*.json is the artifact
+# the app actually reads.
+backend/raw/
+backend/raw_v1/
+backend/.fastf1_cache/
+backend/hub_dataset/
+
+# Build tools. The Colab notebook runs stage-1 inference on a GPU and writes
+# backend/raw/. It is not part of the application and must not ship in the image.
+backend/tools/
+*.ipynb
+
+# Logs. `backend/*.log` does not match the root-level docker build logs, so both
+# patterns are needed.
+backend/*.log
+docker_build*.log
+backend/_run_2023.py
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+*.tsbuildinfo
+node_modules/
+
+.git/
+.gitignore

@@ -1,0 +1,147 @@
+{
+ "question": "Does the Driver State Index separate races that were genuinely different to drive?",
+ "why_it_matters": "This is the strongest available test of whether DSI measures anything real. The slate was chosen for contrast before any of it was analysed: a soaking-wet scramble, a dry processional afternoon as a control, a race run in punishing heat. If those do not separate, the index is measuring something other than driver state.",
+ "setup": {
+  "races": 6,
+  "messages_analysed": 1042,
+  "messages_scored": "engineer-attributed transmissions excluded",
+  "calibration": "pooled across all six races - per-race calibration centres every race on 50.0 by construction and would have made this test impossible",
+  "predictions_made_in_advance": {
+   "high": [
+    "2020 Turkish (wet)",
+    "2019 German (wet chaos)",
+    "2023 Monaco (dry to wet)"
+   ],
+   "low": [
+    "2023 Italian (dry, processional - the control)"
+   ],
+   "fatigue": [
+    "2023 Qatar (extreme heat)"
+   ]
+  }
+ },
+ "results": [
+  {
+   "race": "2023 Monaco",
+   "n": 164,
+   "mean_dsi": 53.0,
+   "sd": 13.1,
+   "ci95": [
+    51.0,
+    55.0
+   ],
+   "stressed_pct": 18,
+   "fatigued_pct": 43
+  },
+  {
+   "race": "2020 Turkish",
+   "n": 143,
+   "mean_dsi": 53.0,
+   "sd": 12.0,
+   "ci95": [
+    51.0,
+    54.9
+   ],
+   "stressed_pct": 17,
+   "fatigued_pct": 27
+  },
+  {
+   "race": "2023 Qatar",
+   "n": 121,
+   "mean_dsi": 52.3,
+   "sd": 15.2,
+   "ci95": [
+    49.6,
+    55.0
+   ],
+   "stressed_pct": 21,
+   "fatigued_pct": 42
+  },
+  {
+   "race": "2021 Abu Dhabi",
+   "n": 108,
+   "mean_dsi": 51.4,
+   "sd": 12.9,
+   "ci95": [
+    49.0,
+    53.8
+   ],
+   "stressed_pct": 14,
+   "fatigued_pct": 29
+  },
+  {
+   "race": "2019 German",
+   "n": 114,
+   "mean_dsi": 48.8,
+   "sd": 13.2,
+   "ci95": [
+    46.4,
+    51.2
+   ],
+   "stressed_pct": 19,
+   "fatigued_pct": 37
+  },
+  {
+   "race": "2023 Italian",
+   "n": 132,
+   "mean_dsi": 47.5,
+   "sd": 13.7,
+   "ci95": [
+    45.2,
+    49.9
+   ],
+   "stressed_pct": 14,
+   "fatigued_pct": 38
+  }
+ ],
+ "contrasts_vs_dry_control": [
+  {
+   "race": "2023 Monaco",
+   "diff": 5.5,
+   "z": 3.51,
+   "p": 0.0004,
+   "survives_bonferroni": true
+  },
+  {
+   "race": "2020 Turkish",
+   "diff": 5.5,
+   "z": 3.5,
+   "p": 0.0005,
+   "survives_bonferroni": true
+  },
+  {
+   "race": "2023 Qatar",
+   "diff": 4.8,
+   "z": 2.6,
+   "p": 0.009,
+   "survives_bonferroni": true
+  },
+  {
+   "race": "2021 Abu Dhabi",
+   "diff": 3.9,
+   "z": 2.24,
+   "p": 0.025,
+   "survives_bonferroni": false
+  },
+  {
+   "race": "2019 German",
+   "diff": 1.3,
+   "z": 0.74,
+   "p": 0.461,
+   "survives_bonferroni": false
+  }
+ ],
+ "bonferroni_note": "Five contrasts were tested, so the corrected threshold is p < 0.01. Abu Dhabi's p = 0.025 does not survive it and is not claimed.",
+ "verdict": "PARTIAL SUPPORT - four of five predictions held, one clearly failed.",
+ "what_held": [
+  "The dry processional control (Monza 2023) is the lowest-stress race in the set, as predicted.",
+  "Wet Turkey 2020 sits at the top and is significantly above the control (p < 0.001).",
+  "Monaco 2023 is joint-top and significantly above the control (p < 0.001).",
+  "Qatar 2023 - the extreme-heat race - has the highest share of Stressed messages (21%) and 42% Fatigued, consistent with the physical-fatigue hypothesis."
+ ],
+ "what_failed": "2019 German was predicted to be near the top: it was a wet, chaotic race with multiple retirements. It came out second-lowest (48.8) and is statistically indistinguishable from the dry control (p = 0.46). The prediction was wrong, and we do not have an explanation we can support.",
+ "effect_size": "The full spread is 5.5 DSI points against a within-race sd of about 13, so Cohen's d is roughly 0.42 - a small-to-moderate effect. The index separates these races, but not dramatically.",
+ "confound_we_cannot_rule_out": "RESOLVED - see _era_analysis.json. This previously read as an open confound: the slate spanned 2019-2023 and radio encoding is not constant across seasons, so some separation could have been recording era. It was then tested directly by building nine races from 2023 alone. Within that single season races still spread 5.5 DSI points against 5.6 across all eras, Monaco vs Monza differs by +5.5 (p=0.0005, surviving Bonferroni), and there is no systematic offset between eras (-0.6 points, p=0.45). Recording era does not explain the separation.",
+ "honest_summary": "DSI separates races in the direction predicted, with the dry processional control correctly at the bottom, and the era confound has now been tested and ruled out on a nine-race within-season slate. It remains evidence that the index tracks race conditions, not proof it tracks driver stress specifically: the effect is modest (Cohen's d about 0.42), one prediction still failed (2019 German), and validation against gold labels shows the valence half of the index is at chance.",
+ "confound_status": "resolved"
+}

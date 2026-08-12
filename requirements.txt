@@ -1,0 +1,30 @@
+# Pinned to the versions this project was actually built and measured against
+# (read off the working environment, not guessed - a pin to an untested version
+# is worse than no pin).
+#
+# torch is CPU-only on purpose: the Space needs no GPU because race data is
+# precomputed, and the CPU wheel is a fraction of the image size.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.9.1
+transformers==5.15.0
+librosa==0.11.0
+soundfile==0.14.0
+numpy==1.26.2
+pandas==2.1.3
+scikit-learn==1.8.0
+
+fastapi==0.129.0
+uvicorn==0.41.0
+python-multipart==0.0.6
+
+# Data pipeline. Not needed to *serve* a precomputed Space, but kept so the
+# container can rebuild a race if asked.
+fastf1==3.8.3
+datasets==5.0.1
+duckdb==1.5.5
+jiwer==4.0.0
+
+# NOTE: torchaudio is deliberately absent. speechbrain pulled in a build that was
+# ABI-incompatible with torch 2.9.1 and broke every import; nothing here needs it
+# because audio is loaded with librosa.

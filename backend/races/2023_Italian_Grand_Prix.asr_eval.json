@@ -1,0 +1,270 @@
+{
+ "race_id": "2023_Italian_Grand_Prix",
+ "sample_size": 40,
+ "wer_unbiased": 0.2857,
+ "wer_biased": 0.3009,
+ "wer_delta": 0.0152,
+ "jargon_terms_in_reference": 8,
+ "jargon_recovered_unbiased": 6,
+ "jargon_recovered_biased": 6,
+ "jargon_recall_unbiased": 0.75,
+ "jargon_recall_biased": 0.75,
+ "note": "WER is measured against the dataset's published transcripts, which themselves contain F1-jargon errors. Treat WER as agreement with a noisy baseline; jargon recall is the more meaningful signal.",
+ "examples": [
+  {
+   "id": "2023_Italian_Grand_Prix_LIALAW01_40_20230903_131035",
+   "reference": "And we still don't have the push to go on now. Okay, copy. I was going to just use it after I started, but copy, I'll do it now. Thank you.",
+   "biased": "And we still don't have the push to go on now. Okay, copy. I was going to just use it after I started, but copy, I don't know. Thank you.",
+   "unbiased": "And we still don't have the push to go now. Okay, copy. I was going to just use it after I started, but copy, I don't know. Thank you.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_GEORUS01_63_20230903_131334",
+   "reference": "Seemed to be a bit more bouncing then than yesterday. Nothing substantial. Fuel 0.1 safe. We'll just have a look at the data on that bouncing.",
+   "biased": "Seem to be a bit more, um, bouncing then. No news today, nothing substantial. Fuel point one safe. Now we'll just have a look at the data on that bouncing.",
+   "unbiased": "Seem to be a bit more um, bouncing then. No news today, nothing substantial. Fuel point one safe. Now we'll just have a look at the data on that bouncing.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_131615",
+   "reference": "There's a problem on the anti store, guys. I'm not releasing my proctor. Copy, Joey, checking now. I paid extra attention, still, same apartment.",
+   "biased": "There's a problem on the anti-store guys. I'm not releasing my photo. Copy, Joe. We checking now? I paid extra attention, still same about.",
+   "unbiased": "There's a problem on the anti-store guys. I'm not releasing my photo. Copy, Joe. We checking now? I paid extra attention, still same about.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_MAXVER01_1_20230903_135634",
+   "reference": "Radio 10 max. Yeah, radio tech. Louder clear. So formation lap procedures. Mode 12, the dummy launch and formation lap. Pit limiter off and a static 5.5 once the car is on the ground. Carry out your launch to third gear and then during the formation lap looking for around plus 15 on your rear left. plus 15 on your rear left. Target refill should be possible to achieve. Lift and coast into turn 11 and no more than 50% throttle from there. From Sergeant's grid position which is grid slot 15 and just as another reminder Alvatore's pit wall is P14. One long and one short. One long, one short burnout and an extra ramp rather than coasting down into your start position.",
+   "biased": "Radio check max. Yep, radio check.",
+   "unbiased": "Radio check max. Yep, radio check.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_YUKTSU01_22_20230903_140211",
+   "reference": "Failure, HP failure. Copy.",
+   "biased": "Ophelia, how do you feel here? Copy.",
+   "unbiased": "Ophelia, how do you feel here? Copy",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_OSCPIA01_81_20230903_140418",
+   "reference": "Okay, there are currently double yellows from turn 8 to turn 11. Sonoda is stopped on the right hand side at the entry to turn 11. They may have cleared the car by the time we get there.",
+   "biased": "Okay, there are currently double yellows from turn 8 to turn 11. Sonoda is stopped on the right hand side at the entry to turn 11. They may have cleared the car by the time we get there.",
+   "unbiased": "Okay, there are currently double yellows from turn 8 to turn 11. Sonoda is stopped on the right hand side at the entry to turn 11. They may have cleared the car by the time we get there.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_MAXVER01_1_20230903_150644",
+   "reference": "Okay, Max, we're expecting the race start to be aborted, so, expecting you to switch your engine off and be a five minute delay.",
+   "biased": "Okay Max, we're expecting the race start to be aborted, so expecting you to switch your engine off and be a five minute delay.",
+   "unbiased": "Okay Max, we're expecting the race start to be aborted, so expecting you to switch your engine off and be a five minute delay.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_ALEALB01_23_20230903_140836",
+   "reference": "The Synodus car is on the flatbed, but with an aborted start, we should be allowed back on the grid and the restart of five minutes, but currently can't get access to the grid.",
+   "biased": "The synodus goes on the flatbed but with an aborted start we should be allowed back on the grid and the restart five minutes but currently can't get access to the grid.",
+   "unbiased": "The synodus goes on the flatbed but with an aborted start we should be allowed back on the grid and the restart five minutes but currently can't get access to the grid.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_PIEGAS01_10_20230903_141146",
+   "reference": "Yeah, let me know in terms of PU temps on the first formation lap if there's anything you want me to do different because ideally I'd still want to push for rear tires. Yeah, copy that, mate. We'll let you know. Given this delay, we'll probably be fine.",
+   "biased": "Yeah, let me know in terms of PU terms on the first formation lap if there's anything you want me to do different, because ideally I still want to push for real tyres. Yeah, copy that name, we'll let you know. Even this delay will probably be fine.",
+   "unbiased": "Yeah, let me know in terms of PU terms on the first formation lap if there's anything you want me to do different because ideally I still want to push for real tyres. Yeah, copy that name. We'll let you know. Even this delay will probably be fine.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "tyres"
+   ],
+   "unbiased_jargon": [
+    "tyres"
+   ]
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_LEWHAM01_44_20230903_141501",
+   "reference": "The tire's cold or at least hell turned. They haven't dropped too much actually, I think that direct sunlight helps as well.",
+   "biased": "The tyre's cold, or at least, hell tent. They haven't dropped too much actually, I think that direct sunlight helps as well.",
+   "unbiased": "The tyre's cold, or are they still 10? They haven't dropped too much actually, I think that direct sunlight helps as well.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "tyre"
+   ],
+   "unbiased_jargon": [
+    "tyre"
+   ]
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_MAXVER01_1_20230903_142025",
+   "reference": "Okay, Max, the procedure will be the same. However, I would like you to target between 12 and 15, no more than 15 on the rear left. You are up to 20.",
+   "biased": "Okay, Max, the procedure will be the same, however, I would like you to target between 12 and 15. No more than 15 on the rear left. You are up to 20.",
+   "unbiased": "Okay, Max, the procedure will be the same, however, I would like you to target between 12 and 15. No more than 15 on the rear left. You are up to 20.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_FERALO01_14_20230903_142108",
+   "reference": "So, maximum temperature when you can, under tyres, and then good lifts, then a good brake.",
+   "biased": "So maximum temperature when you can under tires and then good lifts then a good brake.",
+   "unbiased": "So maximum temperature when you can under tires and then good lifts then a good break",
+   "ref_jargon": [
+    "tyres"
+   ],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_142714",
+   "reference": "Suggest entry plus one. Confirm. DRS enabled. Special two available for turn six and seven.",
+   "biased": "Suggest entry plus one. Not firm. DRS enabled. Special two available for turns six and seven.",
+   "unbiased": "Suggest entry plus one. Not firm. DRS enabled. Special two available for turns six and seven.",
+   "ref_jargon": [
+    "drs"
+   ],
+   "biased_jargon": [
+    "drs"
+   ],
+   "unbiased_jargon": [
+    "drs"
+   ]
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_CHALEC01_16_20230903_143040",
+   "reference": "And easy breaking energies into turn one, got to Russell behind 1.7.",
+   "biased": "And easy braking energies into turn one, got to Russell behind 1.7.",
+   "unbiased": "And easy braking energies into turn one got to Russell behind 1.7",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_FERALO01_14_20230903_143228",
+   "reference": "Just for info, the fuel numbers on the dash are not correct, so don't worry, we'll keep you updated.",
+   "biased": "Just for info, the fuel numbers on the dash are not correct, so don't worry, we'll keep the updated.",
+   "unbiased": "Just for info, the fuel numbers on the dash are not correct, so don't worry, we'll keep the updated.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_LANNOR01_4_20230903_143550",
+   "reference": "Yeah, I'm just, I think I'm quicker at the minute. I'm stuck in the data here. Okay.",
+   "biased": "Yeah, I'm just, I think I'm quicker at the minute. I'm just stuck in the data, yeah. Okay.",
+   "unbiased": "Yeah, I'm just... I think I'm quicker at the minute. I'm stuck in the data. Okay.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_CARSAI01_55_20230903_143656",
+   "reference": "And this mid plus one, twelve the balance, this mid plus one, point six behind.",
+   "biased": "DRS1, 12 balance, DRS1.69.",
+   "unbiased": "And this made the plus one 12 the balance did meet the plus 1.6 behind",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_NICHUL01_27_20230903_144034",
+   "reference": "Balance is tricky, 6-7, very understated, but the rest is really, really limited. They're not great. Understood, Nico.",
+   "biased": "Balance is tricky, 6.7, very understeering, but the rest is really, really limited. Not great. Understood, Nico.",
+   "unbiased": "Balance is tricky, 6-7. Very understeering, but the rest is really, really limited. Not great. Understood, Nico.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_SERPER01_11_20230903_154331",
+   "reference": "He pushed me off.",
+   "biased": "He pushed me off.",
+   "unbiased": "He pushed me off.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_LANNOR01_4_20230903_144438",
+   "reference": "I'm just a lot quicker, I also need to pick up the pace. Okay, Lando, we are looking at that.",
+   "biased": "I'm just a lot quicker, I was pretty sick of the pace. Okay Landa, we are looking at that.",
+   "unbiased": "I'm just a lot quicker, I was pretty sick of the pace. Okay Landa, we are looking at that.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_FERALO01_14_20230903_144721",
+   "reference": "Okay, so last lap they were 27 twos. Yep, cars ahead. Still all clear on our pit window behind.",
+   "biased": "Okay, so last lap they were 27 2s. Cars ahead. Still all clear on our pit window behind.",
+   "unbiased": "Okay, so last lap they were 27 2's cars ahead still all clear on our pit window behind",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [
+    "pit"
+   ],
+   "unbiased_jargon": [
+    "pit"
+   ]
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_GEORUS01_63_20230903_144937",
+   "reference": "Ready to drop it off. Yeah, understood.",
+   "biased": "Yeah, understood.",
+   "unbiased": "Yeah, understood.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_CHALEC01_16_20230903_145213",
+   "reference": "So mode box, mode box, and box is lab box.",
+   "biased": "So, mode box, mode box, and box, this lap box.",
+   "unbiased": "So, mode box, mode box, and box this lap box.",
+   "ref_jargon": [
+    "box"
+   ],
+   "biased_jargon": [
+    "box"
+   ],
+   "unbiased_jargon": [
+    "box"
+   ]
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_GEORUS01_63_20230903_145433",
+   "reference": "Check with the radio way out to the weak base set.",
+   "biased": "Checkers already went out for free base night.",
+   "unbiased": "Check with the radio, we have a briefcase now.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Italian_Grand_Prix_KEVMAG01_20_20230903_145710",
+   "reference": "I think I don't need to push in turn six to create a mistake. It balances the count. Understand, Kev. I'll get back to you. Anyway, I think we're looking at plan C, no? We're looking at plan B, which I think is what you're talking about. Plan C was the first lap shuffle. Copy.",
+   "biased": "I think I do need to push in turn 6 to create an steer. It balances the card. I understand Kev, I'll get back to you. Anyway, I think we're looking at plan C now. We're looking at plan B, which I think is what you're talking about. Plan C was the first lap shuffle. Copy.",
+   "unbiased": "I think I don't need to set six to create a new steer if balance is the card. Understand, Kev, I'll get back to you. Anyway, I think we're looking at plan C. No, we're looking at plan B, which I think is what you're talking about. Plan C was the first lap shuffle. Copy.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  }
+ ]
+}

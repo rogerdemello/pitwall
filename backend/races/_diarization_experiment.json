@@ -1,0 +1,44 @@
+{
+ "experiment": "Acoustic speaker separation (driver vs race engineer)",
+ "question": "Can we attribute each window of radio audio to the driver or their engineer, so driver-state scores are computed from the driver's voice alone?",
+ "motivation": "12% of clips provably contain both speakers and 24% run over 15s (multi-turn), but the prosody model averages a whole clip into one affect score. The text heuristic in speaker.py can suppress a claim but cannot clean the audio, and leaves 42% of messages unattributed.",
+ "method": "A car's radio channel carries only two voices all race. Pool every clip for one driver, window at 3s, drop non-speech by RMS, embed each window with microsoft/wavlm-base-plus-sv (ungated speaker-verification x-vector), cluster into two with spherical k-means, then name the clusters using speaker.py's text direction as weak supervision on short unambiguous clips only.",
+ "pre_registered_criteria": {
+  "min_anchor_windows": 15,
+  "driver_share_of_driver_cluster": ">= 0.65",
+  "driver_share_of_engineer_cluster": "<= 0.35",
+  "note": "Set before running, so the result could not be tuned into a pass."
+ },
+ "rounds": [
+  {
+   "round": 1,
+   "change": "Naive: clip-level text label applied to every window in the clip.",
+   "result": "Strong acoustic separation (cosine ~0.78 within vs ~0.35 between) but clusters mislabelled.",
+   "why": "Dialogue clips contain both speakers, so the supervision was poisoned by the very contamination the method exists to remove."
+  },
+  {
+   "round": 2,
+   "change": "Anchors restricted to short (<=7s) clips with unambiguous text direction; non-speech windows dropped; spherical k-means.",
+   "result": "Anchors collapsed to 5-7 windows per driver, zero for Perez.",
+   "why": "Too few single-turn unambiguous clips exist per driver in one race. Also exposed a bug: a cluster with no anchors scored 0.0 and could still beat an overwhelmingly-engineer cluster."
+  },
+  {
+   "round": 3,
+   "change": "Cluster labelled by anchor majority with empty clusters resolved by elimination; clips pooled across all six downloaded races to multiply anchors.",
+   "result": "1 of 4 drivers met the criteria.",
+   "why": "Pooling across races raised anchor counts but reduced acoustic separation (gap 0.12-0.15 vs 0.22-0.44 single-race), because different races add channel and recording variation that blurs speaker identity."
+  }
+ ],
+ "results": [
+  {"driver": "MAXVER01", "clips": 100, "windows": 351, "anchors": 30, "cosine_gap": 0.123, "driver_share": 0.71, "other_share": 0.04, "passed": true},
+  {"driver": "SERPER01", "clips": 48, "windows": 123, "anchors": 14, "cosine_gap": 0.155, "driver_share": 0.80, "other_share": 0.11, "passed": false, "note": "clean separation; failed only on anchor count"},
+  {"driver": "LEWHAM01", "clips": 95, "windows": 310, "anchors": 17, "cosine_gap": 0.149, "driver_share": 0.83, "other_share": 0.55, "passed": false, "note": "second cluster is mixed, not a speaker split"},
+  {"driver": "LANNOR01", "clips": 63, "windows": 263, "anchors": 13, "cosine_gap": 0.149, "driver_share": 0.67, "other_share": 0.43, "passed": false}
+ ],
+ "verdict": "REJECTED - not shipped in the pipeline.",
+ "conclusion": "Acoustic separation between the two voices on a channel is real and measurable, but reliably naming which cluster is the driver is not achievable with the labelled signal available. It cleared the pre-set bar for 1 of 4 drivers. Shipping it would have made driver-state attribution confidently wrong three times out of four, which is worse than the honest 'unknown' the text heuristic already returns.",
+ "what_we_kept": "speaker.py's grammatical-direction heuristic, which declines to guess (42% unknown) rather than misattributing, and which suppresses driver-state claims on engineer transmissions.",
+ "what_would_fix_it": "Hand-labelled speaker ground truth on a few hundred windows would replace the weak supervision entirely and likely resolve the labelling step; per-race rather than pooled embedding would preserve the stronger acoustic separation. Both are further work, not claims.",
+ "model": "microsoft/wavlm-base-plus-sv",
+ "note_on_pyannote": "pyannote/speaker-diarization-3.1 was the first choice but is gated behind licence acceptance on two models plus an access token. The ungated WavLM path was used so the experiment could run; the same labelling problem would apply to pyannote, since it is the cluster-naming step that failed, not the segmentation."
+}

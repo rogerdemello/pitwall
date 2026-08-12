@@ -1,0 +1,259 @@
+{
+ "race_id": "2023_Qatar_Grand_Prix",
+ "sample_size": 40,
+ "wer_unbiased": 0.2027,
+ "wer_biased": 0.3903,
+ "wer_delta": 0.1876,
+ "jargon_terms_in_reference": 5,
+ "jargon_recovered_unbiased": 3,
+ "jargon_recovered_biased": 4,
+ "jargon_recall_unbiased": 0.6,
+ "jargon_recall_biased": 0.8,
+ "note": "WER is measured against the dataset's published transcripts, which themselves contain F1-jargon errors. Treat WER as agreement with a noisy baseline; jargon recall is the more meaningful signal.",
+ "examples": [
+  {
+   "id": "2023_Qatar_Grand_Prix_LANSTR01_18_20231008_171127",
+   "reference": "Wind is 6 kph as expected so it is on the low side.",
+   "biased": "... witness 6 kph as expected so it is on the low side.",
+   "unbiased": "Witness 6KPH has expected so it is on the low side",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_171345",
+   "reference": "Oscar wind-wised similar to the sprint race yesterday, very mild wind.",
+   "biased": "Oscar wind wise it's similar to the sprint race yesterday, very mild wind.",
+   "unbiased": "Oscar wind wise it's similar to the sprint race yesterday very mild wind",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LANNOR01_4_20231008_171729",
+   "reference": "And launch ship at Lando that was on target, initial throttle good.",
+   "biased": "Launch ship at land, that was on target, initial throttle, good.",
+   "unbiased": "Launch ship at Lando, that was on target, initial throttle, good.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_CHALEC01_16_20231008_172006",
+   "reference": "Can we quickly do the left mirror?",
+   "biased": "Can we quickly do the left mirror?",
+   "unbiased": "Can we quickly do the left mirror?",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_MAXVER01_1_20231008_175510",
+   "reference": "Rear tyres, again target plus 5 on the dash into turn 16.",
+   "biased": "Real tyres, again target plus five on the back, into turn 16.",
+   "unbiased": "We're tires again target plus five on the back into turn 16",
+   "ref_jargon": [
+    "tyres"
+   ],
+   "biased_jargon": [
+    "tyres"
+   ],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_PIEGAS01_10_20231008_175616",
+   "reference": "I'm not sure if I'm going to be able to do that.",
+   "biased": "you",
+   "unbiased": "you",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LEWHAM01_44_20231008_180153",
+   "reference": "Set the duck to all these guys.",
+   "biased": "Set up all these guys.",
+   "unbiased": "Dr. All these guys",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_180549",
+   "reference": "Check my front wing, front left. Yeah, the guy is. Yeah, okay, copy. We are checking.",
+   "biased": "We are checking. Check my front wing, front left. Yeah, the guy is... Yeah, okay, copy. We are checking.",
+   "unbiased": "Check my front wing, front left. The guy is... Yeah, okay, copy.",
+   "ref_jargon": [
+    "front wing"
+   ],
+   "biased_jargon": [
+    "front wing"
+   ],
+   "unbiased_jargon": [
+    "front wing"
+   ]
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LEWHAM01_44_20231008_180733",
+   "reference": "No snipe, you're okay mate. Yeah, I'm taking out my man and teammate.",
+   "biased": "No snipe, you're okay mate? Yeah, I'm taking out my man with teammate.",
+   "unbiased": "No snipe, you're okay mate? Yeah, I'm taking out my man with team mate.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_GEORUS01_63_20231008_181139",
+   "reference": "I lost the words, honestly. I could just send the replays on my TV screen. I couldn't do anything. I was closely sandwiched. Keep your head down. Keep it in this race. Yeah, I know, I know, I know. Lap one. George, let's race now. Let's do the best out of it.",
+   "biased": "F1 radio, lost the words, honestly. I was just in the replays on my TV screen. Couldn't do anything. Closely sandwiched. Keep your head down. Keep your head in this race. Yeah, I know, I know, I know. F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio,",
+   "unbiased": "I lost my words, honestly. I was just in the replays on my TV screen. Couldn't do anything. I was closely sandwiched. Keep your head down. Keep your head in this race. Yeah, I know, I know, I know. I'm up one. George, let's race now. Let's do the best out of it.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LOGSAR01_2_20231008_181218",
+   "reference": "In front of Alex, a camber on medium is being investigated for his great start. Septic card turned 12, Verstappen starting to back off everybody.",
+   "biased": "In front of Alex, we can bear on medium. He's being investigated for his great start. Safety car turn 12, we're starting to back off everybody.",
+   "unbiased": "In front of Alex, he can bear on medium. He's being investigated for his great start. Setika turn 12, Verstappen starting to back off everybody.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "safety car"
+   ],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LANNOR01_4_20231008_181430",
+   "reference": "I know we suggest Strat Twelve, Strat Twelve, Toys, and Reminder to Drink.",
+   "biased": "And now we suggest strap 12, toys and reminder to drink.",
+   "unbiased": "And now we suggest strap 12, toys and reminder to drink.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_FERALO01_14_20231008_181640",
+   "reference": "Yeah, they can snap anything because they win.",
+   "biased": "Yeah, they can snap, I think, because they win.",
+   "unbiased": "Yeah, they can snap I think because they win.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_FERALO01_14_20231008_181813",
+   "reference": "So you know that that was one strike track limits one strike",
+   "biased": "So you know that was one strike, track limits, one strike.",
+   "unbiased": "So you know that was one strike track limits one strike",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_GUAZHO01_24_20231008_181939",
+   "reference": "Keep socket, socket.",
+   "biased": "Keep socket, socket.",
+   "unbiased": "Keep socket socket",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LIALAW01_40_20231008_182339",
+   "reference": "Liam, second strike, track limits, we can't afford anymore.",
+   "biased": "Liam, second strike track limits, we can't afford any more.",
+   "unbiased": "Liam, second strike track limits, we can't afford any more.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_GEORUS01_63_20231008_182605",
+   "reference": "I feel good, I can hear one more.",
+   "biased": "That's so good, I can give him one more.",
+   "unbiased": "That's so good. I can give him one more.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LANNOR01_4_20231008_182902",
+   "reference": "It's clear the pace is strong so let's really try and make sure we use that just for next time.",
+   "biased": "This clear to pace is strong so we'll try to make sure we use that just for next time.",
+   "unbiased": "This clear to pace is strong so we'll try to make sure we use that just for next time.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_LANSTR01_18_20231008_183404",
+   "reference": "Lance, you need to let Fernando buy as soon as you can, please. Important, he's on a different strategy.",
+   "biased": "Lance, you need to let Fernando buy as soon as you can please. Important, he's on a different strategy.",
+   "unbiased": "Lance, you need to let Fernando buy as soon as you can please. Important, he's on a different strategy.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_MAXVER01_1_20231008_183450",
+   "reference": "It will cut to you.",
+   "biased": "Ilk up to.",
+   "unbiased": "Ilk up to you.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_FERALO01_14_20231008_183637",
+   "reference": "Okay for now we have got two strikes on a track limits two strikes",
+   "biased": "Okay, so now we have got two strikes, unattractive limits, two strikes.",
+   "unbiased": "Okay, so now we have got two strikes, unattractive limits, two strikes.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_MAXVER01_1_20231008_183816",
+   "reference": "Your lap at the end of the first stint is still a purple lap, Max. It was an insane stint.",
+   "biased": "Your lap at the end of the first stint is still a purple lap box, it was an insane stint.",
+   "unbiased": "Your lap at the end of the first stint is still a purple lap, it was an insane stint.",
+   "ref_jargon": [
+    "stint"
+   ],
+   "biased_jargon": [
+    "box",
+    "stint"
+   ],
+   "unbiased_jargon": [
+    "stint"
+   ]
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_PIEGAS01_10_20231008_183940",
+   "reference": "But I can't fight with this energy.",
+   "biased": "F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio, F1 radio,",
+   "unbiased": "But I can't fight with this energy.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_OSCPIA01_81_20231008_184022",
+   "reference": "I didn't get any time when I went up last time.",
+   "biased": "I didn't get any time when I went up last time.",
+   "unbiased": "I didn't get any time when I went up last time.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Qatar_Grand_Prix_ALEALB01_23_20231008_184259",
+   "reference": "Do we not take this cable?",
+   "biased": "You had update, what's going on?",
+   "unbiased": "You had update, what's going on?",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  }
+ ]
+}

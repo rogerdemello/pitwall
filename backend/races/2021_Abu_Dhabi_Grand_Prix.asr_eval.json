@@ -1,0 +1,284 @@
+{
+ "race_id": "2021_Abu_Dhabi_Grand_Prix",
+ "sample_size": 40,
+ "wer_unbiased": 0.2138,
+ "wer_biased": 0.2157,
+ "wer_delta": 0.0019,
+ "jargon_terms_in_reference": 10,
+ "jargon_recovered_unbiased": 9,
+ "jargon_recovered_biased": 10,
+ "jargon_recall_unbiased": 0.9,
+ "jargon_recall_biased": 1.0,
+ "note": "WER is measured against the dataset's published transcripts, which themselves contain F1-jargon errors. Treat WER as agreement with a noisy baseline; jargon recall is the more meaningful signal.",
+ "examples": [
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_DANRIC01_3_20211212_122141",
+   "reference": "And Daniel, do you want to add flap? I'm okay. Copy that. Just go again. Yeah, copy that, box this lap.",
+   "biased": "And Daniel, do you want to add flap? I'm okay. Copy that. Just go again. Yeah, copy that, box this lap.",
+   "unbiased": "And Daniel, do you want to add flap? I'm okay. Copy that. Just go again. Yeah, copy that, box this lap.",
+   "ref_jargon": [
+    "box"
+   ],
+   "biased_jargon": [
+    "box"
+   ],
+   "unbiased_jargon": [
+    "box"
+   ]
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_LEWHAM01_44_20211212_122419",
+   "reference": "So, at a constant speed, no burnouts. Pit lane's obviously busy as you can see. What did you say? Just said, pit lane's obviously busy. Surface temps, just getting into the window towards the end of the lap.",
+   "biased": "Is that a constant speed? No burn-ups? Er, pit lane's obviously busy, as you can see. What'd you say? Just said, pit lane's obviously busy. Er, surface temps, just getting into the window towards the end of the lap.",
+   "unbiased": "Is that a constant speed? No burn-ups. Er, the pit lane's obviously busy, as you can see. What'd you say? Just said, the pit lane's obviously busy. Er, surface temps, just getting into the window towards the end of the lap.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [
+    "pit"
+   ],
+   "unbiased_jargon": [
+    "pit"
+   ]
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_VALBOT01_77_20211212_122657",
+   "reference": "Call the car and you're going to the back of the grid. So stay out, back of the grid, shift down to first, then neutral, switch off B2 with the full off the brakes. Fuel is on target.",
+   "biased": "Cool the car, and you're going to the back of the grid. So stay out, back of the grid, shift down to first, then neutral, switch off B2 with the flow of the brakes. Fuel is on target.",
+   "unbiased": "Cool the car, and you're going to the back of the grid. So stay out, back of the grid, shift down to first, then neutral, switch off B2 with the flow of the brakes. Fuel is on target.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_ESTOCO01_31_20211212_123026",
+   "reference": "And it's boxed now to drive through. Do you want to flap adjust? No, I don't think so. Okay, copy that. I think balance is about 0.2 or half a turn over target at the moment. Yeah, it's probably what I feel as well. Okay, copy that. I think that's good. Let's drive through. One more lap, we'll be going to the grid after this one.",
+   "biased": "And it's box now to drive through. Do you want to flap adjust? No, I don't think so. Okay, copy that. I think balance is about 0.2 or half a turn over target at the moment. Yeah, it's probably what I feel at the moment. Okay, copy that. I think that's good. Let's drive through. One more lap, we'll be going to the grid after this one.",
+   "unbiased": "And it's boxed now to drive through. Do you want to flap adjust? No, I don't think so. Okay, copy that. I think balance is about 0.2 or half a turn over target at the moment. Yeah, it's probably what I feel at the moment. Okay, copy that. I think that's good. Let's drive through. One more lap, we'll be going to the grid after this one.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "box"
+   ],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_LEWHAM01_44_20211212_125335",
+   "reference": "Feels like a little bit cooler today, if that's not the case. Lewis, yeah, we've had a bit of cloud cover pretty much all day, so yeah, a little bit cooler. Track temp is just converging on where it normally sits in the evening. And Lewis, just confirming we've come down that extra one turn. Where does that put us compared to the other day? Similar to FP1, FP3, a little bit higher than FP2 to the tune of about 2.5 volts. Still pretty high then. Yeah, we're the same as the other car now.",
+   "biased": "Feels to look a little bit cooler today, that's not the case. Lewis, yeah, we had a bit of cloud cover pretty much all day, so yeah, a little bit cooler. Track temp, it's just converging on where it normally sits in the evening. And Lewis just confirming we've come down that extra one turn. Where does that put us compared to the other day?",
+   "unbiased": "Feels to look a little bit cooler today, that's not the case. Lewis, yeah, we had a bit of cloud cover pretty much all day, so yeah, a little bit cooler. Track temp, it's just converging on where it normally sits in the evening. And Lewis just confirming we've come down that extra one turn. Where does that put us compared to the other day?",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_MICSCH02_47_20211212_125841",
+   "reference": "Okay, it's two minutes till we go. Two minutes when we fire up, we'll press K1. When we're on the deck, we'll do the static bite point learn. You'll switch the pit limiter on, keep the pit limiter until the line. And remember to go back to mode race start before the start. And func4 is set, and we're ready to go. Copy.",
+   "biased": "Okay, it's two minutes till we go, two minutes when we fire up. Press K1, when we're on the deck we'll do the static bite point learn. You'll switch the pit limiter on, keep the pit limiter until the line, and remember to go back to mode race start before the start. And funk four is set, and we're ready to go.",
+   "unbiased": "Okay, it's two minutes till we go, two minutes when we fire up. Press K1, when we're on the deck we'll do the static bite point learn. You'll switch the pit limiter on, keep the pit limiter until the line. And remember to go back to mode race start before the start. And funk four is set and we're ready to go.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [
+    "pit"
+   ],
+   "unbiased_jargon": [
+    "pit"
+   ]
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_MICSCH02_47_20211212_130109",
+   "reference": "Hey, let's go, Mick. You got this.",
+   "biased": "Hey, let's go, Mick, you got this.",
+   "unbiased": "Hey, let's go, Mick. You got this.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_MAXVER01_33_20211212_130745",
+   "reference": "Maybe I can just easily cut the corner. Yep, we're on it Max. Don't worry, you just focus on your rear right tire.",
+   "biased": "F1 radio, the camera key just easily cut the cooler.",
+   "unbiased": "Yep, we're on in max. Don't worry, you just focus on your rear right eye.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_SERPER01_11_20211212_131004",
+   "reference": "28 7 for Hamilton, 29 0 for Max. Typically losing just a little bit at turn 1 to Max.",
+   "biased": "28.7 for Hamilton, 29.0 for Max. Typically losing just a little bit turn one to Max.",
+   "unbiased": "28.7 for Hamilton, 29.0 for Max. Typically losing just a little bit, turn one to Max.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_MAXVER01_33_20211212_131539",
+   "reference": "I'm really starting to struggle a little bit.",
+   "biased": "We are going to start to struggle a little bit.",
+   "unbiased": "We are starting to start going a little bit.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_FERALO01_14_20211212_131740",
+   "reference": "The entire temps are stabilizing now. When you can, can you update your dry switch, please?",
+   "biased": "Entire temps are stabilizing now. When you can, can you update your drive switch please?",
+   "unbiased": "Entire temps are stabilizing now. When you can, can you update your drive switch please?",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_VALBOT01_77_20211212_132024",
+   "reference": "It's impossible to do anything here on this train like Rakapo in the last sector. Keep the tires in good shape.",
+   "biased": "It's impossible to do anything here on this train, like I can't find the last sector. I keep the tyres in good shape.",
+   "unbiased": "It's impossible to do anything here on this train. I can't find the last sector. I keep the ties in good shape.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "tyres"
+   ],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_SEBVET01_5_20211212_132155",
+   "reference": "Sebastian, when you're ready, can I have a just aerobalance check? Yeah, it's pretty okay. The wind is still making a difference. Yeah, copy that, copy.",
+   "biased": "Especially when you're ready, can I have a just aeroballance check? Yeah, it's pretty okay, the wind is still making a difference. Yeah, copy that, copy.",
+   "unbiased": "Especially when you're ready, can I have a just aeroballance check? Yeah, it's pretty okay, the width is still making a difference. Yeah, copy that, copy.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_SERPER01_11_20211212_132533",
+   "reference": "Okay, Hamilton's pitted. Plan A. Correction. Plan B. Plan B.",
+   "biased": "Okay, Hamilton's pitted. Plan A. Correction. Plan B. Plan B.",
+   "unbiased": "Okay, Hamilton's pitted. Plan A. Correction. Plan B. Plan B.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_DANRIC01_3_20211212_132810",
+   "reference": "Daniel, do you think the tire is coming back in clear air? Do you think the tire will come back in clear air? I don't think enough. It might stay like this, but I don't think it'll get quicker. Copy, stay out.",
+   "biased": "Daniel, do you think the tyre's coming back in clear air? Do you think the tyre will come back in clear air? I don't think enough. It might stay like this, but I don't think it'll get quicker. Copy, stay out.",
+   "unbiased": "Daniel, do you think the tyre is coming back in clear air? Do you think the tyre will come back in clear air? I don't think enough. It might stay like this, but I don't think it will get quicker. Copy. Stay out.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "tyre"
+   ],
+   "unbiased_jargon": [
+    "tyre"
+   ]
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_YUKTSU01_22_20211212_133019",
+   "reference": "Don't care about too much protest, really. Copy, let's push, let's push.",
+   "biased": "Don't care about too much butters, really. Copy, let's push, let's push.",
+   "unbiased": "Don't care about too much buttons, really. Copy, let's push, let's push.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_LEWHAM01_44_20211212_133339",
+   "reference": "It's a dangerous shot, man.",
+   "biased": "That's a dangerous shot hit.",
+   "unbiased": "Thank you.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_SEBVET01_5_20211212_133558",
+   "reference": "This is Lancers box. Use everything now, use everything.",
+   "biased": "This person lances box, use everything now, use everything.",
+   "unbiased": "This person lances box use everything now use everything",
+   "ref_jargon": [
+    "box"
+   ],
+   "biased_jargon": [
+    "box"
+   ],
+   "unbiased_jargon": [
+    "box"
+   ]
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_SERPER01_11_20211212_133756",
+   "reference": "So we're going to the end. We're looking what we can do to help Max. So consider plan A for now. Consider plan A for now. Let's push on.",
+   "biased": "So we're going through the air? We're looking what we can do to help Max. So consider plan A for now, consider plan A for now. Let's perform.",
+   "unbiased": "So we're going through the Earth? We're looking what we can do to help Max. So consider Plan A for now, consider Plan A for now. Let's perform.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_GEORUS01_63_20211212_134006",
+   "reference": "Gap at point nine. Bad upshifts. Every upshift, very bad.",
+   "biased": "Gap at point nine. Bad upshifts, every upshift is very bad.",
+   "unbiased": "Gap at point nine. Bad upshifts. Every upshift is very bad.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_LEWHAM01_44_20211212_134527",
+   "reference": "It's a long way up to this island. Copy.",
+   "biased": "It's a long way into this island. Copy.",
+   "unbiased": "It's a long way into this island Copy",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_VALBOT01_77_20211212_134838",
+   "reference": "Ease into the box, brake balance for the box, it'll be second gear shallow.",
+   "biased": "Easy into the box, brake balance for the box, it'll be second gear, shallow.",
+   "unbiased": "Easy into the box brake balance for the box, it'll be second gear, shallow.",
+   "ref_jargon": [
+    "box"
+   ],
+   "biased_jargon": [
+    "box"
+   ],
+   "unbiased_jargon": [
+    "box"
+   ]
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_LEWHAM01_44_20211212_135144",
+   "reference": "And Lewis, if we were to stop under safety car, would you prefer medium or hard? Both times felt good. This one does. Two.",
+   "biased": "And, Lewis, if we were to stop under safety car, would you prefer medium or hard? F1 radio voiceover",
+   "unbiased": "And Lewis, if we were to stop under safety car, would you prefer medium or hard?",
+   "ref_jargon": [
+    "safety car"
+   ],
+   "biased_jargon": [
+    "safety car"
+   ],
+   "unbiased_jargon": [
+    "safety car"
+   ]
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_CHALEC01_16_20211212_135336",
+   "reference": "You are doing a good job. Really good job.",
+   "biased": "Yeah, doing a good job, really good job.",
+   "unbiased": "You are doing a good job, really good job.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2021_Abu_Dhabi_Grand_Prix_LEWHAM01_44_20211212_135634",
+   "reference": "So staying out, staying out.",
+   "biased": "So staying out, staying out.",
+   "unbiased": "So staying out, staying out.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  }
+ ]
+}

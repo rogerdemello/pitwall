@@ -1,0 +1,287 @@
+{
+ "race_id": "2020_Turkish_Grand_Prix",
+ "sample_size": 40,
+ "wer_unbiased": 0.1844,
+ "wer_biased": 0.1821,
+ "wer_delta": -0.0023,
+ "jargon_terms_in_reference": 12,
+ "jargon_recovered_unbiased": 12,
+ "jargon_recovered_biased": 12,
+ "jargon_recall_unbiased": 1.0,
+ "jargon_recall_biased": 1.0,
+ "note": "WER is measured against the dataset's published transcripts, which themselves contain F1-jargon errors. Treat WER as agreement with a noisy baseline; jargon recall is the more meaningful signal.",
+ "examples": [
+  {
+   "id": "2020_Turkish_Grand_Prix_CHALEC01_16_20201115_093337",
+   "reference": "And let me know on track conditions. Yeah, yeah, for now it's wet. I mean, extreme wet.",
+   "biased": "And let me know on track conditions. Yeah, yeah, for now it's wet. I'm in extreme wet.",
+   "unbiased": "And let me know on track conditions. Yeah, yeah, for now it's wet. I'm in extreme wet.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_KIMRAI01_7_20201115_093039",
+   "reference": "And going light. Radio check, pit exit. Okay. Okay, good to me too.",
+   "biased": "And, green light. Radio check, pit exit. OK, good for me too.",
+   "unbiased": "And... going light. Radio check, pit exit. Ok, good for me too.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [
+    "pit"
+   ],
+   "unbiased_jargon": [
+    "pit"
+   ]
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_ANTGIO01_99_20201115_093850",
+   "reference": "Someone can help you? Yeah, we will help. So stay in the car and they bring you back, and then on the good, we let you know.",
+   "biased": "Someone can help you? Yeah, we will help. So stay in the car and they bring you back and then on the go to we. No, you're not.",
+   "unbiased": "Someone can help you? Yeah, we will help. So stay in the car and they bring you back and then on the go to we. No, you're not.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_NICLAF01_6_20201115_093952",
+   "reference": "It's too far forward. I mean, I can't hit the brakes hard. Then go back, minus two, minus two, and we need to try to generate temperature. Focus singly on the brake for the last lap. And you drive through the pit lane for one more lap, drive through the pit lane for one more lap.",
+   "biased": "It's too far forward, I can't hit the brakes hard. Then go back, minus 2, minus 2, and we need to try to generate temperature. Focus singly on the brake for the last lap. And you drive through the pit lane for one more lap, drive through the pit lane for one more lap.",
+   "unbiased": "It's too far forward, I can't hit the brakes hard. Then go back, minus two, minus two and we need to try to generate temperature. Focus singly on the brake for the last lap. And you drive through the pit lane for one more lap, drive through the pit lane for one more lap.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [
+    "pit"
+   ],
+   "unbiased_jargon": [
+    "pit"
+   ]
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_KIMRAI01_7_20201115_100027",
+   "reference": "Safety car lights are off, so it's a normal start.",
+   "biased": "Safety car lights are off, so it's a normal start.",
+   "unbiased": "Safety car lights are off so it's a normal start.",
+   "ref_jargon": [
+    "safety car"
+   ],
+   "biased_jargon": [
+    "safety car"
+   ],
+   "unbiased_jargon": [
+    "safety car"
+   ]
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LEWHAM01_44_20201115_100600",
+   "reference": "Probably going to dry up quite quick or go towards being drier quite quick I reckon with all that's running out there. Yeah Lewis just be mindful that even though the track may be drying quite quickly that pit entry is still going to be lethal with no cars running on it so just be careful don't touch a wall or anything.",
+   "biased": "We're going to dry up quite quick. So, it goes towards being a dryer quite quick, I reckon. With all that running out there. Yeah, Lewis, just be mindful that even though the track may be drying quite quickly, that pit entry is still going to be lethal. There's no cars running on it, so just be careful not to touch a wall or anything.",
+   "unbiased": "Yeah, just be mindful that even though the track may be drying quite quickly that pit entry is still going to be lethal. No cars running on it, so just be careful.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [
+    "pit"
+   ],
+   "unbiased_jargon": [
+    "pit"
+   ]
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_GEORUS01_63_20201115_101231",
+   "reference": "Playing a strolls approaching the grid.",
+   "biased": "And a stroll to Pritchett.",
+   "unbiased": "Okay, strolls approaching the grid.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_NICLAF01_6_20201115_101732",
+   "reference": "I'm in the gravel. Okay, just focus on bringing back the temperature. Stay on track, focus on that. I think it will switch to enter. I think you're on the right tire, mate. So focus on no mistakes, stay on track.",
+   "biased": "Okay, just focus on bringing back the temperature. Stay on track, focus on that. I think we switched to enter, I think you're on the right tyre mate. So focus on no mistakes, stay on track.",
+   "unbiased": "Okay, just focus on bringing back the temperature. Stay on track, focus on that. I think we switched to enter. I think you're on the right tyre mate. So focus on no mistakes, stay on track.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "tyre"
+   ],
+   "unbiased_jargon": [
+    "tyre"
+   ]
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LANSTR01_18_20201115_102047",
+   "reference": "It's drying up.",
+   "biased": "He's trying up.",
+   "unbiased": "He's trying up",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LANSTR01_18_20201115_102142",
+   "reference": "Go one, go one. How many laps do you think? You're plus. How much am I plus? Give me the gap. Six plus six seconds. Okay, no stress, no stress.",
+   "biased": "Go one, go one. How many laps do you think? Your plus. How much am I plus? Give me the gap. Six plus six seconds. Okay, no stress, no stress.",
+   "unbiased": "Go one, go one. How many laps do you think? Your plus. How much am I plus? Give me the gap. Six plus six seconds. Okay, no stress, no stress.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LEWHAM01_44_20201115_102413",
+   "reference": "Front brakes aren't working really well.",
+   "biased": "Front brakes aren't working really well.",
+   "unbiased": "Front brakes aren't working really well.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LANNOR01_4_20201115_102650",
+   "reference": "It's very difficult to pass as you can tell so clean track is huge.",
+   "biased": "It's very difficult to pass as you can tell so clean track is huge.",
+   "unbiased": "It's very difficult to pass as you can tell so clean track is huge.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_DANKVY01_26_20201115_102854",
+   "reference": "Let me know if someone goes on Inter. Leclerc on Inter now. Yeah, how is he looking? He looks fast now. Okay, let's go then.",
+   "biased": "We know what goes on the input. Leclerco, inter now. Yeah, how is he looking? He looks faster now. Okay, let's go then.",
+   "unbiased": "We know what goes on the input. Leclerco need it now. Yeah, how is he looking? He looks faster now. Okay, let's go then.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_MAXVER01_33_20201115_103127",
+   "reference": "That's not too early on the intro.",
+   "biased": "Thank you.",
+   "unbiased": "Thank you.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_PIEGAS01_10_20201115_103408",
+   "reference": "How much faster is the interest? Currently two seconds faster.",
+   "biased": "How much faster is the inters? 20 seconds faster.",
+   "unbiased": "How much faster is the interest? 22 seconds faster.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "inters"
+   ],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_SERPER01_11_20201115_103646",
+   "reference": "Go one, go one.",
+   "biased": "Go 1, go 1.",
+   "unbiased": "Go one, go one.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_ALEALB01_23_20201115_104016",
+   "reference": "Okay, so that car is getting close to being behind the barrier. Won't be too much longer, so let's keep going longitudinal, braking, accelerating, get some temperature going. Currently, still not too bad. The fronts have dropped, rears are staying quite high, fronts have dropped a bit, so work the fronts when you can.",
+   "biased": "Okay, so that car is getting close to being behind the barrier, won't be too much longer, so let's keep going longitudinal, braking, accelerating, get some temperature going. Currently still not too bad, the fronts have dropped, the rears are staying quite high, fronts have dropped a bit, so work the fronts when you can.",
+   "unbiased": "Okay, so that car is getting close to being behind the barrier, won't be too much longer, so let's keep going longitudinal, braking, accelerating, get some temperature going. Currently still not too bad, the fronts have dropped, the rears are staying quite high, fronts have dropped a bit, so work the fronts when you can.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LANSTR01_18_20201115_104221",
+   "reference": "That's a balance on the Inters. Yeah, it's okay, a bit rear limited, but it's okay. Virtual safety car ending, minus two brake balance and go five. Go five, switch it now, go five.",
+   "biased": "That's a balance on the inters. Yeah, it's okay, a bit real limited, but it's okay. Virtual safety car ending, minus two brake balance, and go five, go five, switch it now, go five.",
+   "unbiased": "That's a balance on the inters. Yeah, it's okay, a bit real limited, but it's okay. Virtual safety car ending, minus two brake balance and go five, go five. Switch it now, go five.",
+   "ref_jargon": [
+    "inters",
+    "safety car"
+   ],
+   "biased_jargon": [
+    "inters",
+    "safety car"
+   ],
+   "unbiased_jargon": [
+    "inters",
+    "safety car"
+   ]
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_PIEGAS01_10_20201115_104426",
+   "reference": "I can't see a thing with this f***ing visor. I don't know what I have, it's so sneaky. Can't see the f***ing corners, like, I'm blind.",
+   "biased": "I can't see a thing with this f***ing visor, I don't know what I have, it's so sticky. Can't see f***ing corners, like, I'm blind.",
+   "unbiased": "I can't see a thing with this f***ing visor. I don't know what I have, it's so sticky. Can't see f***ing corners like I'm blind.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LANNOR01_4_20201115_104641",
+   "reference": "Okay, so turn 8 is where there's starting to be a bit of a dry line in terms of cornering.",
+   "biased": "Okay, so turn 8 is where there's starting to be a bit of a dry line in terms of cornering.",
+   "unbiased": "Okay, so turn 8 is where there's starting to be a bit of a dry line in terms of cornering.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LEWHAM01_44_20201115_104819",
+   "reference": "And those three attempts... I see, fine!",
+   "biased": "Those rear tires, Tiese 5!",
+   "unbiased": "Those three attacks... Ties in, mate!",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_GEORUS01_63_20201115_105004",
+   "reference": "Getting better lup by lup, nowhere close to slicks.",
+   "biased": "Getting better, love, love, no way close to slicks.",
+   "unbiased": "Getting better, love by love, nowhere close to slicks.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_CARSAI01_55_20201115_105225",
+   "reference": "Yeah, I'm quicker than this guy, but I cannot pass.",
+   "biased": "Yeah, I'm quicker on this guy, but I cannot trust.",
+   "unbiased": "Yeah, I'm quicker on this guy but I cannot trust.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LANSTR01_18_20201115_105424",
+   "reference": "I'm picking up a lot of unders here.",
+   "biased": "I'm picking up a lot of understeer.",
+   "unbiased": "I'm picking up a lot of others here.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "understeer"
+   ],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2020_Turkish_Grand_Prix_LEWHAM01_44_20201115_105654",
+   "reference": "So we just need to keep these tyres in decent state so we can transition to dry.",
+   "biased": "So we just need to keep these tyres in decent state so we can transition to dry.",
+   "unbiased": "So we just need to keep these tyres in decent state so we can transition to dry.",
+   "ref_jargon": [
+    "tyres"
+   ],
+   "biased_jargon": [
+    "tyres"
+   ],
+   "unbiased_jargon": [
+    "tyres"
+   ]
+  }
+ ]
+}

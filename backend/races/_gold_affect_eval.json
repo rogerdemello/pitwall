@@ -1,0 +1,95 @@
+{
+ "dataset": "confit/cremad-parquet",
+ "split": "test",
+ "n": 926,
+ "excluded_labels": [
+  "disgust",
+  "disgusted"
+ ],
+ "label_mapping": {
+  "anger": "Stressed",
+  "angry": "Stressed",
+  "fear": "Stressed",
+  "fearful": "Stressed",
+  "happy": "Energised",
+  "happiness": "Energised",
+  "sad": "Fatigued",
+  "sadness": "Fatigued",
+  "neutral": "Calm"
+ },
+ "accuracy": 0.4924,
+ "majority_class_baseline": 0.4125,
+ "beats_baseline": true,
+ "confusion": {
+  "Calm": {
+   "Calm": 79,
+   "Energised": 21,
+   "Fatigued": 51,
+   "Stressed": 12
+  },
+  "Energised": {
+   "Energised": 107,
+   "Calm": 29,
+   "Stressed": 38,
+   "Fatigued": 16
+  },
+  "Stressed": {
+   "Stressed": 148,
+   "Fatigued": 69,
+   "Energised": 123,
+   "Calm": 42
+  },
+  "Fatigued": {
+   "Fatigued": 122,
+   "Calm": 55,
+   "Energised": 7,
+   "Stressed": 7
+  }
+ },
+ "per_class": {
+  "Calm": {
+   "precision": 0.385,
+   "recall": 0.485,
+   "f1": 0.429,
+   "support": 163
+  },
+  "Energised": {
+   "precision": 0.415,
+   "recall": 0.563,
+   "f1": 0.478,
+   "support": 190
+  },
+  "Stressed": {
+   "precision": 0.722,
+   "recall": 0.387,
+   "f1": 0.504,
+   "support": 382
+  },
+  "Fatigued": {
+   "precision": 0.473,
+   "recall": 0.639,
+   "f1": 0.543,
+   "support": 191
+  }
+ },
+ "verdict": "Accuracy 49.2% vs a majority-class baseline of 41.3% - the mapping carries real signal.",
+ "caveat": "CREMA-D is acted, studio-quality American English. This validates the prosody model and our arousal/valence quadrant logic; it does not demonstrate in-domain performance on compressed F1 team radio. The implication runs one way only: a model that cannot recover emotion from clean acted speech is certainly not doing so on radio.",
+ "axes": {
+  "arousal_high_vs_low": {
+   "accuracy": 0.7808,
+   "majority_baseline": 0.6177,
+   "lift": 0.1631,
+   "n": 926
+  },
+  "valence_negative_vs_positive": {
+   "accuracy": 0.6285,
+   "majority_baseline": 0.6188,
+   "lift": 0.0097,
+   "n": 926
+  },
+  "near_chance_axes": [
+   "valence"
+  ],
+  "interpretation": "Arousal is recovered well; valence is at or near chance. Since DSI weights valence at 0.45, close to half the index rests on the dimension the model does not resolve - which is the single most important limitation of the affect scale."
+ }
+}

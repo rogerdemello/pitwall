@@ -1,0 +1,846 @@
+{
+ "races": [
+  "2019_German_Grand_Prix",
+  "2020_Turkish_Grand_Prix",
+  "2021_Abu_Dhabi_Grand_Prix",
+  "2023_Dutch_Grand_Prix",
+  "2023_Italian_Grand_Prix",
+  "2023_Japanese_Grand_Prix",
+  "2023_Mexico_City_Grand_Prix",
+  "2023_Miami_Grand_Prix",
+  "2023_Monaco_Grand_Prix",
+  "2023_Qatar_Grand_Prix",
+  "2023_Spanish_Grand_Prix",
+  "2023_United_States_Grand_Prix"
+ ],
+ "messages_pooled": 2042,
+ "stress_vs_pace": {
+  "n": 1155,
+  "excluded_non_racing_laps": 286,
+  "pooled_r": 0.0428,
+  "per_driver": [
+   {
+    "driver": "2023_Mexico_City_Grand_Prix|NIC",
+    "n": 9,
+    "r": -0.7184
+   },
+   {
+    "driver": "2021_Abu_Dhabi_Grand_Prix|SAI",
+    "n": 8,
+    "r": 0.5995
+   },
+   {
+    "driver": "2023_Mexico_City_Grand_Prix|GAS",
+    "n": 8,
+    "r": 0.5538
+   },
+   {
+    "driver": "2023_United_States_Grand_Prix|ALO",
+    "n": 8,
+    "r": 0.5314
+   },
+   {
+    "driver": "2023_Monaco_Grand_Prix|NOR",
+    "n": 8,
+    "r": 0.5017
+   },
+   {
+    "driver": "2023_Miami_Grand_Prix|RUS",
+    "n": 15,
+    "r": 0.4309
+   },
+   {
+    "driver": "2020_Turkish_Grand_Prix|STR",
+    "n": 9,
+    "r": -0.425
+   },
+   {
+    "driver": "2023_Monaco_Grand_Prix|NIC",
+    "n": 11,
+    "r": -0.4248
+   },
+   {
+    "driver": "2023_Miami_Grand_Prix|SAI",
+    "n": 13,
+    "r": -0.4072
+   },
+   {
+    "driver": "2023_Miami_Grand_Prix|VER",
+    "n": 16,
+    "r": -0.3819
+   },
+   {
+    "driver": "2020_Turkish_Grand_Prix|HAM",
+    "n": 16,
+    "r": 0.3364
+   },
+   {
+    "driver": "2023_United_States_Grand_Prix|HAM",
+    "n": 15,
+    "r": -0.3125
+   },
+   {
+    "driver": "2023_Italian_Grand_Prix|VER",
+    "n": 9,
+    "r": 0.3104
+   },
+   {
+    "driver": "2023_Monaco_Grand_Prix|SAI",
+    "n": 23,
+    "r": 0.3023
+   },
+   {
+    "driver": "2023_Mexico_City_Grand_Prix|HAM",
+    "n": 12,
+    "r": 0.2789
+   },
+   {
+    "driver": "2023_Miami_Grand_Prix|HAM",
+    "n": 14,
+    "r": -0.2656
+   },
+   {
+    "driver": "2023_Italian_Grand_Prix|SAI",
+    "n": 9,
+    "r": -0.2525
+   },
+   {
+    "driver": "2023_Monaco_Grand_Prix|RUS",
+    "n": 19,
+    "r": 0.2506
+   },
+   {
+    "driver": "2023_Mexico_City_Grand_Prix|OSC",
+    "n": 18,
+    "r": -0.2485
+   },
+   {
+    "driver": "2023_United_States_Grand_Prix|LEC",
+    "n": 10,
+    "r": 0.246
+   },
+   {
+    "driver": "2023_Italian_Grand_Prix|ALE",
+    "n": 8,
+    "r": 0.2421
+   },
+   {
+    "driver": "2023_Dutch_Grand_Prix|ALE",
+    "n": 9,
+    "r": -0.2259
+   },
+   {
+    "driver": "2023_Japanese_Grand_Prix|NOR",
+    "n": 15,
+    "r": 0.2235
+   },
+   {
+    "driver": "2023_Italian_Grand_Prix|ALO",
+    "n": 8,
+    "r": -0.2168
+   },
+   {
+    "driver": "2023_Miami_Grand_Prix|PER",
+    "n": 9,
+    "r": -0.1846
+   },
+   {
+    "driver": "2023_Qatar_Grand_Prix|ALO",
+    "n": 8,
+    "r": 0.162
+   },
+   {
+    "driver": "2023_Mexico_City_Grand_Prix|LOG",
+    "n": 10,
+    "r": 0.1493
+   },
+   {
+    "driver": "2023_Qatar_Grand_Prix|LIA",
+    "n": 8,
+    "r": 0.1462
+   },
+   {
+    "driver": "2023_Dutch_Grand_Prix|ALO",
+    "n": 9,
+    "r": 0.1369
+   },
+   {
+    "driver": "2023_Mexico_City_Grand_Prix|LEC",
+    "n": 9,
+    "r": 0.1291
+   },
+   {
+    "driver": "2023_Monaco_Grand_Prix|ALO",
+    "n": 9,
+    "r": 0.1266
+   },
+   {
+    "driver": "2021_Abu_Dhabi_Grand_Prix|VER",
+    "n": 8,
+    "r": 0.1126
+   },
+   {
+    "driver": "2023_Japanese_Grand_Prix|NIC",
+    "n": 8,
+    "r": -0.1081
+   },
+   {
+    "driver": "2023_Monaco_Grand_Prix|VER",
+    "n": 11,
+    "r": 0.0949
+   },
+   {
+    "driver": "2023_Mexico_City_Grand_Prix|GUA",
+    "n": 9,
+    "r": -0.088
+   },
+   {
+    "driver": "2023_Japanese_Grand_Prix|ALO",
+    "n": 10,
+    "r": 0.0637
+   },
+   {
+    "driver": "2023_Japanese_Grand_Prix|RUS",
+    "n": 10,
+    "r": 0.0585
+   },
+   {
+    "driver": "2023_Qatar_Grand_Prix|GAS",
+    "n": 9,
+    "r": 0.0533
+   },
+   {
+    "driver": "2023_Italian_Grand_Prix|NOR",
+    "n": 10,
+    "r": -0.0522
+   },
+   {
+    "driver": "2021_Abu_Dhabi_Grand_Prix|HAM",
+    "n": 13,
+    "r": 0.0433
+   },
+   {
+    "driver": "2023_Monaco_Grand_Prix|BOT",
+    "n": 9,
+    "r": -0.0346
+   },
+   {
+    "driver": "2023_Spanish_Grand_Prix|RUS",
+    "n": 9,
+    "r": 0.018
+   },
+   {
+    "driver": "2023_United_States_Grand_Prix|NOR",
+    "n": 14,
+    "r": -0.0053
+   },
+   {
+    "driver": "2023_Qatar_Grand_Prix|NOR",
+    "n": 9,
+    "r": -0.0045
+   }
+  ],
+  "tercile": {
+   "drivers": [
+    {
+     "driver": "2023_Monaco_Grand_Prix|RUS",
+     "n": 19,
+     "calm_mean_delta_s": 1.258,
+     "stressed_mean_delta_s": 9.398,
+     "gap_s": 8.14
+    },
+    {
+     "driver": "2019_German_Grand_Prix|VER",
+     "n": 7,
+     "calm_mean_delta_s": -4.048,
+     "stressed_mean_delta_s": 2.269,
+     "gap_s": 6.317
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|HAM",
+     "n": 7,
+     "calm_mean_delta_s": -1.71,
+     "stressed_mean_delta_s": 3.838,
+     "gap_s": 5.548
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|ALO",
+     "n": 9,
+     "calm_mean_delta_s": -0.239,
+     "stressed_mean_delta_s": 4.495,
+     "gap_s": 4.733
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|NOR",
+     "n": 8,
+     "calm_mean_delta_s": 4.539,
+     "stressed_mean_delta_s": 8.81,
+     "gap_s": 4.271
+    },
+    {
+     "driver": "2020_Turkish_Grand_Prix|VER",
+     "n": 6,
+     "calm_mean_delta_s": -1.083,
+     "stressed_mean_delta_s": 2.244,
+     "gap_s": 3.327
+    },
+    {
+     "driver": "2023_Dutch_Grand_Prix|NIC",
+     "n": 7,
+     "calm_mean_delta_s": -2.478,
+     "stressed_mean_delta_s": 0.555,
+     "gap_s": 3.033
+    },
+    {
+     "driver": "2020_Turkish_Grand_Prix|HAM",
+     "n": 16,
+     "calm_mean_delta_s": 0.996,
+     "stressed_mean_delta_s": 3.792,
+     "gap_s": 2.796
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|SAI",
+     "n": 23,
+     "calm_mean_delta_s": 0.05,
+     "stressed_mean_delta_s": 2.585,
+     "gap_s": 2.535
+    },
+    {
+     "driver": "2023_Qatar_Grand_Prix|ALE",
+     "n": 7,
+     "calm_mean_delta_s": -1.139,
+     "stressed_mean_delta_s": 0.861,
+     "gap_s": 2.0
+    },
+    {
+     "driver": "2023_Qatar_Grand_Prix|LIA",
+     "n": 8,
+     "calm_mean_delta_s": 2.023,
+     "stressed_mean_delta_s": 3.92,
+     "gap_s": 1.897
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|NOR",
+     "n": 6,
+     "calm_mean_delta_s": -0.787,
+     "stressed_mean_delta_s": 0.923,
+     "gap_s": 1.711
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|PER",
+     "n": 7,
+     "calm_mean_delta_s": -0.986,
+     "stressed_mean_delta_s": 0.61,
+     "gap_s": 1.596
+    },
+    {
+     "driver": "2019_German_Grand_Prix|NIC",
+     "n": 7,
+     "calm_mean_delta_s": -0.649,
+     "stressed_mean_delta_s": 0.812,
+     "gap_s": 1.462
+    },
+    {
+     "driver": "2021_Abu_Dhabi_Grand_Prix|VER",
+     "n": 8,
+     "calm_mean_delta_s": -0.146,
+     "stressed_mean_delta_s": 0.989,
+     "gap_s": 1.135
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|ALO",
+     "n": 6,
+     "calm_mean_delta_s": -1.47,
+     "stressed_mean_delta_s": -0.391,
+     "gap_s": 1.078
+    },
+    {
+     "driver": "2020_Turkish_Grand_Prix|OCO",
+     "n": 6,
+     "calm_mean_delta_s": 5.798,
+     "stressed_mean_delta_s": 6.86,
+     "gap_s": 1.062
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|ALO",
+     "n": 8,
+     "calm_mean_delta_s": -0.702,
+     "stressed_mean_delta_s": 0.204,
+     "gap_s": 0.905
+    },
+    {
+     "driver": "2023_Qatar_Grand_Prix|NOR",
+     "n": 9,
+     "calm_mean_delta_s": 0.131,
+     "stressed_mean_delta_s": 0.946,
+     "gap_s": 0.815
+    },
+    {
+     "driver": "2023_Dutch_Grand_Prix|SAI",
+     "n": 6,
+     "calm_mean_delta_s": -0.426,
+     "stressed_mean_delta_s": 0.379,
+     "gap_s": 0.805
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|OCO",
+     "n": 6,
+     "calm_mean_delta_s": 0.372,
+     "stressed_mean_delta_s": 1.094,
+     "gap_s": 0.722
+    },
+    {
+     "driver": "2021_Abu_Dhabi_Grand_Prix|HAM",
+     "n": 13,
+     "calm_mean_delta_s": -0.434,
+     "stressed_mean_delta_s": 0.257,
+     "gap_s": 0.691
+    },
+    {
+     "driver": "2021_Abu_Dhabi_Grand_Prix|SAI",
+     "n": 8,
+     "calm_mean_delta_s": -1.621,
+     "stressed_mean_delta_s": -0.979,
+     "gap_s": 0.642
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|HAM",
+     "n": 12,
+     "calm_mean_delta_s": -0.352,
+     "stressed_mean_delta_s": 0.266,
+     "gap_s": 0.618
+    },
+    {
+     "driver": "2023_Japanese_Grand_Prix|ALO",
+     "n": 10,
+     "calm_mean_delta_s": -0.39,
+     "stressed_mean_delta_s": 0.227,
+     "gap_s": 0.617
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|LOG",
+     "n": 10,
+     "calm_mean_delta_s": 0.074,
+     "stressed_mean_delta_s": 0.658,
+     "gap_s": 0.584
+    },
+    {
+     "driver": "2023_Qatar_Grand_Prix|GAS",
+     "n": 9,
+     "calm_mean_delta_s": 0.008,
+     "stressed_mean_delta_s": 0.522,
+     "gap_s": 0.513
+    },
+    {
+     "driver": "2023_Qatar_Grand_Prix|VER",
+     "n": 6,
+     "calm_mean_delta_s": 0.456,
+     "stressed_mean_delta_s": 0.962,
+     "gap_s": 0.506
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|GAS",
+     "n": 8,
+     "calm_mean_delta_s": -0.044,
+     "stressed_mean_delta_s": 0.393,
+     "gap_s": 0.437
+    },
+    {
+     "driver": "2023_Miami_Grand_Prix|RUS",
+     "n": 15,
+     "calm_mean_delta_s": 0.568,
+     "stressed_mean_delta_s": 0.899,
+     "gap_s": 0.331
+    },
+    {
+     "driver": "2023_Japanese_Grand_Prix|NOR",
+     "n": 15,
+     "calm_mean_delta_s": 0.193,
+     "stressed_mean_delta_s": 0.48,
+     "gap_s": 0.287
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|LEC",
+     "n": 9,
+     "calm_mean_delta_s": 0.244,
+     "stressed_mean_delta_s": 0.512,
+     "gap_s": 0.268
+    },
+    {
+     "driver": "2023_Italian_Grand_Prix|VER",
+     "n": 9,
+     "calm_mean_delta_s": 0.226,
+     "stressed_mean_delta_s": 0.489,
+     "gap_s": 0.263
+    },
+    {
+     "driver": "2023_Italian_Grand_Prix|PER",
+     "n": 6,
+     "calm_mean_delta_s": -0.079,
+     "stressed_mean_delta_s": 0.17,
+     "gap_s": 0.25
+    },
+    {
+     "driver": "2023_Italian_Grand_Prix|ALE",
+     "n": 8,
+     "calm_mean_delta_s": 0.157,
+     "stressed_mean_delta_s": 0.331,
+     "gap_s": 0.174
+    },
+    {
+     "driver": "2023_Qatar_Grand_Prix|ALO",
+     "n": 8,
+     "calm_mean_delta_s": 1.587,
+     "stressed_mean_delta_s": 1.754,
+     "gap_s": 0.167
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|BOT",
+     "n": 9,
+     "calm_mean_delta_s": -0.932,
+     "stressed_mean_delta_s": -0.87,
+     "gap_s": 0.063
+    },
+    {
+     "driver": "2023_Japanese_Grand_Prix|NIC",
+     "n": 8,
+     "calm_mean_delta_s": 0.643,
+     "stressed_mean_delta_s": 0.681,
+     "gap_s": 0.038
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|VER",
+     "n": 7,
+     "calm_mean_delta_s": -1.448,
+     "stressed_mean_delta_s": -1.458,
+     "gap_s": -0.01
+    },
+    {
+     "driver": "2023_Italian_Grand_Prix|ALO",
+     "n": 8,
+     "calm_mean_delta_s": 0.236,
+     "stressed_mean_delta_s": 0.173,
+     "gap_s": -0.064
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|NOR",
+     "n": 14,
+     "calm_mean_delta_s": 0.34,
+     "stressed_mean_delta_s": 0.275,
+     "gap_s": -0.065
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|RUS",
+     "n": 6,
+     "calm_mean_delta_s": 0.73,
+     "stressed_mean_delta_s": 0.602,
+     "gap_s": -0.128
+    },
+    {
+     "driver": "2023_Japanese_Grand_Prix|RUS",
+     "n": 10,
+     "calm_mean_delta_s": 0.059,
+     "stressed_mean_delta_s": -0.105,
+     "gap_s": -0.164
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|NOR",
+     "n": 6,
+     "calm_mean_delta_s": 0.407,
+     "stressed_mean_delta_s": 0.241,
+     "gap_s": -0.166
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|LEC",
+     "n": 10,
+     "calm_mean_delta_s": -0.413,
+     "stressed_mean_delta_s": -0.597,
+     "gap_s": -0.184
+    },
+    {
+     "driver": "2021_Abu_Dhabi_Grand_Prix|PER",
+     "n": 7,
+     "calm_mean_delta_s": 0.281,
+     "stressed_mean_delta_s": 0.02,
+     "gap_s": -0.261
+    },
+    {
+     "driver": "2023_Miami_Grand_Prix|SAI",
+     "n": 13,
+     "calm_mean_delta_s": -0.248,
+     "stressed_mean_delta_s": -0.586,
+     "gap_s": -0.337
+    },
+    {
+     "driver": "2023_Italian_Grand_Prix|RUS",
+     "n": 6,
+     "calm_mean_delta_s": 0.41,
+     "stressed_mean_delta_s": 0.056,
+     "gap_s": -0.354
+    },
+    {
+     "driver": "2023_Italian_Grand_Prix|SAI",
+     "n": 9,
+     "calm_mean_delta_s": 0.39,
+     "stressed_mean_delta_s": 0.034,
+     "gap_s": -0.356
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|GAS",
+     "n": 7,
+     "calm_mean_delta_s": -0.071,
+     "stressed_mean_delta_s": -0.439,
+     "gap_s": -0.368
+    },
+    {
+     "driver": "2023_Italian_Grand_Prix|NOR",
+     "n": 10,
+     "calm_mean_delta_s": 0.065,
+     "stressed_mean_delta_s": -0.342,
+     "gap_s": -0.408
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|GUA",
+     "n": 9,
+     "calm_mean_delta_s": 0.422,
+     "stressed_mean_delta_s": -0.055,
+     "gap_s": -0.477
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|SAI",
+     "n": 6,
+     "calm_mean_delta_s": 0.729,
+     "stressed_mean_delta_s": 0.218,
+     "gap_s": -0.511
+    },
+    {
+     "driver": "2023_Miami_Grand_Prix|PER",
+     "n": 9,
+     "calm_mean_delta_s": 0.325,
+     "stressed_mean_delta_s": -0.203,
+     "gap_s": -0.528
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|RUS",
+     "n": 7,
+     "calm_mean_delta_s": 0.307,
+     "stressed_mean_delta_s": -0.352,
+     "gap_s": -0.659
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|OSC",
+     "n": 18,
+     "calm_mean_delta_s": 0.701,
+     "stressed_mean_delta_s": -0.004,
+     "gap_s": -0.705
+    },
+    {
+     "driver": "2023_Mexico_City_Grand_Prix|NIC",
+     "n": 9,
+     "calm_mean_delta_s": 0.374,
+     "stressed_mean_delta_s": -0.341,
+     "gap_s": -0.715
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|RUS",
+     "n": 9,
+     "calm_mean_delta_s": 0.408,
+     "stressed_mean_delta_s": -0.321,
+     "gap_s": -0.729
+    },
+    {
+     "driver": "2023_Dutch_Grand_Prix|ALO",
+     "n": 9,
+     "calm_mean_delta_s": 1.173,
+     "stressed_mean_delta_s": 0.432,
+     "gap_s": -0.741
+    },
+    {
+     "driver": "2021_Abu_Dhabi_Grand_Prix|ALO",
+     "n": 7,
+     "calm_mean_delta_s": 0.044,
+     "stressed_mean_delta_s": -0.707,
+     "gap_s": -0.75
+    },
+    {
+     "driver": "2023_Miami_Grand_Prix|VER",
+     "n": 16,
+     "calm_mean_delta_s": 0.469,
+     "stressed_mean_delta_s": -0.359,
+     "gap_s": -0.828
+    },
+    {
+     "driver": "2023_Miami_Grand_Prix|HAM",
+     "n": 14,
+     "calm_mean_delta_s": 0.035,
+     "stressed_mean_delta_s": -0.88,
+     "gap_s": -0.915
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|STR",
+     "n": 7,
+     "calm_mean_delta_s": 0.068,
+     "stressed_mean_delta_s": -0.894,
+     "gap_s": -0.963
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|OCO",
+     "n": 7,
+     "calm_mean_delta_s": 0.502,
+     "stressed_mean_delta_s": -0.491,
+     "gap_s": -0.993
+    },
+    {
+     "driver": "2021_Abu_Dhabi_Grand_Prix|NOR",
+     "n": 7,
+     "calm_mean_delta_s": -0.013,
+     "stressed_mean_delta_s": -1.087,
+     "gap_s": -1.075
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|HAM",
+     "n": 15,
+     "calm_mean_delta_s": 0.54,
+     "stressed_mean_delta_s": -0.577,
+     "gap_s": -1.117
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|VER",
+     "n": 11,
+     "calm_mean_delta_s": 8.257,
+     "stressed_mean_delta_s": 7.087,
+     "gap_s": -1.17
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|VER",
+     "n": 6,
+     "calm_mean_delta_s": 0.923,
+     "stressed_mean_delta_s": -0.357,
+     "gap_s": -1.28
+    },
+    {
+     "driver": "2020_Turkish_Grand_Prix|NOR",
+     "n": 6,
+     "calm_mean_delta_s": -0.405,
+     "stressed_mean_delta_s": -1.79,
+     "gap_s": -1.385
+    },
+    {
+     "driver": "2023_Japanese_Grand_Prix|GAS",
+     "n": 7,
+     "calm_mean_delta_s": 0.827,
+     "stressed_mean_delta_s": -0.566,
+     "gap_s": -1.393
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|NIC",
+     "n": 6,
+     "calm_mean_delta_s": 0.442,
+     "stressed_mean_delta_s": -1.16,
+     "gap_s": -1.601
+    },
+    {
+     "driver": "2023_Dutch_Grand_Prix|VER",
+     "n": 6,
+     "calm_mean_delta_s": 1.058,
+     "stressed_mean_delta_s": -0.81,
+     "gap_s": -1.868
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|HAM",
+     "n": 6,
+     "calm_mean_delta_s": 0.914,
+     "stressed_mean_delta_s": -1.149,
+     "gap_s": -2.062
+    },
+    {
+     "driver": "2023_Spanish_Grand_Prix|LEC",
+     "n": 6,
+     "calm_mean_delta_s": 0.756,
+     "stressed_mean_delta_s": -1.856,
+     "gap_s": -2.612
+    },
+    {
+     "driver": "2023_United_States_Grand_Prix|SAI",
+     "n": 6,
+     "calm_mean_delta_s": 1.806,
+     "stressed_mean_delta_s": -0.921,
+     "gap_s": -2.727
+    },
+    {
+     "driver": "2020_Turkish_Grand_Prix|SAI",
+     "n": 6,
+     "calm_mean_delta_s": 3.811,
+     "stressed_mean_delta_s": -0.506,
+     "gap_s": -4.316
+    },
+    {
+     "driver": "2020_Turkish_Grand_Prix|STR",
+     "n": 9,
+     "calm_mean_delta_s": 3.738,
+     "stressed_mean_delta_s": -0.706,
+     "gap_s": -4.445
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|NIC",
+     "n": 11,
+     "calm_mean_delta_s": 6.446,
+     "stressed_mean_delta_s": 0.726,
+     "gap_s": -5.719
+    },
+    {
+     "driver": "2023_Monaco_Grand_Prix|PER",
+     "n": 6,
+     "calm_mean_delta_s": 10.594,
+     "stressed_mean_delta_s": -0.613,
+     "gap_s": -11.207
+    },
+    {
+     "driver": "2023_Dutch_Grand_Prix|ALE",
+     "n": 9,
+     "calm_mean_delta_s": 12.582,
+     "stressed_mean_delta_s": 0.918,
+     "gap_s": -11.665
+    }
+   ],
+   "mean_gap_s": -0.071,
+   "drivers_slower_when_stressed": 38,
+   "drivers_total": 80,
+   "sign_test_p": 0.7376
+  }
+ },
+ "lag": {
+  "by_lag": {
+   "lag_0": {
+    "n": 883,
+    "r": 0.0561,
+    "p": 0.0957
+   },
+   "lag_1": {
+    "n": 112,
+    "r": 0.0369,
+    "p": 0.6999
+   },
+   "lag_2": {
+    "n": 109,
+    "r": 0.1408,
+    "p": 0.1445
+   },
+   "lag_3": {
+    "n": 111,
+    "r": -0.1523,
+    "p": 0.1107
+   }
+  },
+  "min_n_for_consideration": 30,
+  "bonferroni_alpha": 0.0125,
+  "underpowered_lags": [],
+  "best_lag": "lag_3",
+  "best_r": -0.1523,
+  "best_p": 0.1107,
+  "predictive": false,
+  "caveat": "4 lags are tested and the largest |r| is reported, which is a multiple comparison, so significance is judged at p < 0.0125 (Bonferroni). Lags below n=30 are excluded from selection. A negative r means higher stress preceded faster laps - the opposite of the hypothesis - and never counts as predictive."
+ },
+ "verdict": "No pooled linear relationship between stress and lap-time loss (r=0.0428). Within drivers, the most-stressed calls sit -0.07s off the calmest ones, with 38/80 drivers slower when stressed - no better than chance (sign test p=0.7376). Stress does not appear to lead pace loss in this corpus. The largest lag correlation (lag_3, r=-0.1523) is negative, meaning higher stress preceded *faster* laps - the opposite of the hypothesis - and at p=0.1107 it is not significant once the four lags tested are accounted for.",
+ "caveat": "Driver histories are namespaced per race, so no comparison spans two races. Lap-time delta is measured against each driver's own median within that race. The era confound noted in _corpus_finding.json applies here too."
+}

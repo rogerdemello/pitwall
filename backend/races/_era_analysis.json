@@ -1,0 +1,147 @@
+{
+ "races": [
+  {
+   "race_id": "2020_Turkish_Grand_Prix",
+   "race": "2020 Turkish",
+   "season": 2020,
+   "n": 143,
+   "mean": 53.46153846153846,
+   "sd": 12.041750930213759,
+   "se": 1.0069818001886708,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Monaco_Grand_Prix",
+   "race": "2023 Monaco",
+   "season": 2023,
+   "n": 164,
+   "mean": 53.41463414634146,
+   "sd": 13.199178854274486,
+   "se": 1.030682707756294,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Qatar_Grand_Prix",
+   "race": "2023 Qatar",
+   "season": 2023,
+   "n": 121,
+   "mean": 52.6198347107438,
+   "sd": 15.262581152732778,
+   "se": 1.3875073775211617,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Spanish_Grand_Prix",
+   "race": "2023 Spanish",
+   "season": 2023,
+   "n": 128,
+   "mean": 52.03125,
+   "sd": 13.546757857048306,
+   "se": 1.1973755429763748,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Mexico_City_Grand_Prix",
+   "race": "2023 Mexico City",
+   "season": 2023,
+   "n": 137,
+   "mean": 51.81751824817518,
+   "sd": 13.16832018955457,
+   "se": 1.1250455193212177,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2021_Abu_Dhabi_Grand_Prix",
+   "race": "2021 Abu Dhabi",
+   "season": 2021,
+   "n": 108,
+   "mean": 51.7962962962963,
+   "sd": 13.06448341968865,
+   "se": 1.257130503196774,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Miami_Grand_Prix",
+   "race": "2023 Miami",
+   "season": 2023,
+   "n": 120,
+   "mean": 51.475,
+   "sd": 13.917592284587158,
+   "se": 1.2704965400713744,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Japanese_Grand_Prix",
+   "race": "2023 Japanese",
+   "season": 2023,
+   "n": 124,
+   "mean": 50.0,
+   "sd": 13.911007477255486,
+   "se": 1.2492453497245979,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_United_States_Grand_Prix",
+   "race": "2023 United States",
+   "season": 2023,
+   "n": 126,
+   "mean": 49.73809523809524,
+   "sd": 11.673588811370797,
+   "se": 1.0399659477673138,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2019_German_Grand_Prix",
+   "race": "2019 German",
+   "season": 2019,
+   "n": 114,
+   "mean": 49.18421052631579,
+   "sd": 13.36108895490715,
+   "se": 1.251380634244692,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Dutch_Grand_Prix",
+   "race": "2023 Dutch",
+   "season": 2023,
+   "n": 130,
+   "mean": 49.06923076923077,
+   "sd": 11.7159906909242,
+   "se": 1.0275603589601572,
+   "calibration": "pooled"
+  },
+  {
+   "race_id": "2023_Italian_Grand_Prix",
+   "race": "2023 Italian",
+   "season": 2023,
+   "n": 132,
+   "mean": 47.90151515151515,
+   "sd": 13.826226642105262,
+   "se": 1.2034185622849516,
+   "calibration": "pooled"
+  }
+ ],
+ "n_races": 12,
+ "n_2023": 9,
+ "within_season_spread": 5.51,
+ "cross_era_spread": 5.56,
+ "contrasts": [
+  {
+   "comparison": "2023 Monaco vs 2023 Italian (both 2023)",
+   "diff": 5.51,
+   "z": 3.48,
+   "p": 0.0005,
+   "bonferroni_alpha": 0.0063,
+   "survives": true
+  }
+ ],
+ "era_comparison": {
+  "mean_2023": 50.9,
+  "mean_pre2023": 51.48,
+  "diff": -0.58,
+  "z": -0.75,
+  "p": 0.4543,
+  "systematic_era_effect": false
+ },
+ "verdict": "Holding the season fixed barely changes the picture: races from 2023 alone spread 5.5 points, against 5.6 across all seasons. Recording era does not explain the separation. 2023 Monaco vs 2023 Italian (both 2023) differs by +5.5 (p=0.00050), surviving Bonferroni correction. And there is no systematic offset between eras (-0.6 points, p=0.4543), which is the confound tested directly."
+}
