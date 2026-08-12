@@ -31,6 +31,40 @@ CLIP_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "clip
 RAW_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "raw")
 
 
+def _read_journal(path: str) -> dict[str, dict]:
+    """Completed records from an append-only journal.
+
+    A partial final line is the expected shape of an interrupted write, so it is
+    skipped rather than treated as corruption. Failed clips are not returned, so
+    a rerun retries them.
+    """
+    if not os.path.exists(path):
+        return {}
+    done: dict[str, dict] = {}
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue  # truncated tail from a killed process
+            if "id" in rec and "error" not in rec:
+                done[rec["id"]] = rec
+    return done
+
+
+def _append(journal, record: dict) -> None:
+    """One line, flushed and fsynced, so a hard kill cannot lose it."""
+    journal.write(json.dumps(record, ensure_ascii=False) + "\n")
+    journal.flush()
+    try:
+        os.fsync(journal.fileno())
+    except OSError:
+        pass  # some filesystems (and Drive mounts) refuse fsync; the flush stands
+
+
 def build(race_id: str, limit: int | None = None) -> str:
     clip_dir = os.path.join(CLIP_ROOT, race_id)
     manifest = json.load(open(os.path.join(clip_dir, "manifest.json"), encoding="utf-8"))
@@ -39,14 +73,24 @@ def build(race_id: str, limit: int | None = None) -> str:
 
     os.makedirs(RAW_ROOT, exist_ok=True)
     out_path = os.path.join(RAW_ROOT, f"{race_id}.raw.json")
+    journal_path = os.path.join(RAW_ROOT, f"{race_id}.raw.jsonl")
 
     # Resume support: an hour-long job should never be restarted from zero.
-    done: dict[str, dict] = {}
-    if os.path.exists(out_path):
+    #
+    # The journal is append-only, and that is the point. This used to rewrite the
+    # entire results list to one path every five clips, so a disconnect during a
+    # write truncated the file and lost the whole run - which is exactly the
+    # failure mode a Colab session produces when it drops. One line per clip
+    # cannot be corrupted by an interrupted write; at worst the last line is
+    # partial and is skipped on reload.
+    done: dict[str, dict] = _read_journal(journal_path)
+    if not done and os.path.exists(out_path):
         prev = json.load(open(out_path, encoding="utf-8"))
         # Failed clips are deliberately not treated as done, so a rerun retries them.
         done = {r["id"]: r for r in prev.get("messages", []) if "error" not in r}
+    if done:
         print(f"resuming: {len(done)} already processed")
+    journal = open(journal_path, "a", encoding="utf-8")
 
     print(f"loading FastF1 session for {race_id}...")
     session = race_data.load_session(race_id)
@@ -75,7 +119,7 @@ def build(race_id: str, limit: int | None = None) -> str:
             se = sentiment.analyse(tr.text)
             lap = race_data.lap_for_timestamp(laps_for(m["racing_number"]), m["message_timestamp"])
 
-            results.append({
+            record = {
                 **m,
                 "transcript": tr.text,
                 "duration_s": tr.duration_s,
@@ -90,18 +134,35 @@ def build(race_id: str, limit: int | None = None) -> str:
                 "text_negative": se.negative,
                 "text_positive": se.positive,
                 "lap": lap.__dict__,
-            })
+                # v2 additions. Every aggregation choice becomes a stage-2
+                # decision instead of being baked into an hour of inference.
+                "windows": af.windows,
+                "arousal_range": af.arousal_range,
+                "arousal_slope": af.arousal_slope,
+                "voiced_fraction": af.voiced_fraction,
+                "speech_s": round(af.speech_s, 3),
+                "window_scores": [w.to_dict() for w in af.window_scores],
+                "asr_model_id": tr.model_id,
+                "asr_backend": tr.backend,
+                "asr_segments": [s.to_dict() for s in tr.segments],
+                "asr_language": tr.language,
+                "asr_language_probability": tr.language_probability,
+                "no_speech": tr.no_speech,
+            }
+            results.append(record)
         except Exception as e:  # one bad clip must not lose the whole run
             print(f"  !! {m['id']}: {type(e).__name__}: {e}")
-            results.append({**m, "error": f"{type(e).__name__}: {e}"})
+            record = {**m, "error": f"{type(e).__name__}: {e}"}
+            results.append(record)
+
+        _append(journal, record)
 
         if i % 5 == 0 or i == len(manifest):
             rate = (time.perf_counter() - t_start) / max(1, i - len(done))
             left = rate * (len(manifest) - i)
-            print(f"  {i}/{len(manifest)}  ~{left/60:.1f} min remaining")
-            json.dump({"race_id": race_id, "messages": results},
-                      open(out_path, "w", encoding="utf-8"), indent=1)
+            print(f"  {i}/{len(manifest)}  ~{left/60:.1f} min remaining", flush=True)
 
+    journal.close()
     json.dump({"race_id": race_id, "messages": results},
               open(out_path, "w", encoding="utf-8"), indent=1)
 
