@@ -65,7 +65,8 @@ def _append(journal, record: dict) -> None:
         pass  # some filesystems (and Drive mounts) refuse fsync; the flush stands
 
 
-def build(race_id: str, limit: int | None = None) -> str:
+def build(race_id: str, limit: int | None = None,
+          join_laps: bool = True) -> str:
     clip_dir = os.path.join(CLIP_ROOT, race_id)
     manifest = json.load(open(os.path.join(clip_dir, "manifest.json"), encoding="utf-8"))
     if limit:
@@ -92,13 +93,37 @@ def build(race_id: str, limit: int | None = None) -> str:
         print(f"resuming: {len(done)} already processed")
     journal = open(journal_path, "a", encoding="utf-8")
 
-    print(f"loading FastF1 session for {race_id}...")
-    session = race_data.load_session(race_id)
+    # The lap join here is redundant and optional.
+    #
+    # calibrate.py recomputes it from scratch (`m["lap"] = lap_for_timestamp(...)`),
+    # so whatever stage 1 writes is overwritten in stage 2 regardless. It stays
+    # by default because it is free when the FastF1 cache is warm and makes the
+    # raw file readable on its own.
+    #
+    # It must be skippable because stage 1 now runs on a GPU box that has no
+    # cache, and FastF1's live-timing API no longer serves older seasons - a
+    # 2019 session there returns SessionNotAvailableError for every endpoint and
+    # every message lands on no lap. That is harmless, since stage 2 fixes it on
+    # a machine that has the cache, but spending the API calls and the wall time
+    # to produce a result that is thrown away is not.
+    session = None
+    if join_laps:
+        print(f"loading FastF1 session for {race_id}...")
+        try:
+            session = race_data.load_session(race_id)
+        except Exception as e:
+            print(f"  !! FastF1 unavailable ({type(e).__name__}: {e})")
+            print("     continuing without the lap join - calibrate.py redoes it")
+            session = None
+    else:
+        print("skipping the lap join (calibrate.py recomputes it in stage 2)")
 
     # Cache lap frames per car number rather than per message.
     lap_cache: dict[str, object] = {}
 
     def laps_for(num: str):
+        if session is None:
+            return None
         if num not in lap_cache:
             lap_cache[num] = race_data.driver_laps(session, num)
         return lap_cache[num]
@@ -117,7 +142,9 @@ def build(race_id: str, limit: int | None = None) -> str:
             tr = asr.transcribe(audio)
             af = prosody.analyse(audio)
             se = sentiment.analyse(tr.text)
-            lap = race_data.lap_for_timestamp(laps_for(m["racing_number"]), m["message_timestamp"])
+            frames = laps_for(m["racing_number"])
+            lap = (race_data.lap_for_timestamp(frames, m["message_timestamp"])
+                   if frames is not None else None)
 
             record = {
                 **m,
@@ -133,7 +160,7 @@ def build(race_id: str, limit: int | None = None) -> str:
                 "text_polarity": se.polarity,
                 "text_negative": se.negative,
                 "text_positive": se.positive,
-                "lap": lap.__dict__,
+                "lap": lap.__dict__ if lap is not None else None,
                 # v2 additions. Every aggregation choice becomes a stage-2
                 # decision instead of being baked into an hour of inference.
                 "windows": af.windows,
