@@ -42,8 +42,8 @@ CALIBRATION = os.path.join(HERE, "_pooled.calibration.json")
 #: purpose: a live result computed by a different model than the one behind the
 #: Race Replay would be a quiet inconsistency, and the response says which was
 #: used either way. Override to compare.
-ASR_MODEL = os.environ.get("PITWALL_ASR_MODEL", asr.MODEL_ID)
-CORPUS_ASR_MODEL = "openai/whisper-small.en"
+ASR_MODEL = asr.MODEL_ID
+CORPUS_ASR_MODEL = asr.CORPUS_MODEL_ID
 
 MAX_SECONDS = 120.0
 

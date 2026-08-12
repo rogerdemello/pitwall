@@ -410,6 +410,11 @@ async def analyze(file: UploadFile = File(...), race_id: str = "2021_Abu_Dhabi_G
         "text_sentiment": {"label": se.label, "polarity": se.polarity},
         "state": st.to_dict(),
         "calibrated_against": race_id if _calibrator(race_id) else None,
+        # Which model produced this, and whether it is the one the Race Replay
+        # was built with. The deployment may run a smaller model than the corpus
+        # build; saying so beats a quiet inconsistency the user cannot see.
+        "model_id": tr.model_id,
+        "matches_corpus_model": tr.matches_corpus_model,
     }
 
 
