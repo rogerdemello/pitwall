@@ -158,3 +158,52 @@ class TestEraAnalysisAgrees:
     def test_race_count_matches_the_corpus(self, live_races):
         era = _load("_era_analysis.json")
         assert era["n_races"] == len(live_races)
+
+
+class TestValenceIsNotMisreported:
+    """The published claim used to be a flat 'valence is at chance'. It is not.
+
+    The axis scores at chance *at the 0.5 split*, which is a fact about the
+    threshold. The model ranks valence at AUC 0.687 and reaches +0.0605 lift at
+    the fitted cut. Both must stay visible: quoting only the pessimistic figure
+    understates the model, and quoting only the optimistic one hides that the
+    corrected boundary does not transfer to radio.
+    """
+
+    @pytest.fixture(scope="class")
+    def boundary(self):
+        return _load("_valence_boundary.json")
+
+    def test_the_axis_is_threshold_limited_not_signal_limited(self, boundary):
+        v = boundary["valence_raw_space"]
+        assert v["lift_over_baseline_fitted"] > v["lift_over_baseline_median"]
+        assert v["auc"] > 0.6, "ranking signal must be well above chance"
+
+    def test_the_fitted_cut_is_stable_across_speakers(self, boundary):
+        v = boundary["valence_raw_space"]
+        assert v["fitted_cut_spread_relative"] < 0.15
+        assert v["optimism"] < 0.05, "in-sample and CV must not diverge"
+
+    def test_arousal_boundary_is_already_correct(self, boundary):
+        """The median split is right for arousal and wrong for valence.
+
+        If moving the arousal boundary ever starts helping, the quadrant scheme
+        has changed underneath us.
+        """
+        assert boundary["arousal_raw_space"]["lift_over_median"] <= 0.0
+
+    def test_the_transfer_failure_is_recorded(self, boundary):
+        t = boundary["transfer_check"]
+        assert t["computable"]
+        assert "median_shift_in_gold_sds" in t
+        if not t["distributions_comparable"]:
+            assert boundary["recommendation"] == "do_not_transfer_to_f1"
+
+    def test_production_still_uses_the_untransferred_boundary(self):
+        """The finding is published; the corpus is not relabelled on it."""
+        from pipeline import fusion
+        hi_v = fusion._quadrant(0.9, 0.51)[0]
+        lo_v = fusion._quadrant(0.9, 0.49)[0]
+        assert (hi_v, lo_v) == ("Energised", "Stressed"), (
+            "the 0.5 percentile split is still the production boundary"
+        )

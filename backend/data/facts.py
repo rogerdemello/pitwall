@@ -109,6 +109,7 @@ def facts() -> dict:
     leak = _load("_calibration_leakage.json") or {}
     vdiag = _load("_valence_diagnostic.json") or {}
     v1 = _load("_v1_baseline.json") or {}
+    bound = _load("_valence_boundary.json") or {}
 
     svp = ca.get("stress_vs_pace") or {}
     tercile = svp.get("tercile") or {}
@@ -163,7 +164,20 @@ def facts() -> dict:
         "valence_acc": valence.get("accuracy"),
         "valence_baseline": valence.get("majority_baseline"),
         "valence_lift": valence.get("lift"),
-        "valence_at_chance": (valence.get("lift") or 0) < 0.05,
+        # The axis scores at chance *at the 0.5 split*. That is a fact about the
+        # threshold, not about the model - which ranks valence at AUC 0.687 and
+        # reaches +0.0605 lift at the fitted cut. Both facts are exposed so a doc
+        # cannot state the pessimistic one alone, which is what the old flat
+        # "valence is at chance" claim did.
+        "valence_at_chance_at_median_split": (valence.get("lift") or 0) < 0.05,
+        "valence_lift_at_fitted_boundary": (
+            bound.get("valence_raw_space") or {}).get("lift_over_baseline_fitted"),
+        "valence_is_threshold_limited": bound.get("finding") == "boundary_is_misplaced_on_gold",
+        "valence_boundary_recommendation": bound.get("recommendation"),
+        "valence_boundary_transfers": (
+            bound.get("transfer_check") or {}).get("distributions_comparable"),
+        "valence_domain_shift_sds": (
+            bound.get("transfer_check") or {}).get("median_shift_in_gold_sds"),
 
         # Convergent validity
         "convergent_model": conv.get("second_model"),
