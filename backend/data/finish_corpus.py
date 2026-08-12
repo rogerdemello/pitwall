@@ -42,8 +42,6 @@ def built_races() -> list[str]:
     out = []
     for path in sorted(glob.glob(os.path.join(RAW_ROOT, "*.raw.json"))):
         base = os.path.basename(path)
-        if ".bak." in base:
-            continue
         out.append(base[: -len(".raw.json")])
     return out
 
@@ -97,8 +95,8 @@ def main() -> None:
               f"{r['stressed'] * 100:>9.0f}%{r['fatigued'] * 100:>9.0f}%")
 
     sources = {r["source"] for r in rows}
-    if sources != {"pooled"}:
-        print(f"\n!! calibration sources are {sources} - expected all 'pooled'")
+    if not sources <= {"pooled", "leave-one-race-out"}:
+        print(f"\n!! calibration sources are {sources} - expected a shared cross-race calibration")
     elif len(rows) > 1:
         spread = rows[0]["mean"] - rows[-1]["mean"]
         print(f"\nspread between highest and lowest mean DSI: {spread:.1f} points")

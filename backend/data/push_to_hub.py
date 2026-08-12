@@ -102,8 +102,8 @@ arousal axis is the part that holds up.
 
 ## The null result
 
-We built this to test whether driver stress predicts lap-time loss. Across 556
-paired observations it does not: pooled r = 0.047, and no lag from +1 to +3 beats
+We built this to test whether driver stress predicts lap-time loss. Across 1155
+paired observations it does not: pooled r = 0.045, and no lag from +1 to +3 beats
 the same-lap correlation once corrected for multiple comparisons. Published
 anyway, because a null result with this much data is worth more than a
 correlation manufactured by leaving pit stops in.

@@ -91,7 +91,7 @@ backend/
     eval_asr.py          WER + jargon recall, biased vs unbiased
     label_affect.py      human labelling tool + confusion matrix
   research/              the spikes and ablations the Evidence screen cites
-  tests/                 29 tests over the logic that is easy to break
+  tests/                 tests over the logic that is easy to break
 ```
 
 **The two-stage split is deliberate.** Stage 1 is an hour of CPU inference per
@@ -155,7 +155,7 @@ that killed features we had planned to ship.
 This was the most serious flaw in the project: 12% of clips provably contain both
 speakers and 24% run over 15s, but the prosody model averages a whole clip into
 one score — so "driver stress" was partly the engineer. We pooled each driver's
-audio across six races, embedded 3-second windows with
+audio across 12 races, embedded 3-second windows with
 `microsoft/wavlm-base-plus-sv`, and clustered into two speakers, naming the
 clusters by grammatical direction as weak supervision.
 
@@ -208,8 +208,8 @@ training), and mangles domain terms that `whisper-small.en` gets right:
 
 **Does the index separate races that were genuinely different to drive?**
 Partly — four of five predictions held, one clearly failed. The slate and the
-predictions were fixed before any of it was analysed. Across **1,042 messages
-from six races**, with calibration pooled so races are actually comparable:
+predictions were fixed before any of it was analysed. Across **2,042 messages
+from 12 races**, with calibration pooled so races are actually comparable:
 
 | Race | n | Mean DSI | 95% CI | vs dry control |
 |---|---|---|---|---|
@@ -254,7 +254,7 @@ circuit) top, Qatar (extreme heat) second, Monza (dry, processional) bottom.
 Across **1,155 paired observations from twelve races**, there is no reliable
 relationship between driver stress and lap-time loss:
 
-- Pooled Pearson **r = 0.043**. Essentially nothing.
+- Pooled Pearson **r = 0.045**. Essentially nothing.
 - Within drivers, the most-stressed calls sit **−0.07s** off the calmest, and
   only **38 of 80** drivers are slower when stressed — fewer than half, sign
   test **p = 0.74**.
@@ -263,7 +263,7 @@ relationship between driver stress and lap-time loss:
   *faster* laps, the opposite of the hypothesis — and not significant once four
   tests are accounted for.
 
-**Doubling the corpus made the null cleaner, which is the point.** At six races
+**Doubling the corpus made the null cleaner, which is the point.** At 12 races
 the within-driver gap read **+0.39s** with 23 of 37 drivers slower. At twelve it
 is **−0.07s** with 38 of 80. That collapse toward zero as n grows is what a true
 null looks like — and it means the earlier, more flattering number was itself
@@ -285,7 +285,7 @@ That was a pit stop, not a mood.
 **What this means for the product.** The instrument works: it transcribes, scores
 affect, places every message on a real lap, and separates races (below). What it
 does *not* do is predict lap time from voice. Saying so is the finding — a null
-result with 556 observations and proper statistics is worth more than a
+result with 1155 observations and proper statistics is worth more than a
 correlation manufactured by leaving pit stops in the data.
 
 ---
@@ -316,7 +316,7 @@ cd frontend && npm run dev                        # terminal 2
 matches its manifest, then runs the pooling. Completion is detected from the data
 rather than a process handle, so it survives the build being restarted.
 
-`pytest backend/tests -q` runs the test suite (29 tests, no models needed).
+`pytest backend/tests -q` runs the test suite (no models needed).
 
 ### The race slate
 

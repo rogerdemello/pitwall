@@ -82,7 +82,7 @@ material you have.
    *This is the strongest thing you can say. Most teams cannot tell you which
    part of their model is broken. Lead with it.*
 
-2. **The central claim failed.** 556 observations, six races: r = 0.047. Stress
+2. **The central claim failed.** 1155 observations, 12 races: r = 0.045. Stress
    does not predict lap time. Say it plainly.
 3. **We killed three of our own false positives getting there** — r = 0.62 from
    n = 10, then r = −0.25 at p = 0.06, then a negative correlation being called
@@ -101,7 +101,7 @@ material you have.
 > The instrument works — transcription, affect, telemetry join, a pit call with
 > its evidence attached. What we can't tell you is that voice predicts lap time,
 > because we measured it and it doesn't. We'd rather show you a null result with
-> 556 observations than a correlation we manufactured.
+> 1155 observations than a correlation we manufactured.
 
 ---
 

@@ -58,8 +58,6 @@ MIN_FOLD_RECORDS = 500
 def _by_race() -> list[tuple[str, list[dict]]]:
     out = []
     for path in sorted(glob.glob(os.path.join(RAW_ROOT, "*.raw.json"))):
-        if ".bak." in os.path.basename(path):
-            continue
         data = json.load(open(path, encoding="utf-8"))
         good = [m for m in data["messages"]
                 if "error" not in m and m.get("arousal") is not None]

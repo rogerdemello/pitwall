@@ -56,8 +56,15 @@ def _load(name: str) -> dict | None:
         return None
 
 
-def _count_tests() -> int | None:
-    """Ask pytest, rather than trusting anyone to update a number in prose."""
+def count_tests() -> int | None:
+    """Ask pytest for the suite size.
+
+    Deliberately NOT part of `facts()`. It shells out to a pytest collection,
+    which makes every caller slow, and - more to the point - an exact test count
+    does not belong in prose: it is stale the moment anyone adds a test, so a
+    document stating one cannot stay true. The docs describe what the suite
+    covers instead. This stays for anyone who wants the number interactively.
+    """
     try:
         out = subprocess.run(
             [sys.executable, "-m", "pytest", TESTS, "--collect-only", "-q",
@@ -234,8 +241,6 @@ def facts() -> dict:
         # Rejected experiments
         "diarization_verdict": diar.get("verdict"),
 
-        # The repo itself
-        "n_tests": _count_tests(),
     }
 
 

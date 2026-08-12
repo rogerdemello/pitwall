@@ -36,7 +36,7 @@ Built for the Grand Prix Hackathon (Problem Statement 1).
 ## The part worth reading
 
 The central hypothesis — that driver stress predicts lap-time loss — **is not
-supported**. Across 556 paired observations from six races, pooled r = 0.047,
+supported**. Across 1155 paired observations from 12 races, pooled r = 0.045,
 and stress does not lead pace loss at any lag. That is on the Evidence screen,
 stated plainly.
 

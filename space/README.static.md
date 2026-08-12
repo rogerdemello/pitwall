@@ -41,7 +41,7 @@ and F1 telemetry — agreeing on the same event. That join is what the project i
 ## The part worth reading
 
 The central hypothesis — that driver stress predicts lap-time loss — **is not
-supported**. Across 1,155 paired observations, pooled r = 0.043, and stress does
+supported**. Across 1,155 paired observations, pooled r = 0.045, and stress does
 not lead pace loss at any lag. It is on the Evidence screen, stated plainly.
 
 Three of our own false positives were caught and killed getting there

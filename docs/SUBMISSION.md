@@ -59,7 +59,7 @@ recommendation with its evidence attached.
 The Evidence screen reads from measured files; nothing on it is typed by hand.
 
 - **The central hypothesis is not supported.** 1,155 paired observations,
-  12 races: pooled r = 0.043. Stress does not predict lap-time loss, and does
+  12 races: pooled r = 0.045. Stress does not predict lap-time loss, and does
   not lead it at any lag.
 - **Three of our own false positives were caught and killed** — r = 0.62 from
   n = 10; r = −0.25 at p = 0.06; a *negative* correlation being reported as
@@ -75,7 +75,7 @@ The Evidence screen reads from measured files; nothing on it is typed by hand.
   drive, and the recording-era confound was tested on nine same-season races and
   ruled out.
 
-48 tests pass (`pytest backend/tests -q`).
+the suite passes (`pytest backend/tests -q`).
 
 ---
 
