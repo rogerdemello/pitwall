@@ -37,6 +37,19 @@ Three things worth knowing if you redeploy:
 To rebuild and redeploy:
 
 ```bash
+python backend/tools/deploy.py            # gates, build, upload all three
+python backend/tools/deploy.py --fast     # skip pytest, keep the cheap gates
+python backend/tools/deploy.py --dry-run  # build and verify, upload nothing
+python backend/tools/deploy.py --only live
+```
+
+About two minutes with `--fast`. It encodes the ordering rather than trusting
+anyone to remember it, and refuses to upload an export that is missing its
+README or its live-Space URL — the two ways an upload looks fine and behaves
+wrongly. The manual sequence below is what it runs, kept for reference:
+
+
+```bash
 python backend/data/build_static_site.py
 python backend/data/build_static_site.py --check      # must exit 0
 cd frontend
