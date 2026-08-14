@@ -15,7 +15,7 @@ Each line was verified against the running application, not asserted.
 | PS1 requirement | Where | Status |
 |---|---|---|
 | "play or upload a radio audio clip" | Race Replay plays any of 2,042 clips; Live Analysis accepts upload or mic | ✅ |
-| "converts the speech to text" | `pipeline/asr.py` — `openai/whisper-small.en` | ✅ |
+| "converts the speech to text" | `pipeline/asr.py` — `openai/whisper-large-v3` | ✅ |
 | "studies the tone of voice and shows if the driver seems calm, stressed, or tired" | `pipeline/prosody.py` + `fusion.py` → **Calm / Energised / Stressed / Fatigued** | ✅ |
 | "shown alongside basic lap-time information" | Lap time and Driver State Index in stacked panels on one shared x-axis | ✅ |
 | "see if stress is matching up with slower laps" | Evidence screen — measured, and reported as a null result | ✅ |
@@ -59,7 +59,7 @@ recommendation with its evidence attached.
 The Evidence screen reads from measured files; nothing on it is typed by hand.
 
 - **The central hypothesis is not supported.** 1,155 paired observations,
-  12 races: pooled r = 0.045. Stress does not predict lap-time loss, and does
+  12 races: pooled r = 0.026. Stress does not predict lap-time loss, and does
   not lead it at any lag.
 - **Three of our own false positives were caught and killed** — r = 0.62 from
   n = 10; r = −0.25 at p = 0.06; a *negative* correlation being reported as
@@ -100,10 +100,40 @@ The Evidence screen reads from measured files; nothing on it is typed by hand.
   same 2,042 messages it scored. It is now leave-one-race-out, and the leak was
   quantified rather than quietly fixed: race means move by at most 0.41 points
   and the ordering survives, so every previously published contrast stands.
-- **What does hold:** the index separates races that were genuinely different to
-  drive — and more strongly out of sample than in, spread 5.5 → 7.7 points,
-  Cohen's d 0.41 → 0.52. The recording-era confound was tested on nine
-  same-season races and ruled out.
+- **We rebuilt the whole corpus on a better model, and it cost us our headline
+  claim.** Stage 1 was re-run on a GPU with `whisper-large-v3` — no 30-second
+  truncation, 12.7% more transcribed words. Pre-registered predictions about
+  which races would score high went from **4 of 5 holding to 1 of 5**, so the
+  falsification clause written before the run applies: *the v1 separation was
+  largely an artifact of the v1 pipeline.* We are publishing that in place of
+  the old finding.
+
+  There is a reading on which the clause does not fire — separation itself got
+  *stronger*, spread 7.7 → 8.5 — and we are not taking it. Spread is not a
+  claim; the predicted directions were, and they failed. Nor is it bookkeeping:
+  restricted to messages driver-attributed under both pipelines, Monaco falls
+  3.3 DSI points on identical audio while re-attribution accounts for 0.3.
+
+- **The null got cleaner, exactly as pre-registered.** We predicted in advance
+  that a better model would not reveal a relationship that is not there. It
+  didn't: pooled r is now **0.026**, the within-driver gap **−0.035s**, and
+  **41 of 80** drivers slower when stressed — a coin flip, sign test p = 0.91.
+  Every one of those moved *toward* zero from its v1 value. The before-and-after
+  pair is in `_v2_scoring.json`, read out of the artifacts rather than retyped
+  here, because a superseded number quoted in prose is the thing this project
+  keeps catching itself doing.
+
+- **Two pre-registered hypotheses did not pass.** Truncation fell from 92 clips
+  to 6, but the registered threshold was *exactly 0*, so H1 is recorded as not
+  met. And H2 passed its rate threshold while failing the test it named: of the
+  51 near-silent clips the pre-registration singled out, **50 still hallucinate**
+  — they say *"Thank you."* now instead of *"you"*. Counted per family that
+  reads as elimination; followed by clip id it is the same defect renamed.
+
+- **What does still hold:** the recording-era confound stays ruled out. Holding
+  the season fixed, 2023 races spread 7.0 points against 8.5 across all seasons,
+  with no systematic offset between eras (p = 0.59). That survived the rebuild;
+  the prediction scorecard did not.
 
 The suite passes (`pytest backend/tests -q`), and it includes tests that fail the
 build if a published number drifts from the file that measured it.

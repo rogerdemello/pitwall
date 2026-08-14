@@ -79,7 +79,7 @@ frontend/            Next.js 16 + React 19 — Replay, Live, Evidence
 backend/
   main.py            FastAPI: /race, /analyze, /evidence, /audio
   pipeline/
-    asr.py           whisper-small.en + F1 vocabulary biasing
+    asr.py           whisper-large-v3 via CTranslate2 (corpus) / small.en (live)
     prosody.py       audeering AVD model (continuous arousal/valence/dominance)
     sentiment.py     cardiffnlp RoBERTa sentiment
     calibration.py   percentile calibration to the F1 radio domain
@@ -113,7 +113,7 @@ the network unplugged. Only Live Analysis runs models at request time.
 |---|---|
 | Data | [`MikCil/f1-team-radio`](https://huggingface.co/datasets/MikCil/f1-team-radio) — 14,681 clips, 149 GPs, 2018–2025 |
 | Prosody | [`audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim`](https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim) |
-| ASR | [`openai/whisper-small.en`](https://huggingface.co/openai/whisper-small.en) |
+| ASR | [`openai/whisper-large-v3`](https://huggingface.co/openai/whisper-large-v3) |
 | Text sentiment | [`cardiffnlp/twitter-roberta-base-sentiment-latest`](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) |
 
 Telemetry via **FastF1**.
@@ -231,57 +231,74 @@ training), and mangles domain terms that `whisper-small.en` gets right:
 | does not have DRS | "the areas" | **DRS** |
 | Hamilton's pitted | "I will turn to the pitted" | **Hamilton's pitted** |
 
-**Does the index separate races that were genuinely different to drive?**
-Partly — four of five predictions held, one clearly failed. The slate and the
-predictions were fixed before any of it was analysed. Across **2,042 messages
-from 12 races**, with calibration pooled so races are actually comparable:
+**Does the index separate races that were genuinely different to drive? We
+pre-registered five predictions, rebuilt the pipeline, and four of them broke.**
+
+This is the most important result in the project, and it is a negative one about
+our own earlier claim. Under v1 the answer was "mostly yes — four of five
+predictions held". Under v2, on the same 2,042 clips:
 
 | Race | n | Mean DSI | 95% CI | vs dry control |
 |---|---|---|---|---|
-| 2023 Monaco | 164 | 53.0 | 51.0–55.0 | +5.5, p<0.001 |
-| 2020 Turkish (wet) | 143 | 53.0 | 51.0–54.9 | +5.5, p<0.001 |
-| 2023 Qatar (heat) | 121 | 52.3 | 49.6–55.0 | +4.8, p=0.009 |
-| 2021 Abu Dhabi | 108 | 51.4 | 49.0–53.8 | +3.9, p=0.025 (not claimed) |
-| 2019 German (wet) | 114 | 48.8 | 46.4–51.2 | +1.3, p=0.46 |
-| **2023 Italian (dry control)** | 132 | **47.5** | 45.2–49.9 | — |
+| 2020 Turkish (wet) | 139 | 55.5 | 52.7–58.4 | **+8.1, p=0.0001** |
+| 2023 Qatar (heat) | 116 | 51.3 | 47.8–54.7 | +3.9, p=0.087 (not claimed) |
+| 2021 Abu Dhabi | 111 | 51.2 | 48.2–54.2 | +3.8, p=0.071 (not claimed) |
+| 2023 Monaco | 165 | 50.5 | 47.8–53.1 | +3.1, p=0.117 (not claimed) |
+| **2023 Italian (dry control)** | 130 | **47.4** | 44.6–50.3 | — |
+| 2019 German (wet) | 101 | 47.0 | 43.5–50.5 | −0.4, p=0.862 (not claimed) |
 
-The dry processional control came out lowest, as predicted. Wet Turkey and
-Monaco sit significantly above it. Qatar — the extreme-heat race — has the
-highest share of *Stressed* messages (21%) and 42% *Fatigued*.
+Only wet Turkey survives. Monaco was significant in v1 and is not now. The dry
+control was predicted lowest and is no longer lowest — 2019 German sits 0.4
+points below it. **1 of 5 predictions held.**
 
-**But 2019 German failed.** It was wet and chaotic and should have been near the
-top; it came second-lowest and is statistically indistinguishable from the dry
-control. We have no explanation we can support. Five contrasts were tested, so
-the Bonferroni threshold is p<0.01 — Abu Dhabi's p=0.025 does not survive it and
-is not claimed. The spread is 5.5 points against a within-race sd of ~13
-(Cohen's d ≈ 0.42): real, but modest.
+**The pre-registration said what to do if this happened, so we are doing it.**
+The falsification clause reads: *if the index no longer separates the
+pre-registered contrast slate, the separation in v1 was an artifact of the v1
+pipeline.* We are publishing that.
 
-**The era confound: tested and ruled out.** This was an open weakness — the
-slate spanned 2019–2023, radio encoding is not constant across seasons, and the
-one race that failed its prediction was the oldest in the set, exactly what a
-recording-era artefact would produce. So we built **nine races from 2023 alone**
-and held the season fixed:
+There is a reading on which the clause does not fire, and we are not taking it.
+Separation itself did not weaken — the spread actually **grew from 7.7 to 8.5
+points**, and the strongest contrast is more significant than any in v1. But
+spread on its own is not a claim; a noisy index produces spread. What made v1's
+separation mean something was that the directions were predicted in advance, and
+those predictions are what did not survive. Reading the clause on spread alone
+would have been choosing the interpretation that suits us, which is the exact
+move a pre-registration exists to prevent.
 
-| | Spread |
-|---|---|
-| Within 2023 only (9 races) | **5.5 pts** |
-| Across all eras (12 races) | 5.6 pts |
+**It is not a bookkeeping artefact, which we checked before concluding
+anything.** Longer transcripts change which messages the speaker heuristic
+attributes to the driver, so the scored population moved too. Restricting to
+messages driver-attributed under *both* pipelines isolates the two effects:
 
-Essentially unchanged. Monaco vs Monza, both 2023, differ by **+5.5 (p = 0.0005)**,
-surviving Bonferroni correction, and there is **no systematic offset between
-eras** (2023 mean 50.9 vs pre-2023 51.5, p = 0.45). Recording era does not
-explain the separation — the race-condition effect is real.
+| Race | v1 | v2 | Same messages, both pipelines |
+|---|---|---|---|
+| 2023 Monaco | 53.3 | 50.5 | **−3.3** |
+| 2019 German | 48.4 | 47.0 | −2.5 |
+| 2020 Turkish | 54.5 | 55.5 | +1.4 |
 
-The within-season ordering is also coherent on its own terms: Monaco (street
-circuit) top, Qatar (extreme heat) second, Monza (dry, processional) bottom.
+Re-attribution accounts for at most 0.3 points. The affect scores genuinely
+moved — Monaco by 3.3 points on identical audio. Seven of the twelve races
+change rank materially.
+
+**The era confound stays ruled out.** Holding the season fixed, races from 2023
+alone spread **7.0 points** against 8.5 across all seasons, and 2023 Spanish vs
+2023 Italian differ by +7.0 (p = 0.0013), surviving Bonferroni. There is no
+systematic offset between eras (2023 mean 50.7 vs pre-2023 51.3, p = 0.59). That
+finding survived the rebuild; the prediction scorecard did not.
+
+**What we take from it.** A result that depends on which of two defensible
+pipelines produced it is not a result about Formula One. The index does
+distinguish these races — but we can no longer say it distinguishes them in the
+directions we predicted, and the honest version of that sentence is the one
+above rather than the one we published before.
 
 **The central hypothesis is not supported, and that is the honest headline.**
 Across **1,155 paired observations from twelve races**, there is no reliable
 relationship between driver stress and lap-time loss:
 
-- Pooled Pearson **r = 0.045**. Essentially nothing.
-- Within drivers, the most-stressed calls sit **−0.07s** off the calmest, and
-  only **38 of 80** drivers are slower when stressed — fewer than half, sign
+- Pooled Pearson **r = 0.026**. Essentially nothing.
+- Within drivers, the most-stressed calls sit **-0.035s** off the calmest, and
+  only **41 of 80** drivers are slower when stressed — fewer than half, sign
   test **p = 0.74**.
 - **Stress does not lead pace loss either.** Lags 0–3 were tested. The largest
   correlation (lap +3, r = −0.15) is *negative* — higher stress preceding
@@ -290,7 +307,7 @@ relationship between driver stress and lap-time loss:
 
 **Doubling the corpus made the null cleaner, which is the point.** At 12 races
 the within-driver gap read **+0.39s** with 23 of 37 drivers slower. At twelve it
-is **−0.07s** with 38 of 80. That collapse toward zero as n grows is what a true
+is **-0.035s** with 41 of 80. That collapse toward zero as n grows is what a true
 null looks like — and it means the earlier, more flattering number was itself
 small-sample noise. We report the larger sample.
 

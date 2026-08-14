@@ -41,7 +41,7 @@ and F1 telemetry — agreeing on the same event. That join is what the project i
 ## The part worth reading
 
 The central hypothesis — that driver stress predicts lap-time loss — **is not
-supported**. Across 1,155 paired observations, pooled r = 0.045, and stress does
+supported**. Across 1,155 paired observations, pooled r = 0.026, and stress does
 not lead pace loss at any lag. It is on the Evidence screen, stated plainly.
 
 Three of our own false positives were caught and killed getting there
@@ -80,7 +80,7 @@ would be 327 MB, and the Evidence screens need none of it.
 |---|---|
 | Data | [`MikCil/f1-team-radio`](https://huggingface.co/datasets/MikCil/f1-team-radio) |
 | Prosody | [`audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim`](https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim) |
-| ASR | [`openai/whisper-small.en`](https://huggingface.co/openai/whisper-small.en) |
+| ASR | [`openai/whisper-large-v3`](https://huggingface.co/openai/whisper-large-v3) |
 | Text sentiment | [`cardiffnlp/twitter-roberta-base-sentiment-latest`](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) |
 | Validation | [`confit/cremad-parquet`](https://huggingface.co/datasets/confit/cremad-parquet) |
 

@@ -261,6 +261,8 @@ def facts() -> dict:
         "leakage_ordering_preserved": leak.get("ordering_preserved"),
         "leakage_mean_abs_delta": (leak.get("per_message") or {}).get("mean_abs_delta"),
         "leakage_verdict": leak.get("verdict"),
+        "leakage_spread_in_sample": leak.get("spread_in_sample"),
+        "leakage_spread_held_out": leak.get("spread_held_out"),
 
         # Why acoustic valence was kept or removed. The stratified figure is the
         # one the verdict rests on: the naive contrast turned out not to be

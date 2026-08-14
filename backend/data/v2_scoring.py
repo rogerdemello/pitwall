@@ -448,20 +448,31 @@ def baseline_drift(prereg: dict, v1_frozen: dict, v1_now: dict) -> dict:
     }
 
 
+def confirmatory_figures(doc: dict | None) -> dict:
+    """The four headline numbers, pulled from _corpus_analysis.json's shape.
+
+    They live under `stress_vs_pace`, not at the top level. Reading them with
+    top-level `.get()` returns None for everything, which makes a reconciliation
+    that quietly compares nothing to nothing and declares agreement.
+    """
+    if not doc:
+        return {}
+    svp = doc.get("stress_vs_pace") or {}
+    terc = svp.get("tercile") or {}
+    return {
+        "pooled_r": svp.get("pooled_r"),
+        "n": svp.get("n"),
+        "tercile_gap_s": terc.get("mean_gap_s"),
+        "sign_test_p": terc.get("sign_test_p"),
+        "drivers_slower": terc.get("drivers_slower_when_stressed"),
+        "drivers_total": terc.get("drivers_total"),
+        "predictive": (doc.get("lag") or {}).get("predictive"),
+    }
+
+
 def confirmatory_reconciliation(prereg: dict, before: dict | None) -> dict:
     reg = (prereg.get("the_single_confirmatory_test") or {}).get("baseline") or {}
-    disk = {}
-    if before:
-        disk = {
-            "pooled_r": before.get("pooled_r"),
-            "n": before.get("paired_n") or before.get("n"),
-            "tercile_gap_s": ((before.get("tercile_contrast") or {}).get("gap_s")
-                              if isinstance(before.get("tercile_contrast"), dict)
-                              else before.get("tercile_gap_s")),
-            "sign_test_p": ((before.get("tercile_contrast") or {}).get("sign_test_p")
-                            if isinstance(before.get("tercile_contrast"), dict)
-                            else before.get("sign_test_p")),
-        }
+    disk = confirmatory_figures(before)
     shared = [k for k in reg if k in disk and disk[k] is not None]
     disagree = any(reg[k] != disk[k] for k in shared)
     return {

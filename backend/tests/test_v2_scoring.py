@@ -46,6 +46,31 @@ def msg(i: int, **over) -> dict:
     return m
 
 
+def corpus_analysis(pooled_r, gap, sign_p, slower, n=1155) -> dict:
+    """A _corpus_analysis.json in the shape the real one actually has.
+
+    The figures are nested under `stress_vs_pace` and `stress_vs_pace.tercile`,
+    not at the top level. An earlier version of these fixtures invented a flat
+    shape, which meant the reconciliation test passed while comparing None to
+    None - the same class of miss that let a `.get()` on a prose field reach the
+    real artifact and crash it.
+    """
+    return {
+        "messages_pooled": 2042,
+        "stress_vs_pace": {
+            "n": n,
+            "pooled_r": pooled_r,
+            "tercile": {
+                "mean_gap_s": gap,
+                "sign_test_p": sign_p,
+                "drivers_slower_when_stressed": slower,
+                "drivers_total": 80,
+            },
+        },
+        "lag": {"predictive": False},
+    }
+
+
 def tree(root: str, messages: list[dict], extra: dict | None = None) -> str:
     os.makedirs(root, exist_ok=True)
     with open(os.path.join(root, f"{RACE}.json"), "w", encoding="utf-8") as f:
@@ -270,9 +295,7 @@ class TestReportingDiscipline:
 
     def test_the_registered_baseline_is_never_edited(self, wired):
         tree(wired["races_v1"], [msg(0)],
-             extra={"_corpus_analysis.json": {"pooled_r": 0.0446, "paired_n": 1155,
-                                              "tercile_gap_s": -0.086,
-                                              "sign_test_p": 0.5764}})
+             extra={"_corpus_analysis.json": corpus_analysis(0.0446, -0.086, 0.5764, 37)})
         tree(wired["races"], [msg(0)])
         rec = v2_scoring.build()["confirmatory_baseline_reconciliation"]
         assert rec["registered_in_prereg"]["pooled_r"] == 0.0428, "prereg untouched"
@@ -284,9 +307,7 @@ class TestReportingDiscipline:
 
     def test_no_disagreement_is_reported_when_there_is_none(self, wired):
         tree(wired["races_v1"], [msg(0)],
-             extra={"_corpus_analysis.json": {"pooled_r": 0.0428, "paired_n": 1155,
-                                              "tercile_gap_s": -0.071,
-                                              "sign_test_p": 0.7376}})
+             extra={"_corpus_analysis.json": corpus_analysis(0.0428, -0.071, 0.7376, 38)})
         tree(wired["races"], [msg(0)])
         rec = v2_scoring.build()["confirmatory_baseline_reconciliation"]
         assert rec["they_disagree"] is False

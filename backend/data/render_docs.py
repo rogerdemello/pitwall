@@ -98,6 +98,33 @@ def rules(f: dict) -> list[tuple[str, str]]:
          "majority-class baseline**"),
         (r"(?<=\| )\*\*\+16\.3\*\*", f"**{_signed(f, 'arousal_lift')}**"),
         (r"(?<=\| )\*\*\+1\.0\*\*", f"**{_signed(f, 'valence_lift')}**"),
+        # The confirmatory figures, which the GPU rebuild moved. Every one of
+        # these was a literal in prose with no rule behind it, which is how the
+        # v1 values would have survived a rebuild that changed all of them.
+        (r"\br = 0\.045\b", f"r = {r}"),
+        (r"\bpooled r = 0\.045\b", f"pooled r = {r}"),
+        (r"\bpooled Pearson \*\*r = 0\.045\*\*", f"pooled Pearson **r = {r}**"),
+        (r"\b0\.045\b", str(r)),
+        (r"\*\*[−-]0\.07s\*\*", f"**{f['tercile_gap_s']}s**"),
+        (r"\b[−-]0\.07s\b", f"{f['tercile_gap_s']}s"),
+        (r"\b38 of 80\b", f"{f['drivers_slower']} of {f['drivers_total']}"),
+        (r"\b37 of 80\b", f"{f['drivers_slower']} of {f['drivers_total']}"),
+        (r"p = 0\.5764", f"p = {f['sign_test_p']}"),
+        # Calibration leakage: in-sample vs held-out spread.
+        (r"spread 5\.5 → 7\.7 points",
+         f"spread {f['leakage_spread_in_sample']} → {f['leakage_spread_held_out']} points"),
+        (r"spread 7\.7 → 8\.5 points",
+         f"spread {f['leakage_spread_in_sample']} → {f['leakage_spread_held_out']} points"),
+        # The corpus ASR model, where a document is stating what built the
+        # corpus. NOT applied blanket: space_live serves small.en on purpose and
+        # says so, and the distil-whisper contrast table is a v1 measurement
+        # that stays true. Anchored to the models-table row only.
+        (r"\| ASR \| \[`openai/whisper-small\.en`\]\(https://huggingface\.co/openai/whisper-small\.en\) \|",
+         f"| ASR | [`{f['corpus_asr_model']}`](https://huggingface.co/{f['corpus_asr_model']}) |"),
+        (r"`pipeline/asr\.py` — `openai/whisper-small\.en`",
+         f"`pipeline/asr.py` — `{f['corpus_asr_model']}`"),
+        (r"our ASR output \(`openai/whisper-small\.en`\)",
+         f"our ASR output (`{f['corpus_asr_model']}`)"),
     ]
 
 

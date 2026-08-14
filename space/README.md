@@ -36,7 +36,7 @@ Built for the Grand Prix Hackathon (Problem Statement 1).
 ## The part worth reading
 
 The central hypothesis — that driver stress predicts lap-time loss — **is not
-supported**. Across 1155 paired observations from 12 races, pooled r = 0.045,
+supported**. Across 1155 paired observations from 12 races, pooled r = 0.026,
 and stress does not lead pace loss at any lag. That is on the Evidence screen,
 stated plainly.
 
@@ -59,7 +59,7 @@ in the product, not buried.
 |---|---|
 | Data | [`MikCil/f1-team-radio`](https://huggingface.co/datasets/MikCil/f1-team-radio) |
 | Prosody | [`audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim`](https://huggingface.co/audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim) |
-| ASR | [`openai/whisper-small.en`](https://huggingface.co/openai/whisper-small.en) |
+| ASR | [`openai/whisper-large-v3`](https://huggingface.co/openai/whisper-large-v3) |
 | Text sentiment | [`cardiffnlp/twitter-roberta-base-sentiment-latest`](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) |
 | Validation | [`confit/cremad-parquet`](https://huggingface.co/datasets/confit/cremad-parquet) |
 
