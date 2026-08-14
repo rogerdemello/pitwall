@@ -1,9 +1,10 @@
 # Publishing to Hugging Face
 
-**Both artifacts are live under `rogerdemello`:**
+**Three artifacts are live under `rogerdemello`:**
 
 - Dataset — https://huggingface.co/datasets/rogerdemello/pitwall-f1-radio-analysis
-- Space — https://huggingface.co/spaces/rogerdemello/pitwall
+- App (static) — https://huggingface.co/spaces/rogerdemello/pitwall
+- Model backend (ZeroGPU) — https://huggingface.co/spaces/rogerdemello/pitwall-live
 
 ## What shipped, and why it's a *static* Space
 
@@ -14,11 +15,17 @@ nothing here needs a server — Replay and Evidence read precomputed JSON, and
 only Live Analysis runs a model.
 
 So `build_static_site.py` freezes every GET endpoint to a file (`/api/<x>` →
-`/data/<x>.json`, one uniform rewrite rather than a per-endpoint table), the
-frontend builds with `NEXT_PUBLIC_STATIC=1`, and Live Analysis shows an
-explanation instead of failing.
+`/data/<x>.json`, one uniform rewrite rather than a per-endpoint table) and the
+frontend builds with `NEXT_PUBLIC_STATIC=1`.
 
-Two things worth knowing if you redeploy:
+Three things worth knowing if you redeploy:
+
+- **Rebuild the snapshot, or the Space serves superseded numbers.** This is not
+  hypothetical: the corpus was recalibrated, `frontend/public/data/` was not
+  rebuilt, and the live site served pre-recalibration figures while every test
+  passed — because the tests watched `backend/races/` and the deployed artifact
+  reads the snapshot. `build_static_site.py --check` now diffs the two and
+  `backend/tests/test_static_snapshot.py` fails the build on a mismatch.
 
 - **The static host serves exact file paths only.** It resolves `index.html` at
   the root but *not* in subdirectories, so `/evidence/` 404s and the browser
@@ -31,11 +38,53 @@ To rebuild and redeploy:
 
 ```bash
 python backend/data/build_static_site.py
+python backend/data/build_static_site.py --check      # must exit 0
 cd frontend
-NEXT_PUBLIC_API="" NEXT_PUBLIC_STATIC=1 NEXT_OUTPUT=export npx next build
-cp ../space/README.static.md out/README.md
-# then upload out/ to spaces/rogerdemello/pitwall
+npm run check:export                                  # FIRST - see below
+NEXT_PUBLIC_API="" NEXT_PUBLIC_STATIC=1 \
+  NEXT_PUBLIC_LIVE_SPACE="https://rogerdemello-pitwall-live.hf.space" \
+  NEXT_OUTPUT=export npx next build
+cp ../space/README.static.md out/README.md            # the YAML frontmatter is
+                                                      # what configures the Space
+hf upload rogerdemello/pitwall out . --repo-type=space
 ```
+
+**`check:export` runs its own `next build`, so it must come before the real
+one, not after.** Run it afterwards and it silently replaces `out/` with a build
+that has no `NEXT_PUBLIC_LIVE_SPACE` baked in and no `README.md` — an upload
+that looks fine, has Live Analysis dead again, and has no Space frontmatter.
+
+## The model backend: `space_live/`
+
+Live Analysis needs a process to run three models in, and a static Space has
+none. Free accounts in good standing may host two **ZeroGPU** Gradio Spaces, so
+the models live in a second Space and the static frontend calls it cross-origin.
+Gradio's CORS middleware accepts any origin when the host is not a localhost
+alias, which is the case on `*.hf.space`, so there is no proxy.
+
+`space_live/` is assembled, not written: `build_space_live.py` copies
+`backend/pipeline/` in verbatim and `backend/tests/test_space_live.py` asserts
+every module is byte-identical and that the Gradio response matches
+`POST /api/analyze` field for field. There is one implementation of every model
+call, and a test that fails if that stops being true.
+
+`space_live/pipeline/` and `space_live/_pooled.calibration.json` are build
+artifacts and are gitignored, so a fresh clone **must** run the build before
+uploading or the Space ships with no pipeline and no calibration:
+
+```bash
+python backend/data/build_space_live.py
+hf upload rogerdemello/pitwall-live space_live . --repo-type=space
+```
+
+The Space must be on ZeroGPU hardware (`zero-a10g`); on CPU the wav2vec2 model
+makes each request slow enough to time out. `startup_duration_timeout: 1h` in
+its README frontmatter covers the first boot, which downloads three models.
+
+Two consequences worth stating plainly. The frontend reaches it through
+`NEXT_PUBLIC_LIVE_SPACE`; unset, Live Analysis falls back to explaining itself
+rather than failing. And ZeroGPU time is charged to the visitor, not to the
+Space, so an anonymous visitor gets a few GPU-minutes a day.
 
 ## If you later subscribe to PRO
 
@@ -117,11 +166,12 @@ needs no source audio.
 
 ## Still outstanding for the hackathon
 
-**The brief requires every team member to have their own Hugging Face account.**
-`rogerdemello` is one. Your second team member needs one too — that's a hard
-submission rule, not a nice-to-have.
+**Team accounts: done.** The brief requires every team member to have their own
+Hugging Face account, and both do — [rogerdemello](https://huggingface.co/rogerdemello)
+and [vynride](https://huggingface.co/vynride). This section used to say the
+second one was still needed; it was stale, and `docs/SUBMISSION.md` had it right.
 
-The other open item is the in-domain listening pass
+The one open item is the in-domain listening pass
 (`python backend/data/label_affect.py label <race> 60`). The gold-label
 validation uses acted studio speech; nobody has yet labelled *this* audio, and
 the Evidence page says so rather than implying otherwise.

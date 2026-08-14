@@ -4,7 +4,7 @@
  * recording. Upload or record a clip and watch the same pipeline run on it. */
 
 import { useRef, useState } from "react";
-import { analyzeClip, dsiColor, STATIC_MODE } from "@/lib/api";
+import { analyzeClip, CAN_ANALYSE, dsiColor, LIVE_SPACE, STATIC_MODE } from "@/lib/api";
 
 const RACE = "2021_Abu_Dhabi_Grand_Prix";
 
@@ -87,7 +87,31 @@ export default function LivePage() {
         </p>
       </div>
 
-      {STATIC_MODE && (
+      {STATIC_MODE && CAN_ANALYSE && (
+        <div className="card" style={{ marginBottom: 18 }}>
+          <p className="card-title">Running on the ZeroGPU backend</p>
+          <p style={{ fontSize: 13, lineHeight: 1.6, margin: 0 }}>
+            This page is served by a <strong>static</strong> Space, which has no process
+            to run a model in. The clip is sent to{" "}
+            <a href={LIVE_SPACE} target="_blank" rel="noreferrer">
+              a second Space
+            </a>{" "}
+            running the pipeline on ZeroGPU — the same <code>pipeline/</code> package
+            behind the Race Replay, copied in verbatim at build time rather than
+            reimplemented.
+          </p>
+          <p
+            className="muted"
+            style={{ fontSize: 12.5, lineHeight: 1.6, marginTop: 8, marginBottom: 0 }}
+          >
+            The first call of the day wakes the Space and loads three models, so it can
+            take a minute; later ones are quick. ZeroGPU time is charged to you, not to
+            the Space — signing in to Hugging Face raises the allowance.
+          </p>
+        </div>
+      )}
+
+      {!CAN_ANALYSE && (
         <div
           className="card"
           style={{
@@ -165,8 +189,9 @@ export default function LivePage() {
           )}
 
           <p className="muted" style={{ fontSize: 11.5, lineHeight: 1.55, marginTop: 16, marginBottom: 0 }}>
-            Inference runs on CPU, so expect a few seconds per clip. The Race Replay is
-            precomputed for exactly this reason.
+            {STATIC_MODE && CAN_ANALYSE
+              ? "Inference runs on a shared ZeroGPU slice, so a warm call takes a few seconds and a cold one takes a minute. The Race Replay is precomputed for exactly this reason."
+              : "Inference runs on CPU, so expect a few seconds per clip. The Race Replay is precomputed for exactly this reason."}
           </p>
         </div>
 

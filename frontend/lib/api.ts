@@ -1,16 +1,12 @@
-export const API = process.env.NEXT_PUBLIC_API ?? "http://localhost:8000";
-
-/* Static mode.
+/* Reached through lib/http.ts rather than redefined here.
  *
- * Docker Spaces need a paid plan; Static Spaces are free. Almost nothing here
- * needs a server - Replay and Evidence read precomputed JSON, and only Live
- * Analysis runs a model - so a build can point at snapshotted files instead.
- *
- * build_static_site.py freezes every GET endpoint under the same shape:
- * /api/<anything> becomes /data/<anything>.json. Keeping that mapping uniform
- * means one rewrite here rather than a lookup table that drifts as soon as
- * someone adds an endpoint. */
-export const STATIC_MODE = process.env.NEXT_PUBLIC_STATIC === "1";
+ * This used to default to `http://localhost:8000`, which made the `rewrites()`
+ * proxy in next.config.ts dead code: dev requests went cross-origin straight to
+ * uvicorn and depended on its CORS allowlist. Defaulting to "" sends dev,
+ * Docker and the export down the same same-origin `/api` path. */
+export { API, CAN_ANALYSE, LIVE_SPACE, STATIC_MODE } from "./http";
+import { API, LIVE_SPACE, STATIC_MODE } from "./http";
+import { analyzeOnSpace } from "./liveSpace";
 
 function resolve(path: string): string {
   if (!STATIC_MODE) return `${API}${path}`;
@@ -376,6 +372,12 @@ export const getAudioManifest = () =>
   );
 
 export async function analyzeClip(file: File, raceId: string) {
+  // A static Space has no process to run a model in, so when one is configured
+  // the clip goes to the ZeroGPU Space instead. Same pipeline package, same
+  // response fields - see lib/liveSpace.ts.
+  if (STATIC_MODE && LIVE_SPACE) {
+    return analyzeOnSpace(LIVE_SPACE, file);
+  }
   if (STATIC_MODE) {
     throw new Error(
       "Live Analysis needs the model backend, which a static Space cannot host. " +

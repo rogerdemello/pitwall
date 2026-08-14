@@ -62,10 +62,14 @@ ruled out.
 
 ## Limitations of this deployment
 
-**Live Analysis is disabled here.** It runs three models, which needs a backend;
-Hugging Face hosts static Spaces free but charges for Docker ones. Everything on
-Race Replay is that same pipeline's actual output — to run a clip yourself,
-clone the repo and start it locally.
+**Live Analysis runs on a second Space.** This one is `sdk: static`, so it has
+no process to run a model in — Hugging Face hosts static Spaces free but charges
+for Docker ones. The models therefore live in
+[pitwall-live](https://huggingface.co/spaces/rogerdemello/pitwall-live), a
+ZeroGPU Gradio Space that imports the same `pipeline/` package rather than
+reimplementing it, and this frontend calls it cross-origin. The first call of
+the day has to wake it and load three models, so it is slow once and quick
+after.
 
 **Audio is bundled for the showcase race only** (Abu Dhabi 2021). All twelve
 would be 327 MB, and the Evidence screens need none of it.

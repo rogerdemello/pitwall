@@ -36,6 +36,7 @@ DOCS = [
     "docs/DEPLOY.md",
     "space/README.md",
     "space/README.static.md",
+    "space_live/README.md",
     "backend/data/push_to_hub.py",
 ]
 
