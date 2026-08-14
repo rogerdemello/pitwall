@@ -1,56 +1,68 @@
 {
  "second_model": "Dpngtm/wav2vec2-emotion-recognition",
- "n": 55,
- "skipped_unmappable": 5,
- "raw_agreement": 0.2364,
- "cohens_kappa": -0.0013,
- "kappa_band": "worse than chance",
+ "n": 57,
+ "skipped_unmappable": 3,
+ "label_treatment": {
+  "disgust": "mapped to Stressed",
+  "why": "Disgust is negative but has no dependable arousal direction, so its quadrant is a choice rather than a reading. Included here to retain data; note the other evaluation excludes it.",
+  "excluded_labels": [
+   "calm",
+   "excited",
+   "excitement",
+   "surprise",
+   "surprised"
+  ],
+  "n_mapped_labels": 11
+ },
+ "raw_agreement": 0.3333,
+ "cohens_kappa": 0.1206,
+ "kappa_band": "slight",
  "ours_distribution": {
-  "Fatigued": 17,
-  "Calm": 7,
-  "Energised": 19,
-  "Stressed": 12
+  "Fatigued": 18,
+  "Calm": 13,
+  "Stressed": 13,
+  "Energised": 13
  },
  "theirs_distribution": {
-  "Stressed": 45,
-  "Energised": 4,
-  "Fatigued": 6
+  "Stressed": 42,
+  "Energised": 6,
+  "Fatigued": 9
  },
  "confusion_ours_vs_theirs": {
   "Calm": {
-   "Stressed": 4,
-   "Fatigued": 2,
-   "Energised": 1
+   "Stressed": 7,
+   "Energised": 2,
+   "Fatigued": 4
   },
   "Energised": {
-   "Stressed": 18,
-   "Fatigued": 1
-  },
-  "Stressed": {
-   "Stressed": 10,
+   "Stressed": 11,
    "Energised": 2
   },
+  "Stressed": {
+   "Stressed": 12,
+   "Energised": 1
+  },
   "Fatigued": {
-   "Stressed": 13,
-   "Energised": 1,
-   "Fatigued": 3
+   "Stressed": 12,
+   "Fatigued": 5,
+   "Energised": 1
   }
  },
  "label_mapping": {
-  "angry": "Stressed",
   "anger": "Stressed",
+  "angry": "Stressed",
   "fear": "Stressed",
   "fearful": "Stressed",
-  "disgust": "Stressed",
-  "disgusted": "Stressed",
   "happy": "Energised",
   "happiness": "Energised",
   "sad": "Fatigued",
   "sadness": "Fatigued",
-  "neutral": "Calm"
+  "neutral": "Calm",
+  "disgust": "Stressed",
+  "disgusted": "Stressed"
  },
  "reference_collapsed_on_radio": true,
- "reference_largest_class_share": 0.8182,
+ "reference_largest_class_share": 0.7368,
  "reference_sanity_check": {
   "ran": true,
   "n": 120,
@@ -66,6 +78,6 @@
   "truth_largest_class_share": 0.5833,
   "degenerate_on_gold": false
  },
- "verdict": "Raw agreement 23.6%, Cohen's kappa -0.0013 (worse than chance). But the reference model is degenerate on radio: it assigns one quadrant to 82% of clips. On CREMA-D it works normally (81.7% vs a 58.3% baseline, largest class 61%), so the failure is domain transfer in the *reference*, not evidence about our scoring. This comparison cannot adjudicate either way - it is reported because the attempt was made, not because it settles anything.",
+ "verdict": "Raw agreement 33.3%, Cohen's kappa 0.1206 (slight). But the reference model is degenerate on radio: it assigns one quadrant to 74% of clips. On CREMA-D it works normally (81.7% vs a 58.3% baseline, largest class 61%), so the failure is domain transfer in the *reference*, not evidence about our scoring. This comparison cannot adjudicate either way - it is reported because the attempt was made, not because it settles anything.",
  "why_kappa": "Raw agreement is misleading here: both models over-produce one or two quadrants, so a large share of agreement happens by accident. Kappa subtracts the agreement expected from the marginal distributions."
 }
