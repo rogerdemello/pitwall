@@ -146,3 +146,46 @@ class TestChunkingRemovesTruncation:
 
     def test_duration_is_the_real_duration(self):
         assert asr.transcribe(tone(45.0)).duration_s == pytest.approx(45.0, abs=0.1)
+
+
+class TestTheFasterWhisperBackendLoadsAConvertedModel:
+    """faster-whisper runs CTranslate2, which needs a model.bin.
+
+    The `openai/*` repos publish safetensors for transformers and contain no
+    such file, so passing MODEL_ID through unmapped fails on every clip with
+    "Unable to open file 'model.bin'". This is not hypothetical: it killed a
+    full GPU corpus rebuild, and it did so silently in the sense that the
+    tiny-model smoke test two cells earlier passed - faster-whisper resolves
+    bare size aliases to pre-converted repos itself, and only takes a full
+    org/name id literally.
+    """
+
+    def test_the_corpus_model_maps_to_a_ct2_conversion(self):
+        got = asr.ct2_repo_for("openai/whisper-large-v3")
+        assert got != "openai/whisper-large-v3"
+        assert "faster-whisper" in got
+
+    def test_every_model_routed_to_faster_whisper_has_a_mapping(self):
+        """A model that routes to CTranslate2 with no conversion cannot load."""
+        for model_id in ("openai/whisper-large-v3", "openai/whisper-large-v2"):
+            routes_to_ct2 = "large" in model_id or "distil" in model_id
+            if routes_to_ct2:
+                assert model_id in asr.CT2_EQUIVALENT, (
+                    f"{model_id} routes to faster-whisper but has no CTranslate2 "
+                    "equivalent, so it will fail to load on every clip"
+                )
+
+    def test_an_unknown_model_is_passed_through_untouched(self):
+        """Someone naming a CT2 repo directly must not be second-guessed."""
+        for direct in ("Systran/faster-whisper-large-v3", "large-v3", "tiny"):
+            assert asr.ct2_repo_for(direct) == direct
+
+    def test_the_mapping_does_not_change_the_recorded_model_id(self):
+        """asr_model_id names the weights, not their serialisation.
+
+        Rewriting MODEL_ID instead of mapping at load time would stamp every
+        record with the conversion repo, and build_race's resume check compares
+        that field against MODEL_ID - so the two must not drift apart.
+        """
+        assert asr.ct2_repo_for(asr.MODEL_ID) == asr.MODEL_ID or \
+            asr.MODEL_ID in asr.CT2_EQUIVALENT

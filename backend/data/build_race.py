@@ -217,8 +217,15 @@ def build(race_id: str, limit: int | None = None,
               open(out_path, "w", encoding="utf-8"), indent=1)
 
     ok = sum(1 for r in results if "error" not in r)
-    in_race = sum(1 for r in results if r.get("lap", {}).get("in_race"))
-    print(f"\ndone: {ok}/{len(results)} analysed, {in_race} landed on a race lap")
+    # `.get("lap", {})` only substitutes when the key is *absent*. Under
+    # join_laps=False every record carries "lap": None explicitly, so the
+    # default never applied and this line raised AttributeError - after the
+    # results were safely written, which is the only reason a GPU rebuild that
+    # hit it on all twelve races lost nothing but its own summary.
+    in_race = sum(1 for r in results if (r.get("lap") or {}).get("in_race"))
+    joined = "join skipped, stage 2 recomputes it" if not join_laps \
+        else f"{in_race} landed on a race lap"
+    print(f"\ndone: {ok}/{len(results)} analysed, {joined}")
     print(f"wrote {out_path}")
     return out_path
 

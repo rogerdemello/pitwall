@@ -242,13 +242,39 @@ def _transcribe_transformers(audio: np.ndarray, bias: bool, ab: bool) -> Transcr
 # faster-whisper backend - the corpus build
 # --------------------------------------------------------------------------
 
+#: OpenAI checkpoint -> the CTranslate2 conversion of the same weights.
+#:
+#: faster-whisper runs CTranslate2, which loads a `model.bin`. The `openai/*`
+#: repos publish safetensors for transformers and contain no such file, so
+#: passing MODEL_ID straight through fails on every single clip with "Unable to
+#: open file 'model.bin'". faster-whisper resolves bare size aliases ("tiny",
+#: "large-v3") to pre-converted repos itself, but takes a full `org/name` id
+#: literally - which is why the tiny-model smoke test passed while the real
+#: build could not load anything.
+#:
+#: Mapping rather than rewriting MODEL_ID: the recorded `asr_model_id` should
+#: name the model, not its serialisation, so a v2 record stays comparable to
+#: anything else built from the same weights.
+CT2_EQUIVALENT = {
+    "openai/whisper-large-v3": "Systran/faster-whisper-large-v3",
+    "openai/whisper-large-v2": "Systran/faster-whisper-large-v2",
+    "openai/whisper-medium.en": "Systran/faster-whisper-medium.en",
+    "openai/whisper-small.en": "Systran/faster-whisper-small.en",
+}
+
+
+def ct2_repo_for(model_id: str) -> str:
+    """The CTranslate2 repo to load for `model_id`, or `model_id` unchanged."""
+    return CT2_EQUIVALENT.get(model_id, model_id)
+
+
 @functools.lru_cache(maxsize=1)
 def _load_faster():
     from faster_whisper import WhisperModel
 
     on_gpu = torch.cuda.is_available()
     return WhisperModel(
-        MODEL_ID,
+        ct2_repo_for(MODEL_ID),
         device="cuda" if on_gpu else "cpu",
         # int8 on CPU is a large speedup at negligible WER cost; fp16 on GPU.
         compute_type="float16" if on_gpu else "int8",
