@@ -5,6 +5,13 @@
 # torch is NOT pinned to the CPU wheel here, unlike the root requirements.txt.
 # ZeroGPU needs the CUDA build, and its runtime requires torch >= 2.8.
 
+# python_version 3.12 in README.md is load-bearing, not cosmetic. The ZeroGPU
+# base image is Python 3.10, and scipy 1.16.3 publishes no cp310 wheel - the
+# first build died on "No matching distribution found for scipy==1.16.3". The
+# fix is to move the interpreter rather than to relax the pin: this file exists
+# so the Space runs the versions the test suite ran, and test_space_live.py
+# asserts the pipeline is byte-identical to backend/pipeline. Byte-identical
+# code on a different scipy is a weaker claim than it looks.
 torch==2.9.1
 transformers==5.15.0
 librosa==0.11.0
@@ -19,4 +26,8 @@ scikit-learn==1.8.0
 faster-whisper==1.2.1
 
 gradio==5.49.1
-spaces==0.42.1
+
+# `spaces` is deliberately NOT pinned here. The ZeroGPU builder appends its own
+# `spaces==<version>` to the same pip invocation as this file, so pinning a
+# different one is a hard resolver conflict and the build fails before it
+# installs anything. The runtime owns that package; we import it.
