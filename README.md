@@ -357,15 +357,28 @@ authenticated account. See **[DEPLOY.md](DEPLOY.md)** for the exact commands.
 The dataset ships no emotion labels, so we built the tool to create them:
 
 ```bash
-python backend/data/label_affect.py label 2021_Abu_Dhabi_Grand_Prix 60
-python backend/data/label_affect.py score 2021_Abu_Dhabi_Grand_Prix
+python backend/data/label_affect.py serve all 300     # label in a browser
+python backend/data/label_affect.py score all         # confusion matrix
 ```
 
-`label` plays clips and records what a human hears; `score` produces the
-confusion matrix and per-class precision/recall. The sample is **stratified
-across the model's own predicted states**, so a model that guesses one class for
-everything can't look good on a sample it chose itself, and the prediction is
-hidden while labelling so it can't anchor the judgement.
+`serve` puts the sample in a browser — one keystroke per clip, saved to disk as
+you go — because a listening pass that is tedious is a listening pass that does
+not happen. `score` produces the confusion matrix and per-class
+precision/recall, and writes the file the Evidence screen already knows how to
+render. There is also `label` (the same pass over a terminal) and `import`, for
+judgements collected some other way: `score` never touches audio, so it only
+ever needed `{message_id: state}`.
+
+The sample is **stratified across the model's own predicted states**, so a model
+that guesses one class for everything can't look good on a sample it chose
+itself, and neither the prediction nor the transcript is shown while labelling,
+so neither can anchor the judgement.
+
+That stratification is also the limit of what the result can claim: it measures
+per-class precision honestly, and it is *not* an estimate of how often drivers
+are actually stressed. Fitting a decision boundary against it would import the
+stratification — which is exactly the kind of quiet circularity the rest of this
+project is built to avoid.
 
 ## Known limitations
 
