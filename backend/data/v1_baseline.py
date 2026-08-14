@@ -39,6 +39,7 @@ from pipeline.artifacts import iter_race_files  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RACES = os.path.join(HERE, "..", "races")
+RACES_V1 = os.path.join(HERE, "..", "races_v1")
 OUT = os.path.join(RACES, "_v1_baseline.json")
 
 #: Whisper's feature extractor pads or truncates to exactly this many seconds.
@@ -70,9 +71,17 @@ def has_repetition_loop(text: str, reps: int = 5, max_gram: int = 4) -> bool:
     return False
 
 
-def load_messages() -> list[dict]:
+def load_messages(races_dir: str | None = None) -> list[dict]:
+    """Every message in a race tree.
+
+    The directory is a parameter so `v2_scoring.py` can run the identical audit
+    over `races_v1/` and `races/` and compare the results. A metric definition
+    that drifts between a baseline and its follow-up manufactures exactly the
+    kind of false positive this project keeps catching, so there is one
+    definition and it is this one.
+    """
     msgs = []
-    for path in iter_race_files(RACES):
+    for path in iter_race_files(races_dir or RACES):
         d = json.load(open(path, encoding="utf-8"))
         for m in d["messages"]:
             m["_race"] = d["race_id"]
@@ -246,7 +255,27 @@ def _median(xs):
     return round(xs[len(xs) // 2], 1) if xs else None
 
 
-def main() -> None:
+def main(force: bool = False) -> None:
+    # Refuse to re-derive the baseline once v1 has been frozen.
+    #
+    # This script reads races/, which after the v2 import holds v2. Running it
+    # then would overwrite the recorded v1 defects - 92 truncated clips, a
+    # 0.0269 hallucination rate, a 0.525 unknown share - with v2's own numbers
+    # and label them the baseline. H1, H2 and H3 are all scored against those
+    # three figures, so the pre-registration would silently start comparing v2
+    # against itself. Nothing would error and every hypothesis would pass.
+    if os.path.isdir(RACES_V1) and os.path.exists(OUT) and not force:
+        raise SystemExit(
+            f"refusing to overwrite {os.path.basename(OUT)}.\n"
+            "\n"
+            f"{RACES_V1} exists, so v1 is frozen and races/ now holds a later\n"
+            "pipeline. Re-deriving the baseline from it would score v2 against\n"
+            "itself.\n"
+            "\n"
+            "  To audit the current tree instead:  python backend/data/v2_scoring.py\n"
+            "  To overwrite anyway (you will need a reason):  --force\n"
+        )
+
     msgs = load_messages()
     if not msgs:
         print("no races built")
@@ -285,4 +314,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(force="--force" in sys.argv)

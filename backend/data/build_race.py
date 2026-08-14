@@ -31,6 +31,24 @@ CLIP_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "clip
 RAW_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "raw")
 
 
+def _is_done(rec: dict) -> bool:
+    """Is this cached record a finished clip *from the model now selected*?
+
+    The model check is not defensive tidiness; without it the GPU rebuild is a
+    silent no-op. `backend/raw/*.raw.json` is committed, so the Colab notebook's
+    `git clone` puts a full set of v1 records on the runtime before a single
+    model is loaded. Resume then sees every clip as already done, the journal
+    stays empty, the "long run" finishes in seconds, and the only symptom is a
+    tarball that looks small.
+
+    Cached output from a different model is not a checkpoint, it is the previous
+    experiment. v1 records predate this field entirely, so they read as None and
+    are correctly refused.
+    """
+    return ("id" in rec and "error" not in rec
+            and rec.get("asr_model_id") == asr.MODEL_ID)
+
+
 def _read_journal(path: str) -> dict[str, dict]:
     """Completed records from an append-only journal.
 
@@ -50,7 +68,7 @@ def _read_journal(path: str) -> dict[str, dict]:
                 rec = json.loads(line)
             except json.JSONDecodeError:
                 continue  # truncated tail from a killed process
-            if "id" in rec and "error" not in rec:
+            if _is_done(rec):
                 done[rec["id"]] = rec
     return done
 
@@ -84,11 +102,16 @@ def build(race_id: str, limit: int | None = None,
     # failure mode a Colab session produces when it drops. One line per clip
     # cannot be corrupted by an interrupted write; at worst the last line is
     # partial and is skipped on reload.
+    # Resume only across records this same model produced - see _is_done.
     done: dict[str, dict] = _read_journal(journal_path)
     if not done and os.path.exists(out_path):
-        prev = json.load(open(out_path, encoding="utf-8"))
+        prev = json.load(open(out_path, encoding="utf-8")).get("messages", [])
         # Failed clips are deliberately not treated as done, so a rerun retries them.
-        done = {r["id"]: r for r in prev.get("messages", []) if "error" not in r}
+        done = {r["id"]: r for r in prev if _is_done(r)}
+        stale = len(prev) - len(done)
+        if stale:
+            print(f"ignoring {stale} record(s) from another model; "
+                  f"rebuilding them with {asr.MODEL_ID}")
     if done:
         print(f"resuming: {len(done)} already processed")
     journal = open(journal_path, "a", encoding="utf-8")

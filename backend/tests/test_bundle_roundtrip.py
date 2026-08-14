@@ -23,6 +23,7 @@ BACKEND = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, BACKEND)
 
 from data import build_race, import_raw_bundle  # noqa: E402
+from pipeline import asr  # noqa: E402
 
 
 def record(i: int, **over) -> dict:
@@ -34,6 +35,9 @@ def record(i: int, **over) -> dict:
         "text_label": "neutral", "text_polarity": 0.0,
         "text_negative": 0.1, "text_positive": 0.1,
         "windows": 2, "voiced_fraction": 0.7,
+        # Resume is scoped to the model that produced the record, so a record
+        # without this is not a checkpoint - see build_race._is_done.
+        "asr_model_id": asr.MODEL_ID,
     }
     r.update(over)
     return r
@@ -106,6 +110,32 @@ class TestJournal:
 
     def test_missing_journal_is_empty_not_an_error(self, tmp_path):
         assert build_race._read_journal(str(tmp_path / "nope.jsonl")) == {}
+
+    def test_a_record_from_another_model_is_not_a_checkpoint(self, tmp_path):
+        """Otherwise the GPU rebuild silently does nothing.
+
+        backend/raw/*.raw.json is committed, so the Colab notebook's clone lands
+        a full set of v1 records on the runtime before any model loads. Treating
+        those as done skips every clip, leaves the journal empty, and finishes
+        the "long run" in seconds - with a small tarball as the only symptom.
+        """
+        p = tmp_path / "j.jsonl"
+        p.write_text(
+            json.dumps(record(0, asr_model_id="openai/whisper-small.en")) + "\n"
+            + json.dumps(record(1, asr_model_id="openai/whisper-large-v3")) + "\n",
+            encoding="utf-8")
+        done = build_race._read_journal(str(p))
+        keep = f"race_clip_{0 if asr.MODEL_ID == 'openai/whisper-small.en' else 1}"
+        drop = f"race_clip_{1 if keep.endswith('0') else 0}"
+        assert keep in done and drop not in done
+
+    def test_a_v1_record_predating_the_field_is_refused(self, tmp_path):
+        """v1 raw output carries no asr_model_id at all. None must not match."""
+        r = record(0)
+        del r["asr_model_id"]
+        p = tmp_path / "j.jsonl"
+        p.write_text(json.dumps(r) + "\n", encoding="utf-8")
+        assert build_race._read_journal(str(p)) == {}
 
 
 class TestVerification:
