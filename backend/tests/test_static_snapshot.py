@@ -30,6 +30,15 @@ from data import build_static_site as bss  # noqa: E402
 
 RACES = os.path.join(BACKEND, "races")
 
+#: `frontend/public/data/` is a build artifact and is gitignored, so a fresh
+#: clone has no snapshot to compare against and there is nothing to be stale.
+#: The failure this file exists to catch is the other one - a snapshot that was
+#: built once, and then left behind when the corpus moved.
+built = pytest.mark.skipif(
+    not os.path.isdir(bss.DATA),
+    reason="no static snapshot built yet (run backend/data/build_static_site.py)",
+)
+
 
 @pytest.fixture(scope="module")
 def fresh(tmp_path_factory):
@@ -40,12 +49,7 @@ def fresh(tmp_path_factory):
 
 
 class TestTheSnapshotMatchesTheCorpus:
-    def test_public_data_exists(self):
-        assert os.path.isdir(bss.DATA), (
-            "frontend/public/data is missing entirely - the static Space would "
-            "have no data at all. Run build_static_site.py."
-        )
-
+    @built
     def test_snapshot_is_current(self):
         """The whole point. A stale snapshot is a published wrong number."""
         assert bss.check() == 0, (
