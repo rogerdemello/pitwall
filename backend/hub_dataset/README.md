@@ -43,7 +43,7 @@ telemetry independently confirms the stop the radio ordered.
 | Field | Meaning |
 |---|---|
 | `id`, `race_id`, `driver_code`, `timestamp` | keys back to the source dataset |
-| `transcript` | our ASR output (`openai/whisper-small.en`) |
+| `transcript` | our ASR output (`openai/whisper-large-v3`) |
 | `arousal_raw`, `valence_raw` | raw dimensional affect (`audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim`) |
 | `arousal_pct`, `valence_pct`, `dominance_pct` | percentile-calibrated against this corpus |
 | `dsi` | Driver State Index, 0-100 |
@@ -68,7 +68,7 @@ arousal axis is the part that holds up.
 ## The null result
 
 We built this to test whether driver stress predicts lap-time loss. Across 1155
-paired observations it does not: pooled r = 0.045, and no lag from +1 to +3 beats
+paired observations it does not: pooled r = 0.026, and no lag from +1 to +3 beats
 the same-lap correlation once corrected for multiple comparisons. Published
 anyway, because a null result with this much data is worth more than a
 correlation manufactured by leaving pit stops in.
