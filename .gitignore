@@ -48,3 +48,8 @@ backend/_run_2023.py
 
 # Source bundle for a GPU runtime with no git remote (backend/tools/pack_source.py)
 pitwall_src.zip
+
+# Demo recording artefacts - regenerate with backend/tools/record_demo.py
+pitwall_demo*.webm
+.demo_video/
+.demo_shots/

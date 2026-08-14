@@ -20,45 +20,64 @@ Don't over-explain. The next thirty seconds does the work.
 
 ## 0:20 — Play one clip (40 seconds)
 
-Race Replay → Key Moments → **SAI lap 35, DSI 82**.
+Race Replay → Key Moments → **SAI lap 35, DSI 92**.
+(clip `CARSAI01_55_20211212_135518.mp3`)
 
 Play it. Let them hear it before you say anything.
 
-> *"I mean, I have to stop. There's no way you beat these two guys in front of
-> me."*
+> *"I'm in a two-stop, there's no way you meet these two guys in front of me."*
 
 Then point at the screen, in this order:
 
-- **DSI 82, Stressed** — arousal in the 91st percentile, valence in the 21st
+- **DSI 92, Stressed** — arousal in the 96th percentile, valence in the 12th
 - **Lap 35** — not a label on a clip, the actual lap he was driving
 - The lap-time trace above it
 
 > We didn't tag this by hand. The model heard it, and the telemetry says exactly
 > which lap he was on when he said it.
 
+**Optional, if you want to show the ASR upgrade paying off.** Our first build
+transcribed this as *"I mean, I have to stop"* — plausible English, wrong
+sport. large-v3 hears *"I'm in a two-stop"*, and the other radio call on the
+same lap says *"they might be converting to a two-stop"*, which confirms it
+independently. Small point, thirty seconds, and it shows the corpus is
+something we rebuilt rather than something we downloaded.
+
 ## 1:00 — Why the lap matters (45 seconds)
 
 Switch to **Hamilton, lap 15**.
 
-> The radio says "box box". The lap time is +20 seconds and the tyre compound
-> changes to Hard. Two completely independent sources — a Hugging Face audio
-> dataset and F1 telemetry — agreeing on the same event. That's the join, and
-> it's what makes everything else possible.
+> The radio says "Ok Lewis, so box, box." The panel shows that lap at
+> **108.75s — +20.92s versus his median**. The compound changes to **Hard**,
+> tyre life resets to **2 laps**. Two completely independent sources — a Hugging
+> Face audio dataset and F1 telemetry — agreeing on the same event, and nobody
+> told the code where the pit stops were.
+
+Worth pointing at the banner too: **engineer voice — not scored as driver
+state**. The pit wall talking is not the driver's stress, and the app says so
+rather than counting it.
 
 This is the moment that separates you from a clip-labelling demo. Land it.
 
 ## 1:45 — The feature nobody else built (45 seconds)
 
-Find a **suppressed stress** flag (white-ringed dot, or the Key Moments chip).
+Go to **PER, lap 21 — DSI 97**, the white-ringed dot.
 
-> Everyone notices a driver shouting. What gets missed is the driver saying
-> "yeah, all good" in a voice that isn't. We run sentiment on the words and
-> prosody on the voice, and flag it when they disagree.
+> *"Okay, back him up, back him up."*
+
+This is the most famous radio call of that race, and it is the best example the
+corpus has:
+
+> The words read *positive*. The voice sits in the **bottom 1%** of the race for
+> valence — the single most negative-sounding message of the Grand Prix. Nobody
+> misses a driver shouting. What gets missed is this: calm words, and a voice
+> that isn't. We run sentiment on the words and prosody on the voice, and flag
+> it when they disagree.
 
 Mention the guard, briefly — it shows judgement:
 
 > Our first version fired on half of all messages, including a cheerful "Checo is
-> a legend". It now fires on 8% of eligible messages.
+> a legend". It now fires on 6.5% of eligible messages — 98 out of 1,512.
 
 ## 2:30 — Live proof (40 seconds)
 
