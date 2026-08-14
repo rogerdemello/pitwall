@@ -1,0 +1,32 @@
+{
+ "python": "3.12.13",
+ "torch": "2.11.0+cu128",
+ "cuda": "12.8",
+ "gpu": "Tesla T4",
+ "transformers": "5.15.0",
+ "faster_whisper": "1.2.1",
+ "ctranslate2": "4.8.1",
+ "asr_model": "openai/whisper-large-v3",
+ "asr_backend": "faster-whisper",
+ "prosody_model": "audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim",
+ "decode": {
+  "beam_size": 5,
+  "temperature": [
+   0.0,
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1.0
+  ],
+  "compression_ratio_threshold": 2.4,
+  "log_prob_threshold": -1.0,
+  "no_speech_threshold": 0.6,
+  "condition_on_previous_text": false,
+  "hallucination_silence_threshold": 2.0,
+  "word_timestamps": true
+ },
+ "asr_ct2_repo": "Systran/faster-whisper-large-v3",
+ "clips": 2042,
+ "races": 12
+}

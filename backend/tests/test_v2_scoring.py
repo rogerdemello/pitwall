@@ -195,10 +195,42 @@ class TestTheSharedMetricsComeFromOneDefinition:
         tree(wired["races_v1"], [msg(0, transcript="you"), msg(1)])
         tree(wired["races"], [msg(0, transcript="clear track"), msg(1)])
         h2 = v2_scoring.build()["hypotheses"][1]
-        assert h2["paired"]["bare_you_v1"] == 1
-        assert h2["paired"]["bare_you_v2"] == 0
+        assert h2["the_named_test"]["cohort_size"] == 1
+        assert h2["the_named_test"]["genuinely_resolved"] == 1
+        assert h2["the_named_test"]["passed"] is True
         assert h2["paired"]["n_fixed"] == 1
         assert h2["v2_rate"] < h2["baseline_rate"] or h2["v2_rate"] == 0.0
+
+    def test_the_named_cohort_is_followed_by_id_not_by_family(self, wired):
+        """Per-family counts hide a hallucination that merely changed wording.
+
+        The pre-registration named the near-silent clips decoding to "you" as
+        the specific test. Counted per family they read 51 -> 0 and look
+        eliminated; followed by clip id they are almost all still inventing
+        text, just saying "Thank you." instead. The rate barely moves for
+        exactly that reason, so the rate alone cannot be the whole verdict.
+        """
+        tree(wired["races_v1"], [msg(0, transcript="you"), msg(1, transcript="you"),
+                                 msg(2)])
+        tree(wired["races"], [msg(0, transcript="Thank you."),   # renamed, not fixed
+                              msg(1, transcript="box box now"),  # genuinely fixed
+                              msg(2)])
+        h2 = v2_scoring.build()["hypotheses"][1]
+        named = h2["the_named_test"]
+        assert named["cohort_size"] == 2
+        assert named["still_hallucinating_in_v2"] == 1
+        assert named["genuinely_resolved"] == 1
+        assert named["what_they_became"] == {"thanks_only": 1}
+        assert named["passed"] is False
+
+    def test_meeting_the_threshold_does_not_hide_failing_the_named_test(self, wired):
+        tree(wired["races_v1"], [msg(i, transcript="you") for i in range(2)]
+                                + [msg(i) for i in range(2, 6)])
+        tree(wired["races"], [msg(i, transcript="Thank you.") for i in range(2)]
+                             + [msg(i) for i in range(2, 6)])
+        h2 = v2_scoring.build()["hypotheses"][1]
+        assert h2["status"] in ("MET", "MET AT TARGET"), "rate did not worsen"
+        assert h2["threshold_met_but_named_test_failed"] is True
 
     def test_a_worsening_rate_is_a_registered_regression(self, wired):
         tree(wired["races_v1"], [msg(i) for i in range(4)])

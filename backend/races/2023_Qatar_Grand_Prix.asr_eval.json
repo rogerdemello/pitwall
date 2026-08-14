@@ -255,5 +255,8 @@
    "biased_jargon": [],
    "unbiased_jargon": []
   }
- ]
+ ],
+ "measured_on_pipeline": "v1",
+ "measured_on_asr_model": "openai/whisper-small.en",
+ "why_not_remeasured": "The prompting A/B is implemented only on the transformers backend (asr.py:302-317). Re-running it against the faster-whisper corpus model leaves every unbiased hypothesis empty, and jiwer scores an empty hypothesis as WER 1.0 rather than raising - so the ablation would have published 'prompting improves WER 1.00 -> 0.20, 0 of 12 races hurt', an exact reversal of the measured negative result, onto the README, both Space cards and the Hub dataset card. The v1 measurement stands and is labelled as v1 rather than silently reattributed to the v2 corpus."
 }

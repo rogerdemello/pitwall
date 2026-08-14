@@ -206,6 +206,15 @@ def score_h1(prereg: dict, v1: dict, v2: dict,
 # H2 - hallucination
 # --------------------------------------------------------------------------
 
+def _family(text: str | None) -> str | None:
+    """Which hallucination family this transcript belongs to, if any."""
+    t = (text or "").strip()
+    for name, pat in v1b.ARTIFACTS.items():
+        if re.search(pat, t):
+            return name
+    return "repetition_loop" if v1b.has_repetition_loop(t) else None
+
+
 def _flagged(msgs: list[dict]) -> dict[str, str]:
     """Which clips look like Whisper inventing text, and from which family.
 
@@ -234,9 +243,25 @@ def score_h2(prereg: dict, v1: dict, v2: dict) -> dict:
     fixed = sorted(set(f1) - set(f2))
     introduced = sorted(set(f2) - set(f1))
 
+    # The cohort the pre-registration named as "the specific test": the
+    # near-silent clips that decoded to the single word "you".
+    #
+    # Counting bare_you on each side separately says 51 -> 0 and reads as a
+    # total fix. It is not one. Following the *same clips* through shows almost
+    # all of them still inventing text, in a different canned phrase, which the
+    # per-family counts hide completely. So the cohort is tracked by id.
     bare = re.compile(v1b.ARTIFACTS["bare_you"])
-    bare1 = sum(1 for m in v1["_msgs"] if bare.search((m.get("transcript") or "").strip()))
-    bare2 = sum(1 for m in v2["_msgs"] if bare.search((m.get("transcript") or "").strip()))
+    cohort = {m["id"] for m in v1["_msgs"]
+              if bare.search((m.get("transcript") or "").strip())}
+    v2_by_id = {m["id"]: m for m in v2["_msgs"]}
+    became = collections.Counter()
+    resolved = []
+    for mid in cohort:
+        fam = _family((v2_by_id.get(mid) or {}).get("transcript"))
+        if fam:
+            became[fam] += 1
+        else:
+            resolved.append(mid)
     by2 = {m["id"] for m in v2["_msgs"] if not (m.get("transcript") or "").strip()}
 
     fam1 = set(v1["hallucination"]["by_family"])
@@ -267,14 +292,29 @@ def score_h2(prereg: dict, v1: dict, v2: dict) -> dict:
             "n_fixed": len(fixed),
             "n_introduced": len(introduced),
             "introduced": introduced[:10],
-            "bare_you_v1": bare1,
-            "bare_you_v2": bare2,
             "empty_transcripts_v2": len(by2),
-            "note": ("The registered claim names the near-silent clips that "
-                     "decode to the single word 'you' as the specific test, so "
-                     "they are counted on both sides rather than folded into "
-                     "the rate."),
         },
+        "the_named_test": {
+            "what_was_registered": (
+                "the 51 near-silent clips that currently decode to 'you' are "
+                "the specific test"
+            ),
+            "cohort_size": len(cohort),
+            "still_hallucinating_in_v2": sum(became.values()),
+            "genuinely_resolved": len(resolved),
+            "what_they_became": dict(became),
+            "passed": sum(became.values()) == 0,
+            "why_the_family_counts_mislead": (
+                "Counted per family the cohort reads bare_you 51 -> 0, which "
+                "looks like it was eliminated. Followed by clip id, almost all "
+                "of it is still there under a different canned phrase. The "
+                "model did not stop inventing text on silence; it changed what "
+                "it invents. The rate barely moves for exactly that reason."
+            ),
+        },
+        "threshold_met_but_named_test_failed": (
+            status in ("MET", "MET AT TARGET") and sum(became.values()) > 0
+        ),
         "if_it_fails": reg.get("if_it_fails"),
     }
 
@@ -545,25 +585,68 @@ def falsification(v1_finding: dict | None, v2_finding: dict | None) -> dict:
         # do not try to parse the sentence: a regex over prose is a number that
         # looks derived and is not.
         card = f.get("prediction_scorecard") or []
+        held = sum(1 for p in card if p.get("held"))
+        sig = [c for c in (f.get("contrasts_vs_dry_control") or [])
+               if c.get("survives_bonferroni")]
         return {
             "verdict": f.get("verdict"),
-            "predictions_held": sum(1 for p in card if p.get("held")),
+            "predictions_held": held,
             "predictions_total": len(card),
+            "majority_of_predictions_held": bool(card) and held * 2 > len(card),
+            "contrasts_surviving_bonferroni": len(sig),
             "effect_size_note": f.get("effect_size"),
         }
 
     a, b = read(v1_finding), read(v2_finding)
     falsified = None
-    if a and b and b.get("verdict"):
-        falsified = str(b["verdict"]).upper().startswith("NOT")
+    if a and b:
+        # The clause asks whether the index still separates the slate *as
+        # predicted*. Spread on its own does not answer that - any noisy index
+        # produces spread, and v2's spread in fact grew. What made the v1
+        # separation a claim rather than a scatter was the directional
+        # scorecard, so that is what the clause is evaluated on: it fires when
+        # a majority of pre-registered predictions held before and does not now.
+        falsified = a["majority_of_predictions_held"] and \
+            not b["majority_of_predictions_held"]
+
     return {
+        "clause": (
+            "If, after the rebuild, the Driver State Index no longer separates "
+            "the pre-registered contrast slate, then the separation in v1 was an "
+            "artifact of the v1 pipeline and the index does not measure what we "
+            "claim. That result is published in place of the current one."
+        ),
         "v1": a, "v2": b,
         "index_falsified": falsified,
-        "clause": (
-            "If the index no longer separates the pre-registered contrast slate, "
-            "the v1 separation was an artifact of the v1 pipeline and that result "
-            "is published in place of the current one."
+        "how_the_clause_was_read": (
+            "On the directional scorecard, not on spread. The clause's own "
+            "parenthetical defines the state it is measuring against as "
+            "'4 of 5 predictions held', so the predictions are the operative "
+            "test. Read on spread alone the clause would not fire - see "
+            "separation_without_direction below - and reading it that way would "
+            "have been choosing the interpretation that suits us, which is the "
+            "move this pre-registration exists to prevent."
         ),
+        "separation_without_direction": {
+            "note": (
+                "Recorded because it is true and it cuts the other way. The "
+                "index does still distinguish these races; what it no longer "
+                "does is distinguish them in the directions predicted in "
+                "advance. Both halves are reported."
+            ),
+            "contrasts_surviving_bonferroni": {
+                "v1": a and a["contrasts_surviving_bonferroni"],
+                "v2": b and b["contrasts_surviving_bonferroni"],
+            },
+        },
+        "what_this_means": (
+            "The v1 prediction record was substantially an artifact of the v1 "
+            "pipeline. Removing a truncation defect and rescoring prosody over "
+            "detected speech moved race means by up to 3.3 DSI points on "
+            "identical messages, and four of the five advance predictions did "
+            "not survive it. A result that depends on which of two defensible "
+            "pipelines produced it is not a result about Formula One."
+        ) if falsified else None,
     }
 
 

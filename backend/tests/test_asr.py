@@ -63,8 +63,15 @@ class TestTranscriptContract:
         assert t.matches_corpus_model == (asr.MODEL_ID == asr.CORPUS_MODEL_ID)
 
     def test_flags_a_model_mismatch(self):
-        """The Space may run a smaller model than the corpus build."""
-        assert self._t(model_id="openai/whisper-large-v3").matches_corpus_model is False
+        """The Space runs a smaller model than the corpus build, and says so.
+
+        The example here used to be large-v3, on the assumption that the corpus
+        model was small.en and anything bigger was the anomaly. The GPU rebuild
+        inverted that: large-v3 is now what built the corpus, and the serving
+        model is the one that has to declare itself as different.
+        """
+        assert self._t(model_id=asr.SERVING_MODEL_ID).matches_corpus_model is False
+        assert self._t(model_id=asr.CORPUS_MODEL_ID).matches_corpus_model is True
 
     def test_serialises_for_the_api(self):
         d = self._t().to_dict()
@@ -111,14 +118,33 @@ class TestDecodeGuards:
 
 
 class TestBackendSelection:
-    def test_default_is_the_corpus_model(self):
-        assert asr.CORPUS_MODEL_ID == "openai/whisper-small.en"
+    def test_the_corpus_model_is_the_one_the_corpus_was_built_with(self):
+        assert asr.CORPUS_MODEL_ID == "openai/whisper-large-v3"
 
-    def test_small_model_uses_transformers(self, monkeypatch):
+    def test_serving_is_not_the_corpus_model(self):
+        """They differ on purpose, and the response has to say so.
+
+        large-v3 runs through CTranslate2 and wants CUDA plus ~3GB resident. A
+        ZeroGPU slice transcribing one uploaded clip should not carry that and a
+        CPU container cannot, so Live Analysis serves the smaller model and
+        reports matches_corpus_model=False. If these two ever became equal, that
+        disclosure would silently start claiming a parity that does not exist.
+        """
+        assert asr.SERVING_MODEL_ID != asr.CORPUS_MODEL_ID
+        assert "large" not in asr.SERVING_MODEL_ID
+
+    def test_serving_default_uses_transformers(self):
         """The free Space has no ctranslate2 build; it must stay on transformers."""
         assert asr.BACKEND in ("transformers", "faster-whisper")
-        if asr.MODEL_ID == asr.CORPUS_MODEL_ID:
+        if asr.MODEL_ID == asr.SERVING_MODEL_ID:
             assert asr.BACKEND == "transformers"
+
+    def test_the_corpus_model_routes_to_faster_whisper(self):
+        """And therefore needs the CTranslate2 mapping above to exist."""
+        routed = "faster-whisper" if ("large" in asr.CORPUS_MODEL_ID
+                                      or "distil" in asr.CORPUS_MODEL_ID) else "transformers"
+        assert routed == "faster-whisper"
+        assert asr.CORPUS_MODEL_ID in asr.CT2_EQUIVALENT
 
     def test_window_constant_matches_whisper(self):
         """30.0s is where the feature extractor truncates - the v1 bug."""

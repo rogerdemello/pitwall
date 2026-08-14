@@ -116,6 +116,19 @@ def convert(work: str, dry_run: bool) -> list[tuple[str, int]]:
                                     encoding="utf-8"), indent=1)
             shutil.copy(os.path.join(work, name), os.path.join(RAW, name))
         written.append((race_id, len(by_id)))
+
+    # Keep the provenance with the data it describes.
+    #
+    # This used to verify _manifest.json and then drop it, which left the
+    # repository holding a corpus with no record of the commit, GPU, models or
+    # decode settings that produced it - checked once at import and then
+    # unavailable to anything downstream. facts.py reads it for
+    # corpus_asr_model, and _v2_scoring.json quotes it as the build provenance.
+    if not dry_run:
+        for extra in ("_manifest.json", "checksums.sha256"):
+            src = os.path.join(work, extra)
+            if os.path.exists(src):
+                shutil.copy(src, os.path.join(RAW, extra))
     return written
 
 

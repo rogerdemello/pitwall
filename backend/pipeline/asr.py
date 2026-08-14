@@ -63,9 +63,21 @@ from transformers import WhisperForConditionalGeneration, WhisperProcessor
 
 from pipeline import device
 
-#: The model the shipped corpus was built with. Overridden for the GPU build.
-CORPUS_MODEL_ID = "openai/whisper-small.en"
-MODEL_ID = os.environ.get("PITWALL_ASR_MODEL", CORPUS_MODEL_ID)
+#: The model the shipped corpus was built with, on a GPU, once.
+CORPUS_MODEL_ID = "openai/whisper-large-v3"
+
+#: What a live request runs, and deliberately not the corpus model.
+#:
+#: large-v3 goes through CTranslate2, which wants CUDA and about 3GB resident.
+#: A ZeroGPU slice transcribing one uploaded clip should not carry that, and a
+#: CPU container cannot. So Live Analysis serves small.en and the response says
+#: so: `matches_corpus_model` is False there, which is what that field exists
+#: for. Disclosing the difference is the point - a deployment quietly running a
+#: smaller model than the evidence screen describes is the failure being
+#: avoided.
+SERVING_MODEL_ID = "openai/whisper-small.en"
+
+MODEL_ID = os.environ.get("PITWALL_ASR_MODEL", SERVING_MODEL_ID)
 BACKEND = os.environ.get(
     "PITWALL_ASR_BACKEND",
     "faster-whisper" if "large" in MODEL_ID or "distil" in MODEL_ID else "transformers",

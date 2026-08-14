@@ -1,0 +1,424 @@
+{
+ "generated_by": "backend/data/v2_scoring.py",
+ "purpose": "Adjudicate _preregistration.json against the rebuild. Written and committed before the run, so it could not be tuned to the result.",
+ "provenance": {
+  "prereg_registered_against_commit": "8eee02d",
+  "v1_source": "backend/races_v1/",
+  "v2_source": "backend/races/",
+  "raw_v1": "E:\\GrandPrixHackathon\\backend\\data\\..\\raw_v1",
+  "raw_v2": "E:\\GrandPrixHackathon\\backend\\data\\..\\raw",
+  "bundle_manifest": {
+   "repo_sha": null,
+   "asr_model": "openai/whisper-large-v3",
+   "asr_backend": "faster-whisper",
+   "prosody_model": "audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim",
+   "gpu": "Tesla T4",
+   "clips": 2042,
+   "races": 12
+  }
+ },
+ "corpus_pairing": {
+  "n_v1": 2042,
+  "n_v2": 2042,
+  "ids_only_in_v1": [],
+  "ids_only_in_v2": [],
+  "n_only_in_v1": 0,
+  "n_only_in_v2": 0,
+  "paired": true
+ },
+ "baseline_drift": {
+  "why_this_section_exists": "_v1_baseline.json was frozen before some later stage-2 changes landed, so two of the three registered H-baselines no longer match what the same code computes over the same race files today. The registered values are not edited - the disagreement is measured.",
+  "metrics": {
+   "clips_truncated": {
+    "registered": 92,
+    "recomputed_at_rebuild": 92,
+    "drifted": false
+   },
+   "hallucination_rate": {
+    "registered": 0.0269,
+    "recomputed_at_rebuild": 0.0269,
+    "drifted": false
+   },
+   "unknown_speaker_share": {
+    "registered": 0.525,
+    "recomputed_at_rebuild": 0.498,
+    "drifted": true
+   }
+  },
+  "drifted": [
+   "unknown_speaker_share"
+  ],
+  "note": "clips_truncated and hallucination_rate depend only on duration_s and transcript, which stage 2 does not touch, so they are stable. unknown_speaker_share moved when speaker attribution gained the driver roster, and it moved in the direction that flatters v1."
+ },
+ "confirmatory_baseline_reconciliation": {
+  "registered_in_prereg": {
+   "pooled_r": 0.0428,
+   "n": 1155,
+   "tercile_gap_s": -0.071,
+   "sign_test_p": 0.7376,
+   "predictive": false
+  },
+  "on_disk_before_the_rebuild": {
+   "pooled_r": null,
+   "n": null,
+   "tercile_gap_s": null,
+   "sign_test_p": null
+  },
+  "they_disagree": false,
+  "moved_at_commit": null,
+  "cause": null,
+  "the_registered_value_is_not_edited": true,
+  "comparison_point_for_the_confirmatory_run": "on_disk_before_the_rebuild",
+  "why_that_one": "The confirmatory question is whether the v2 pipeline moves the null. That is a v1-versus-v2 comparison, so both sides have to be measured by the same code. The registered figure was measured two commits earlier. It is reported alongside so the drift stays visible instead of being absorbed."
+ },
+ "hypotheses": [
+  {
+   "id": "H1",
+   "claim": "The upgrade removes the truncation defect entirely.",
+   "status": "NOT MET",
+   "registered_metric": "_v1_baseline.truncation.clips_truncated",
+   "registered_metric_valid_for_v2": false,
+   "why_the_registered_metric_cannot_score_v2": "It counts clips whose duration_s exceeds 30s. duration_s is len(audio)/16000 in both backends (asr.py:202, asr.py:260), so it describes the audio file and not the pipeline: it returns the same 92 under v1, under v2, and under any future decoder. It was an exact proxy in v1 only because WhisperProcessor truncated unconditionally at n_samples=480000, so every long clip was necessarily cut. Once chunking exists the proxy stops tracking the defect. The flaw is in our pre-registered design, and is recorded here rather than worked around silently.",
+   "operational_metric": "a clip is truncated if prosody's VAD found speech after 30.0s (max window end > 30) and no ASR segment ends after 30.0s",
+   "baseline": {
+    "clips_truncated": 92,
+    "clips_truncated_recomputed_at_rebuild": 92,
+    "audio_never_transcribed_min": 21.9
+   },
+   "threshold": "exactly 0",
+   "v2": {
+    "clips_over_30s": 92,
+    "records_with_both_fields": 1988,
+    "clips_with_speech_past_30s": 80,
+    "clips_truncated": 6,
+    "worst": [
+     {
+      "id": "2021_Abu_Dhabi_Grand_Prix_CHALEC01_16_20211212_145310",
+      "duration_s": 45.94
+     },
+     {
+      "id": "2020_Turkish_Grand_Prix_LANSTR01_18_20201115_121317",
+      "duration_s": 31.49
+     },
+     {
+      "id": "2023_Spanish_Grand_Prix_MAXVER01_1_20230604_153249",
+      "duration_s": 31.42
+     },
+     {
+      "id": "2023_Italian_Grand_Prix_GUAZHO01_24_20230903_141342",
+      "duration_s": 31.15
+     },
+     {
+      "id": "2021_Abu_Dhabi_Grand_Prix_LEWHAM01_44_20211212_142515",
+      "duration_s": 30.7
+     }
+    ]
+   },
+   "paired_evidence": {
+    "n": 92,
+    "v2_more_words": 87,
+    "v2_fewer_words": 3,
+    "median_word_delta": 28,
+    "regressions": [
+     {
+      "id": "2019_German_Grand_Prix_LANSTR01_18_20190728_160817",
+      "duration_s": 30.58,
+      "words_v1": 72,
+      "words_v2": 71
+     },
+     {
+      "id": "2021_Abu_Dhabi_Grand_Prix_CHALEC01_16_20211212_145310",
+      "duration_s": 45.94,
+      "words_v1": 56,
+      "words_v2": 55
+     },
+     {
+      "id": "2023_Miami_Grand_Prix_MAXVER01_1_20230507_210830",
+      "duration_s": 31.18,
+      "words_v1": 90,
+      "words_v2": 89
+     }
+    ],
+    "note": "Word counts on the clips v1 truncated. Both pipelines produced a transcript for these, so this comparison does not depend on the operational metric above."
+   },
+   "if_it_fails": "The chunking is wrong. Report the count and do not ship the ASR upgrade as complete."
+  },
+  {
+   "id": "H2",
+   "claim": "Hallucination on non-speech does not get worse, despite large-v3 being more confabulatory than small.en on noise.",
+   "status": "MET",
+   "registered_metric": "_v1_baseline.hallucination.rate",
+   "registered_metric_valid_for_v2": true,
+   "threshold": "<= 0.0269; target < 0.010 given no_speech_threshold is now active",
+   "baseline_rate": 0.0269,
+   "v2_rate": 0.0255,
+   "delta": -0.0014,
+   "v1_by_family": {
+    "bare_you": 51,
+    "thanks_only": 3,
+    "repetition_loop": 1
+   },
+   "v2_by_family": {
+    "thanks_only": 50,
+    "subtitle_credit": 2
+   },
+   "new_families_in_v2": [
+    "subtitle_credit"
+   ],
+   "families_eliminated": [
+    "bare_you",
+    "repetition_loop"
+   ],
+   "paired": {
+    "n_fixed": 4,
+    "n_introduced": 1,
+    "introduced": [
+     "2019_German_Grand_Prix_MAXVER01_33_20190728_150225"
+    ],
+    "empty_transcripts_v2": 0
+   },
+   "the_named_test": {
+    "what_was_registered": "the 51 near-silent clips that currently decode to 'you' are the specific test",
+    "cohort_size": 51,
+    "still_hallucinating_in_v2": 50,
+    "genuinely_resolved": 1,
+    "what_they_became": {
+     "thanks_only": 49,
+     "subtitle_credit": 1
+    },
+    "passed": false,
+    "why_the_family_counts_mislead": "Counted per family the cohort reads bare_you 51 -> 0, which looks like it was eliminated. Followed by clip id, almost all of it is still there under a different canned phrase. The model did not stop inventing text on silence; it changed what it invents. The rate barely moves for exactly that reason."
+   },
+   "threshold_met_but_named_test_failed": true,
+   "if_it_fails": "Report it as a regression. A larger model that invents more text is not an improvement, and the 51 near-silent clips that currently decode to 'you' are the specific test."
+  },
+  {
+   "id": "H3",
+   "claim": "Segment-level attribution cuts the unattributed share.",
+   "status": "NOT TESTED",
+   "registered_intervention_built": false,
+   "held_out_judgements_available": false,
+   "reason": "The registered threshold is a conjunction and neither half is measurable. The intervention - segment-level classification over word timestamps with calibrated abstention - was not built; calibrate.py still calls the clip-level speaker.classify. And no held-out speaker judgements exist in this repository, so precision is unmeasured in v2 exactly as it was in v1.",
+   "why_coverage_alone_is_not_reported_as_a_result": "speaker.classify returns 'unknown' below two words and otherwise counts lexical cues, so a longer transcript moves this number by itself - and removing the 30s truncation makes transcripts longer. A coverage improvement here is attributable to the ASR upgrade, not to the registered speaker change. The pre-registration anticipates this: 'Abstention is acceptable; unmeasured abstention is not.'",
+   "not_tested_is_not_failed": "H3 is unmet because the change was not made, not because the change was made and did not work. It is listed under the registered regressions as an unmet pre-registration either way.",
+   "descriptive_only": {
+    "these_do_not_constitute_a_verdict_on_H3": true,
+    "unknown_share_registered_baseline": 0.525,
+    "unknown_share_v1_recomputed_at_rebuild": 0.498,
+    "unknown_share_v2": 0.447,
+    "counts_v1": {
+     "unknown": 1016,
+     "driver": 569,
+     "engineer": 457
+    },
+    "counts_v2": {
+     "unknown": 913,
+     "driver": 599,
+     "engineer": 530
+    },
+    "fed_to_strategy_as_driver_voiced": {
+     "v1": 0.776,
+     "v2": 0.74
+    },
+    "precision": null,
+    "precision_reason": "no labelled speaker judgements exist in this repository"
+   },
+   "what_would_test_it": "A few hundred hand-labelled speaker judgements, split by driver - the same missing input _diarization_experiment.json names under what_would_fix_it. backend/data/label_affect.py is the pattern; the labels it collects are for affect, not speaker.",
+   "if_it_fails": "Report the precision-coverage curve as measured. Abstention is acceptable; unmeasured abstention is not."
+  },
+  {
+   "id": "H4",
+   "status": "ADJUDICATED BEFORE THE REBUILD",
+   "outcome": "NOT SUPPORTED - the hypothesis as stated is wrong, and the planned change it justified has been abandoned.",
+   "note": "H4 was scored on gold labels before the rebuild and is not re-adjudicated here. Any change in its underlying numbers is a re-measurement, and is reported as one below."
+  }
+ ],
+ "registered_regressions": [
+  {
+   "registered": "any increase in hallucination rate",
+   "measured": true,
+   "regressed": false,
+   "detail": "0.0269 -> 0.0255"
+  },
+  {
+   "registered": "any decrease in speaker attribution precision",
+   "measured": false,
+   "regressed": null,
+   "detail": "Unmeasured in both v1 and v2 - no labelled speaker judgements exist. Reported as unperformed, not as passed."
+  },
+  {
+   "registered": "any race whose /api/compare ordering changes under leave-one-race-out calibration",
+   "measured": true,
+   "regressed": true,
+   "detail": "7 material swap(s)"
+  },
+  {
+   "registered": "any aggregation strategy chosen for reasons other than held-out performance",
+   "measured": true,
+   "regressed": false,
+   "detail": "No aggregation strategy was selected. Stage 2 still consumes the clip-level mean; pipeline/aggregate.py's candidates remain unused, which is what its own module docstring says."
+  },
+  {
+   "registered": "any of the four pre-registered hypotheses failing",
+   "measured": true,
+   "regressed": true,
+   "detail": "H1=NOT MET, H2=MET, H3=NOT TESTED"
+  }
+ ],
+ "compare_ordering": {
+  "computable": true,
+  "tie_threshold_dsi": 0.15,
+  "order_v1": [
+   "2020_Turkish_Grand_Prix",
+   "2023_Monaco_Grand_Prix",
+   "2023_Qatar_Grand_Prix",
+   "2023_Spanish_Grand_Prix",
+   "2021_Abu_Dhabi_Grand_Prix",
+   "2023_Mexico_City_Grand_Prix",
+   "2023_Miami_Grand_Prix",
+   "2023_United_States_Grand_Prix",
+   "2023_Japanese_Grand_Prix",
+   "2023_Dutch_Grand_Prix",
+   "2019_German_Grand_Prix",
+   "2023_Italian_Grand_Prix"
+  ],
+  "order_v2": [
+   "2020_Turkish_Grand_Prix",
+   "2023_Spanish_Grand_Prix",
+   "2023_United_States_Grand_Prix",
+   "2023_Mexico_City_Grand_Prix",
+   "2023_Qatar_Grand_Prix",
+   "2021_Abu_Dhabi_Grand_Prix",
+   "2023_Miami_Grand_Prix",
+   "2023_Monaco_Grand_Prix",
+   "2023_Dutch_Grand_Prix",
+   "2023_Japanese_Grand_Prix",
+   "2023_Italian_Grand_Prix",
+   "2019_German_Grand_Prix"
+  ],
+  "order_changed": true,
+  "material_swaps": [
+   {
+    "race": "2023_Monaco_Grand_Prix",
+    "v1_rank": 2,
+    "v2_rank": 8,
+    "v1_mean": 53.31,
+    "v2_mean": 50.46
+   },
+   {
+    "race": "2023_Spanish_Grand_Prix",
+    "v1_rank": 4,
+    "v2_rank": 2,
+    "v1_mean": 52.11,
+    "v2_mean": 54.4
+   },
+   {
+    "race": "2023_United_States_Grand_Prix",
+    "v1_rank": 8,
+    "v2_rank": 3,
+    "v1_mean": 49.6,
+    "v2_mean": 54.17
+   },
+   {
+    "race": "2023_Japanese_Grand_Prix",
+    "v1_rank": 9,
+    "v2_rank": 10,
+    "v1_mean": 49.33,
+    "v2_mean": 47.89
+   },
+   {
+    "race": "2023_Dutch_Grand_Prix",
+    "v1_rank": 10,
+    "v2_rank": 9,
+    "v1_mean": 48.42,
+    "v2_mean": 47.96
+   },
+   {
+    "race": "2019_German_Grand_Prix",
+    "v1_rank": 11,
+    "v2_rank": 12,
+    "v1_mean": 48.39,
+    "v2_mean": 47.04
+   },
+   {
+    "race": "2023_Italian_Grand_Prix",
+    "v1_rank": 12,
+    "v2_rank": 11,
+    "v1_mean": 46.77,
+    "v2_mean": 47.45
+   }
+  ],
+  "detail": "7 material swap(s)"
+ },
+ "falsification_check": {
+  "clause": "If, after the rebuild, the Driver State Index no longer separates the pre-registered contrast slate, then the separation in v1 was an artifact of the v1 pipeline and the index does not measure what we claim. That result is published in place of the current one.",
+  "v1": {
+   "verdict": "PARTIAL SUPPORT - 4 of 5 predictions held, 1 clearly failed.",
+   "predictions_held": 4,
+   "predictions_total": 5,
+   "majority_of_predictions_held": true,
+   "contrasts_surviving_bonferroni": 4,
+   "effect_size_note": "The full spread across the slate is 7.7 DSI points against a within-race sd of about 15, so Cohen's d is roughly 0.52 - a small-to-moderate effect. The index separates these races, but not dramatically."
+  },
+  "v2": {
+   "verdict": "PARTIAL SUPPORT - 1 of 5 predictions held, 4 clearly failed.",
+   "predictions_held": 1,
+   "predictions_total": 5,
+   "majority_of_predictions_held": false,
+   "contrasts_surviving_bonferroni": 1,
+   "effect_size_note": "The full spread across the slate is 8.5 DSI points against a within-race sd of about 17, so Cohen's d is roughly 0.49 - a small-to-moderate effect. The index separates these races, but not dramatically."
+  },
+  "index_falsified": true,
+  "how_the_clause_was_read": "On the directional scorecard, not on spread. The clause's own parenthetical defines the state it is measuring against as '4 of 5 predictions held', so the predictions are the operative test. Read on spread alone the clause would not fire - see separation_without_direction below - and reading it that way would have been choosing the interpretation that suits us, which is the move this pre-registration exists to prevent.",
+  "separation_without_direction": {
+   "note": "Recorded because it is true and it cuts the other way. The index does still distinguish these races; what it no longer does is distinguish them in the directions predicted in advance. Both halves are reported.",
+   "contrasts_surviving_bonferroni": {
+    "v1": 4,
+    "v2": 1
+   }
+  },
+  "what_this_means": "The v1 prediction record was substantially an artifact of the v1 pipeline. Removing a truncation defect and rescoring prosody over detected speech moved race means by up to 3.3 DSI points on identical messages, and four of the five advance predictions did not survive it. A result that depends on which of two defensible pipelines produced it is not a result about Formula One."
+ },
+ "standing_commitment_check": {
+  "statement": "Fusion weights will not be fitted against lap time, at any stage, for any variant.",
+  "fusion_last_changed_before_the_rebuild": true,
+  "lap_time_appears_in_fusion": false
+ },
+ "index": {
+  "v1": {
+   "dsi_mean": 50.01,
+   "dsi_sd": 14.74,
+   "dsi_min": 9,
+   "dsi_max": 100,
+   "dsi_p05": 27,
+   "dsi_p95": 76,
+   "state_counts": {
+    "Fatigued": 701,
+    "Energised": 698,
+    "Stressed": 324,
+    "Calm": 319
+   },
+   "suppressed_stress": 85,
+   "recommendations": 345
+  },
+  "v2": {
+   "dsi_mean": 50.0,
+   "dsi_sd": 17.39,
+   "dsi_min": 4,
+   "dsi_max": 100,
+   "dsi_p05": 22,
+   "dsi_p95": 82,
+   "state_counts": {
+    "Energised": 623,
+    "Fatigued": 620,
+    "Calm": 401,
+    "Stressed": 398
+   },
+   "suppressed_stress": 98,
+   "recommendations": 422
+  }
+ },
+ "confirmatory_result": null,
+ "confirmatory_result_note": "The confirmatory analysis runs exactly once, after everything else is frozen. Re-run this with --after-confirmatory to fold the result in. This field is null rather than absent so it cannot look like a run that did not happen.",
+ "summary": "Pre-registration scored: H1 NOT MET; H2 MET; H3 NOT TESTED; H4 ADJUDICATED BEFORE THE REBUILD. Registered regressions to report: any race whose /api/compare ordering changes under leave-one-race-out calibration; any of the four pre-registered hypotheses failing. The index no longer separates the pre-registered contrast slate; the falsification clause applies."
+}

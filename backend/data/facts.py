@@ -88,6 +88,22 @@ def count_tests() -> int | None:
     return None
 
 
+def _build_manifest() -> dict:
+    """What produced the current stage-1 output, from the bundle that shipped it.
+
+    `backend/raw/_manifest.json` is written by the GPU notebook and verified by
+    import_raw_bundle against a checksum, so it records what actually ran rather
+    than what a constant in the source currently says. Absent before any import,
+    which is why every reader here uses .get().
+    """
+    path = os.path.join(RACES, "..", "raw", "_manifest.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
 def _asr_ablation() -> dict:
     """The prompting ablation, aggregated across every race that measured it.
 
@@ -110,6 +126,16 @@ def _asr_ablation() -> dict:
         "mean_wer_unbiased": round(sum(r["wer_unbiased"] for r in rows) / len(rows), 4),
         "mean_wer_biased": round(sum(r["wer_biased"] for r in rows) / len(rows), 4),
         "sample_per_race": rows[0].get("sample_size"),
+        # Which pipeline produced these WERs. The corpus moved to large-v3 and
+        # this ablation did not move with it: the prompting A/B only exists on
+        # the transformers backend, and re-running it under faster-whisper would
+        # score every unbiased hypothesis as an empty string - jiwer returns 1.0
+        # for that rather than raising, so the published conclusion would have
+        # inverted rather than errored. Exposed as a fact so a document quoting
+        # the WER has to say which pipeline measured it.
+        "measured_on_pipeline": rows[0].get("measured_on_pipeline", "v1"),
+        "measured_on_asr_model": rows[0].get(
+            "measured_on_asr_model", "openai/whisper-small.en"),
     }
 
 
@@ -123,6 +149,7 @@ def facts() -> dict:
     diar = _load("_diarization_experiment.json") or {}
     leak = _load("_calibration_leakage.json") or {}
     vdiag = _load("_valence_diagnostic.json") or {}
+    build = _build_manifest()
     v1 = _load("_v1_baseline.json") or {}
     bound = _load("_valence_boundary.json") or {}
 
@@ -219,6 +246,15 @@ def facts() -> dict:
         "asr_mean_wer": asr.get("mean_wer_unbiased"),
         "asr_mean_wer_prompted": asr.get("mean_wer_biased"),
         "asr_sample_per_race": asr.get("sample_per_race"),
+        "asr_ablation_pipeline": asr.get("measured_on_pipeline"),
+        "asr_ablation_model": asr.get("measured_on_asr_model"),
+        # What actually built the shipped corpus, read from the build manifest
+        # rather than from pipeline.asr - this module imports no model, and the
+        # manifest is the better source anyway: it records what ran, not what
+        # the constant currently says.
+        "corpus_asr_model": build.get("asr_model"),
+        "corpus_asr_backend": build.get("asr_backend"),
+        "corpus_built_on_gpu": build.get("gpu"),
 
         # Calibration: is it held out, and what was the leak worth?
         "calibration_scheme": "leave-one-race-out",
