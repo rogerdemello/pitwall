@@ -12,6 +12,7 @@
 import { useMemo, useState } from "react";
 import type { Message } from "@/lib/api";
 import { dsiColor } from "@/lib/api";
+import { safeMax, safeMin } from "@/lib/format";
 
 interface Props {
   messages: Message[];
@@ -42,8 +43,17 @@ export default function RaceTimeline({ messages, lapTimes, onSelect, selectedId 
   // 100s+ outliers that would otherwise flatten the entire trace.
   const racing = lapTimes.map((l) => l.seconds).sort((a, b) => a - b);
   const p95 = racing[Math.floor(racing.length * 0.95)] ?? 100;
-  const loT = Math.min(...racing);
-  const hiT = Math.min(Math.max(...racing), p95 * 1.15);
+
+  // safeMin/safeMax return null on an empty list rather than the +/-Infinity
+  // that `Math.min(...[])` gives. That distinction is the whole fix: Infinity
+  // propagated silently into the tick positions and rendered "M NaN,NaN" path
+  // data with Infinity axis labels. A race with no lap times now draws no pace
+  // panel, which is the honest rendering of having no pace data.
+  const lo = safeMin(racing);
+  const hi = safeMax(racing);
+  const hasPace = lo != null && hi != null;
+  const loT = lo ?? 0;
+  const hiT = hasPace ? Math.min(hi, p95 * 1.15) : 1;
 
   const x = (lap: number) => PAD_L + ((lap - 1) / Math.max(1, maxLap - 1)) * (W - PAD_L - PAD_R);
   const yPace = (s: number) =>
@@ -64,7 +74,7 @@ export default function RaceTimeline({ messages, lapTimes, onSelect, selectedId 
     Math.round(1 + (i * (maxLap - 1)) / Math.max(1, Math.min(12, maxLap) - 1)),
   );
 
-  const paceTicks = [loT, (loT + hiT) / 2, hiT];
+  const paceTicks = hasPace ? [loT, (loT + hiT) / 2, hiT] : [];
 
   return (
     <div style={{ position: "relative" }}>

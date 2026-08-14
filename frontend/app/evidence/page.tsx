@@ -31,6 +31,7 @@ import {
   type EraAnalysis,
   type Evidence,
 } from "@/lib/api";
+import { pct, pctOf } from "@/lib/format";
 import RacePicker, { useRaces } from "@/components/RacePicker";
 
 const DEFAULT_RACE = "2021_Abu_Dhabi_Grand_Prix";
@@ -120,7 +121,7 @@ export default function EvidencePage() {
         <div className="stat">
           <div className="label">Placed on a lap</div>
           <div className="value">{ev.on_lap_count}</div>
-          <div className="foot">{(ev.join_rate * 100).toFixed(0)}% telemetry join rate</div>
+          <div className="foot">{pctOf(ev.join_rate, 0)} telemetry join rate</div>
         </div>
         <div className="stat">
           <div className="label">DSI range</div>
@@ -131,7 +132,7 @@ export default function EvidencePage() {
           <div className="label">Suppressed stress</div>
           <div className="value">{ev.suppressed_stress_count}</div>
           <div className="foot">
-            {((ev.suppressed_stress_count / ev.suppressed_stress_eligible) * 100).toFixed(1)}% of{" "}
+            {pct(ev.suppressed_stress_count, ev.suppressed_stress_eligible, 1)} of{" "}
             {ev.suppressed_stress_eligible} eligible
           </div>
         </div>
