@@ -43,6 +43,14 @@ RETIRED = {
     "1,042": "n_messages",
     "29 tests": "n_tests",
     "six races": "n_races",
+    # Retired by the CREMA-D re-measurement - the artifacts behind these had been
+    # generated before prosody.py gained VAD and per-window scoring.
+    "78.1%": "arousal_acc",
+    "62.9%": "valence_acc",
+    "49.2%": "gold_accuracy",
+    "+16.3": "arousal_lift",
+    "+0.0605": "valence_lift_at_fitted_boundary",
+    "+0.061": "valence_lift_at_fitted_boundary",
 }
 
 
@@ -171,11 +179,14 @@ def facts() -> dict:
         "valence_acc": valence.get("accuracy"),
         "valence_baseline": valence.get("majority_baseline"),
         "valence_lift": valence.get("lift"),
-        # The axis scores at chance *at the 0.5 split*. That is a fact about the
-        # threshold, not about the model - which ranks valence at AUC 0.687 and
-        # reaches +0.0605 lift at the fitted cut. Both facts are exposed so a doc
-        # cannot state the pessimistic one alone, which is what the old flat
-        # "valence is at chance" claim did.
+        # The axis scores at chance *at the 0.5 split*, which is a fact about the
+        # threshold rather than about the model: ranking performance and the lift
+        # at a fitted cut are both better. Every figure here is read from the
+        # boundary artifact and none is restated in this comment, because the
+        # last version of it quoted an AUC and a lift that a re-measurement then
+        # moved - see _remeasurement.json. Both the pessimistic and the
+        # optimistic facts are exposed so a doc cannot quote one alone, which is
+        # what the old flat "valence is at chance" claim did.
         "valence_at_chance_at_median_split": (valence.get("lift") or 0) < 0.05,
         "valence_lift_at_fitted_boundary": (
             bound.get("valence_raw_space") or {}).get("lift_over_baseline_fitted"),

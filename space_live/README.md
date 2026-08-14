@@ -63,8 +63,8 @@ so the frontend renders live and precomputed results with the same component.
 ## Two honest caveats
 
 **The valence axis is at chance.** Validated against CREMA-D gold labels, the
-affect model's arousal axis scores 78.1% against a 61.8% baseline, but valence
-scores 62.9% against 61.9% — no better than guessing. A state's high/low
+affect model's arousal scores 79.4% against a 61.8% baseline, but valence
+scores 60.9% against 61.9% — no better than guessing. A state's high/low
 *activation* is reliable; its calm/stressed *direction* is much less so. This is
 measured and reported rather than smoothed over.
 

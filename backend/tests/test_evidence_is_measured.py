@@ -174,7 +174,16 @@ class TestValenceIsNotMisreported:
     def boundary(self):
         return _load("_valence_boundary.json")
 
-    def test_the_axis_is_threshold_limited_not_signal_limited(self, boundary):
+    def test_the_axis_carries_ranking_signal(self, boundary):
+        """Threshold-free ranking must beat chance, whatever the cut does.
+
+        This used to also assert that fitting the cut beat the median split by
+        enough to matter, on the strength of a +0.0605 lift. Re-measuring on the
+        VAD-windowed prosody that actually ships put that at +0.0324, below the
+        script's own pre-declared 0.05 materiality bar - so the assertion was
+        encoding a finding that no longer holds rather than a property that must.
+        The finding moved; see the boundary artifact's own `finding` field.
+        """
         v = boundary["valence_raw_space"]
         assert v["lift_over_baseline_fitted"] > v["lift_over_baseline_median"]
         assert v["auc"] > 0.6, "ranking signal must be well above chance"
@@ -192,12 +201,28 @@ class TestValenceIsNotMisreported:
         """
         assert boundary["arousal_raw_space"]["lift_over_median"] <= 0.0
 
-    def test_the_transfer_failure_is_recorded(self, boundary):
+    def test_a_gold_fitted_cut_is_never_recommended_for_radio(self, boundary):
+        """The property, not one particular way of satisfying it.
+
+        This asserted `recommendation == "do_not_transfer_to_f1"`, which was the
+        right answer to the wrong question: it pinned one safe value instead of
+        excluding the unsafe one. When the boundary was re-measured on the
+        shipping prosody path the refit stopped clearing its materiality bar, so
+        the script returned `no_change` - safer still, and the test failed
+        anyway.
+
+        Radio valence sits a measured distance from CREMA-D's, so `fit_valence_
+        boundary.py` has exactly one recommendation that would be wrong here:
+        move_the_boundary. That is what to forbid.
+        """
         t = boundary["transfer_check"]
         assert t["computable"]
         assert "median_shift_in_gold_sds" in t
         if not t["distributions_comparable"]:
-            assert boundary["recommendation"] == "do_not_transfer_to_f1"
+            assert boundary["recommendation"] != "move_the_boundary", (
+                "the gold-fitted cut must not be adopted for radio while the two "
+                f"distributions differ by {t['median_shift_in_gold_sds']} gold SDs"
+            )
 
     def test_production_still_uses_the_untransferred_boundary(self):
         """The finding is published; the corpus is not relabelled on it."""

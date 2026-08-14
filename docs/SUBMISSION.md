@@ -67,20 +67,35 @@ The Evidence screen reads from measured files; nothing on it is typed by hand.
 - **Two planned features were measured and rejected** — ASR vocabulary prompting
   (worse in 4 of 6 races, and the prompt leaked into transcripts) and acoustic
   speaker separation (cleared its pre-registered bar for 1 of 4 drivers).
-- **We know which half of our model works — and we were wrong about why.**
-  Against CREMA-D gold labels, arousal scores 78.1% vs a 61.8% baseline; valence
-  62.9% vs 61.9%, which is chance. We had planned to remove acoustic valence on
-  that basis. A pre-registered matched-arousal test says the opposite: valence
-  separates happy from anger at **AUC 0.67 with arousal held constant**, and
-  fitting the boundary on held-out speakers lifts the axis to **+0.061** over
-  baseline, six times the published figure. The axis is threshold-limited, not
-  signal-limited. So the planned removal was abandoned.
-- **And we did not ship the fix either.** The corrected boundary was measured on
-  acted studio speech, where raw valence sits 2.3 standard deviations away from
-  where it sits on radio. Applying it would relabel Stressed from 324 messages to
-  72 for a reason unrelated to how the drivers sound, with no in-domain labels to
-  say which is right. The finding is published; the production boundary is
-  untouched.
+- **We know which half of our model works.** Against CREMA-D gold labels,
+  arousal scores 79.4% vs a 61.8% baseline — a +17.6 point lift. Valence scores
+  60.9% vs 61.9%, which is *below* the majority baseline: at the production
+  split it is very slightly worse than guessing the commoner class.
+- **We caught our own evidence being out of date, and one published claim did
+  not survive it.** All three CREMA-D artifacts had been generated before
+  `prosody.py` gained VAD and per-window scoring, so they evaluated a model that
+  no longer ran. Nothing detected it — the tests checked documents against
+  artifacts, and the artifacts agreed with themselves. Re-running them moved 15
+  of 18 tracked figures.
+
+  What survived: the pre-registered matched-arousal test still separates happy
+  from anger at **AUC 0.67 with arousal held constant**, above its 0.65
+  threshold. The model does carry valence signal, so the plan to delete acoustic
+  valence outright stays abandoned.
+
+  What did not: we had published that refitting the decision boundary lifts the
+  axis to **+0.061**, "six times the published figure", and called it
+  threshold-limited rather than signal-limited. On the pipeline that actually
+  ships that refit is worth **+0.042**, below the script's own pre-declared 0.05
+  materiality bar, and the artifact's verdict flipped from
+  `boundary_is_misplaced_on_gold` to `boundary_is_fine`. So the rescue is
+  withdrawn. The model ranks valence better than chance; we cannot turn that
+  into a better production label, and the boundary is left alone — now because
+  moving it does not help, rather than because the correction would not transfer.
+
+  Every delta is in `backend/races/_remeasurement.json`, read out of git rather
+  than typed. The pre-registration itself is **not** edited: it recorded +0.0605
+  before the fact and that is what it still says.
 - **Every DSI is now out of sample.** The calibration used to be fitted on the
   same 2,042 messages it scored. It is now leave-one-race-out, and the leak was
   quantified rather than quietly fixed: race means move by at most 0.41 points

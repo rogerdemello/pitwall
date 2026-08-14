@@ -25,40 +25,40 @@
   "n_clips": 926,
   "n_actors": 91,
   "n_folds": 5,
-  "auc": 0.687,
-  "cv_acc_at_fitted_threshold": 0.6803,
-  "cv_acc_at_median_split": 0.6285,
+  "auc": 0.6412,
+  "cv_acc_at_fitted_threshold": 0.6512,
+  "cv_acc_at_median_split": 0.6091,
   "cv_majority_baseline": 0.6188,
-  "lift_over_median": 0.0518,
-  "lift_over_baseline_fitted": 0.0615,
-  "lift_over_baseline_median": 0.0097,
+  "lift_over_median": 0.0421,
+  "lift_over_baseline_fitted": 0.0324,
+  "lift_over_baseline_median": -0.0097,
   "incumbent_cut": 0.5,
   "fitted_cut_per_fold": [
-   0.7832,
-   0.7832,
-   0.7832,
-   0.7832,
-   0.7827
+   0.9006,
+   0.9006,
+   0.879,
+   0.8737,
+   0.8737
   ],
-  "fitted_cut_mean": 0.7831,
-  "fitted_cut_spread": 0.0005,
-  "fitted_cut_spread_relative": 0.0005,
+  "fitted_cut_mean": 0.8855,
+  "fitted_cut_spread": 0.0269,
+  "fitted_cut_spread_relative": 0.0269,
   "score_span": [
    0.0005,
    0.9995
   ],
-  "in_sample_cut": 0.7832,
-  "in_sample_acc": 0.6803,
-  "optimism": 0.0,
+  "in_sample_cut": 0.9006,
+  "in_sample_acc": 0.6555,
+  "optimism": 0.0043,
   "folds": [
    {
     "fold": 0,
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.7832,
-    "acc_at_fitted": 0.7135,
-    "acc_at_median": 0.6811,
+    "fitted_cut": 0.9006,
+    "acc_at_fitted": 0.6703,
+    "acc_at_median": 0.6486,
     "majority_baseline": 0.6216
    },
    {
@@ -66,9 +66,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.7832,
-    "acc_at_fitted": 0.6324,
-    "acc_at_median": 0.5568,
+    "fitted_cut": 0.9006,
+    "acc_at_fitted": 0.627,
+    "acc_at_median": 0.5676,
     "majority_baseline": 0.6324
    },
    {
@@ -76,9 +76,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.7832,
-    "acc_at_fitted": 0.6649,
-    "acc_at_median": 0.6595,
+    "fitted_cut": 0.879,
+    "acc_at_fitted": 0.627,
+    "acc_at_median": 0.6162,
     "majority_baseline": 0.573
    },
    {
@@ -86,8 +86,8 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.7832,
-    "acc_at_fitted": 0.7027,
+    "fitted_cut": 0.8737,
+    "acc_at_fitted": 0.6757,
     "acc_at_median": 0.6324,
     "majority_baseline": 0.627
    },
@@ -96,9 +96,9 @@
     "n_train": 740,
     "n_test": 186,
     "n_actors_held_out": 19,
-    "fitted_cut": 0.7827,
-    "acc_at_fitted": 0.6882,
-    "acc_at_median": 0.6129,
+    "fitted_cut": 0.8737,
+    "acc_at_fitted": 0.6559,
+    "acc_at_median": 0.5806,
     "majority_baseline": 0.6398
    }
   ]
@@ -109,40 +109,40 @@
   "n_clips": 926,
   "n_actors": 91,
   "n_folds": 5,
-  "auc": 0.8596,
-  "cv_acc_at_fitted_threshold": 0.7743,
-  "cv_acc_at_median_split": 0.7808,
+  "auc": 0.8666,
+  "cv_acc_at_fitted_threshold": 0.7818,
+  "cv_acc_at_median_split": 0.7937,
   "cv_majority_baseline": 0.6177,
-  "lift_over_median": -0.0065,
-  "lift_over_baseline_fitted": 0.1566,
-  "lift_over_baseline_median": 0.1631,
+  "lift_over_median": -0.0119,
+  "lift_over_baseline_fitted": 0.1641,
+  "lift_over_baseline_median": 0.176,
   "incumbent_cut": 0.5,
   "fitted_cut_per_fold": [
-   0.4655,
-   0.4687,
-   0.4687,
-   0.4212,
-   0.4471
+   0.4884,
+   0.474,
+   0.4536,
+   0.4058,
+   0.4849
   ],
-  "fitted_cut_mean": 0.4542,
-  "fitted_cut_spread": 0.0475,
-  "fitted_cut_spread_relative": 0.0475,
+  "fitted_cut_mean": 0.4613,
+  "fitted_cut_spread": 0.0826,
+  "fitted_cut_spread_relative": 0.0827,
   "score_span": [
    0.0005,
    0.9995
   ],
-  "in_sample_cut": 0.4687,
-  "in_sample_acc": 0.7862,
-  "optimism": 0.0119,
+  "in_sample_cut": 0.4838,
+  "in_sample_acc": 0.797,
+  "optimism": 0.0152,
   "folds": [
    {
     "fold": 0,
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4655,
-    "acc_at_fitted": 0.7351,
-    "acc_at_median": 0.7297,
+    "fitted_cut": 0.4884,
+    "acc_at_fitted": 0.7405,
+    "acc_at_median": 0.7351,
     "majority_baseline": 0.6108
    },
    {
@@ -150,9 +150,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4687,
-    "acc_at_fitted": 0.8378,
-    "acc_at_median": 0.8216,
+    "fitted_cut": 0.474,
+    "acc_at_fitted": 0.827,
+    "acc_at_median": 0.8324,
     "majority_baseline": 0.6108
    },
    {
@@ -160,9 +160,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4687,
+    "fitted_cut": 0.4536,
     "acc_at_fitted": 0.8,
-    "acc_at_median": 0.8,
+    "acc_at_median": 0.8054,
     "majority_baseline": 0.6595
    },
    {
@@ -170,9 +170,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4212,
-    "acc_at_fitted": 0.7514,
-    "acc_at_median": 0.7946,
+    "fitted_cut": 0.4058,
+    "acc_at_fitted": 0.7568,
+    "acc_at_median": 0.8,
     "majority_baseline": 0.6162
    },
    {
@@ -180,9 +180,9 @@
     "n_train": 740,
     "n_test": 186,
     "n_actors_held_out": 19,
-    "fitted_cut": 0.4471,
-    "acc_at_fitted": 0.7473,
-    "acc_at_median": 0.7581,
+    "fitted_cut": 0.4849,
+    "acc_at_fitted": 0.7849,
+    "acc_at_median": 0.7957,
     "majority_baseline": 0.5914
    }
   ]
@@ -193,40 +193,40 @@
   "n_clips": 926,
   "n_actors": 91,
   "n_folds": 5,
-  "auc": 0.687,
-  "cv_acc_at_fitted_threshold": 0.6793,
-  "cv_acc_at_median_split": 0.6275,
+  "auc": 0.6412,
+  "cv_acc_at_fitted_threshold": 0.6512,
+  "cv_acc_at_median_split": 0.6091,
   "cv_majority_baseline": 0.6188,
-  "lift_over_median": 0.0518,
-  "lift_over_baseline_fitted": 0.0605,
-  "lift_over_baseline_median": 0.0087,
-  "incumbent_cut": 0.3725,
+  "lift_over_median": 0.0421,
+  "lift_over_baseline_fitted": 0.0324,
+  "lift_over_baseline_median": -0.0097,
+  "incumbent_cut": 0.4101,
   "fitted_cut_per_fold": [
-   0.4416,
-   0.4416,
-   0.4416,
-   0.4416,
-   0.4411
+   0.5295,
+   0.5295,
+   0.5212,
+   0.5197,
+   0.5197
   ],
-  "fitted_cut_mean": 0.4415,
-  "fitted_cut_spread": 0.0005,
-  "fitted_cut_spread_relative": 0.0008,
+  "fitted_cut_mean": 0.5239,
+  "fitted_cut_spread": 0.0098,
+  "fitted_cut_spread_relative": 0.0131,
   "score_span": [
-   0.1036,
-   0.7342
+   0.1331,
+   0.8832
   ],
-  "in_sample_cut": 0.4416,
-  "in_sample_acc": 0.6803,
-  "optimism": 0.001,
+  "in_sample_cut": 0.5295,
+  "in_sample_acc": 0.6555,
+  "optimism": 0.0043,
   "folds": [
    {
     "fold": 0,
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4416,
-    "acc_at_fitted": 0.7135,
-    "acc_at_median": 0.6811,
+    "fitted_cut": 0.5295,
+    "acc_at_fitted": 0.6703,
+    "acc_at_median": 0.6486,
     "majority_baseline": 0.6216
    },
    {
@@ -234,9 +234,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4416,
-    "acc_at_fitted": 0.6324,
-    "acc_at_median": 0.5568,
+    "fitted_cut": 0.5295,
+    "acc_at_fitted": 0.627,
+    "acc_at_median": 0.5676,
     "majority_baseline": 0.6324
    },
    {
@@ -244,9 +244,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4416,
-    "acc_at_fitted": 0.6649,
-    "acc_at_median": 0.6595,
+    "fitted_cut": 0.5212,
+    "acc_at_fitted": 0.627,
+    "acc_at_median": 0.6162,
     "majority_baseline": 0.573
    },
    {
@@ -254,8 +254,8 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.4416,
-    "acc_at_fitted": 0.7027,
+    "fitted_cut": 0.5197,
+    "acc_at_fitted": 0.6757,
     "acc_at_median": 0.6324,
     "majority_baseline": 0.627
    },
@@ -264,9 +264,9 @@
     "n_train": 740,
     "n_test": 186,
     "n_actors_held_out": 19,
-    "fitted_cut": 0.4411,
-    "acc_at_fitted": 0.6828,
-    "acc_at_median": 0.6075,
+    "fitted_cut": 0.5197,
+    "acc_at_fitted": 0.6559,
+    "acc_at_median": 0.5806,
     "majority_baseline": 0.6398
    }
   ]
@@ -277,40 +277,40 @@
   "n_clips": 926,
   "n_actors": 91,
   "n_folds": 5,
-  "auc": 0.8596,
-  "cv_acc_at_fitted_threshold": 0.7743,
-  "cv_acc_at_median_split": 0.7808,
+  "auc": 0.8666,
+  "cv_acc_at_fitted_threshold": 0.7829,
+  "cv_acc_at_median_split": 0.7937,
   "cv_majority_baseline": 0.6177,
-  "lift_over_median": -0.0065,
-  "lift_over_baseline_fitted": 0.1566,
-  "lift_over_baseline_median": 0.1631,
-  "incumbent_cut": 0.378,
+  "lift_over_median": -0.0108,
+  "lift_over_baseline_fitted": 0.1652,
+  "lift_over_baseline_median": 0.176,
+  "incumbent_cut": 0.4116,
   "fitted_cut_per_fold": [
-   0.3593,
-   0.3619,
-   0.3619,
-   0.3323,
-   0.349
+   0.408,
+   0.4013,
+   0.3897,
+   0.3679,
+   0.4068
   ],
-  "fitted_cut_mean": 0.3529,
-  "fitted_cut_spread": 0.0296,
-  "fitted_cut_spread_relative": 0.0268,
+  "fitted_cut_mean": 0.3947,
+  "fitted_cut_spread": 0.0401,
+  "fitted_cut_spread_relative": 0.04,
   "score_span": [
-   -0.1265,
-   0.9798
+   -0.0073,
+   0.9947
   ],
-  "in_sample_cut": 0.3619,
-  "in_sample_acc": 0.7862,
-  "optimism": 0.0119,
+  "in_sample_cut": 0.4062,
+  "in_sample_acc": 0.797,
+  "optimism": 0.0141,
   "folds": [
    {
     "fold": 0,
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.3593,
-    "acc_at_fitted": 0.7351,
-    "acc_at_median": 0.7297,
+    "fitted_cut": 0.408,
+    "acc_at_fitted": 0.7405,
+    "acc_at_median": 0.7351,
     "majority_baseline": 0.6108
    },
    {
@@ -318,9 +318,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.3619,
-    "acc_at_fitted": 0.8378,
-    "acc_at_median": 0.8216,
+    "fitted_cut": 0.4013,
+    "acc_at_fitted": 0.827,
+    "acc_at_median": 0.8324,
     "majority_baseline": 0.6108
    },
    {
@@ -328,9 +328,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.3619,
+    "fitted_cut": 0.3897,
     "acc_at_fitted": 0.8,
-    "acc_at_median": 0.8,
+    "acc_at_median": 0.8054,
     "majority_baseline": 0.6595
    },
    {
@@ -338,9 +338,9 @@
     "n_train": 741,
     "n_test": 185,
     "n_actors_held_out": 18,
-    "fitted_cut": 0.3323,
-    "acc_at_fitted": 0.7514,
-    "acc_at_median": 0.7946,
+    "fitted_cut": 0.3679,
+    "acc_at_fitted": 0.7568,
+    "acc_at_median": 0.8,
     "majority_baseline": 0.6162
    },
    {
@@ -348,9 +348,9 @@
     "n_train": 740,
     "n_test": 186,
     "n_actors_held_out": 19,
-    "fitted_cut": 0.349,
-    "acc_at_fitted": 0.7473,
-    "acc_at_median": 0.7581,
+    "fitted_cut": 0.4068,
+    "acc_at_fitted": 0.7903,
+    "acc_at_median": 0.7957,
     "majority_baseline": 0.5914
    }
   ]
@@ -360,24 +360,24 @@
   "computable": true,
   "n_f1": 2042,
   "n_gold": 1117,
-  "gold_median": 0.3682,
+  "gold_median": 0.4087,
   "f1_median": 0.5915,
   "gold_iqr": [
-   0.3043,
-   0.4264
+   0.3503,
+   0.4679
   ],
   "f1_iqr": [
    0.5105,
    0.6769
   ],
-  "median_shift": 0.2233,
-  "median_shift_in_gold_sds": 2.3,
-  "share_below_cut_gold": 0.7905,
-  "share_below_cut_f1": 0.1244,
+  "median_shift": 0.1828,
+  "median_shift_in_gold_sds": 1.85,
+  "share_below_cut_gold": 0.8926,
+  "share_below_cut_f1": 0.2919,
   "distributions_comparable": false
  },
- "finding": "boundary_is_misplaced_on_gold",
- "recommendation": "do_not_transfer_to_f1",
- "why": "On gold labels the boundary is definitively misplaced: moving it lifts the valence axis from +0.0087 to +0.0605 over baseline, stable to 0.0005 across 91 actors. The valence axis is threshold-limited, not signal-limited, and the published claim that it sits 'at chance' understates the model.\n\n    But the cut does NOT transfer. Raw valence on F1 radio has median 0.5915 against 0.3682 on CREMA-D, a shift of 2.3 gold standard deviations. The same absolute cut catches 79.0% of gold clips but only 12.4% of radio messages. Applying it would relabel the corpus for a reason that has nothing to do with how the drivers sound, and there are no in-domain labels to say whether the shift is real or a channel artifact.\n\n    So the finding is published and the production boundary is left alone. This is now the single highest-value thing an in-domain labelling pass would settle: we know exactly which number it decides.",
+ "finding": "boundary_is_fine",
+ "recommendation": "no_change",
+ "why": "Fitting the threshold on held-out speakers recovers only +0.0421 accuracy over the incumbent split, below the pre-declared 0.05 bar.",
  "base_rate_caveat": "A percentile threshold encodes a base rate. CREMA-D is 62% negative valence by construction; the true rate for F1 team radio is unknown and there are no in-domain labels to measure it. Any threshold fitted here would import CREMA-D's balance, so a fitted number is evidence about the model's headroom first and a production setting only second."
 }

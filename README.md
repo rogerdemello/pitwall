@@ -124,24 +124,44 @@ Telemetry via **FastF1**.
 
 The F1 dataset ships no emotion labels, so we validated the same pipeline
 against **CREMA-D** (`confit/cremad-parquet`, 926 usable clips with gold labels).
-Overall 4-way accuracy is **49.2% against a 41.3% majority-class baseline** —
+Overall 4-way accuracy is **49.5% against a 41.2% majority-class baseline** —
 real signal, but the useful part is the per-axis breakdown:
 
 | Axis | Accuracy | Baseline | Lift |
 |---|---|---|---|
-| **Arousal** (high vs low) | 78.1% | 61.8% | **+16.3** |
-| **Valence** (negative vs positive) | 62.9% | 61.9% | **+1.0** |
+| **Arousal** (high vs low) | 79.4% | 61.8% | **+17.6** |
+| **Valence** (negative vs positive) | 60.9% | 61.9% | **-1.0** |
 
-**Arousal works. Valence is at chance.** And DSI weights valence at 0.45, so
-close to half the index rests on a dimension the model does not resolve. It also
-explains the confusion matrix exactly: Stressed leaks into Energised, Calm into
-Fatigued — pairs that differ *only* in valence.
+**Arousal works. Valence does not.** At the production split valence now scores
+*fractionally below* the majority baseline — it is not merely uninformative,
+it is very slightly worse than guessing the commoner class. DSI weights valence
+at 0.45, so close to half the index rests on a dimension the model does not
+resolve. It also explains the confusion matrix exactly: Stressed leaks into
+Energised, Calm into Fatigued — pairs that differ *only* in valence.
 
 The product says so. The state label carries a "valence unvalidated" marker, and
 the Evidence screen leads with it. *Caveat: CREMA-D is acted studio speech, so
 this validates the model and our quadrant logic, not in-domain radio. The
 implication only runs one way — a model that cannot recover emotion from clean
 speech is certainly not doing it on team radio.*
+
+**These figures moved, and how we found out is the point.** All three CREMA-D
+artifacts were generated *before* `prosody.py` gained VAD and per-window
+scoring. Both changes sit upstream of every number in them, so for several
+commits the docs faithfully quoted an evaluation of a model that no longer ran —
+and nothing failed, because the tests checked that documents matched the
+artifacts and the artifacts agreed with themselves. Nothing checked that an
+artifact still matched the code that produced it.
+
+Re-running them moved 15 of 18 tracked figures. Arousal came out **better** than
+we had published (+17.6 over baseline, not +16.3); valence came out worse; and
+one published rescue did not survive at all (below). The deltas are recorded in
+`backend/races/_remeasurement.json`, derived by reading both versions out of git
+rather than typed from memory:
+
+```bash
+python backend/data/remeasurement.py --against v1-submission-good
+```
 
 **A second model was no help, and that is itself a result.**
 `Dpngtm/wav2vec2-emotion-recognition` agrees with us at chance (Cohen's kappa

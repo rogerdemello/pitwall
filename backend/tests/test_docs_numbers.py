@@ -33,9 +33,44 @@ RETIRED = {
     r"\b1,042\b": "corpus size (now 2,042)",
     r"\b29 tests\b": "test count",
     r"\bsix races\b": "corpus size (now 12 races)",
+    # The gold-label axis figures, retired when the three CREMA-D artifacts were
+    # re-measured against the prosody path that actually ships. See
+    # _remeasurement.json. `78.1%` is barred rather than `78.1` because the
+    # latter appears legitimately inside quoted history.
+    r"\b78\.1%": "arousal accuracy (re-measured with VAD and windowing)",
+    r"\b62\.9%": "valence accuracy (re-measured)",
+    r"\b49\.2%": "four-way gold accuracy (re-measured)",
+    r"\+16\.3\b": "arousal lift (re-measured)",
+    r"\+0\.0605\b": "valence lift at the fitted boundary (re-measured)",
+    r"\+0\.061\b": "valence lift at the fitted boundary (re-measured)",
+    r"\bsix times the published figure\b":
+        "the boundary refit no longer clears its own materiality bar",
 }
 
 DOCS = [d for d in render_docs.DOCS if d.endswith(".md")]
+
+#: (file, pattern) -> why this one occurrence is allowed to survive retirement.
+#:
+#: A retired number must never be *asserted* again. But a superseded claim that
+#: is being withdrawn has to name the figure it is withdrawing, or the retraction
+#: says nothing - and "we quietly stopped mentioning it" is exactly the move this
+#: project exists not to make.
+#:
+#: So the ban stays absolute by default and every exception is written down here
+#: with a reason. An allowlist that costs a line of justification per entry is
+#: hard to abuse by accident; a blanket "skip anything near the word withdrawn"
+#: would not be.
+QUOTED_HISTORY = {
+    ("docs/SUBMISSION.md", r"\+0\.061\b"):
+        "names the withdrawn lift in the paragraph that withdraws it",
+    ("docs/SUBMISSION.md", r"\+0\.0605\b"):
+        "quotes the pre-registration, which is committed-before-the-fact and "
+        "must not be edited to match a later measurement",
+    ("docs/SUBMISSION.md", r"\bsix times the published figure\b"):
+        "quotes the exact wording being retracted",
+    ("README.md", r"\+16\.3\b"):
+        "contrasts the superseded arousal lift with the re-measured one",
+}
 
 
 @pytest.fixture(scope="module")
@@ -57,8 +92,21 @@ class TestNoRetiredNumbers:
         text = _read(rel)
         if text is None:
             pytest.skip(f"{rel} not present")
-        found = [why for pat, why in RETIRED.items() if re.search(pat, text)]
+        found = [why for pat, why in RETIRED.items()
+                 if re.search(pat, text) and (rel, pat) not in QUOTED_HISTORY]
         assert not found, f"{rel} still states retired {found}"
+
+    @pytest.mark.parametrize("key", sorted(QUOTED_HISTORY))
+    def test_every_exemption_is_still_needed(self, key):
+        """An allowlist nobody prunes becomes a list of things nobody checks."""
+        rel, pat = key
+        text = _read(rel)
+        if text is None:
+            pytest.skip(f"{rel} not present")
+        assert re.search(pat, text), (
+            f"{rel} no longer contains {pat!r} - drop this entry from "
+            "QUOTED_HISTORY so the ban goes back to being absolute"
+        )
 
     def test_the_generated_dataset_card_template_is_clean(self):
         """The card is published to the Hub, so a stale number there is public.

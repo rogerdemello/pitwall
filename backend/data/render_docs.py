@@ -71,7 +71,46 @@ def rules(f: dict) -> list[tuple[str, str]]:
         (r"\b38/80\b", f"{f['drivers_slower']}/{f['drivers_total']}"),
         (r"p = 0\.7376", f"p = {f['sign_test_p']}"),
         (r"p=0\.7376", f"p={f['sign_test_p']}"),
+        # The gold-label axis figures.
+        #
+        # These had no rules at all, and every one of them was wrong: the three
+        # CREMA-D artifacts were generated before prosody.py gained VAD and
+        # per-window scoring, so they described a model that no longer ran. The
+        # docs faithfully quoted numbers no current code produced, and nothing
+        # failed, because the tests compared documents to artifacts and the
+        # artifacts agreed with themselves. Anchored to their surrounding words
+        # so a bare "78.1%" elsewhere is not rewritten by accident.
+        (r"(?<=\| )78\.1%", _pctv(f, "arousal_acc")),
+        (r"(?<=\| )62\.9%", _pctv(f, "valence_acc")),
+        (r"arousal (?:axis )?scores 78\.1%", f"arousal scores {_pctv(f, 'arousal_acc')}"),
+        (r"\(78\.1% vs a 61\.8% baseline\)",
+         f"({_pctv(f, 'arousal_acc')} vs a {_pctv(f, 'arousal_baseline')} baseline)"),
+        (r"\(62\.9% vs 61\.9%\)",
+         f"({_pctv(f, 'valence_acc')} vs {_pctv(f, 'valence_baseline')})"),
+        (r"scores 62\.9% against 61\.9%",
+         f"scores {_pctv(f, 'valence_acc')} against {_pctv(f, 'valence_baseline')}"),
+        (r"78\.1% against a 61\.8% baseline",
+         f"{_pctv(f, 'arousal_acc')} against a {_pctv(f, 'arousal_baseline')} baseline"),
+        (r"\b61\.8%", _pctv(f, "arousal_baseline")),
+        (r"\b61\.9%", _pctv(f, "valence_baseline")),
+        (r"\*\*49\.2% against a 41\.3% majority-class baseline\*\*",
+         f"**{_pctv(f, 'gold_accuracy')} against a {_pctv(f, 'gold_baseline')} "
+         "majority-class baseline**"),
+        (r"(?<=\| )\*\*\+16\.3\*\*", f"**{_signed(f, 'arousal_lift')}**"),
+        (r"(?<=\| )\*\*\+1\.0\*\*", f"**{_signed(f, 'valence_lift')}**"),
     ]
+
+
+def _pctv(f: dict, key: str) -> str:
+    """A fact as a percentage string, or the placeholder if it is unmeasured."""
+    v = f.get(key)
+    return "—" if v is None else f"{v * 100:.1f}%"
+
+
+def _signed(f: dict, key: str) -> str:
+    """A lift in percentage points, always signed - the sign is the finding."""
+    v = f.get(key)
+    return "—" if v is None else f"{v * 100:+.1f}"
 
 
 def apply(text: str, f: dict) -> tuple[str, int]:

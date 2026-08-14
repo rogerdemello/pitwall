@@ -94,7 +94,7 @@ effect" - our first run reported exactly that.
 ## Read this before using `dsi`
 
 Validated against CREMA-D gold labels, the underlying model recovers **arousal**
-(78.1% vs a 61.8% baseline) but **valence is at chance** (62.9% vs 61.9%). DSI
+(79.4% vs a 61.8% baseline) but **valence is at chance** (60.9% vs 61.9%). DSI
 weights valence at 0.45, so close to half the index rests on a dimension the
 model does not resolve. Concretely: **Stressed vs Energised, and Calm vs
 Fatigued, differ only in valence and should be treated as unreliable.** The
