@@ -82,26 +82,5 @@
   "Any of the four pre-registered hypotheses failing"
  ],
 
- "what_would_falsify_the_whole_index": "If, after the rebuild, the Driver State Index no longer separates the pre-registered contrast slate (currently PARTIAL SUPPORT, 4 of 5 predictions held, spread 5.6 points), then the separation in v1 was an artifact of the v1 pipeline and the index does not measure what we claim. That result would be published in place of the current one.",
-
- "deviations_from_the_registered_change": {
-  "recorded_before_the_run": true,
-  "why_this_key_exists": "Two registered changes were not implemented as written and one was not implemented at all. Discovering that during the write-up would make the explanation post-hoc, so it is recorded here first. Nothing registered is edited - this is additive, like every other amendment to this file.",
-  "asr_vad_filter": "The registered ASR line says 'Silero VAD'. Silero is applied in pipeline/vad.py to prosody windowing; asr.DECODE does not set vad_filter, so faster-whisper decodes the full clip under no_speech_threshold 0.6, compression_ratio_threshold 2.4 and hallucination_silence_threshold 2.0. Left as built: adding a VAD gate now would change what H2 tests, and there is no measurement in hand to justify the change.",
-  "loro_fitted_on_driver_attributed_only": "The registered calibration line says leave-one-race-out is fitted on driver-attributed messages only. pool_calibration.py fits on every non-error message. Left as built: changing the calibration fit in the same step as the model change would make H1, H2 and the falsification check uninterpretable, and _calibration_leakage.json already establishes the leak is immaterial.",
-  "segment_level_speaker_attribution": "Not built. calibrate.py still calls the clip-level speaker.classify, and no held-out speaker judgements exist in the repository. H3 is therefore NOT TESTED rather than failed or partially met - see _v2_scoring.json, which quarantines the coverage number so it cannot be read as support."
- },
- "baseline_reconciliation": {
-  "why_this_key_exists": "Two registered baselines have drifted from the artifacts they name, because the corpus was re-derived after registration. No registered value in this file is edited - that is what makes it a pre-registration. The reconciliation is measured rather than typed, and lives in the generated artifact named below.",
-  "measured_in": "_v2_scoring.json",
-  "keys": [
-   "baseline_drift",
-   "confirmatory_baseline_reconciliation"
-  ],
-  "affected": [
-   "confirmatory_hypotheses[H3].baseline",
-   "the_single_confirmatory_test.baseline",
-   "what_would_falsify_the_whole_index (spread)"
-  ]
- }
+ "what_would_falsify_the_whole_index": "If, after the rebuild, the Driver State Index no longer separates the pre-registered contrast slate (currently PARTIAL SUPPORT, 4 of 5 predictions held, spread 5.6 points), then the separation in v1 was an artifact of the v1 pipeline and the index does not measure what we claim. That result would be published in place of the current one."
 }

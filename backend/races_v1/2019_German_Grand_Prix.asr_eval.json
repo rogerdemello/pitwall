@@ -1,0 +1,306 @@
+{
+ "race_id": "2019_German_Grand_Prix",
+ "sample_size": 40,
+ "wer_unbiased": 0.1436,
+ "wer_biased": 0.1291,
+ "wer_delta": -0.0145,
+ "jargon_terms_in_reference": 19,
+ "jargon_recovered_unbiased": 17,
+ "jargon_recovered_biased": 17,
+ "jargon_recall_unbiased": 0.8947,
+ "jargon_recall_biased": 0.8947,
+ "note": "WER is measured against the dataset's published transcripts, which themselves contain F1-jargon errors. Treat WER as agreement with a noisy baseline; jargon recall is the more meaningful signal.",
+ "examples": [
+  {
+   "id": "2019_German_Grand_Prix_CHALEC01_16_20190728_134116",
+   "reference": "Ah, it's way too much with the inters. There's way too much water. Copy. Aqua planning, quite a lot.",
+   "biased": "Ah, it's way too much with the inters, there's way too much water. Copy. Mark, we're planning quite a lot.",
+   "unbiased": "Ah, it's way too much with the inters. There's way too much water. Copy. I'm not planning quite a lot.",
+   "ref_jargon": [
+    "inters"
+   ],
+   "biased_jargon": [
+    "inters"
+   ],
+   "unbiased_jargon": [
+    "inters"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_MAXVER01_33_20190728_133703",
+   "reference": "Okay. So confirm you do not want a look at an inter and you do not want a flap adjustment. No, don't worry. Okay, straight through the pit lane. And again, it'll be a gear one launch.",
+   "biased": "OK, so confirm you do not want to look at an inter and you do not want a flap adjustment. No, don't worry. OK, straight through the pillar. And again it will be a gear one launch.",
+   "unbiased": "Okay. So confirm you do not want to look at an inter and you do not want a flap adjustment. No, don't worry. Okay, straight through the pillow. And again it will be a gear one launch.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_CARSAI01_55_20190728_133313",
+   "reference": "Yep, that's loud and clear, Carlos. And how are the conditions? Yeah, extreme, more than extreme, nearly. Yeah, it looks too wet for Inters to us, Carlos.",
+   "biased": "Yep, that's loud and clear, Carlos, and how are the conditions? Yeah, extreme, more than extreme, nearly. Yeah, it looks too wet for inters to us, Carlos.",
+   "unbiased": "Yep, that's loud and clear, Carlos. And how are the conditions? Yeah, extreme, more than extreme, nearly. Yeah, it looks too wet for inters to us, Carlos.",
+   "ref_jargon": [
+    "inters"
+   ],
+   "biased_jargon": [
+    "inters"
+   ],
+   "unbiased_jargon": [
+    "inters"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_KIMRAI01_7_20190728_133115",
+   "reference": "Yeah, ready, it's okay. I cannot see anything behind the coat. Copy. Okay, we are okay with the throttle, so if you want to go full throttle, no problem.",
+   "biased": "F1 radio, second. I cannot see anything behind the car. Copy. Ok, we are ok with the throttle, so if you want to go full throttle, no problem.",
+   "unbiased": "Copy. Okay, we are okay with the throttle, so if you want to go full throttle, no problem.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_PIEGAS01_10_20190728_133546",
+   "reference": "Feedback on the last one. Your clutch release was deep. On the last one, your clutch release was deep.",
+   "biased": "Feedback on the last one, your clutch release was deep. On the last one, your clutch release was deep.",
+   "unbiased": "Feedback on the last one, your clutch release was deep. On the last one, your clutch release was deep.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_KIMRAI01_7_20190728_135121",
+   "reference": "It is a very important topic for the United States.",
+   "biased": "you",
+   "unbiased": "you",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_LEWHAM01_44_20190728_140229",
+   "reference": "Safety car stop. Yeah, it's just been confirmed. Safety car stop. Yeah, Lewis at Shov. There'll be some laps behind the safety car to clear the water and then he can decide whether or not it's a standing start or a rolling start.",
+   "biased": "Safety car stop. Yeah, it's just been confirmed. Safety car stop. Yeah, Lewis, it's off. He'll, there'll be some laps behind the safety car to clear the water and then he can decide whether or not it's a standing start or a rolling start.",
+   "unbiased": "Yeah, Lewis, it's shelf. There'll be some laps behind the safety car to clear the water and then he can decide whether or not it's a standing start or a rolling start.",
+   "ref_jargon": [
+    "safety car"
+   ],
+   "biased_jargon": [
+    "safety car"
+   ],
+   "unbiased_jargon": [
+    "safety car"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_CARSAI01_55_20190728_140624",
+   "reference": "You decide on the tire based on the weather forecast. If it's not going to rain heavier, I would go for inter. Let's see how many laps we do behind the safety car, but we need to decide based on the weather forecast, not in the conditions that we have at the moment.",
+   "biased": "You decide on the tyre based on the weather forecast. Copy. It's not going to rain heavier. I would go for inter. Let's see how many laps we do behind the safety car, but we need to decide based on the weather forecast, not in the conditions that we have at the moment.",
+   "unbiased": "You decide on the tyre based on the weather forecast. Copy. If it's not going to rain heavier, I would go for inter. Let's see how many laps we do behind the safety car, but we need to decide based on the weather forecast, not in the conditions that we have at the moment.",
+   "ref_jargon": [
+    "safety car"
+   ],
+   "biased_jargon": [
+    "safety car",
+    "tyre"
+   ],
+   "unbiased_jargon": [
+    "safety car",
+    "tyre"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_CARSAI01_55_20190728_141251",
+   "reference": "Carlos, how are the conditions now? A bit better than in the Labster grid. Still poor visibility.",
+   "biased": "Carlos, how are the conditions now? A bit better than in the lobster breed, still poor visibility.",
+   "unbiased": "Carlos, how are the conditions now? A bit better than in the lobster breed Still poor visibility",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_MAXVER01_33_20190728_141504",
+   "reference": "For me, we can race.",
+   "biased": "Now for VVK Race.",
+   "unbiased": "Now for me we can race.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_VALBOT01_77_20190728_141725",
+   "reference": "Okay, so safe.",
+   "biased": "Okay so safety",
+   "unbiased": "Okay so save",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_GEORUS01_63_20190728_142128",
+   "reference": "We're in time to share this.",
+   "biased": "F1 radio, see you out of there.",
+   "unbiased": "F***ing great, I'll see you out of it.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_LEWHAM01_44_20190728_142404",
+   "reference": "So box, box, box, box.",
+   "biased": "So box box, box box.",
+   "unbiased": "So box box, box box.",
+   "ref_jargon": [
+    "box"
+   ],
+   "biased_jargon": [
+    "box"
+   ],
+   "unbiased_jargon": [
+    "box"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_CARSAI01_55_20190728_142601",
+   "reference": "If you're not sure, stay out or follow cars in front and let us know. No, I think it's box. Let me see one second. Let me see. Cars in front look to be pitting. Box, box, box. Box, box now. Apply the brakes during the stop.",
+   "biased": "If you're not sure stay out or follow cars in front and let us know. No, I think it's box. Let me see one second, let me see. Cars in front look to be pitting. Box, box, box, box now. Apply the brakes during the stop.",
+   "unbiased": "If you're not sure stay out or follow cars in front and let us know. No, I think it's box. Let me see one second. Let me see. Cars in front look to be pitting. Box, box, box, box now. Apply the brakes during the stop.",
+   "ref_jargon": [
+    "box"
+   ],
+   "biased_jargon": [
+    "box"
+   ],
+   "unbiased_jargon": [
+    "box"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_DANRIC01_3_20190728_142850",
+   "reference": "Okay, Daniels, we've got five cars still out there on extreme wets.",
+   "biased": "K10, you also got five cars still out there on extreme wets.",
+   "unbiased": "Get any also got five cars still out there on extreme wets",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_LEWHAM01_44_20190728_143121",
+   "reference": "Try and look after these tyres, there may be more rain on the way.",
+   "biased": "I try and look after these tyres, there may be more rain on the way.",
+   "unbiased": "I try and look after these tyres, there may be more rain on the way.",
+   "ref_jargon": [
+    "tyres"
+   ],
+   "biased_jargon": [
+    "tyres"
+   ],
+   "unbiased_jargon": [
+    "tyres"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_LANNOR01_4_20190728_143304",
+   "reference": "Okay, Lander, the aim is to try and undercut Stroll. He is still out on wet, he's falling back rapidly. He is 19.8.",
+   "biased": "Okay, Lander, the aim is to try and undercut Stroll. He is still out on wet, he's falling back rapidly. He is 19.8.",
+   "unbiased": "Okay Landa, the aim is to try and undercut Stroll. He is still out on wet, he's falling back rapidly. He is 19.8.",
+   "ref_jargon": [
+    "undercut"
+   ],
+   "biased_jargon": [
+    "undercut"
+   ],
+   "unbiased_jargon": [
+    "undercut"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_NICHUL01_27_20190728_143633",
+   "reference": "The fronts are getting a hard time now, especially front left. Copy that, Nico. Front left getting a hard time.",
+   "biased": "The front's are getting a hard time now, especially front left Copy that Nico, front left getting a hard time",
+   "unbiased": "The front's are getting a hard time now, especially front left Copy that Nico, front left getting a hard time",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_VALBOT01_77_20190728_143811",
+   "reference": "So there might be some more rain, so we're hanging out.",
+   "biased": "So there might be some more rain, so we're hanging out.",
+   "unbiased": "So there might be some rain so we're hanging out",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_MAXVER01_33_20190728_144045",
+   "reference": "Engine 2 left front, that's a struggle. Understood. Engine 2 position 11. Engine 2 position 11.",
+   "biased": "Engine 2, left front, start to struggle. Engine 2, position 11, engine 2, position 11, when you have",
+   "unbiased": "Engine 2, left front starts the struggle. Engine 2, position 11, Engine 2, position 11, when you have",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_NICHUL01_27_20190728_144522",
+   "reference": "BSC is ending.",
+   "biased": "BSC is ending.",
+   "unbiased": "BSC is ending.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_MAXVER01_33_20190728_144800",
+   "reference": "Just be patient, Max.",
+   "biased": "Just be patient Max.",
+   "unbiased": "Just be patient Max.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2019_German_Grand_Prix_NICHUL01_27_20190728_145103",
+   "reference": "Okay, Nico, let's bring the set in as gently as you can. Last set was about 50% worn, but new tyres on a drier track will get more of a hard time, as I'm sure you know.",
+   "biased": "Okay, Nico, let's bring the setting as gently as you can. Last set was about 50% won, but new tyres on a dry track will get more of a hard time, as I'm sure you know.",
+   "unbiased": "Okay Nico, let's bring the setting as gently as you can. Last set was about 50% won, but new tyres on a dry track will get more of a hard time as I'm sure you know.",
+   "ref_jargon": [
+    "tyres"
+   ],
+   "biased_jargon": [
+    "tyres"
+   ],
+   "unbiased_jargon": [
+    "tyres"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_LEWHAM01_44_20190728_145352",
+   "reference": "And we have rain in the pit lane, rain in the pit lane.",
+   "biased": "And we have rain in the pit lane, rain in the pit lane.",
+   "unbiased": "And we have rain in the pit lane. Rain in the pit lane.",
+   "ref_jargon": [
+    "pit"
+   ],
+   "biased_jargon": [
+    "pit"
+   ],
+   "unbiased_jargon": [
+    "pit"
+   ]
+  },
+  {
+   "id": "2019_German_Grand_Prix_SEBVET01_5_20190728_145725",
+   "reference": "And box Sebastian box for new soft. You're happy? Copy.",
+   "biased": "Unbox, about to unbox, for new soft, Chiarepi.",
+   "unbiased": "Unbox about the unbox for new soft, Chiarepe.",
+   "ref_jargon": [
+    "box"
+   ],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  }
+ ]
+}

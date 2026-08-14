@@ -1,0 +1,134 @@
+{
+ "generated_by": "backend/data/remeasurement.py",
+ "purpose": "Record what moved when gold-label evidence was re-measured against the prosody path that actually ships. Both sides are read from files - the old ones out of git - so the comparison can be regenerated rather than taken on trust.",
+ "compared_against": {
+  "ref": "v1-submission-good",
+  "sha": "05c625d79c33be2dcc8367eedab30c5e405f9375"
+ },
+ "cause": {
+  "artifacts_predate": [
+   "VAD conditioning",
+   "per-window prosody"
+  ],
+  "how_it_was_found": "Ancestry, not timestamps: each artifact's last commit is a strict ancestor of both the VAD commit and the per-window prosody commit, so every figure in them was produced by a prosody.analyse that no longer exists in the tree.",
+  "why_nothing_caught_it": "test_evidence_is_measured.py checks that documents match the artifacts. The artifacts matched themselves. Nothing checked that an artifact still matched the code that generated it."
+ },
+ "artifacts": {
+  "_gold_affect_eval.json": {
+   "comparable": true,
+   "fields": {
+    "four_way_accuracy": {
+     "before": 0.4924,
+     "after": 0.4946,
+     "moved": true
+    },
+    "majority_baseline": {
+     "before": 0.4125,
+     "after": 0.4125,
+     "moved": false
+    },
+    "arousal_accuracy": {
+     "before": 0.7808,
+     "after": 0.7937,
+     "moved": true
+    },
+    "arousal_lift": {
+     "before": 0.1631,
+     "after": 0.176,
+     "moved": true
+    },
+    "valence_accuracy": {
+     "before": 0.6285,
+     "after": 0.6091,
+     "moved": true
+    },
+    "valence_lift": {
+     "before": 0.0097,
+     "after": -0.0097,
+     "moved": true
+    }
+   },
+   "n_moved": 5,
+   "n_held": 1
+  },
+  "_valence_diagnostic.json": {
+   "comparable": true,
+   "fields": {
+    "verdict": {
+     "before": "mapping_is_at_fault",
+     "after": "mapping_is_at_fault",
+     "moved": false
+    },
+    "happy_anger_auc_naive": {
+     "before": 0.6889,
+     "after": 0.6721,
+     "moved": true
+    },
+    "happy_anger_auc_stratified": {
+     "before": 0.6695,
+     "after": 0.6695,
+     "moved": false
+    },
+    "neutral_sad_auc_stratified": {
+     "before": 0.6149,
+     "after": 0.5448,
+     "moved": true
+    }
+   },
+   "n_moved": 2,
+   "n_held": 2
+  },
+  "_valence_boundary.json": {
+   "comparable": true,
+   "fields": {
+    "finding": {
+     "before": "boundary_is_misplaced_on_gold",
+     "after": "boundary_is_fine",
+     "moved": true
+    },
+    "recommendation": {
+     "before": "do_not_transfer_to_f1",
+     "after": "no_change",
+     "moved": true
+    },
+    "valence_auc": {
+     "before": 0.687,
+     "after": 0.6412,
+     "moved": true
+    },
+    "lift_over_baseline_median": {
+     "before": 0.0087,
+     "after": -0.0097,
+     "moved": true
+    },
+    "lift_over_baseline_fitted": {
+     "before": 0.0605,
+     "after": 0.0324,
+     "moved": true
+    },
+    "lift_over_median": {
+     "before": 0.0518,
+     "after": 0.0421,
+     "moved": true
+    },
+    "fitted_cut_mean": {
+     "before": 0.4415,
+     "after": 0.5239,
+     "moved": true
+    },
+    "domain_shift_in_gold_sds": {
+     "before": 2.3,
+     "after": 1.85,
+     "moved": true
+    }
+   },
+   "n_moved": 8,
+   "n_held": 0
+  }
+ },
+ "totals": {
+  "figures_moved": 15,
+  "figures_held": 3
+ },
+ "how_to_reproduce": "python backend/data/remeasurement.py --against v1-submission-good"
+}

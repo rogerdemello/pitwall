@@ -1,0 +1,252 @@
+{
+ "race_id": "2023_Monaco_Grand_Prix",
+ "sample_size": 40,
+ "wer_unbiased": 0.1725,
+ "wer_biased": 0.1908,
+ "wer_delta": 0.0183,
+ "jargon_terms_in_reference": 7,
+ "jargon_recovered_unbiased": 5,
+ "jargon_recovered_biased": 6,
+ "jargon_recall_unbiased": 0.7143,
+ "jargon_recall_biased": 0.8571,
+ "note": "WER is measured against the dataset's published transcripts, which themselves contain F1-jargon errors. Treat WER as agreement with a noisy baseline; jargon recall is the more meaningful signal.",
+ "examples": [
+  {
+   "id": "2023_Monaco_Grand_Prix_FERALO01_14_20230527_162158",
+   "reference": "I cannot push any harder than this, so at least for whatever position we are in, this is the maximum. The staff has done you, mate, sorry, by 800s. Yeah, well done, guys. Don't be disappointed. This is magic. Yeah, well done, mate. Yeah, imagine two months ago if we think about this. So, well done, everyone.",
+   "biased": "I cannot push any harder than this. So all this, whatever position we are in, this is the maximum. The staff has done you mate, sorry, by 800s. Yeah, well done guys. Don't be disappointed. This is magic. Yeah, well done mate. Yeah, imagine two months ago if we think about this. Well done everyone.",
+   "unbiased": "I cannot push any harder than this. So all this, whatever position we are in, this is the maximum. The staff has done you mate, sorry, by eight hundredths. Yeah, well done guys. Don't be disappointed. This is magic. Yeah, well done mate. Yeah, imagine two months ago if we think about this. So, well done everyone.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_131403",
+   "reference": "Should we try another point forward? Do we have time for that? Yes, we can do that.",
+   "biased": "So we try another point forward, do we have time for that? Yes, we can do that.",
+   "unbiased": "So we try another point forward. Do we have time for that? Yes, we can do that.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_LEWHAM01_44_20230528_131856",
+   "reference": "I spot air coming out of that gun.",
+   "biased": "There's hot air coming out of that gun.",
+   "unbiased": "There's hot air coming out of that gun.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_ESTOCO01_31_20230528_140124",
+   "reference": "Clutch drop, absolutely spot on. Same again, please.",
+   "biased": "Clutch drop, absolutely spot on. Same again, please.",
+   "unbiased": "Clutch drop. Absolutely spot on. Same again, please.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_GUAZHO01_24_20230528_140206",
+   "reference": "Try to push turn 12 minus three on target",
+   "biased": "Try to push turn 12, minus 3 on target.",
+   "unbiased": "Try to push turn 12, minus 3 on target.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_GEORUS01_63_20230528_140705",
+   "reference": "How are bright temps?",
+   "biased": "How upright, temps.",
+   "unbiased": "How upright temps.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_NICHUL01_27_20230528_140932",
+   "reference": "Okay, Nico, we'll check. Data is okay. We'll check the video too.",
+   "biased": "Okay, Nico will check. Data is okay, we'll check the video too.",
+   "unbiased": "Okay, Nico will check. Data is okay. We'll check the video too.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_141100",
+   "reference": "No issues on brakes, Kev. No issues on brakes.",
+   "biased": "No issues on brakes, Kev, no issues on brakes.",
+   "unbiased": "No issues on brakes, Kev. No issues on brakes.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_FERALO01_14_20230528_141532",
+   "reference": "Which axle you're wearing? So, Fernando, it's all about the rears, the left rear, it's all about that. So, we're happy to use the fronts to protect the rears.",
+   "biased": "Which axle you're wearing? So, Fernando, it's all about the rear, the left rear, it's all about that, so we're happy to use the front protector ears.",
+   "unbiased": "which axle you're wearing. So Fernando, it's all about the rear, the left rear, it's all about that, so we're happy to use the front protector ears.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_CARSAI01_55_20230528_141745",
+   "reference": "Broken from wing. Stay out, stay out for a moment. No damage.",
+   "biased": "F1 radio, check that on the wing. Broken from wing. Stay out, stay out for a moment. No damage.",
+   "unbiased": "Broken from wing. Stay out, stay out for a moment. No damage.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_PIEGAS01_10_20230528_141839",
+   "reference": "To go over the debris before turn, please just check the fires, please. Yeah, we're looking at it.",
+   "biased": "F1 radio, DRS, deg, safety car.",
+   "unbiased": "Yeah, we're looking at it.",
+   "ref_jargon": [],
+   "biased_jargon": [
+    "deg",
+    "drs",
+    "safety car"
+   ],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_FERALO01_14_20230528_141936",
+   "reference": "Maybe puncher on the left, right.",
+   "biased": "Maybe puncture on the left right.",
+   "unbiased": "Maybe puncher on the left right",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_ESTOCO01_31_20230528_142144",
+   "reference": "There was no space for both of us there, so. Yeah, copy that.",
+   "biased": "There was no space for both of us there, so... Yeah, copy that.",
+   "unbiased": "There was no space for both of us there, so... Yeah, copy that.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_CARSAI01_55_20230528_142503",
+   "reference": "Okay, I see a bit of front left and a bit of rear left waiting on the right. Just waiting for...",
+   "biased": "Okay, see a bit of front left and a bit of rear left, waiting on the run. Just waiting for...",
+   "unbiased": "Okay, see a bit of front left and a bit of rear left, waiting on the run. Just waiting for...",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_GEORUS01_63_20230528_142531",
+   "reference": "Yeah, but you asked me to manage peaks.",
+   "biased": "Yeah, but you're off to manage, peace.",
+   "unbiased": "Yeah, but you're off to manage, peace.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_NYCDEV01_21_20230528_142812",
+   "reference": "Okay, Albon has pitted for hard mode 3 when you can. Next car is Botas 5 behind.",
+   "biased": "Okay, Albona, speed it for hard, mode 3 when you can. Next car is Bottas 5 behind.",
+   "unbiased": "Okay, I'll gonna speed it for hard, mode 3 when you can. Next card is Botas 5 behind.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_KEVMAG01_20_20230528_142951",
+   "reference": "Just let me know what I need to do.",
+   "biased": "Just let me know what I need to do.",
+   "unbiased": "Just let me know what I need to do.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_CARSAI01_55_20230528_143218",
+   "reference": "The following follows reporting rear-left graining on the hard and also lapel in seven point nine.",
+   "biased": "F1 info, reporting rear left grainings on the hard and also lap time 7.9.",
+   "unbiased": "For influence report in rear left grain on the heart and also lap time 7.9",
+   "ref_jargon": [
+    "graining"
+   ],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_LANNOR01_4_20230528_143530",
+   "reference": "Synoda struggling with \"front left\", Lando \"possible rein\" Class One on lap thirty-five.",
+   "biased": "So now we're just struggling with front left, Lando, possible rain, class 1 on lap 35.",
+   "unbiased": "So now we're just struggling with front left, Lando, possible rain, Class 1 on lap 35.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_SERPER01_11_20230528_143714",
+   "reference": "Front left main concern, watch the lock here.",
+   "biased": "One left, main concern, watch the lock here.",
+   "unbiased": "One left, main concern. Watch the lock here.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_LANNOR01_4_20230528_143927",
+   "reference": "And then, how's the balance? How's the balance? Well, not great, obviously. The front graining is just hard to not get the radius, you have to manage a bit, but the front graining is the bigger problem.",
+   "biased": "How's the balance? How's the balance? Well, not great obviously. The front graining is just hard to not get. The radio shift, the management bit, but the front graining is the bigger problem.",
+   "unbiased": "How's the balance? How's the balance? Well, not great obviously. The front graining is just hard to not get. The radius you have to manage a bit but the front graining is the bigger problem.",
+   "ref_jargon": [
+    "graining"
+   ],
+   "biased_jargon": [
+    "graining"
+   ],
+   "unbiased_jargon": [
+    "graining"
+   ]
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_SERPER01_11_20230528_144102",
+   "reference": "There's a risk of rain towards the end of the race. People might be trying to hang on for that.",
+   "biased": "There's a risk of rain towards the end of the race. People might be trying to hang on for that.",
+   "unbiased": "There's a risk of rain towards the end of the race. People might be trying to hang on for that.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_VALBOT01_77_20230528_144356",
+   "reference": "Okay, Valtry, we really need to get De Vries if we can. Try to use the blue flag to your advantage.",
+   "biased": "Okay, Valtry, we really need to get to Vries if we can. Try to use the blue flag to your advantage.",
+   "unbiased": "Okay, Valtry, we really need to get to Vries if we can. Try to use the blue flag to your advantage.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_LANSTR01_18_20230528_144632",
+   "reference": "I don't understand what's taking so long. It's so obvious he cut the chicane. It's like ridiculous.",
+   "biased": "I don't understand what's taking so long. It's so obvious he cut the chicane. It's like ridiculous.",
+   "unbiased": "I don't understand what's taking so long. It's so obvious he cut the chicane. It's like ridiculous.",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  },
+  {
+   "id": "2023_Monaco_Grand_Prix_YUKTSU01_22_20230528_144730",
+   "reference": "If you have one or two things in your pocket, it's the moment to use it now.",
+   "biased": "If you have one or two things in your pocket, it's the moment to use it now.",
+   "unbiased": "If you have one or two things in your pocket is the moment to use it now",
+   "ref_jargon": [],
+   "biased_jargon": [],
+   "unbiased_jargon": []
+  }
+ ]
+}

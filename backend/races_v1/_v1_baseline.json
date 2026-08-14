@@ -1,0 +1,120 @@
+{
+ "generated_by": "backend/data/v1_baseline.py",
+ "purpose": "Frozen record of v1 behaviour, so the GPU rebuild can be scored against it on the identical clips rather than described in adjectives.",
+ "pipeline": {
+  "asr": "openai/whisper-small.en, greedy, max_new_tokens=128, no VAD, no chunking, no hallucination guards",
+  "prosody": "audeering/wav2vec2-large-robust-12-ft-emotion-msp-dim, 15s windows, mean-pooled over the whole clip, CPU",
+  "sentiment": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+  "speaker": "lexicon and regex, clip-level, no audio",
+  "fusion": "0.55*a + 0.45*(1-v) - 0.10*(d-0.5), hand-set"
+ },
+ "n_messages": 2042,
+ "n_races": 12,
+ "truncation": {
+  "whisper_window_s": 30.0,
+  "clips_truncated": 92,
+  "share": 0.0451,
+  "audio_never_transcribed_min": 21.9,
+  "longest_clip_s": 105.4,
+  "worst_examples": [
+   {
+    "race": "2021_Abu_Dhabi_Grand_Prix",
+    "id": "2021_Abu_Dhabi_Grand_Prix_SEBVET01_5_20211212_145000",
+    "duration_s": 105.38,
+    "transcribed_share": 0.28
+   },
+   {
+    "race": "2020_Turkish_Grand_Prix",
+    "id": "2020_Turkish_Grand_Prix_LANNOR01_4_20201115_121037",
+    "duration_s": 93.98,
+    "transcribed_share": 0.32
+   },
+   {
+    "race": "2021_Abu_Dhabi_Grand_Prix",
+    "id": "2021_Abu_Dhabi_Grand_Prix_KIMRAI01_7_20211212_134506",
+    "duration_s": 90.86,
+    "transcribed_share": 0.33
+   },
+   {
+    "race": "2023_Dutch_Grand_Prix",
+    "id": "2023_Dutch_Grand_Prix_ALEALB01_23_20230827_163811",
+    "duration_s": 83.3,
+    "transcribed_share": 0.36
+   },
+   {
+    "race": "2023_Dutch_Grand_Prix",
+    "id": "2023_Dutch_Grand_Prix_MAXVER01_1_20230827_135744",
+    "duration_s": 80.78,
+    "transcribed_share": 0.37
+   }
+  ],
+  "note": "asr.py passes whole clips to WhisperProcessor with no chunking, and the feature extractor truncates to 30s. prosody.analyse reads the full clip, so on these messages the transcript and the voice describe different audio."
+ },
+ "hallucination": {
+  "flagged": 55,
+  "rate": 0.0269,
+  "by_family": {
+   "bare_you": 51,
+   "thanks_only": 3,
+   "repetition_loop": 1
+  },
+  "median_duration_s": 1.2,
+  "reference_also_hallucinates": 47,
+  "note": "The published reference transcripts hallucinate on the same clips - a 0.9s squelch burst is transcribed 'Thank you.' in both. WER against that reference therefore cannot detect this class of error, which is why a gold set is needed to score the upgrade.",
+  "guard_in_v1": "none - v1 decodes greedily with no no_speech_threshold, no compression_ratio_threshold and no temperature fallback"
+ },
+ "scored_noise": {
+  "clips": 55,
+  "share_of_corpus": 0.0269,
+  "still_assigned_a_state": {
+   "Fatigued": 49,
+   "Energised": 3,
+   "Stressed": 3
+  },
+  "still_in_calibration_reference": true,
+  "note": "These clips are scored end to end. The largest family decodes to the single word 'you', on which the text sentiment model returns a fixed polarity, and the prosody model reads channel noise."
+ },
+ "short_clips": {
+  "clips_under_2s": 49,
+  "share": 0.024,
+  "unknown_speaker_share": 1.0,
+  "note": "speaker.py returns 'unknown' below 2 words, so most of these are unattributed regardless of content."
+ },
+ "speaker_attribution": {
+  "counts": {
+   "unknown": 1072,
+   "engineer": 495,
+   "driver": 475
+  },
+  "shares": {
+   "unknown": 0.525,
+   "engineer": 0.242,
+   "driver": 0.233
+  },
+  "unknown_share": 0.525,
+  "fed_to_strategy_as_driver_voiced": 0.758,
+  "note": "strategy.py filters only on speaker != 'engineer', so unknowns are treated as possibly the driver."
+ },
+ "index": {
+  "dsi_mean": 50.0,
+  "dsi_sd": 13.14,
+  "dsi_min": 13,
+  "dsi_max": 95,
+  "dsi_p05": 30,
+  "dsi_p95": 74,
+  "state_counts": {
+   "Fatigued": 700,
+   "Energised": 700,
+   "Calm": 321,
+   "Stressed": 321
+  },
+  "suppressed_stress": 84,
+  "recommendations": 322
+ },
+ "what_v2_must_beat": {
+  "clips_truncated": 0,
+  "hallucination_rate": "<= 0.0269",
+  "unknown_speaker_share": "< 0.525",
+  "note": "Any of these getting worse is a regression and must be reported as one, not dropped."
+ }
+}

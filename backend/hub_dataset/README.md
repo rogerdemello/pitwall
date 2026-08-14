@@ -59,7 +59,7 @@ effect" - our first run reported exactly that.
 ## Read this before using `dsi`
 
 Validated against CREMA-D gold labels, the underlying model recovers **arousal**
-(78.1% vs a 61.8% baseline) but **valence is at chance** (62.9% vs 61.9%). DSI
+(79.4% vs a 61.8% baseline) but **valence is at chance** (60.9% vs 61.9%). DSI
 weights valence at 0.45, so close to half the index rests on a dimension the
 model does not resolve. Concretely: **Stressed vs Energised, and Calm vs
 Fatigued, differ only in valence and should be treated as unreliable.** The
@@ -67,8 +67,8 @@ arousal axis is the part that holds up.
 
 ## The null result
 
-We built this to test whether driver stress predicts lap-time loss. Across 556
-paired observations it does not: pooled r = 0.047, and no lag from +1 to +3 beats
+We built this to test whether driver stress predicts lap-time loss. Across 1155
+paired observations it does not: pooled r = 0.045, and no lag from +1 to +3 beats
 the same-lap correlation once corrected for multiple comparisons. Published
 anyway, because a null result with this much data is worth more than a
 correlation manufactured by leaving pit stops in.

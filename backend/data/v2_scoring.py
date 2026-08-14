@@ -540,10 +540,17 @@ def falsification(v1_finding: dict | None, v2_finding: dict | None) -> dict:
     def read(f):
         if not f:
             return None
-        return {"verdict": f.get("verdict"),
-                "predictions_held": f.get("predictions_held"),
-                "spread_dsi": (f.get("effect_size") or {}).get("spread_dsi")
-                              or f.get("spread_dsi")}
+        # `effect_size` is prose in this artifact, not a dict - the spread is
+        # stated inside a sentence. Read the scorecard, which is structured, and
+        # do not try to parse the sentence: a regex over prose is a number that
+        # looks derived and is not.
+        card = f.get("prediction_scorecard") or []
+        return {
+            "verdict": f.get("verdict"),
+            "predictions_held": sum(1 for p in card if p.get("held")),
+            "predictions_total": len(card),
+            "effect_size_note": f.get("effect_size"),
+        }
 
     a, b = read(v1_finding), read(v2_finding)
     falsified = None

@@ -1,0 +1,114 @@
+{
+ "dataset": "confit/cremad-parquet",
+ "split": "test",
+ "n": 926,
+ "label_treatment": {
+  "disgust": "excluded",
+  "why": "Disgust is negative but has no dependable arousal direction, so its quadrant is a choice rather than a reading. Excluded here rather than asserting a placement we cannot justify.",
+  "excluded_labels": [
+   "calm",
+   "disgust",
+   "disgusted",
+   "excited",
+   "excitement",
+   "surprise",
+   "surprised"
+  ],
+  "n_mapped_labels": 9
+ },
+ "excluded_labels": [
+  "calm",
+  "disgust",
+  "disgusted",
+  "excited",
+  "excitement",
+  "surprise",
+  "surprised"
+ ],
+ "label_mapping": {
+  "anger": "Stressed",
+  "angry": "Stressed",
+  "fear": "Stressed",
+  "fearful": "Stressed",
+  "happy": "Energised",
+  "happiness": "Energised",
+  "sad": "Fatigued",
+  "sadness": "Fatigued",
+  "neutral": "Calm"
+ },
+ "accuracy": 0.4946,
+ "majority_class_baseline": 0.4125,
+ "beats_baseline": true,
+ "confusion": {
+  "Calm": {
+   "Calm": 80,
+   "Fatigued": 58,
+   "Energised": 15,
+   "Stressed": 10
+  },
+  "Energised": {
+   "Energised": 108,
+   "Calm": 24,
+   "Stressed": 41,
+   "Fatigued": 17
+  },
+  "Stressed": {
+   "Stressed": 165,
+   "Fatigued": 62,
+   "Energised": 108,
+   "Calm": 47
+  },
+  "Fatigued": {
+   "Fatigued": 105,
+   "Calm": 70,
+   "Energised": 11,
+   "Stressed": 5
+  }
+ },
+ "per_class": {
+  "Calm": {
+   "precision": 0.362,
+   "recall": 0.491,
+   "f1": 0.417,
+   "support": 163
+  },
+  "Energised": {
+   "precision": 0.446,
+   "recall": 0.568,
+   "f1": 0.5,
+   "support": 190
+  },
+  "Stressed": {
+   "precision": 0.747,
+   "recall": 0.432,
+   "f1": 0.547,
+   "support": 382
+  },
+  "Fatigued": {
+   "precision": 0.434,
+   "recall": 0.55,
+   "f1": 0.485,
+   "support": 191
+  }
+ },
+ "axes": {
+  "arousal_high_vs_low": {
+   "accuracy": 0.7937,
+   "majority_baseline": 0.6177,
+   "lift": 0.176,
+   "n": 926
+  },
+  "valence_negative_vs_positive": {
+   "accuracy": 0.6091,
+   "majority_baseline": 0.6188,
+   "lift": -0.0097,
+   "n": 926
+  },
+  "near_chance_axes": [
+   "valence"
+  ],
+  "interpretation": "Arousal is recovered well; valence is at or near chance. Since DSI weights valence at 0.45, close to half the index rests on the dimension the model does not resolve - which is the single most important limitation of the affect scale."
+ },
+ "verdict": "Accuracy 49.5% vs a majority-class baseline of 41.3% - the mapping carries real signal.",
+ "caveat": "CREMA-D is acted, studio-quality American English. This validates the prosody model and our arousal/valence quadrant logic; it does not demonstrate in-domain performance on compressed F1 team radio. The implication runs one way only: a model that cannot recover emotion from clean acted speech is certainly not doing so on radio."
+}
